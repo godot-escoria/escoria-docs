@@ -1,0 +1,21 @@
+.. Intention: provide the necessary information to make the most of the getting
+   started series, answering questions like "do I want to learn Escoria?", "how
+   does it look and feel?", "how does it work?", and "how do I best learn it?".
+
+Introduction
+============
+
+This series will introduce you to Escoria and give you an overview of its
+features.
+
+In the following pages, you will get answers to questions such as "Is Escoria 
+for me?" or "What can I do with Escoria?". We will then introduce the engine's 
+most essential concepts, run you through the editor's interface, and give you 
+tips to make the most of your time learning it.
+
+.. toctree::
+   :maxdepth: 1
+   :name: toc-learn-introduction
+
+   what_is_a_point_n_click_game
+   what_is_escoria

@@ -1,0 +1,7 @@
+.. _doc_introduction_to_escoria:
+
+Introduction to Escoria
+=======================
+
+Blah
+

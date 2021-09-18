@@ -1,0 +1,19 @@
+.. _doc_introduction_to_escoria:
+
+What is Escoria
+===============
+
+Escoria is a framework made for and with `Godot Engine 
+<https://godotengine.org>`__ allowing you to create point and click adventure 
+games. 
+
+It provides you various special nodes and features to help you focus on creating
+your rooms, items, characters, and puzzles. It will take care of all the common 
+tasks that all adventure games need to have: character movements, transitions 
+between rooms, items relations, etc. All you'll have to do is create all these 
+elements for your game, and script the interactions.
+
+It does not require you to be a Godot Engine specialist: all you'll need to know 
+it the basics 
+of Godot scenes and resources.  
+
