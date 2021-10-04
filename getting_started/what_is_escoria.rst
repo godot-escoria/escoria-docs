@@ -1,4 +1,4 @@
-.. _doc_introduction_to_escoria:
+.. What is Escoria
 
 What is Escoria
 ===============
@@ -71,7 +71,8 @@ Player
 
 The player is the scene that is controlled by Escoria to perform the actions 
 corresponding to the user inputs: walk to a destination and perform events on 
-items.
+items. This also includes base animations defined for the character for idling, 
+walking and talking, and other specific animations as well.
 
 It is not mandatory to define a player scene, if your game is a HOPA (Hidden 
 Object Puzzle Adventure) or a Myst-like game. In this kinds of games, the world 
@@ -79,10 +80,16 @@ is displayed in the eyes of the protagonist, so there is no player to walk to
 the clicked item's location. In this case, events are immediately started after
 user input.
 
-Inventory
-~~~~~~~~~
+Inventory and inventory items
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Blah
+Escoria manages the inventory for the game developer. This includes items that
+are added or removed to the inventory, and events actions happening on inventory
+items (look and use items for example).
 
+Of course, the way the inventory is displayed to the player in terms of UI is 
+the game developer's burden. Escoria only provides some base scenes for 
+inventory and inventory items, but the way these are displayed it not managed by
+Escoria. This way, the game developer has a total control on the inventory.
 
 

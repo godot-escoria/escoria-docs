@@ -17,7 +17,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Create a player character" href="create_player_character.html" />
-    <link rel="prev" title="Step by step" href="index.html" /> 
+    <link rel="prev" title="Create the game scene" href="create_game_scene.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -37,19 +37,28 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption"><span class="caption-text">General</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../general/index.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../general/nodes/index.html">Nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../general/what_is_a_point_n_click_game.html">What is a point’n’click game?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../general/architecture/index.html">Architecture of Escoria</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Getting started</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Step by step</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Create a room</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create_escoria_project.html">Create an Escoria project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create_game_scene.html">Create the game scene</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Create a room</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#root-node-escroom">Root node: ESCRoom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#escbackground">ESCBackground</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="create_player_character.html">Create a player character</a></li>
 <li class="toctree-l2"><a class="reference internal" href="create_items.html">Create items</a></li>
 <li class="toctree-l2"><a class="reference internal" href="create_inventory.html">Create the inventory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="script_game.html">Script the game</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create_main_menu_pause_menu.html">Create the main menu &amp; pause menu</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../escoria_settings.html">Escoria settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nodes/index.html">Nodes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../esc_scripting/index.html">ESC scripting</a></li>
 </ul>
 
@@ -80,13 +89,29 @@
              
   <div class="section" id="create-a-room">
 <h1>Create a room<a class="headerlink" href="#create-a-room" title="Permalink to this headline">¶</a></h1>
+<p>A room, in Escoria terminology, is an environment where the player evolves without changing the point of view or the background. You can think of it as a “shot” in filmmaking.</p>
+<p>Create a <code class="docutils literal notranslate"><span class="pre">rooms</span></code> folder which will contain the rooms. This is not mandatory but you’ll want to build a coherent folder structure for your project if it grows bigger and bigger with time. In this folder, create a new folder to contain the files of the room scene we’ll now create: let’s call it <code class="docutils literal notranslate"><span class="pre">room01</span></code>.</p>
+<p>First, you can download <a class="reference external" href="assets/2d_-_backgrounds_-_random_town_locations.zip">these assets we will use in this guide</a>.</p>
+<div class="section" id="root-node-escroom">
+<h2>Root node: ESCRoom<a class="headerlink" href="#root-node-escroom" title="Permalink to this headline">¶</a></h2>
+<p>You can now create your first room scene. Create a new Godot scene and set its root node type as <code class="docutils literal notranslate"><span class="pre">ESCRoom</span></code>.</p>
+<img alt="Scene tree at room creation" class="align-center" src="../../_images/create_room_01.png" />
+<p>Don’t forget to set a <code class="docutils literal notranslate"><span class="pre">global_id</span></code> in the node parameters visible in the Inspector. This is the unique name of your room, which allows Escoria to remember the last room the player was in.</p>
+</div>
+<div class="section" id="escbackground">
+<h2>ESCBackground<a class="headerlink" href="#escbackground" title="Permalink to this headline">¶</a></h2>
+<p>Now, our room requires an <code class="docutils literal notranslate"><span class="pre">ESCBackground</span></code> node. This node is mandatory to capture input events on the background of the room. It can also display a background image, as <code class="docutils literal notranslate"><span class="pre">ESCBackground</span></code> extends <code class="docutils literal notranslate"><span class="pre">TextureRect</span></code>.</p>
+<p>Add one as child to the root node.</p>
+<img alt="Scene tree at ESCBackground node add" class="align-center" src="../../_images/create_room_02.png" />
+<p>Currently, the node displays no background. In the Inspector panel, set a background texture.</p>
+</div>
 </div>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="Step by step" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="create_game_scene.html" class="btn btn-neutral float-left" title="Create the game scene" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="create_player_character.html" class="btn btn-neutral float-right" title="Create a player character" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

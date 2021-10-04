@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,14 +9,13 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Nodes" href="nodes/index.html" />
+    <link rel="next" title="Step by step" href="../getting_started/step_by_step/index.html" />
     <link rel="prev" title="What is a point’n’click game" href="what_is_a_point_n_click_game.html" /> 
 </head>
 
@@ -39,10 +38,18 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Introduction</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="what_is_a_point_n_click_game.html">What is a point’n’click game</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">What is Escoria</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">What is Escoria</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#base-concepts">Base concepts</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#rooms">Rooms</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#items">Items</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#player">Player</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inventory-and-inventory-items">Inventory and inventory items</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="nodes/index.html">Nodes</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Getting started</span></p>
 <ul>
@@ -76,7 +83,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="what-is-escoria">
-<span id="doc-introduction-to-escoria"></span><h1>What is Escoria<a class="headerlink" href="#what-is-escoria" title="Permalink to this headline">¶</a></h1>
+<h1>What is Escoria<a class="headerlink" href="#what-is-escoria" title="Permalink to this headline">¶</a></h1>
 <p>Escoria is a framework made for and with <a class="reference external" href="https://godotengine.org">Godot Engine</a> allowing you to create point and click adventure
 games.</p>
 <p>It provides you various special nodes and features to help you focus on creating
@@ -84,9 +91,75 @@ your rooms, items, characters, and puzzles. It will take care of all the common
 tasks that all adventure games need to have: character movements, transitions
 between rooms, items relations, etc. All you’ll have to do is create all these
 elements for your game, and script the interactions.</p>
-<p>It does not require you to be a Godot Engine specialist: all you’ll need to know
-it the basics
-of Godot scenes and resources.</p>
+<p>It does not require you to be a Godot Engine specialist: you only need to know
+the basics of Godot scenes and resources.</p>
+<div class="section" id="base-concepts">
+<h2>Base concepts<a class="headerlink" href="#base-concepts" title="Permalink to this headline">¶</a></h2>
+<p>Escoria comes with many features designed for point and click adventure games
+development. For this purpose, some concepts need to be clearly defined in order
+to create your game scenes.</p>
+<div class="section" id="rooms">
+<h3>Rooms<a class="headerlink" href="#rooms" title="Permalink to this headline">¶</a></h3>
+<p>A room is a specific scene defining an environment for the player to walk in. It
+is composed of one mandatory elements:</p>
+<ul class="simple">
+<li><p>an ESCRoom root node,</p></li>
+<li><p>a background: defines both the background texture and the area that can grab
+player inputs.</p></li>
+</ul>
+<p>And some facultative elements:</p>
+<ul class="simple">
+<li><p>a walkable area (called “terrain”): defines the area where the player (if any)
+an walk in,</p></li>
+<li><p>items (interactive or not),</p></li>
+<li><p>specific location points of the space</p></li>
+<li><p>other visible elements in the room that are not managed by Escoria: simple
+sprites, particles, etc.</p></li>
+</ul>
+</div>
+<div class="section" id="items">
+<h3>Items<a class="headerlink" href="#items" title="Permalink to this headline">¶</a></h3>
+<p>Items are central in Escoria. They are multi-purpose, as they can be different
+things. All these purposes were merged as one node as they share many details in
+common.</p>
+<ul class="simple">
+<li><p>an interactive item, that can react to scripted actions. It can be part of the
+background (not pickable) or a pickable item that goes to the inventory.</p></li>
+<li><p>an “exit” that triggers rooms transitions,</p></li>
+<li><p>a invisible trigger zone that activates a scripted event if an object or the
+player collides with it,</p></li>
+</ul>
+<p>NPCs (Non Playable Characters) are also considered as items in Escoria. Nothing
+forbids you to create a game where the player can have a discussion with a
+table, a button on the wall or a rock on the floor.</p>
+<p>Items can also be defined as “movable”, which allow them to move around the room
+using defined animations.</p>
+<p>If an item is pickable, it must be associated with another specific scene for it
+to be displayed in the inventory.</p>
+</div>
+<div class="section" id="player">
+<h3>Player<a class="headerlink" href="#player" title="Permalink to this headline">¶</a></h3>
+<p>The player is the scene that is controlled by Escoria to perform the actions
+corresponding to the user inputs: walk to a destination and perform events on
+items. This also includes base animations defined for the character for idling,
+walking and talking, and other specific animations as well.</p>
+<p>It is not mandatory to define a player scene, if your game is a HOPA (Hidden
+Object Puzzle Adventure) or a Myst-like game. In this kinds of games, the world
+is displayed in the eyes of the protagonist, so there is no player to walk to
+the clicked item’s location. In this case, events are immediately started after
+user input.</p>
+</div>
+<div class="section" id="inventory-and-inventory-items">
+<h3>Inventory and inventory items<a class="headerlink" href="#inventory-and-inventory-items" title="Permalink to this headline">¶</a></h3>
+<p>Escoria manages the inventory for the game developer. This includes items that
+are added or removed to the inventory, and events actions happening on inventory
+items (look and use items for example).</p>
+<p>Of course, the way the inventory is displayed to the player in terms of UI is
+the game developer’s burden. Escoria only provides some base scenes for
+inventory and inventory items, but the way these are displayed it not managed by
+Escoria. This way, the game developer has a total control on the inventory.</p>
+</div>
+</div>
 </div>
 
 
@@ -94,7 +167,7 @@ of Godot scenes and resources.</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="what_is_a_point_n_click_game.html" class="btn btn-neutral float-left" title="What is a point’n’click game" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="nodes/index.html" class="btn btn-neutral float-right" title="Nodes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../getting_started/step_by_step/index.html" class="btn btn-neutral float-right" title="Step by step" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

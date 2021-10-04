@@ -1,7 +1,7 @@
-.. _what_is_a_point_n_click_game:
+.. What is a point and click game
 
-What is a point'n'click game
-============================
+What is a point'n'click game?
+=============================
 
 Point and click refers to a sub-genre of adventure games where the player 
 interacts mainly with the mouse or any pointing device. 
