@@ -62,7 +62,7 @@ html_context = {
     "display_github": True,  # Integrate GitHub
     "github_user": "godot-escoria",  # Username
     "github_repo": "escoria-docs",  # Repo name
-    "github_version": "master",  # Version
+    "github_version": "main",  # Version
     "conf_py_path": "/",  # Path in the checkout to the docs root
 }
 
