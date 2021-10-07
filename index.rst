@@ -44,8 +44,9 @@ The main documentation for the site is organized into the following sections:
    :maxdepth: 1
    :caption: API
    :name: sec-api
+   :glob:
 
-   api/index
+   api/*
 
 
 Indices and tables
