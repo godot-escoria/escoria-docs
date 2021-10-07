@@ -1,6 +1,0 @@
-.. ESCItems
-
-ESCItem
-=======
-
-Blah

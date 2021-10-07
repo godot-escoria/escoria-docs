@@ -1,6 +1,0 @@
-.. ESCInventoryItem
-
-ESCInventoryItem
-================
-
-Blah

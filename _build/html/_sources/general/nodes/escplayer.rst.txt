@@ -1,6 +1,0 @@
-.. ESCPlayer
-
-ESCPlayer
-=========
-
-Blah

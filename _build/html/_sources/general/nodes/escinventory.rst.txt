@@ -1,6 +1,0 @@
-.. ESCInventory
-
-ESCInventory
-============
-
-Blah

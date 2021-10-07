@@ -1,6 +1,0 @@
-.. Rooms
-
-ESCRooms
-========
-
-Blah
