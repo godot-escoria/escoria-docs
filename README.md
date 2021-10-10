@@ -8,4 +8,4 @@ This repository holds the official Escoria framework documentation, which is hos
 
 To build the documentation locally, run the following using [Docker](https://docker.com):
 
-    docker run -it --rm -v (pwd):/docs --entrypoint "/bin/bash" sphinxdoc/sphinx -c "pip install sphinx_rtd_theme && sphinx-build -a . _build"
+    docker run -it --rm -v (pwd):/docs --entrypoint "/bin/bash" sphinxdoc/sphinx -c "pip install sphinx_rtd_theme myst_parser && sphinx-build -a . _build"
