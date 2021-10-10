@@ -189,5 +189,4 @@ Using Escoria classes
 ---------------------
 
 Please refer to the API documentation on how to use the specific classes used by Escoria. The classes are usually available in the `Escoria main singleton </api/escoria.html>`_.
-
-(e.g. `escoria.object_manager` to access the `ESCObjectManager. </api/ESCObjectManager.html>`_
+(e.g. `escoria.object_manager` to access the `ESCObjectManager </api/ESCObjectManager.html>`_)
