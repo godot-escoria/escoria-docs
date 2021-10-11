@@ -38,7 +38,14 @@ The main documentation for the site is organized into the following sections:
 
    getting_started/escoria_settings
    getting_started/nodes/index
-   getting_started/esc_scripting/index
+   getting_started/esc_reference
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Advanced
+   :name: sec-advanced
+
+   advanced/custom_esc_commands
 
 .. toctree::
    :maxdepth: 1
