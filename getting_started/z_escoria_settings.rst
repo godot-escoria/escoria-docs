@@ -86,10 +86,6 @@ This category defines the following settings:
 | Default dialog scene    | Path to the default scene to be used as dialog   |
 |                         | scene                                            |
 +-------------------------+--------------------------------------------------+
-| Main menu scene         | Path to the main menu scene                      |
-+-------------------------+--------------------------------------------------+
-| Pause menu scene        | Path to the pause menu scene                     |
-+-------------------------+--------------------------------------------------+
 | Game scene              | Path to the Game scene                           |
 +-------------------------+--------------------------------------------------+
 | Items autoregister path | Path to the folder containing items of the game, |
