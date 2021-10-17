@@ -1,7 +1,5 @@
-.. Create the game scene
-
-Create the game scene
-=====================
+Creating a custom UI
+====================
 
 The game scene is the central scene of your game. It is important that you have this scene existing in your game because it will be automatically called by Escoria, through an API defined by the class ESCGame. Your job is to override (if needed) the functions provided by this API.
 
@@ -35,7 +33,7 @@ When Escoria detects an input event from the player on a game element, it needs 
 
 These are just some proposals. As the actual "game" reaction to player inputs is the game developer's choice (you!), it is necessary to override some functions to tell Escoria what to do in that case.
 
-To do so, ``ESCGame`` provides an API for you to override. Note that you don't have to override each one of the methods it provides as most already perform a default action, so you can reimplement only the ones you need. To get the list of these methods, please refer to `ESCGame <api/ESCGame>`__ page.
+To do so, ``ESCGame`` provides an API for you to override. Note that you don't have to override each one of the methods it provides as most already perform a default action, so you can reimplement only the ones you need. To get the list of these methods, please refer to `ESCGame </api/ESCGame.html>`__ page.
 
 For now we'll keep it simple and leave the script empty: Escoria will use the default implementation of the API for each method.
 
@@ -54,18 +52,20 @@ Then add a new ``Tween`` node as child of this root node. Save the scene: you're
 
 Now, instance this scene into the game scene.
 
+TODO: Why create a scene an instance it? Why not just create a single ESCCamera node? Also, check out escoria-demo-game#413.
+
 User interface
 --------------
 
-The user interface features multiple elements which you'll have to create a scene for each. Most of them are visual and can be hidden by default:
+The user interface features multiple elements which are used in your game. Most of them are visual and can be hidden by default:
 
 - verbs
 - inventory
 - tooltip
 - pause menu
-- dialogs player (not directly visual, but loads and display visual scenes)
+- dialogs player (not directly visual, but loads and displays visual scenes)
 
-There is no mandatory way to build the visual aspect of you UI, although we advise you to create some ``CanvasLayers`` to better separate these elements. Add a new ``CanvasLayer`` node to the game scene and name it ``ui``.
+There is no mandatory way to build the visual aspect of your UI, although we advise you to create some ``CanvasLayers`` to better separate these elements. Add a new ``CanvasLayer`` node to the game scene and name it ``ui``.
 
 Tooltip
 ~~~~~~~

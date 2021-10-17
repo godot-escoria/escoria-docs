@@ -23,29 +23,26 @@ The main documentation for the site is organized into the following sections:
    :maxdepth: 1
    :caption: General
    :name: sec-general
+   :glob:
 
-   general/what_is_a_point_n_click_game
-   general/architecture/index
-  
+   general/*
 
 .. toctree::
    :maxdepth: 1
    :caption: Getting started
    :name: sec-gettingstarted
-
+   :glob:
   
    getting_started/step_by_step/index
-
-   getting_started/escoria_settings
-   getting_started/nodes/index
-   getting_started/esc_reference
+   getting_started/*
 
 .. toctree::
    :maxdepth: 1
    :caption: Advanced
    :name: sec-advanced
+   :glob:
 
-   advanced/custom_esc_commands
+   advanced/*
 
 .. toctree::
    :maxdepth: 1
@@ -53,7 +50,7 @@ The main documentation for the site is organized into the following sections:
    :name: sec-api
    :glob:
 
-   api/*
+   api/index
 
 
 Indices and tables

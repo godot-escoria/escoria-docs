@@ -1,7 +1,7 @@
 .. What is Escoria
 
-What is Escoria
-===============
+What is Escoria?
+================
 
 Escoria is a framework made for and with `Godot Engine 
 <https://godotengine.org>`__ allowing you to create point and click adventure 
