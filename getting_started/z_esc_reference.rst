@@ -32,7 +32,7 @@ Item activity is also handled as a special case of global flags. If the
 check starts with “a/”, like “a/elaine”, you’re checking if “elaine” is
 active.
 
-::
+.. code-block::
 
    :ready
    > [!a/elaine]
@@ -61,7 +61,7 @@ The inventory is handled as a special case of global flags. All flags
 with a name starting with “i/” are considered an inventory object, with
 the object’s global id following. Example:
 
-::
+.. code-block::
 
    # Waits for 5 seconds if the player has the key in its inventory
    wait 5 [i/key]
@@ -91,7 +91,7 @@ are called by Escoria when certain things happen:
 
 To initialize a room properly, you may want to use ``:setup`` like this:
 
-::
+.. code-block::
 
    :setup
    teleport player door1 [eq ESC_LAST_SCENE scene1]
@@ -127,7 +127,7 @@ Commands
 Commands consist of one word followed by parameters. Parameters can be
 one word, or strings in quotes.
 
-::
+.. code-block::
 
    # one parameter "player", another parameter "hello world"
    say player "hello world"
@@ -142,12 +142,12 @@ be used to negate it.
 
 Example:
 
-::
+.. code-block::
 
    # runs the command only if the door_open flag is true
    say player "The door is open" [door_open]
 
-::
+.. code-block::
 
    # runs the group only if door_open is false and i/key is true
    > [!door_open,i/key]
@@ -157,7 +157,7 @@ Additionally, there’s a set of comparison operators for use with global
 integers: ``eq``, ``gt`` and ``lt``, all of which can be negated.
 Example:
 
-::
+.. code-block::
 
    # runs the command only if the value of pieces_of_eight is greater than 5
    set_state inv_pieces_of_eight money_bag [gt pieces_of_eight 5]
@@ -169,7 +169,7 @@ Commands can be grouped using the character “>” to start a group, and
 incrementing the indentation of the commands that belong to the group.
 Example:
 
-::
+.. code-block::
 
    >
        set_global door_open true
@@ -178,7 +178,7 @@ Example:
 
 Groups cann also use conditions:
 
-::
+.. code-block::
 
    # Present the key if the player already has it
    > [i/key]
@@ -197,8 +197,8 @@ List of commands
 
 .. ESCCOMMANDS
 
-`accept_input [ALL|NONE|SKIP]` `API-Doc </api/AcceptInputCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``accept_input [ALL|NONE|SKIP]`` `API-Doc </api/AcceptInputCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 What type of input does the game accept. ALL is the default, SKIP allows
 skipping of dialog but nothing else, NONE denies all input. Including opening
@@ -209,8 +209,8 @@ This allows you to create cut scenes with SKIP where the dialog can be
 skipped, but also initiate locked#### down cutscenes with accept_input
 NONE in :setup and accept_input ALL later in :ready.
 
-`anim object name [reverse]` `API-Doc </api/AnimCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``anim object name [reverse]`` `API-Doc </api/AnimCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Executes the animation specificed with the "name" parameter on the object,
 without blocking. The next command in the event will be executed immediately
@@ -218,60 +218,60 @@ after. Optional parameters:
 
 * reverse: plays the animation in reverse when true
 
-`camera_push target [time] [type]` `API-Doc </api/CameraPushCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``camera_push target [time] [type]`` `API-Doc </api/CameraPushCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Push camera to `target`. Target must have camera_pos set. If it's of type
 Camera2D, its zoom will be used as well as position. `type` is any of the
 Tween.TransitionType values without the prefix, eg. LINEAR, QUART or CIRC;
 defaults to QUART. A `time` value of 0 will set the camera immediately.
 
-`camera_set_limits camlimits_id` `API-Doc </api/CameraSetLimitsCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``camera_set_limits camlimits_id`` `API-Doc </api/CameraSetLimitsCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Sets the camera limits to the one defined under `camlimits_id` in ESCRoom's
 camera_limits array.
 - camlimits_id: int: id of the camera limits to apply (defined in ESCRoom's
   camera_limits array)
 
-`camera_set_pos speed x y` `API-Doc </api/CameraSetPosCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``camera_set_pos speed x y`` `API-Doc </api/CameraSetPosCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Moves the camera to a position defined by "x" and "y", at the speed defined
 by "speed" in pixels per second. If speed is 0, camera is teleported to the
 position.
 
-`camera_set_target speed object` `API-Doc </api/CameraSetTargetCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``camera_set_target speed object`` `API-Doc </api/CameraSetTargetCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Configures the camera to set the target to the given `object`using `speed`
 as speed limit.
 This is the default behavior (default follow object is "player").
 
-`camera_set_zoom magnitude [time]` `API-Doc </api/CameraSetZoomCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``camera_set_zoom magnitude [time]`` `API-Doc </api/CameraSetZoomCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Zooms the camera in/out to the desired `magnitude`. Values larger than 1 zooms
 the camera out, and smaller values zooms in, relative to the default value
 of 1. An optional `time` in seconds controls how long it takes for the camera
 to zoom into position.
 
-`camera_set_zoom_height pixels [time]` `API-Doc </api/CameraSetZoomHeightCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``camera_set_zoom_height pixels [time]`` `API-Doc </api/CameraSetZoomHeightCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Zooms the camera in/out to the desired `pixels` height.
 An optional `time` in seconds controls how long it takes for the camera
 to zoom into position.
 
-`camera_shift x y [time] [type]` `API-Doc </api/CameraShiftCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``camera_shift x y [time] [type]`` `API-Doc </api/CameraShiftCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Shift camera by `x` and `y` pixels over `time` seconds. `type` is any of the
 Tween.TransitionType values without the prefix, eg. LINEAR, QUART or CIRC;
 defaults to QUART.
 
-`change_scene path [disable_automatic_transition] [run_events]` `API-Doc </api/ChangeSceneCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``change_scene path [disable_automatic_transition] [run_events]`` `API-Doc </api/ChangeSceneCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Loads a new scene, specified by "path".
  The `disable_automatic_transition` is a boolean (default false) can be set
@@ -281,14 +281,14 @@ The `run_events` variable is a boolean (default true) which you never want
 to set manually! It's there only to benefit save games, so they don't
 conflict with the scene's events.
 
-`custom object node func_name [params]` `API-Doc </api/CustomCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``custom object node func_name [params]`` `API-Doc </api/CustomCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Calls the function `func_name` of the node `node` of object `object` with
 the optional `params`. This is a blocking function
 
-`cut_scene object name [reverse]` `API-Doc </api/CutSceneCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``cut_scene object name [reverse]`` `API-Doc </api/CutSceneCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Executes the animation specificed with the "name" parameter on the object,
 blocking. The next command in the event will be executed when the animation
@@ -296,47 +296,47 @@ is finished playing. Optional parameters:
 
 * reverse plays the animation in reverse when true
 
-`debug string [string2 ...]` `API-Doc </api/DebugCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``debug string [string2 ...]`` `API-Doc </api/DebugCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Takes 1 or more strings, prints them to the console.
 
-`dec_global name value` `API-Doc </api/DecGlobalCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``dec_global name value`` `API-Doc </api/DecGlobalCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Subtracts the value from global with given "name". Value and global must
 both be integers.
 
-`enable_terrain node_name` `API-Doc </api/EnableTerrainCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``enable_terrain node_name`` `API-Doc </api/EnableTerrainCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Enable the ESCTerrain's NavigationPolygonInstance defined by given node name.
 Disables previously activated NavigationPolygonInstance.
 
-`inc_global name value` `API-Doc </api/IncGlobalCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``inc_global name value`` `API-Doc </api/IncGlobalCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Adds the value to global with given "name". Value and global must both be
 integers.
 
-`inventory_add item` `API-Doc </api/InventoryAddCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``inventory_add item`` `API-Doc </api/InventoryAddCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Add an item to the inventory
 
-`inventory_remove item` `API-Doc </api/InventoryRemoveCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``inventory_remove item`` `API-Doc </api/InventoryRemoveCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Remove an item from the inventory.
 
-`play_snd file [player]` `API-Doc </api/PlaySndCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``play_snd file [player]`` `API-Doc </api/PlaySndCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Plays the sound specificed with the "file" parameter on the sound player
 `player`, without blocking. (player defaults to _sound)
 
-`queue_resource path [front_of_queue]` `API-Doc </api/QueueResourceCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``queue_resource path [front_of_queue]`` `API-Doc </api/QueueResourceCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Queues the load of a resource in a background thread. The `path` must be a
 full path inside your game, for example "res://scenes/next_scene.tscn". The
@@ -345,19 +345,19 @@ resource in the front of the queue. Queued resources are cleared when a
 change scene happens (but after the scene is loaded, meaning you can queue
 resources that belong to the next scene).
 
-`rand_global name max_value` `API-Doc </api/RandGlobalCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``rand_global name max_value`` `API-Doc </api/RandGlobalCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Fills the "name" global with a random value between 0 and max-value-1.
 
-`repeat` `API-Doc </api/RepeatCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``repeat`` `API-Doc </api/RepeatCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Restarts the execution of the current scope at the start. A scope can be a
 group or an event.
 
-`say object text [type] [avatar]` `API-Doc </api/SayCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``say object text [type] [avatar]`` `API-Doc </api/SayCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Runs the specified string as a dialog said by the object. Blocks execution
 until the dialog finishes playing.
@@ -373,21 +373,21 @@ Optional parameters:
 * "avatar" determines the avatar to use for the dialog. Default value is
   "default"
 
-`sched_event time object event` `API-Doc </api/SchedEventCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``sched_event time object event`` `API-Doc </api/SchedEventCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Schedules the execution of an "event" found in "object" in a time in seconds.
 If another event is running at the time, execution starts when the running
 event ends.
 
-`set_active object value` `API-Doc </api/SetActiveCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``set_active object value`` `API-Doc </api/SetActiveCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Changes the "active" state of the object, value can be true or false.
 Inactive objects are hidden in the scene.
 
-`set_angle object degrees [wait]` `API-Doc </api/SetAngleCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``set_angle object degrees [wait]`` `API-Doc </api/SetAngleCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Turns object to a degrees angle without animations. 0 sets object facing
 forward, 90 sets it 90 degrees clockwise ("east") etc. When turning to the
@@ -399,39 +399,39 @@ error is reported.
 The wait parameter sets how long to wait for each intermediate angle. It
 defaults to 0, meaning the turnaround is immediate.
 
-`set_animations object animations` `API-Doc </api/SetAnimationsCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``set_animations object animations`` `API-Doc </api/SetAnimationsCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Set the animation resource for the given ESCPlayer
 
-`set_global name value` `API-Doc </api/SetGlobalCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``set_global name value`` `API-Doc </api/SetGlobalCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Changes the value of the global "name" with the value. Value can be "true",
 "false" or an integer.
 
-`set_globals pattern value` `API-Doc </api/SetGlobalsCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``set_globals pattern value`` `API-Doc </api/SetGlobalsCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Changes the value of multiple globals using a wildcard pattern, where "*"
 matches zero or more arbitrary characters and "?" matches any single
 character except a period (".").
 
-`set_hud_visible visible` `API-Doc </api/SetHudVisibleCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``set_hud_visible visible`` `API-Doc </api/SetHudVisibleCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you have a cutscene like sequence where the player doesn't have control,
 and you also have HUD elements visible, use this to hide the HUD. You want
 to do that because it explicitly signals the player that there is no control
 over the game at the moment. "visible" is true or false.
 
-`set_interactive object value` `API-Doc </api/SetInteractiveCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``set_interactive object value`` `API-Doc </api/SetInteractiveCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Sets whether or not an object should be interactive.
 
-`set_sound_state player sound loop` `API-Doc </api/SetSoundStateCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``set_sound_state player sound loop`` `API-Doc </api/SetSoundStateCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Change the sound playing on `player` to `sound` with optional looping if
 `loop` is true.
@@ -440,58 +440,58 @@ Aside from paths to sound or music files, the values *off* and *default*.
 *default* is the default value.
 are also valid for `sound`
 
-`set_speed object speed` `API-Doc </api/SetSpeedCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``set_speed object speed`` `API-Doc </api/SetSpeedCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Sets how fast object moves. Speed is an integer.
 
-`set_state object state [immediate]` `API-Doc </api/SetStateCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``set_state object state [immediate]`` `API-Doc </api/SetStateCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Changes the state of an object, and executes the state animation if present.
 The command can be used to change the appearance of an item or a player
 character.
 If `immediate` is set to true, the animation is run directly
 
-`slide_block object1 object2 [speed]` `API-Doc </api/SlideBlockCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``slide_block object1 object2 [speed]`` `API-Doc </api/SlideBlockCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Moves object1 towards the position of object2, at the speed determined by
 object1's "speed" property, unless overridden. This command is blocking.
 It does not respect the room's navigation polygons, so you can move items
 where the player can't walk.
 
-`slide object1 object2 [speed]` `API-Doc </api/SlideCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``slide object1 object2 [speed]`` `API-Doc </api/SlideCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Moves object1 towards the position of object2, at the speed determined by
 object1's "speed" property, unless overridden. This command is non-blocking.
 It does not respect the room's navigation polygons, so you can move items
 where the player can't walk.
 
-`spawn path [object2]` `API-Doc </api/SpawnCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``spawn path [object2]`` `API-Doc </api/SpawnCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Instances a scene determined by "path", and places in the position of
 object2 (object2 is optional)
 
-`stop` `API-Doc </api/StopCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``stop`` `API-Doc </api/StopCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Stops the event's execution.
 
-`teleport object1 object2` `API-Doc </api/TeleportCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``teleport object1 object2`` `API-Doc </api/TeleportCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Sets the position of object1 to the position of object2.
 
-`teleport_pos object1 x y` `API-Doc </api/TeleportPosCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``teleport_pos object1 x y`` `API-Doc </api/TeleportPosCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Sets the position of object1 to the position (x,y).
 
-`transition transition_name in|out [delay]` `API-Doc </api/TransitionCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``transition transition_name in|out [delay]`` `API-Doc </api/TransitionCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Performs a transition in our out manually.
 
@@ -501,40 +501,40 @@ Parameters:
 - in|out: Wether to play the transition in IN- or OUT-mode
 - delay: Delay for the transition to take. Defaults to 1 second
 
-`turn_to object object_to_face [wait]` `API-Doc </api/TurnToCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``turn_to object object_to_face [wait]`` `API-Doc </api/TurnToCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Turns object to face another object.
 
 The wait parameter sets how long to wait for each intermediate angle. It
 defaults to 0, meaning the turnaround is immediate.
 
-`wait seconds` `API-Doc </api/WaitCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``wait seconds`` `API-Doc </api/WaitCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Blocks execution of the current script for a number of seconds specified by the "seconds" parameter.
 
-`walk_block object1 object2 [speed]` `API-Doc </api/WalkBlockCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``walk_block object1 object2 [speed]`` `API-Doc </api/WalkBlockCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Walks, using the walk animation, object1 towards the position of object2,
 at the speed determined by object1's "speed" property,
 unless overridden. This command is blocking.
 
-`walk object1 object2 [speed]` `API-Doc </api/WalkCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``walk object1 object2 [speed]`` `API-Doc </api/WalkCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Walks, using the walk animation, object1 towards the position of object2,
 at the speed determined by object1's "speed" property,
 unless overridden. This command is non-blocking.
 
-`walk_to_pos_block player x y` `API-Doc </api/WalkToPosBlockCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``walk_to_pos_block player x y`` `API-Doc </api/WalkToPosBlockCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Makes the `player` walk to the position `x`/`y`. This is a blocking command.
 
-`walk_to_pos player x y` `API-Doc </api/WalkToPosCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``walk_to_pos player x y`` `API-Doc </api/WalkToPosCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Makes the `player` walk to the position `x`/`y`.
 
@@ -565,7 +565,7 @@ a ``:`` from the rest of the text.
 
 Example:
 
-::
+.. code-block::
 
    # character's "talk" event
    :talk
