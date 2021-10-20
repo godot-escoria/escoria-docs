@@ -1,4 +1,4 @@
-.. Escoria settings
+.. _escoria_settings:
 
 Escoria settings
 ================
