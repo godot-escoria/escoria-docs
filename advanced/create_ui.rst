@@ -29,9 +29,9 @@ When Escoria detects an input event from the player on a game element, it needs 
 - left mouse-click on the background makes the main character move to the clicked position. 
 - right mouse-click on an item performs the "look" action on the item 
 - left double-click on an item on the floor makes the character move fastly towards this object. 
-- Hovering an item with the mouse could show the label of this item and outline it.
+- Hovering an item with the mouse shows the label of this item and outline it.
 
-These are just some proposals. As the actual "game" reaction to player inputs is the game developer's choice (you!), it is necessary to override some functions to tell Escoria what to do in that case.
+These are just some proposals. As the actual "game" reaction to player inputs is the game developer's choice (you!), it is necessary to override some functions to tell Escoria what to do in each case.
 
 To do so, ``ESCGame`` provides an API for you to override. Note that you don't have to override each one of the methods it provides as most already perform a default action, so you can reimplement only the ones you need. To get the list of these methods, please refer to `ESCGame </api/ESCGame.html>`__ page.
 
@@ -44,13 +44,7 @@ The ``ESCCamera`` is a simple Godot ``Camera2D`` that you can control from an ES
 
 Create a new scene. Add an ``ESCCamera`` node as root node of the scene. In the Inspector, tick the "current" parameter and leave its other parameters by default.
 
-Then add a new ``Tween`` node as child of this root node. Save the scene: you're done. 
-
-.. image:: img/esccamera.png
-    :align: center
-    :alt: ESCCamera scene tree
-
-Now, instance this scene into the game scene.
+Save the scene: you're done. Now, instance this scene into the game scene.
 
 TODO: Why create a scene an instance it? Why not just create a single ESCCamera node? Also, check out escoria-demo-game#413.
 
@@ -106,9 +100,76 @@ This ``update_tooltip_text()`` function creates a centered, colored (with ``ESCT
 
 Save the scene and instance it in the game scene.
 
-
 Verbs
 ~~~~~
+
+Depending on your game, you'll have to define some actions for the player to interact with the environment and items around. These verbs are actions that a character can perform on something. Among the most classic ones: look, use, talk, give, etc. 
+
+These actions will need to be selected by the player to perform the action he wants. The way this verb can be selected has to be defined by you, the game developer. Every graphical adventure game proposed a different way for the player to select the action, here are some examples:
+
+|monkey_island_ui| |kings_quest_ui|
+
+.. |monkey_island_ui| image:: img/9verbs_monkey_island.png
+    :width: 45%
+    :alt: The Secret of Monkey Island's 9 verbs UI
+
+.. |kings_quest_ui| image:: img/kings_quest_6_interactions.gif
+    :width: 45%
+    :alt: King's Quest 6 interactions
+
+
+Escoria does not require you to define a specific scene to allow the player to select the verb to be used, but you can do so. 
+
+Whatever the way you choose, remember that the way you design the UI for your verbs is not related to Escoria - all Escoria needs you is to inform its component Action Manager to set the current action. 
+
+Escoria's Action Manager can be accessed using ``escoria.action_manager`` and it provides 2 methods:
+
+- ``escoria.action_manager.set_current_action(action: String)``: use this method to set the current action to be used.
+- ``escoria.action_manager.clear_current_action()``: use this method to clear the current action so that no action happens on click.
+
+For our example, we decide that our game will only provide 2 actions: use and talk. The player will have to click the button associated to each action to select it.
+
+|use_action| |talk_action|
+
+.. |use_action| image:: img/action_use_button.png
+    :alt: Use action verb texture
+    :scale: 100%
+
+.. |talk_action| image:: img/action_talk_button.png
+    :alt: Talk action verb texture
+    :scale: 100%
+
+Create a new scene that will hold the UI of the verbs selection. Create the root node of the scene of type ``HBoxContainer``. Then, add 2 children nodes of type ``TextureButton``. You can rename these 2 nodes with the action name for clarity.
+
+.. image:: img/verbs_scene_tree.png
+    :align: center
+    :alt: Verbs scene tree
+
+Set each of these buttons' Normal texture to use the according texture.
+
+.. image:: img/verbs_scene.png
+    :align: center
+    :alt: Verbs scene
+
+Now, we need to script this scene so that Escoria's Action Manager is informed that an action button was clicked, and therefore change the current action verb.
+
+Create a script on the root node and set this script:
+
+.. code-block:: gdscript
+
+    extends HBoxContainer
+
+    func _ready():
+        $use.connect("pressed", self, "_on_action_button_pressed", ["use"])
+        $talk.connect("pressed", self, "_on_action_button_pressed", ["talk"])
+    
+
+    func _on_action_button_pressed(action: String):
+        escoria.action_manager.set_current_action(action)
+
+In this example, we connect each button's ``pressed`` event to the ``_on_action_button_pressed`` method, which we provide the actual verb name as String parameter.
+
+Save the scene and instance it in the game scene.
 
 Dialogs player
 ~~~~~~~~~~~~~~
@@ -116,7 +177,7 @@ Dialogs player
 Inventory
 ~~~~~~~~~
 
-Head to the `Create inventory <create_inventory>`__ page.
+Head to the `Create inventory <create_inventory>`__ page to create this scene. When it's created, instance it in the game scene.
 
 
 
