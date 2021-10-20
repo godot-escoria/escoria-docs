@@ -124,4 +124,18 @@ game.
 Click on "New Game" in the main menu and check out your character walking
 around in the new room.
 
+Slowing Graham down
+-------------------
+
+As you can see, Graham is pretty much running through the pub. Also, he looks
+a bit like he's skating through it.
+
+So we should make him walk slower and at the same time animate him faster.
+
+To achieve this, go back to the character and select the ``ESCPlayer`` node
+and set the "Speed" parameter to 150. Additionally, select the
+``AnimatedSprite`` node and set the "Speed scale" parameter to 1.8.
+
+Try starting the game again and watch Graham walk much more natural.
+
 Let's get the :doc:`room more interactive <5_adding_items>`.

@@ -31,7 +31,7 @@ The assets used in this guide are available for download as well:
 
 * :download:`Backgrounds <assets/backgrounds.zip>` by `2dpixx`_
 
-  * :download:`Pub foreground extraction <assets/pub_fg.png>`
+  * :download:`Pub foreground extraction <assets/barrels_fg.png>`
 
 * :download:`Sprite sheet <assets/spritesheet-original.png>` by
   `Technopeasant`_
@@ -41,6 +41,8 @@ The assets used in this guide are available for download as well:
   * :download:`Walkcycle
     extraction (aseprite) <assets/spritesheet-walk.aseprite>`
   * :download:`Idle extraction (aseprite) <assets/spritesheet-idle.aseprite>`
+
+* :download:`A mug of beer <assets/mug.png>` by `arispen`_
 
 With this out of the way, let's get started by
 :doc:`creating an escoria project in Godot <1_create_escoria_project>`.
@@ -58,3 +60,4 @@ With this out of the way, let's get started by
 .. _2dpixx: https://opengameart.org/users/2dpixx
 .. _`Technopeasant`: https://opengameart.org/content/cartoon-male-turn-around-and-walk-cycle-sheet
 .. _Discord: https://discordapp.com
+.. _`arispen`: https://opengameart.org/content/mug-of-beer-0

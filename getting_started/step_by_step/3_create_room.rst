@@ -74,15 +74,22 @@ parameter in the Inspector panel.
 Use the editor window to draw a polygon. This polygon is the area in which the
 character can move around freely.
 
+.. warning::
+
+   Remember that Escoria is using the character's base position when checking
+   the walkable areas, so watch out that navigating through the room doesn't
+   bring the character too close to the walls, else it will be drawn over the
+   walls.
+
 .. image:: img/create_room_terrain_createdpoly.png
    :alt: View of the completed polygon on the background
 
 .. note::
 
-    Escoria supports having multiple walkable areas (represented by multiple
-    ``NavigationPolygonInstance``s), which can be switched by an ESC command
-    in the game. This is useful for things like blocked passages which can be
-    unblocked by pressing a button in the game.
+   Escoria supports having multiple walkable areas (represented by multiple
+   ``NavigationPolygonInstance``s), which can be switched by an ESC command
+   in the game. This is useful for things like blocked passages which can be
+   unblocked by pressing a button in the game.
 
 .. hint:: **Light mapping**
 
@@ -117,6 +124,27 @@ character can move around freely.
 
         The scaling can also be bigger than 1, which can result in scaling
         artifacts.
+
+For simplicity's sake, we don't set up a complex scale map right now, but as
+the character is smaller than it should be displayed in the room, set
+"Scale min" and "Scale max" to 2, so the character sprite will be shown
+at twice its size.
+
+Setting camera limits
+---------------------
+
+Like said before, the background can be much bigger than the screen size, which
+in this example it really is. The background texture is 3976x956 pixels big.
+
+However, using "Camera limits" we can tell Escoria that it can pan over the
+complete background using the game camera.
+
+Select the ``ESCBackground`` node and set the first entry of the
+"Camera limits" parameter to 0, 0, 3975, 956:
+
+.. image:: img/create_room_cameralimits.png
+   :alt: The "camera limits" parameter set to x: 0, y: 0, w: 3975, h: 956
+
 
 Setting a starting location
 ---------------------------

@@ -195,6 +195,33 @@ Try to set up the ``Directions`` and ``Idle`` animations by yourself.
       :alt: Join our Discord
       :target: https://discord.com/invite/jMxJjuBY5Z
 
+Defining the character base position
+------------------------------------
+
+Escoria will move the character sprite around from a specific character
+position, which is usually located at the bottom of the character sprite.
+
+We can define this position by moving the sprite up, so its feed are located
+at the upper left corner of the screen:
+
+.. image:: img/character_create_position.png
+   :alt: The character's feet are positioned at the top left corner of the
+     screen
+
+Preparing the character for interactions
+----------------------------------------
+
+To detect interactions in the game such as when a character reaches an exit
+or moves on a trigger, Escoria uses Godot's built-in collision detection. For
+this to work, we need to add a collision shape to the character which roughly
+defines the outlines of it.
+
+Add a ``CollisionShape2D`` node to the ``ESCPlayer`` and use a
+``CapsuleShape2D`` shape to cover the sprite.
+
+.. image:: img/character_create_collision.png
+   :alt: A CapsuleShape2D is covering the sprite
+
 That concludes creating a player character. Let's
 :doc:`create a room <3_create_room>`.
 

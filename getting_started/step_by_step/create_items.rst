@@ -1,4 +1,0 @@
-.. Create items
-
-Create items
-============
