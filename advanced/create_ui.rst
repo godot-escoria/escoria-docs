@@ -1,3 +1,5 @@
+.. _create_ui:
+
 Creating a custom UI
 ====================
 

@@ -1,3 +1,5 @@
+.. _custom_esc_commands:
+
 Creating custom ESC commands
 ============================
 

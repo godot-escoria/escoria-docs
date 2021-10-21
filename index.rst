@@ -38,6 +38,14 @@ The main documentation for the site is organized into the following sections:
 
 .. toctree::
    :maxdepth: 1
+   :caption: Scripting
+   :name: sec-scripting
+   :glob:
+  
+   scripting/*
+
+.. toctree::
+   :maxdepth: 1
    :caption: Advanced
    :name: sec-advanced
    :glob:

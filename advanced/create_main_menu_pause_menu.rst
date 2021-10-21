@@ -1,4 +1,4 @@
-.. Create main menu and pause menu
+.. _create_main_menu_pause_menu:
 
 Create the main menu & pause menu
 =================================
