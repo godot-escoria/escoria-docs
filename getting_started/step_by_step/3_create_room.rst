@@ -11,7 +11,7 @@ room scene we'll now create: let's call it "pub".
 .. image:: img/create_room_pub.png
    :alt: The file explorer with a newly created folder pub.
 
-Create a new scene named "room01" and set `ESCRoom` as its root node.
+Create a new scene named "room01" and set ``ESCRoom`` as its root node.
 
 .. image:: img/create_room_rootnode.png
    :alt: A new scene with ESCRoom as the root node
@@ -87,7 +87,7 @@ character can move around freely.
 .. note::
 
    Escoria supports having multiple walkable areas (represented by multiple
-   ``NavigationPolygonInstance``s), which can be switched by an ESC command
+   ``NavigationPolygonInstance`` s), which can be switched by an ESC command
    in the game. This is useful for things like blocked passages which can be
    unblocked by pressing a button in the game.
 

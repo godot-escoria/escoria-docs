@@ -66,7 +66,7 @@ command to make Graham talk:
     say graham "That's good to hear. I'm thirsty."
 
 The ``say`` command expects the player character's name as the first parameter
-and the text to say as the second parameter. (see the 
+and the text to say as the second parameter. (see the
 :doc:`documentation </api/SayCommand>`)
 
 Try it out. Depending on which UI you chose, select the look verb or the look

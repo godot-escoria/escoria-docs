@@ -98,5 +98,3 @@ Continuing
 
 After this basic setup, let's
 :doc:`create a character <2_create_player_character>`.
-
-

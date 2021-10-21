@@ -11,6 +11,12 @@ stuff in this documentation. For example:
 * :doc:`A walk through Escoria's architecture </advanced/escoria_architecture>`
 * :doc:`How to create your own UI </advanced/create_ui>`
 
+Additionally, for the final stages of your game, we recommend the following
+Godot documentation:
+
+* `Exporting Godot games`_
+* `Complying with Godot and Escoria licenses`_
+
 Also, don't be shy and say hello to the Escoria community and let's talk about
 your specific ideas for the game:
 
@@ -21,3 +27,6 @@ your specific ideas for the game:
 Thanks for trying Escoria and we can't wait to see what you've made with it.
 
 Your Escoria project team
+
+.. _`Exporting Godot games`: https://docs.godotengine.org/en/stable/getting_started/workflow/export/exporting_projects.html
+.. _`Complying with Godot and Escoria licenses`: https://docs.godotengine.org/en/stable/tutorials/legal/complying_with_licenses.html
