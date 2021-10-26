@@ -52,6 +52,15 @@ The main documentation for the site is organized into the following sections:
 
    advanced/*
 
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Contributing
+   :name: sec-contributing
+   :glob:
+
+   contributing/*
+
 .. toctree::
    :maxdepth: 1
    :caption: API

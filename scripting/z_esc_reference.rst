@@ -201,7 +201,7 @@ the menu etc. SKIP and NONE also disable autosaves.
 
 *Note* that SKIP gets reset to ALL when the event is done, but NONE persists.
 This allows you to create cut scenes with SKIP where the dialog can be
-skipped, but also initiate locked#### down cutscenes with accept_input
+skipped, but also initiate locked down cutscenes with accept_input
 NONE in :setup and accept_input ALL later in :ready.
 
 ``anim object name [reverse]`` :doc:`API-Doc <../api/AnimCommand.hl>`
