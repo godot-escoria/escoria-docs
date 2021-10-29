@@ -94,7 +94,8 @@ available. It does that by defining angle ranges in a 360° circle.
    :alt: A visual representation of a circle around the character with angles
      around it
 
-The angle 0° would show the character facing up, 90° right and so forth.
+The angle 0° would show the character facing away from the camera, 90° right
+and so forth.
 
 As the possible directions aren't restricted to specific points, a range in
 the circle is defined for one side. In the visualization, the green range
@@ -201,7 +202,7 @@ Defining the character base position
 Escoria will move the character sprite around from a specific character
 position, which is usually located at the bottom of the character sprite.
 
-We can define this position by moving the sprite up, so its feed are located
+We can define this position by moving the sprite up, so its feet are located
 at the upper left corner of the screen:
 
 .. image:: img/character_create_position.png
