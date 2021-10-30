@@ -33,7 +33,7 @@ for filename in sorted(Path("api").glob("*.md")):
 
         esc_commands += "%s\n\n" % matches.group("description")
 
-esc_doc = Path("getting_started/z_esc_reference.rst").read_text()
+esc_doc = Path("scripting/z_esc_reference.rst").read_text()
 
 esc_doc = re.sub(r"(?s)\.\. ESCCOMMANDS.*\.\. /ESCCOMMANDS", ".. ESCCOMMANDS\n\n%s\n\n.. /ESCCOMMANDS" % esc_commands, esc_doc)
-Path("getting_started/z_esc_reference.rst").write_text(esc_doc)
+Path("scripting/z_esc_reference.rst").write_text(esc_doc)
