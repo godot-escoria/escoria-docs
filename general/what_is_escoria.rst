@@ -30,7 +30,7 @@ It is composed of these mandatory elements:
 - an ESCBackground, that defines both the background texture and the area that
   reacts to player inputs
 
-Additionally, s some facultative elements can be added:
+Additionally, some facultative elements can be added:
 
 - a walkable area (called "terrain"): defines the area where the player
   (if any) an walk in,
@@ -57,7 +57,7 @@ Nothing forbids you to create a game where the player can have a discussion
 with a table, a button on the wall or a rock on the floor.
 
 Items can also be defined as "movable", which allow them to move around the
-room susing defined animations.
+room using defined animations.
 
 If an item is pickable, it must be associated with another specific scene for
 it to be displayed in the inventory.
