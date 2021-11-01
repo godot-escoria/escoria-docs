@@ -18,7 +18,7 @@ This scene binds together all required objects and interfaces in a central
 place.
 
 In addition to this, various classes are defined in their respective class files
-whici build up the various resources used in Escoria. See the :doc:`API-docs
+which build up the various resources used in Escoria. See the :doc:`API-docs
 section <../api/main.gd>` for details.
 
 Nodes and objects of the Escoria autoload scene
@@ -76,7 +76,7 @@ Object manager
 
 The :doc:`object manager <../api/ESCObjectManager>` handles the state of the
 objects used in the game (active/interactive/states). All objects that should
-be handled by the engine--especially by ESC scripts--are required to register 
+be handled by the engine - especially by ESC scripts - are required to register 
 with the object manager and have a unique global ID.
 
 Command registry
@@ -137,12 +137,11 @@ action based on its workflow. This way, different user interfaces can be
 implemented. For a coin interface, for example, a right click could open the
 coin and let the player select the respective verb.
 
-The game interface will ultimately call ``escoria.do``, which is a plumbing
-method, that handles core functions like walking, clicking on items, and visiting
-areas. This method will then take care of the different actions; for example, 
-moving the player to an object (or its ``interact_position``) and then running
-the appropriate event. The event is based on the ``current_action`` set in the
-:doc:`actions manager <../api/ESCActionManager>` (the verb) and the
-``current_tool`` (the selected item). If the current verb is ``use`` and the
-ESC script has an event ``:use``, the :doc:`event manager
-<../api/ESCEventManager>` will run that specific event.
+The game interface will ultimately call ``escoria.do``, a plumbing that handles 
+core functions like walking, clicking on items, and visiting areas. This method 
+will then take care of the different actions; for example, moving the player to 
+an object (or its ``interact_position``) and then running the appropriate event. 
+The event is based on the ``current_action`` set in the :doc:`actions manager <../api/ESCActionManager>` 
+(the verb) and the ``current_tool`` (the selected item). If the current verb is 
+``use`` and the ESC script has an event ``:use``, the :doc:`event manager <../api/ESCEventManager>` 
+will run that specific event.

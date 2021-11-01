@@ -108,7 +108,7 @@ See this graphic:
 
 When the character is at y position 95, it stands behind the table. At y
 position 105, it stands in front of the table. To achieve this effect in
-Escoria, we simple set the "z-index" property of the table item to 100.
+Escoria, we simply set the "z-index" property of the table item to 100.
 
 For the barrels, though, the character should never walk in front of them, 
 only behind them. So we can set the barrels' ``z-index`` property to the

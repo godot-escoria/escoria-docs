@@ -89,7 +89,7 @@ addon.
 Adding a stock dialog manager
 -----------------------------
 
-Usually, a game made with Escoria uses dialgos as well as the ``say`` command 
+Usually, a game made with Escoria uses dialogs as well as the ``say`` command 
 as narrative elements. While the basic dialog handling and the ``say`` command 
 are included in the core, a user interface that *displays* those lines isn't.
 

@@ -102,7 +102,7 @@ To initialize a room properly, you may want to use ``:setup`` like this:
    teleport player door2 [eq ESC_LAST_SCENE scene2]
 
 This will teleport the player to the appropriate point in the scene 
-depending on the last visited scene. The last visited sceneis stored in the 
+depending on the last visited scene. The last visited scene is stored in the 
 special global state ``ESC_LAST_SCENE``.
 
 Events understand a series of flags. The flags that are currently
