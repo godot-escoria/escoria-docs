@@ -113,14 +113,6 @@ var resource_cache: ESCResourceCache
 
 Resource cache handler
 
-### main\_menu\_instance
-
-```gdscript
-var main_menu_instance
-```
-
-Instance of the main menu
-
 ### room\_terrain
 
 ```gdscript
@@ -132,7 +124,7 @@ Terrain of the current room
 ### dialog\_player
 
 ```gdscript
-var dialog_player: ESCDialogsPlayer
+var dialog_player: ESCDialogPlayer
 ```
 
 Dialog player instantiator. This instance is called directly for dialogs.
@@ -202,7 +194,34 @@ var controller: ESCController
 The controller in charge of converting an action verb on a game object
 into an actual action
 
+### game\_scene
+
+```gdscript
+var game_scene: ESCGame
+```
+
+ The game scene loaded
+
+### start\_script
+
+```gdscript
+var start_script: ESCScript
+```
+
+The compiled start script loaded from ProjectSettings
+escoria/main/game_start_script
+
 ## Method Descriptions
+
+### init
+
+```gdscript
+func init()
+```
+
+Called by Escoria's main_scene as very very first event EVER.
+Usually you'll want to show some logos animations before spawning the main
+menu in the escoria/main/game_start_script 's :init event
 
 ### new\_game
 
@@ -237,6 +256,19 @@ Pauses or unpause the game
 
 #### Parameters
 - p_paused: if true, pauses the game. If false, unpauses the game.
+
+### run\_event\_from\_script
+
+```gdscript
+func run_event_from_script(script: ESCScript, event_name: String)
+```
+
+Runs the event "event_name" from the "script" ESC script.
+
+#### Parameters
+- script: ESC script containing the event to run. The script must have been
+loaded.
+- event_name: Name of the event to run
 
 ## Signals
 

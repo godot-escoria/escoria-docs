@@ -13,7 +13,7 @@ A manager for ESC objects
 ### RESERVED\_OBJECTS
 
 ```gdscript
-const RESERVED_OBJECTS: Array = ["_music","_sound","_speech"]
+const RESERVED_OBJECTS: Array = ["_music","_sound","_speech","_camera"]
 ```
 
 ## Property Descriptions
@@ -90,3 +90,10 @@ Insert data to save into savegame.
 #### Parameters
 
 - p_savegame: The savegame resource
+
+### get\_start\_location
+
+```gdscript
+func get_start_location() -> ESCLocation
+```
+
