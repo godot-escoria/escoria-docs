@@ -102,7 +102,7 @@ Try it out. Graham should now be able to pick up the mug!
 Using the mug
 -------------
 
-Usually, items are not only picked up but also used with different items 
+Usually, items are not only picked up but also used with different items
 either in the inventory or in a particular room.
 
 This is also done using events in the ESC script. Apart from the event name
@@ -113,10 +113,10 @@ need to make the beer combinable with other items when it is used from the
 inventory and then react to it in the ESC script of the blackboard.
 
 So go into the beer item scene again and select the property, ``Use from
-inventory only``. This will restrict usage of the beer to inside the 
+inventory only``. This will restrict usage of the beer to inside the
 inventory only, so the beer mug will not listen to the ``use`` action anymore.
 
-Add an item to "Combine If Action Used Among" and set it to
+Add an item to "Combine When Selected Action Is In" and set it to
 "use". This is required to tell Escoria that if the verb "use" is used on
 the beer mug, another object will be required to complete the action:
 
