@@ -117,10 +117,10 @@ export var default_action_inventory = ""
 
 Default action to use if object is in the inventory
 
-### combine\_if\_action\_used\_among
+### combine\_when\_selected\_action\_is\_in
 
 ```gdscript
-export var combine_if_action_used_among = []
+export var combine_when_selected_action_is_in = []
 ```
 
 If action used by player is in this list, the game will wait for a second
