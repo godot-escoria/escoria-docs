@@ -3,32 +3,32 @@
 Creating custom ESC commands
 ============================
 
-Escoria is designed to abstract and streamline the most basic features for the game developer and at the same time give them a very broad range of freedom so they can 
+Escoria is designed to abstract and streamline the most basic features for game developers and at the same time give them a lot of freedom so they can 
 design the game they have in mind.
 
 ESC is the domain specific language (DSL) used by Escoria to make very basic features of narrative and point and click games as easy as possible.
 
-There are `a lot of commands </getting_started/esc_reference.html#commands>`_  already included in Escoria core. If the game developer requires more commands for their
+There are `a lot of commands </getting_started/esc_reference.html#commands>`_ already included in Escoria core. If the game developer requires more commands for their
 specific game, it is very easy to create new commands with just a bit of `GDScript <https://docs.godotengine.org/en/stable/getting_started/scripting/gdscript/gdscript_basics.html>`_ 
 knowledge.
 
 What is an ESC command?
 -----------------------
 
-ESC commands are based on two things: a name and a number of parameters.
+ESC commands consist of two things: a name and a group of one or more parameters.
 
     say     player        "Hello!"
     <name>  <parameter 1> <parameter 2> <...>
 
-The *name* only allows the following characters:
+*name* only allows the following characters:
 
 * Lowercase characters a-z
 * Numbers from 0-9
 * Underscore _
 
-The parameters are separated from the name and other parameters by a whitespace.
+The parameters are separated from the *name* and other parameters by whitespace.
 
-If a parameter is surrounded by quotation marks, the parameter can include whitespace as well:
+If a parameter is surrounded by quotation marks, the parameter may include whitespace as well:
 
     say player Hello!
 
@@ -42,7 +42,7 @@ If a parameter is surrounded by quotation marks, the parameter can include white
 
     (6 parameters)
 
-When compiling an ESC script, Escoria checks each command if it matches a defined set of parameters and also if the parameters have the right data type.
+When compiling an ESC script, Escoria checks each command to see if it matches a defined set of parameters and also if the parameters have the right data type.
 
 Additionally, a command can include a function which can test the given parameters for validity in depth.
 
@@ -109,47 +109,46 @@ included in the "Command directories" setting by default. The file name is "came
 Documentation
 ~~~~~~~~~~~~~
 
-The command starts with a documentation block, which is used to create the API documentation for the command. The "@ESC" tag used build up the ESC reference. 
-It is recommended, that all custom ESC commands include a similar documentation section as well.
+The command starts with a documentation block which is used to create the API documentation for the command. The "@ESC" tag is used to build up the ESC reference. 
+It is recommended that all custom ESC commands include a similar documentation section.
 
 Class definition
 ~~~~~~~~~~~~~~~~
 
-Every ESC command has to extend the class `ESCBaseCommand` and include a `class_name` statement. The class name is a PascalCase variant of the comamnd name with an
-additional "Command" suffix. So the file `my_custom.gd` would have the class name of "MyCustomCommand".
+Every ESC command has to extend the class ``ESCBaseCommand`` and include a `class_name` statement. The class name is a PascalCase variant of the comamnd name with an
+additional "Command" suffix. So the file `my_custom.gd` would have a class name of "MyCustomCommand".
 
 Configuration function
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The function `configure` is used by the ESC compiler to return an `ESCCommandArgumentDescriptor` instance, which describes the command structure. The parameters to
-the `ESCCommandArgumentDescriptor` constructor are:
+The function ``configure`` is used by the ESC compiler to return an ``ESCCommandArgumentDescriptor`` instance which describes the command structure. The parameters to
+the ``ESCCommandArgumentDescriptor`` constructor are:
 
-- Number of mandatory parameters
-- The types of the possible parameters as a list. If the command is called with more parameters, the data type of the last element of the list is used. The data types
-  corresponds to the `GDScript emum Variant.Type <https://docs.godotengine.org/en/stable/classes/class_@globalscope.html#enumerations>`_
-- A list of default values for each parameter. Mandatory parameters should use `null` as the default value.
+- The number of mandatory parameters
+- A list of the types of all possible parameters. If the command is called with more parameters, the data type of the last element of the list is used. The data types
+  correspond to the `GDScript enum Variant.Type <https://docs.godotengine.org/en/stable/classes/class_@globalscope.html#enumerations>`_
+- A list of default values for each parameter. Mandatory parameters should use ``null`` as the default value.
 
 Validation function
 ~~~~~~~~~~~~~~~~~~~
 
-The function `validate` is called by the event manager prior to running the command. It can check the given parameters and validate them against the current state
+The function ``validate`` is called by the event manager prior to running the command. It can check the given parameters and validate them against the current state
 of the game (e.g. registered objects, active/inactive state, etc.)
 
-In the example, the command checks if the given camera limits id is valid.
-
-It should run the validate function from ESCBaseCommand, which will validate the parameters according to the ESCCommandArgumentDescriptor returned by the `configure`
-function.
+In the example, the command checks if the given camera limits ID is valid. It should run the validate function from ``ESCBaseCommand``, which will validate the 
+parameters according to the ``ESCCommandArgumentDescriptor`` returned by the ``configure`` function.
 
 The run function
 ~~~~~~~~~~~~~~~~
 
-Finally, the `run` function is run by the event manager when the command is validated. It should return an `ESCExecution value </api/ESCExecution.html>`_, which
-informs the event manager about wether the command was run successfully or not.
+Finally, the ``run`` function is executed by the event manager when the command is successfully validated. The function should return an `ESCExecution value </api/ESCExecution.html>`_, 
+which informs the event manager whether the command was run successfully.
 
 An example custom command
 -------------------------
 
-Bringing the different parts together, this is an example custom command, which the developer can place in a custom directory and add it to the list of "Command directories".
+Bringing the different parts together, below is a complete example of a custom command which the developer can place in a custom directory. The custom directory 
+should then be added to the list of "Command directories".
 
 .. code-block:: python
 

@@ -9,29 +9,31 @@ Objects
 Global IDs
 ~~~~~~~~~~
 
-All objects in the game have a global ID, which is used to identify them
-in commands. The ID is configured in the object’s scene.
+All objects in the game have a global ID which is used to identify them
+in commands. The ID is configured in the object's scene.
 
 States
 ~~~~~~
 
-Each object can have a “state”. The state is stored in the global state
-of the game, and the savegame, and it’s set on the object when the scene
-is instanced. States can also be animations with the same name in the
-object’s scene, in that case the animation is run when the state is set.
+Each object can have a "state". This state is stored in the *global state*
+of the game and as part of a savegame. The object's state is set when the 
+scene is instanced. 
 
-For the :doc:`bg_sound <../api/EscSoundPlayer>` and
-:doc:`bg_music <../api/EscMusicPlayer>` objects, the state also means
-the currently running music or sound.
+Animations in the object's scene can have the same name as a state. 
+In this case, the animation is run when the state is set.
+
+For :doc:`bg_sound <../api/EscSoundPlayer>` and
+:doc:`bg_music <../api/EscMusicPlayer>` objects, the state also represents 
+the music or sound that is currently running.
 
 Active objects
 ~~~~~~~~~~~~~~
 
-Objects can be active or inactive. Inactive objects are hidden and non
+Objects can be either active or inactive. Inactive objects are hidden and not 
 clickable.
 
 Item activity is also handled as a special case of global flags. If the
-check starts with “a/”, like “a/elaine”, you’re checking if “elaine” is
+check starts with ``a/``, like ``a/elaine``, you're checking if "elaine" is
 active.
 
 .. code-block::
@@ -43,25 +45,25 @@ active.
 Interactive objects
 ~~~~~~~~~~~~~~~~~~~
 
-If you have something that only blocks the terrain, something you can
-move behind, you probably don’t want to hassle with interaction areas
+If you have an object that only blocks the terrain and is something you can
+move behind, you probably don't want to bother with interaction areas
 and tooltip texts. In this case, just set ``is_interactive`` to
-``false`` and the item will not be checked for areas and its mouse
-events will not be connected.
+``false`` and the item will not be checked for interactions. Its mouse
+events won't be connected, either.
 
 Global flags
 ------------
 
-Global flags define the state of the game, and can have any value
-(true/false, numbers and strings). All commands or groups can be
-conditioned to the value of a global flag.
+Global flags define the state of the game and can be true/false, a number, 
+or a string. All commands and groups can be condtionally set based on the 
+value of a global flag.
 
 Inventory
 ~~~~~~~~~
 
 The inventory is handled as a special case of global flags. All flags
-with a name starting with “i/” are considered an inventory object, with
-the object’s global id following. Example:
+with a name starting with ``i/`` are considered to be an inventory object with
+the inventory object's global ID following. Example:
 
 .. code-block::
 
@@ -71,25 +73,25 @@ the object’s global id following. Example:
 Events
 ------
 
-All ESC scripts are divided into a series of events, which in turn run
+All ESC scripts are divided into a series of events which in turn run
 commands or dialogs.
 
-An event has a name and the prefix “:” like this:
+An event has a name and the prefix ``:``, like this:
 
 ``:ready``
 
-While you can use arbitrary event names (for example to schedule them
+While you can use arbitrary event names (for example, to schedule them
 with the ``sched_event``\ command), there are some special events that
-are called by Escoria when certain things happen:
+are called by Escoria in certain situations:
 
--  ``:setup`` (on an ESCScene object): Called before the transition is
-   performed.
--  ``:ready``\ (on an ESCScene object): Called after the transition is
-   performed.
--  ``:use <global id>``\ (on an ESCItem object): Called when the
-   inventory item ``<global id>``\ was used with this item
--  ``:<verb>``\ (on an ESCItem object): Called when a special verb was
-   used on the item (e.g. ``:look``)
+-  ``:setup`` (on an ``ESCScene`` object): Called *before* a transition is
+   performed
+-  ``:ready``\ (on an ``ESCScene`` object): Called *after* a transition is
+   performed
+-  ``:use <global id>``\ (on an ``ESCItem`` object): Called when the
+   inventory item ``<global id>``\ is used with the item running this script
+-  ``:<verb>``\ (on an ESCItem object): Called when a special verb is 
+   used on the item running this script (e.g.�``:look``)
 
 To initialize a room properly, you may want to use ``:setup`` like this:
 
@@ -99,28 +101,28 @@ To initialize a room properly, you may want to use ``:setup`` like this:
    teleport player door1 [eq ESC_LAST_SCENE scene1]
    teleport player door2 [eq ESC_LAST_SCENE scene2]
 
-This will teleport the player to the respective point in the scene,
-depending on the last visited scene, which is stored in the special
-global state ``ESC_LAST_SCENE``.
+This will teleport the player to the appropriate point in the scene 
+depending on the last visited scene. The last visited scene is stored in the 
+special global state ``ESC_LAST_SCENE``.
 
-Events understand a series of flags. These flags are currently
-implemented:
+Events understand a series of flags. The flags that are currently
+implemented include the following:
 
--  ``TK`` stands for “telekinetic”. It means the player won’t walk over
-   to the item to say the line
--  ``NO_TT`` stands for “No tooltip”. It hides the tooltip for the
+-  ``TK`` stands for "telekinetic": The player won't walk over
+   to an item before saying a line of dialog
+-  ``NO_TT`` stands for "No tooltip": The tooltip is hidden for the
    duration of the event
--  ``NO_HUD`` stands for “No HUD”. It hides the HUD for the duration of
-   the event. Useful when you want something to look like a cut scene
-   but not disable input for skipping dialog.
--  ``NO_SAVE`` disables saving. Use this in cut scenes and anywhere a
+-  ``NO_HUD`` stands for "No HUD": The HUD is hidden for the duration of
+   the event. Useful for when you want something to look like a cutscene
+   but don't want to disable input for skipping dialog.
+-  ``NO_SAVE`` disables saving: Use this in cutscenes and anywhere a
    badly-timed autosave would leave your game in a messed-up state.
 
 Commands
 --------
 
-Commands consist of one word followed by parameters. Parameters can be
-one word, or strings in quotes.
+Commands consist of a single word followed by some parameters. Parameters can be
+a single word or a string in quotes.
 
 .. code-block::
 
@@ -130,10 +132,9 @@ one word, or strings in quotes.
 Conditions
 ~~~~~~~~~~
 
-In order to run a command conditionally depending on the value of a
-flag, use ``[]`` with a list of comma separated conditions. All
-conditions in the list must be true. The character “!” before a flag can
-be used to negate it.
+In order to run a command depending on the value of a flag, use ``[]`` with a list 
+of comma-separated conditions. All conditions in this list must be true. Placing  
+the character ``!`` before a flag can be used to negate that flag.
 
 Example:
 
@@ -148,7 +149,7 @@ Example:
    > [!door_open,i/key]
        say player "The door is close, maybe I can try this key in my inventory"
 
-Additionally, there’s a set of comparison operators for use with global
+Additionally, there is a set of comparison operators for use with global
 integers: ``eq``, ``gt`` and ``lt``, all of which can be negated.
 Example:
 
@@ -160,7 +161,7 @@ Example:
 Groups
 ~~~~~~
 
-Commands can be grouped using the character “>” to start a group, and
+Commands can be grouped using the character `>` to start a group and
 incrementing the indentation of the commands that belong to the group.
 Example:
 
@@ -171,7 +172,7 @@ Example:
        anim player pick_up
    # end of group
 
-Groups cann also use conditions:
+Groups can also use conditions:
 
 .. code-block::
 
@@ -183,8 +184,8 @@ Groups cann also use conditions:
 Blocking
 ~~~~~~~~
 
-Some commands will block execution of the event until they finish,
-others won’t. See the command’s reference for details on which commands
+Some commands will block execution of the event until they finish; 
+others won't. See the command reference for details on which commands
 block.
 
 List of commands
@@ -195,66 +196,68 @@ List of commands
 ``accept_input [ALL|NONE|SKIP]`` :doc:`API-Doc <../api/AcceptInputCommand>`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-What type of input does the game accept. ALL is the default, SKIP allows
-skipping of dialog but nothing else, NONE denies all input. Including opening
-the menu etc. SKIP and NONE also disable autosaves.
+The type of input the game accepts. **ALL** is the default; **SKIP** allows
+skipping of dialog but nothing else; **NONE** denies all input including opening
+the menu etc. **SKIP** and **NONE** also disable autosaves.
 
-*Note* that SKIP gets reset to ALL when the event is done, but NONE persists.
-This allows you to create cut scenes with SKIP where the dialog can be
-skipped, but also initiate locked down cutscenes with accept_input
-NONE in :setup and accept_input ALL later in :ready.
+*Note*: **SKIP** is reset to **ALL** when the event is done, but **NONE** persists.
+This allows you to create cutscenes with **SKIP** where the dialog can be
+skipped. This also allows you to initiate locked-down cutscenes with ``accept_input`` 
+set to **NONE** in :setup and ``accept_input`` set to **ALL** later in ``:ready``.
 
 ``anim object name [reverse]`` :doc:`API-Doc <../api/AnimCommand.hl>`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Executes the animation specificed with the "name" parameter on the object,
-without blocking. The next command in the event will be executed immediately
+Executes the animation (specified by ``name``) on ``object`` without blocking. 
+The next command in the event will be executed immediately
 after. Optional parameters:
 
-* reverse: plays the animation in reverse when true
+* reverse: true/false: Plays the animation in reverse when true
 
 ``camera_push target [time] [type]`` :doc:`API-Doc <../api/CameraPushCommand>`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Push camera to ``target``. Target must have camera_pos set. If it's of type
-Camera2D, its zoom will be used as well as position. ``type`` is any of the
-Tween.TransitionType values without the prefix, eg. LINEAR, QUART or CIRC;
-defaults to QUART. A ``time`` value of 0 will set the camera immediately.
+Push camera to ``target``. Target must have ``camera_pos`` set. If the target is of 
+type ``Camera2D``, its zoom will be used as well as its position. ``type`` is any 
+of the ``Tween.TransitionType`` values without the prefix, e.g. **LINEAR**, **QUART** or **CIRC**;
+defaults to **QUART**. A ``time`` value of 0 will set the camera immediately.
 
 ``camera_set_limits camlimits_id`` :doc:`API-Doc <../api/CameraSetLimitsCommand>`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Sets the camera limits to the one defined under ``camlimits_id`` in ESCRoom's
-camera_limits array.
-- camlimits_id: int: id of the camera limits to apply (defined in ESCRoom's
-camera_limits array)
+Sets the camera limits to the one defined under ``camlimits_id`` in ``ESCRoom``'s
+``camera_limits`` array.
+
+* camlimits_id: int: ID of the camera limits to apply (defined in ``ESCRoom``'s
+``camera_limits`` array)
 
 ``camera_set_pos speed x y`` :doc:`API-Doc <../api/CameraSetPosCommand>`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Moves the camera to a position defined by "x" and "y", at the speed defined
-by "speed" in pixels per second. If speed is 0, camera is teleported to the
-position.
+Moves the camera to a position defined by ``x`` and ``y`` at the speed defined
+by ``speed`` in pixels per second. If ``speed`` is 0, the camera is teleported to the
+specified position.
 
 ``camera_set_target speed object`` :doc:`API-Doc <../api/CameraSetTargetCommand>`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Configures the camera to set the target to the given ``object`` using ``speed``
-as speed limit.
+Configures the camera to set its target to the given ``object`` using ``speed``
+as its speed limit.
+
 This is the default behavior (default follow object is "player").
 
 ``camera_set_zoom magnitude [time]`` :doc:`API-Doc <../api/CameraSetZoomCommand>`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Zooms the camera in/out to the desired ``magnitude``. Values larger than 1 zooms
-the camera out, and smaller values zooms in, relative to the default value
+Zooms the camera in/out to the desired ``magnitude``. Values larger than 1 zoom 
+the camera out while smaller values zoom in, relative to the default value
 of 1. An optional ``time`` in seconds controls how long it takes for the camera
 to zoom into position.
 
 ``camera_set_zoom_height pixels [time]`` :doc:`API-Doc <../api/CameraSetZoomHeightCommand>`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Zooms the camera in/out to the desired `pixels` height.
+Zooms the camera in/out so that the camera's viewport is ``pixels`` height.
 An optional ``time`` in seconds controls how long it takes for the camera
 to zoom into position.
 
@@ -538,14 +541,15 @@ end the dialog.
 
 The following parameters are available:
 
--  avatar: the path to a scene displaying an avatar used in the UI.
-   Defaults to no avatar. To only set the remaining options, set this
-   field to “-”
--  timeout: (default value 0) timeout to select an option. After the
-   time has passed, the “timeout_option” will be selected automatically.
-   If the value is 0, there’s no timeout.
--  timeout_option: (default value 0) index of option (starting from 1)
-   selected when timeout is reached.
+-  avatar: The path to a scene displaying an avatar to be used in the UI.
+   Defaults to no avatar. To set only the parameters below, set this
+   parameter's value to ``-``
+-  timeout: Time allowed to select an option. Default value 0. After the
+   specified time has elapsed, ``timeout_option`` will be selected automatically.
+   If the value is 0, there is no timeout (i.e. no time limit to select an 
+   option).
+-  timeout_option: Index of option selected when timeout is reached. 
+   Default value of 0. Index begins at 1.
 
 Options support translation keys by prepending and separating them with
 a ``:`` from the rest of the text.

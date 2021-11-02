@@ -3,20 +3,20 @@
 Step by step
 ============
 
-This documentation will guide you through the first steps of creating a game
-based on Escoria in Godot.
+This section of the documentation will guide you through the first steps of 
+creating a game based on Escoria in Godot.
 
-It assumes, that you have a very basic understanding of Godot and its basic
+It assumes that you have a very basic understanding of Godot and its basic
 UI. The `editor introduction`_ is a good place to get to know Godot and
-the editor.
+the editor if you're just starting out or need a bit of a refresher.
 
-Especially, you should very bascially understand the terms :dfn:`node` and
-:dfn:`scene tree` and be aware, that Godot understands different types of
-nodes. See the `nodes documentation`_ for details.
+At a minimum, you should make sure that you have a basic understanding of the 
+terms :dfn:`node` and :dfn:`scene tree`, and be aware that Godot provides 
+different types of nodes for use. See the `nodes documentation`_ for details.
 
 Understanding the Godot scripting language :dfn:`GDScript` is not required for
-this guide, but definitely recommended for more advanced development. See
-the `GDScript basics`_ for more information.
+this guide, but it is definitely recommended for more advanced development. See 
+`GDScript basics`_ for more information.
 
 .. hint::
 
@@ -44,7 +44,7 @@ The assets used in this guide are available for download as well:
 
 * :download:`A mug of beer <assets/mug.png>` by `arispen`_
 
-With this out of the way, let's get started by
+With that out of the way, let's get started by
 :doc:`creating an escoria project in Godot <1_create_escoria_project>`.
 
 .. toctree::

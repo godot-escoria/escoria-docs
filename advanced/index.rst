@@ -1,8 +1,8 @@
 Advanced Escoria
 ================
 
-This chapter includes all advanced topics of Escoria. Those are not required
-for a basic game, but are recommended to make games unique and add required
+This chapter includes all advanced topics of Escoria. These are not required
+for a basic game but are recommended to make games unique and add required
 features.
 
 .. note::
