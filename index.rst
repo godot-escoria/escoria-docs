@@ -1,28 +1,32 @@
-.. Escoria documentation master file, created by
-   sphinx-quickstart on Fri Sep 10 13:40:37 2021.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
 Welcome to Escoria's documentation!
 ===================================
 
-Welcome to the official documentation of `Escoria Framework 
-<https://github.com/godot-escoria>`__, a free and open source framework for 
-creating point and click adventure games with `Godot Engine 
-<https://godotengine.org>`__.
+.. warning::
+
+   The documentation is currently under development and may be unstable.
+   There are areas that aren't complete and some information may just not
+   be up to date anymore.
+
+Welcome to the official documentation of the `Escoria Framework`_, a free and
+open source framework for creating point and click adventure games based on
+the `Godot Engine`_.
+
+If you ever get stuck in designing your game, why not check out
+the community on our `Discord`_ server? We're always happy to help.
+
+.. image:: https://img.shields.io/discord/884336424780984330.svg?label=Join%20our%20Discord&logo=Discord&colorB=7289da&style=for-the-badge
+   :alt: Join our Discord
+   :target: https://discord.com/invite/jMxJjuBY5Z
 
 The table of contents below and in the sidebar should let you easily access the
-documentation for your topic of interest. You can also use the search function
+documentation for the topic of interest. You can also use the search function
 in the top-left corner.
 
-
 The main documentation for the site is organized into the following sections:
-
 
 .. toctree::
    :maxdepth: 1
    :caption: General
-   :name: sec-general
    :glob:
 
    general/*
@@ -30,33 +34,28 @@ The main documentation for the site is organized into the following sections:
 .. toctree::
    :maxdepth: 1
    :caption: Getting started
-   :name: sec-gettingstarted
    :glob:
-  
+
    getting_started/step_by_step/index
    getting_started/*
 
 .. toctree::
    :maxdepth: 1
    :caption: Scripting
-   :name: sec-scripting
    :glob:
-  
+
    scripting/*
 
 .. toctree::
    :maxdepth: 1
    :caption: Advanced
-   :name: sec-advanced
    :glob:
 
    advanced/*
 
-
 .. toctree::
    :maxdepth: 1
    :caption: Contributing
-   :name: sec-contributing
    :glob:
 
    contributing/*
@@ -64,11 +63,9 @@ The main documentation for the site is organized into the following sections:
 .. toctree::
    :maxdepth: 1
    :caption: API
-   :name: sec-api
    :glob:
 
    api/index
-
 
 Indices and tables
 ==================
@@ -76,3 +73,7 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
+.. _`Escoria Framework`: https://github.com/godot-escoria
+.. _`Godot Engine`: https://godotengine.org
+.. _Discord: https://discordapp.com

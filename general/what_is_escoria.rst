@@ -14,6 +14,45 @@ their interactions.
 It does not require deep Godot Engine knowledge, only the basics of Godot
 scenes and resources.
 
+History
+-------
+
+This framework was initially developed in 2016 for the point and click
+adventure game `The Interactive Adventures of Dog Mendonça and Pizzaboy`_ and
+later streamlined for broader usage and open sourced as promised to the backers
+of the Kickstarter campaign.
+
+Because of maintainability issues, to make the framework easier for new
+developers, and bring it closer to Godot's standards, the framework was
+completely rewritten and optimized in 2020.
+
+Contributors
+------------
+
+## Authors
+
+In alphabetical order:
+
+* ArturM
+* Sylvain Beucler - beuc
+* Fleskevor
+* Ariel Manzur - punto (original author)
+* Julian Murgia - @StraToN
+* Dennis Ploeger - @dploeger
+* Markus Törnqvist - mjtorn
+
+Licensing
+---------
+
+Like Godot, the Escoria framework is licensed under the MIT license.
+See the LICENSE file in any of the Escoria repositories for details.
+
+Logo
+----
+
+Escoria Logo created by Livio Fania (https://liviofania.com/)
+Licence: CC-BY
+
 Base concepts
 -------------
 
@@ -91,3 +130,4 @@ inventory and inventory items, but the way these are displayed is not managed
 by Escoria. This way, the game developer has total control over the inventory.
 
 .. _`Godot Engine`: https://godotengine.org
+.. _`The Interactive Adventures of Dog Mendonça and Pizzaboy`: https://store.steampowered.com/app/330420
