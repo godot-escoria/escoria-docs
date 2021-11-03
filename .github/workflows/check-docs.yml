@@ -1,0 +1,21 @@
+name: "Check documentation"
+
+on:
+    pull_request:
+        branch:
+            - devel
+
+jobs:
+    doc8:
+        name: "Check doc8"
+        runs-on: "ubuntu-latest"
+        steps:
+            - name: "Checkout"
+              uses: "actions/checkout@v2"
+              with:
+                token: "${{ secrets.DEPLOYMENT_TOKEN }}"
+            - name: "doc8"
+              uses: "docker://python:3"
+              with:
+                entrypoint: "/bin/bash"
+                args: "-c 'pip3 install doc8 && doc8 .'"
