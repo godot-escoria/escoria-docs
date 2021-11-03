@@ -5,10 +5,10 @@ Escoria's main design is centred around its core addon which supports the
 developer with very basic functionality and features to make developing games
 as easy and streamlined as possible.
 
-At the same time, Escoria aims to give a lot of freedom to the developer with 
+At the same time, Escoria aims to give a lot of freedom to the developer with
 regard to the design of the game and its interface.
 
-Because of this, neither a specific user interface nor a dialog manager are 
+Because of this, neither a specific user interface nor a dialog manager are
 included in the Escoria core, although either may be installed as
 additional addons from the Godot Asset Library or completely done from scratch
 for the specific game you're making.
@@ -31,7 +31,8 @@ Select the template to view more details:
 .. image:: img/create_project_template.png
    :alt: Details from the Escoria game template
 
-Click on **Download** to download a fresh copy of the template, then click **Install**.
+Click on **Download** to download a fresh copy of the template, then click
+**Install**.
 
 .. image:: img/create_project_downloaded.png
    :alt: "Installing the gamte template"
@@ -57,8 +58,9 @@ UIs that Escoria provides. You will probably want to
 use one of them as a starting point for
 :doc:`your own game UI </advanced/create_ui>`.
 
-The stock UIs for Escoria are distributed as Godot addons. Switch to the 
-Asset Lib and search for "escoria*ui" to find all currently available stock UIs.
+The stock UIs for Escoria are distributed as Godot addons. Switch to the
+Asset Lib and search for "escoria*ui" to find all currently available stock
+UIs.
 
 .. image:: img/create_project_uis.png
    :alt: Available Escoria UIs
@@ -89,13 +91,14 @@ addon.
 Adding a stock dialog manager
 -----------------------------
 
-Usually, a game made with Escoria uses dialogs as well as the ``say`` command 
-as narrative elements. While the basic dialog handling and the ``say`` command 
+Usually, a game made with Escoria uses dialogs as well as the ``say`` command
+as narrative elements. While the basic dialog handling and the ``say`` command
 are included in the core, a user interface that *displays* those lines isn't.
 
 Again, for simplicity's sake in this guide, we will add the available stock
-dialog manager that Escoria provides. You will probably want to use it as a 
-starting point for :doc:`your own dialog manager </advanced/create_dialog_manager>`.
+dialog manager that Escoria provides. You will probably want to use it as a
+starting point for
+:doc:`your own dialog manager </advanced/create_dialog_manager>`.
 
 Like the stock UIs, the dialog manager is distributed as a Godot addon. Switch
 back to the Asset Lib and search for "escoria*dialog" to find all currently

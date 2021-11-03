@@ -6,8 +6,7 @@ Architecture of Escoria
 The plugin script, autoload and classes
 ---------------------------------------
 
-According to the `concept of Godot plugins
-<https://docs.godotengine.org/en/stable/tutorials/plugins/editor/making_plugins.html>`_,
+According to the `concept of Godot plugins`_,
 Escoria initializes itself in the plugin script
 :doc:`addons/escoria-core/plugin.gd <../api/plugin.gd>`. This script is
 mostly used to initialize the :ref:`Escoria configuration items
@@ -17,9 +16,9 @@ mostly used to initialize the :ref:`Escoria configuration items
 This scene binds together all required objects and interfaces in a central
 place.
 
-In addition to this, various classes are defined in their respective class files
-which build up the various resources used in Escoria. See the :doc:`API-docs
-section <../api/main.gd>` for details.
+In addition to this, various classes are defined in their respective class
+files which build up the various resources used in Escoria. See the
+:doc:`API-docs section <../api/main.gd>` for details.
 
 Nodes and objects of the Escoria autoload scene
 -----------------------------------------------
@@ -30,7 +29,7 @@ that provide vital parts of the engine.
 Logger
 ~~~~~~
 
-The :doc:`ESC logging framework <../api/ESCLogger>` is responsible for logging 
+The :doc:`ESC logging framework <../api/ESCLogger>` is responsible for logging
 various game events throughout the engine.
 
 Utils
@@ -76,7 +75,7 @@ Object manager
 
 The :doc:`object manager <../api/ESCObjectManager>` handles the state of the
 objects used in the game (active/interactive/states). All objects that should
-be handled by the engine - especially by ESC scripts - are required to register 
+be handled by the engine - especially by ESC scripts - are required to register
 with the object manager and have a unique global ID.
 
 Command registry
@@ -121,8 +120,7 @@ storing and loading savegames as well as the game settings.
 The Godot main scene of Escoria
 -------------------------------
 
-The scene that Godot loads when starting a game (the `main scene
-<https://docs.godotengine.org/en/stable/getting_started/step_by_step/exporting.html#setting-a-main-scene>`_)
+The scene that Godot loads when starting a game (the `main scene`_)
 is set to :doc:`addons/escoria-core/game/main_scene.tscn
 <../api/main_scene.gd>` which basically instantiates the configured main menu
 scene and starts it.
@@ -137,11 +135,15 @@ action based on its workflow. This way, different user interfaces can be
 implemented. For a coin interface, for example, a right click could open the
 coin and let the player select the respective verb.
 
-The game interface will ultimately call ``escoria.do``, a plumbing that handles 
-core functions like walking, clicking on items, and visiting areas. This method 
-will then take care of the different actions; for example, moving the player to 
-an object (or its ``interact_position``) and then running the appropriate event. 
-The event is based on the ``current_action`` set in the :doc:`actions manager <../api/ESCActionManager>` 
-(the verb) and the ``current_tool`` (the selected item). If the current verb is 
-``use`` and the ESC script has an event ``:use``, the :doc:`event manager <../api/ESCEventManager>` 
-will run that specific event.
+The game interface will ultimately call ``escoria.do``, a plumbing that handles
+core functions like walking, clicking on items, and visiting areas. This method
+will then take care of the different actions; for example, moving the player to
+an object (or its ``interact_position``) and then running the appropriate
+event. The event is based on the ``current_action`` set in the
+:doc:`actions manager <../api/ESCActionManager>` (the verb) and the
+``current_tool`` (the selected item). If the current verb is ``use`` and the
+ESC script has an event ``:use``, the
+:doc:`event manager <../api/ESCEventManager>` will run that specific event.
+
+.. _`concept of Godot plugins`: https://docs.godotengine.org/en/stable/tutorials/plugins/editor/making_plugins.html
+.. _`main scene`: https://docs.godotengine.org/en/stable/getting_started/step_by_step/exporting.html#setting-a-main-scene

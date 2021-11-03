@@ -30,12 +30,12 @@ Adding a background to the room
 -------------------------------
 
 Now, our room requires an ``ESCBackground`` node. This node is required in
-order to capture input events for the background of the room. It can also 
+order to capture input events for the background of the room. It can also
 display a background image. Add it as a child of the root node.
 
-Currently, the background node is empty. From ``backgrounds.zip``, copy the file
-"pub_bg.png" to the **rooms** directory and set it as the ``texture`` parameter
-in the ``ESCBackground`` node.
+Currently, the background node is empty. From ``backgrounds.zip``, copy the
+file "pub_bg.png" to the **rooms** directory and set it as the ``texture``
+parameter in the ``ESCBackground`` node.
 
 This will additionally set the dimensions of the ``ESCBackground`` node to the
 size of the image.
@@ -56,7 +56,7 @@ Usually, characters aren't allowed to move freely around in the whole room.
 There may be walls and other obstacles blocking their paths.
 
 To set the areas in which characters can walk in a room, add an ``ESCTerrain``
-node to the ``ESCRoom`` node; it will manage the walkable areas as well as 
+node to the ``ESCRoom`` node; it will manage the walkable areas as well as
 other functionality such as light and scale mapping.
 
 To setup a walkable area, add a new ``NavigationPolygonInstance`` node to the
@@ -78,7 +78,7 @@ character can move around freely.
 
    Remember that Escoria is using the character's base position when checking
    the walkable areas, so watch out that navigating through the room doesn't
-   bring the character too close to the walls, or else it will be drawn overtop  
+   bring the character too close to the walls, or else it will be drawn overtop
    of the walls.
 
 .. image:: img/create_room_terrain_createdpoly.png
@@ -87,8 +87,8 @@ character can move around freely.
 .. note::
 
    Escoria supports having multiple walkable areas (represented by multiple
-   ``NavigationPolygonInstance`` instances). These can be switched by an ESC 
-   command in the game. This is useful for things like blocked passages which 
+   ``NavigationPolygonInstance`` instances). These can be switched by an ESC
+   command in the game. This is useful for things like blocked passages which
    can be unblocked by pressing a button in the game.
 
 .. hint:: **Light mapping**
@@ -99,7 +99,7 @@ character can move around freely.
    This can be achieved in Escoria by setting up a light map in the
    ``ESCTerrain`` node.
 
-   The light map is a simple texture in which colors are mapped to the 
+   The light map is a simple texture in which colors are mapped to the
    character's colors as it walks around in the room.
 
 .. hint:: **Scale mapping**
@@ -115,10 +115,11 @@ character can move around freely.
    the texture is considered to be further away from the viewer and a lighter
    part is considered to be more in front of the viewer.
 
-   To fine tune the scaling of the character, use the ``Scale min`` and ``Scale max`` 
-   parameters. The character is only scaled between the numbers
-   given in ``Scale min`` and ``Scale max``, with 0 meaning the character is scaled
-   down to non-existence and 1 representing the actual size of the character.
+   To fine tune the scaling of the character, use the ``Scale min`` and
+   ``Scale max`` parameters. The character is only scaled between the numbers
+   given in ``Scale min`` and ``Scale max``, with 0 meaning the character is
+   scaled down to non-existence and 1 representing the actual size of the
+   character.
 
     .. note::
 
@@ -126,15 +127,16 @@ character can move around freely.
         artifacts.
 
 For simplicity's sake, we won't set up a complex scale map right now, but as
-the character is currently smaller than it should be when displayed in the room, 
-let's set ``Scale min`` and ``Scale max`` to 2 so that the character sprite will 
-be shown at twice its size.
+the character is currently smaller than it should be when displayed in the
+room, let's set ``Scale min`` and ``Scale max`` to 2 so that the character
+sprite will be shown at twice its size.
 
 Setting camera limits
 ---------------------
 
-As was mentioned before, the background can be much bigger than the screen size, 
-and in this example it really is. The background texture is 3976x956 pixels big!
+As was mentioned before, the background can be much bigger than the screen
+size, and in this example it really is. The background texture is 3976x956
+pixels big!
 
 However, using "Camera limits", we can tell Escoria that it can pan over the
 complete background using the game camera.

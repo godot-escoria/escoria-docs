@@ -2,7 +2,7 @@ Handling an inventory
 =====================
 
 Most adventure games feature inventory puzzles: Things you pick up and combine
-with other things which are then used in the game. Classic adventure games 
+with other things which are then used in the game. Classic adventure games
 made use of the inventory extensively!
 
 Escoria has features for handling inventory items as well, of course. Let's
@@ -17,7 +17,7 @@ the previous room is removed from Godot's scene tree, together with the items
 in there.
 
 To workaround this, inventory items must be placed in a special path where
-Escoria can find them whenever needed. This path is called the "autoregister 
+Escoria can find them whenever needed. This path is called the "autoregister
 path", and in the game template it defaults to "items".
 
 .. hint::
@@ -28,7 +28,7 @@ path", and in the game template it defaults to "items".
 Creating an inventory item
 --------------------------
 
-Inventory items are also simple ``ESCItem`` instances that you know from the 
+Inventory items are also simple ``ESCItem`` instances that you know from the
 previous chapter.
 
 Start by copying over the ``mug.png`` file to the "items" directory.
@@ -36,8 +36,8 @@ Start by copying over the ``mug.png`` file to the "items" directory.
 Then, create a new scene and select ``ESCItem`` as its root node. Rename it
 to "Beer" and set "beer" as its ``global id``.
 
-Add a ``TextureRect`` node with the mug picture. Also, add a ``CollisionShape2D`` 
-node to define the area of interactivity like before.
+Add a ``TextureRect`` node with the mug picture. Also, add a
+``CollisionShape2D`` node to define the area of interactivity like before.
 
 Finally, create a new ESC script called "beer.esc" and place it in the "items"
 folder as well. Leave the script empty for now.

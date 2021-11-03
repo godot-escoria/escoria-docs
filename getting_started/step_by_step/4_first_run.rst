@@ -62,9 +62,9 @@ But what should happen when the game starts *before* the main menu is shown?
 Well, that's also handled by this script using an "init" event.
 
 You could add introduction sequences, studio logos, etc. For the moment, we
-only want to show the main menu. 
+only want to show the main menu.
 
-(Further evidence of Escoria being very adaptable to your specific game's 
+(Further evidence of Escoria being very adaptable to your specific game's
 needs!)
 
 Thus, we don't default to any main menu scene by default. We've added a stock
@@ -101,8 +101,8 @@ project settings in the "Game Start Script" parameter in the "Main" category.
 .. hint::
 
    ESC files aren't directly shown in the file explorer as they're not
-   recognized as Godot resource files (as of the time this was written). 
-   As an alternative to copying the path to the ESC file, you can right 
+   recognized as Godot resource files (as of the time this was written).
+   As an alternative to copying the path to the ESC file, you can right
    click the file in the editor:
 
    .. image:: img/start_game_scriptpath.png

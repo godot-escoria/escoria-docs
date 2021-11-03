@@ -3,7 +3,7 @@ Where to go from here
 
 Congratulations! You've built your very first game with Escoria. Well done!
 
-But obviously, there's a lot more to do. We recommend checking out the rest  
+But obviously, there's a lot more to do. We recommend checking out the rest
 of the documentation. For example:
 
 * :doc:`The ESC reference </getting_started/z_esc_reference>`
