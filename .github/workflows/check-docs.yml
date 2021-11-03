@@ -18,4 +18,4 @@ jobs:
               uses: "docker://python:3"
               with:
                 entrypoint: "/bin/bash"
-                args: "-c 'pip3 install doc8 && doc8 .'"
+                args: -c "pip3 install doc8 && doc8 ."
