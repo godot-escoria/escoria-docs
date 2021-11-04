@@ -35,10 +35,10 @@ The following code shows a simple dialog:
     ?
         #3
         - "I sell this fine leather jackets."
-        
+
             say worker "Aha. Well, I don't like leather."
             stop
-        
+
         #4
         - "Can you tell me where the train station is?"
 
