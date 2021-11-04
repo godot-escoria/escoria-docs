@@ -16,8 +16,8 @@ Let's make Graham comment on the "Free cocktails" note on the blackboard.
 Add an ``ESCItem`` node to the ``ESCRoom`` and call it "Blackboard". Set
 its ``Global id`` parameter to "blackboard".
 
-Next, add a ``CollisionPolygon2D`` node to the ``ESCItem`` node and draw 
-a polygon around the blackboard image in the background. This will make 
+Next, add a ``CollisionPolygon2D`` node to the ``ESCItem`` node and draw
+a polygon around the blackboard image in the background. This will make
 that area a hotspot to click on.
 
 .. hint::
@@ -54,7 +54,7 @@ Events are called in much the same way as the verbs that the player uses.
     simple mouse UI, the verb is expressed by different mouse
     cursors (e.g. a magnifying glass expresses the "look" verb).
 
-An example of an event might be if we want to make Graham say something when 
+An example of an event might be if we want to make Graham say something when
 the player "looks" at the blackboard.
 
 For this, we add a new event ``:look`` to our ESC file and use the ``say``
@@ -65,8 +65,8 @@ command to make Graham talk:
     :look
     say graham "That's good to hear. I'm thirsty."
 
-The ``say`` command expects the player character's global ID as the first parameter
-and the text to say as the second parameter. (See the
+The ``say`` command expects the player character's global ID as the first
+parameter and the text to say as the second parameter. (See the
 :doc:`documentation </api/SayCommand>`)
 
 Try it out! Depending on which UI you chose, select the look verb or the look
@@ -89,17 +89,17 @@ this new item and set the texture to the foreground barrels picture.
 Move the new item so it is directly over the barrels in the background. You
 can use the arrow keys of your keyboard for more precision.
 
-To make Graham walk behind the barrels, Escoria uses a little trick: 
+To make Graham walk behind the barrels, Escoria uses a little trick:
 The property ``z-index`` is used by Godot to know which object to draw first.
 
-Objects with a lower z-index are drawn first while objects with a higher z-index 
-are drawn last which are drawn over the ones with a lower z-index (
-this is in addition to the node order in the scene tree where the bottom-most 
+Objects with a lower z-index are drawn first while objects with a higher
+z-index are drawn last which are drawn over the ones with a lower z-index (
+this is in addition to the node order in the scene tree where the bottom-most
 nodes are drawn last).
 
 Escoria constantly updates the parameter ``z-index`` of the player character to
-match the value of its y axis. This makes it possible to define objects where the 
-player walks behind *and* in front of depending on its y position.
+match the value of its y axis. This makes it possible to define objects where
+the player walks behind *and* in front of depending on its y position.
 
 See this graphic:
 
@@ -110,7 +110,7 @@ When the character is at y position 95, it stands behind the table. At y
 position 105, it stands in front of the table. To achieve this effect in
 Escoria, we simply set the "z-index" property of the table item to 100.
 
-For the barrels, though, the character should never walk in front of them, 
+For the barrels, though, the character should never walk in front of them,
 only behind them. So we can set the barrels' ``z-index`` property to the
 height of the background, or simply 1.000 for this example.
 
@@ -122,8 +122,8 @@ height of the background, or simply 1.000 for this example.
 
 .. warning::
 
-    Another property, ``Z As Relative``, is checked by default, meaning that the
-    ``z-axis`` property will also take the ``z-axis`` property of its parent (in
-    this case, the ``ESCRoom`` node). Usually, the ``z-axis`` property of the
-    parent is set to 0, but keep this in mind in case it isn't and the
-    walkbehind effect doesn't work properly.
+    Another property, ``Z As Relative``, is checked by default, meaning that
+    the ``z-axis`` property will also take the ``z-axis`` property of its
+    parent (in this case, the ``ESCRoom`` node). Usually, the ``z-axis``
+    property of the parent is set to 0, but keep this in mind in case it isn't
+    and the walkbehind effect doesn't work properly.

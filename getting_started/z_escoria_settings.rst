@@ -6,9 +6,9 @@ Escoria settings
 Review Escoria's settings
 -------------------------
 
-When you open the Project Settings window and look below the parameters list in the General tab, 
-you can find an Escoria section with 5 settings categories which we'll review in detail in the 
-following sub-sections:
+When you open the Project Settings window and look below the parameters list in
+the General tab, you can find an Escoria section with 5 settings categories
+which we'll review in detail in the following sub-sections:
 
 - Main
 - Debug
@@ -19,12 +19,13 @@ following sub-sections:
 Main
 ~~~~
 
-Allows you to set some base settings, paths, and the version number of your game.
+Allows you to set some base settings, paths, and the version number of your
+game.
 
 This category defines the following settings:
 
 +---------------------+-------------------------------------------------------+
-| Setting             | Description                                           | 
+| Setting             | Description                                           |
 +=====================+=======================================================+
 | Game version        | The version of your game. This setting is important   |
 |                     | for savegame management between your game versions.   |
@@ -54,7 +55,8 @@ This category defines the following settings:
 Debug
 ~~~~~
 
-Allows you to define the behavior of Godot when Escoria triggers an error or a warning, as well as the log level.
+Allows you to define the behavior of Godot when Escoria triggers an error or a
+warning, as well as the log level.
 
 This category defines the following settings:
 
@@ -75,7 +77,8 @@ This category defines the following settings:
 UI
 ~~
 
-Allows you to define the paths to scenes required by Escoria to run correctly. These scenes have to be created by the game developer.
+Allows you to define the paths to scenes required by Escoria to run correctly.
+These scenes have to be created by the game developer.
 
 This category defines the following settings:
 
@@ -99,7 +102,8 @@ This category defines the following settings:
 Sound
 ~~~~~
 
-Allows you to define the base volumes for each sound channel managed by Escoria.
+Allows you to define the base volumes for each sound channel managed by
+Escoria.
 
 This category defines the following settings:
 
@@ -127,7 +131,8 @@ This category defines the following settings:
 Platform
 ~~~~~~~~
 
-Allows you to define some specific behaviors for cache management (regarding resource loading), for desktop and mobile.
+Allows you to define some specific behaviors for cache management (regarding
+resource loading), for desktop and mobile.
 
 This category defines the following settings:
 

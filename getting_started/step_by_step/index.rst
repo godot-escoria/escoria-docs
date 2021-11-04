@@ -3,19 +3,19 @@
 Step by step
 ============
 
-This section of the documentation will guide you through the first steps of 
+This section of the documentation will guide you through the first steps of
 creating a game based on Escoria in Godot.
 
 It assumes that you have a very basic understanding of Godot and its basic
 UI. The `editor introduction`_ is a good place to get to know Godot and
 the editor if you're just starting out or need a bit of a refresher.
 
-At a minimum, you should make sure that you have a basic understanding of the 
-terms :dfn:`node` and :dfn:`scene tree`, and be aware that Godot provides 
+At a minimum, you should make sure that you have a basic understanding of the
+terms :dfn:`node` and :dfn:`scene tree`, and be aware that Godot provides
 different types of nodes for use. See the `nodes documentation`_ for details.
 
 Understanding the Godot scripting language :dfn:`GDScript` is not required for
-this guide, but it is definitely recommended for more advanced development. See 
+this guide, but it is definitely recommended for more advanced development. See
 `GDScript basics`_ for more information.
 
 .. hint::

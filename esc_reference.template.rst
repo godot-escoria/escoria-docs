@@ -16,20 +16,20 @@ States
 ~~~~~~
 
 Each object can have a "state". This state is stored in the *global state*
-of the game and as part of a savegame. The object's state is set when the 
-scene is instanced. 
+of the game and as part of a savegame. The object's state is set when the
+scene is instanced.
 
-Animations in the object's scene can have the same name as a state. 
+Animations in the object's scene can have the same name as a state.
 In this case, the animation is run when the state is set.
 
 For :doc:`bg_sound <../api/EscSoundPlayer>` and
-:doc:`bg_music <../api/EscMusicPlayer>` objects, the state also represents 
+:doc:`bg_music <../api/EscMusicPlayer>` objects, the state also represents
 the music or sound that is currently running.
 
 Active objects
 ~~~~~~~~~~~~~~
 
-Objects can be either active or inactive. Inactive objects are hidden and not 
+Objects can be either active or inactive. Inactive objects are hidden and not
 clickable.
 
 Item activity is also handled as a special case of global flags. If the
@@ -54,8 +54,8 @@ events won't be connected, either.
 Global flags
 ------------
 
-Global flags define the state of the game and can be true/false, a number, 
-or a string. All commands and groups can be condtionally set based on the 
+Global flags define the state of the game and can be true/false, a number,
+or a string. All commands and groups can be condtionally set based on the
 value of a global flag.
 
 Inventory
@@ -90,7 +90,7 @@ are called by Escoria in certain situations:
    performed
 -  ``:use <global id>``\ (on an ``ESCItem`` object): Called when the
    inventory item ``<global id>``\ is used with the item running this script
--  ``:<verb>``\ (on an ESCItem object): Called when a special verb is 
+-  ``:<verb>``\ (on an ESCItem object): Called when a special verb is
    used on the item running this script (e.g.``:look``)
 
 To initialize a room properly, you may want to use ``:setup`` like this:
@@ -101,8 +101,8 @@ To initialize a room properly, you may want to use ``:setup`` like this:
    teleport player door1 [eq ESC_LAST_SCENE scene1]
    teleport player door2 [eq ESC_LAST_SCENE scene2]
 
-This will teleport the player to the appropriate point in the scene 
-depending on the last visited scene. The last visited scene is stored in the 
+This will teleport the player to the appropriate point in the scene
+depending on the last visited scene. The last visited scene is stored in the
 special global state ``ESC_LAST_SCENE``.
 
 Events understand a series of flags. The flags that are currently
@@ -121,8 +121,8 @@ implemented include the following:
 Commands
 --------
 
-Commands consist of a single word followed by some parameters. Parameters can be
-a single word or a string in quotes.
+Commands consist of a single word followed by some parameters. Parameters can
+be a single word or a string in quotes.
 
 .. code-block::
 
@@ -132,9 +132,9 @@ a single word or a string in quotes.
 Conditions
 ~~~~~~~~~~
 
-In order to run a command depending on the value of a flag, use ``[]`` with a list 
-of comma-separated conditions. All conditions in this list must be true. Placing  
-the character ``!`` before a flag can be used to negate that flag.
+In order to run a command depending on the value of a flag, use ``[]`` with a
+list of comma-separated conditions. All conditions in this list must be true.
+Placing the character ``!`` before a flag can be used to negate that flag.
 
 Example:
 
@@ -184,7 +184,7 @@ Groups can also use conditions:
 Blocking
 ~~~~~~~~
 
-Some commands will block execution of the event until they finish; 
+Some commands will block execution of the event until they finish;
 others won't. See the command reference for details on which commands
 block.
 
@@ -207,10 +207,11 @@ The following parameters are available:
    Defaults to no avatar. To set only the parameters below, set this
    parameter's value to ``-``
 -  timeout: Time allowed to select an option. Default value 0. After the
-   specified time has elapsed, ``timeout_option`` will be selected automatically.
-   If the value is 0, there is no timeout (i.e. no time limit to select an 
+   specified time has elapsed, ``timeout_option`` will be selected
+   automatically.
+   If the value is 0, there is no timeout (i.e. no time limit to select an
    option).
--  timeout_option: Index of option selected when timeout is reached. 
+-  timeout_option: Index of option selected when timeout is reached.
    Default value of 0. Index begins at 1.
 
 Options support translation keys by prepending and separating them with
