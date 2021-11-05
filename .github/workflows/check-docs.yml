@@ -13,6 +13,6 @@ jobs:
             - name: "Checkout"
               uses: "actions/checkout@v2"
             - name: doc8-check
-              uses: deep-entertainment/doc8-action@v3
+              uses: deep-entertainment/doc8-action@v4
               with:
                 ignorePaths: "_build,scripting/z_esc_reference.rst"
