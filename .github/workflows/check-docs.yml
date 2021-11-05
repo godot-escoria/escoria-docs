@@ -12,11 +12,17 @@ jobs:
         steps:
             - name: "Checkout"
               uses: "actions/checkout@v2"
-              with:
-                token: "${{ secrets.DEPLOYMENT_TOKEN }}"
             - name: "doc8"
+              id: "doc8"
               uses: "docker://python:3"
               with:
                 entrypoint: "/bin/bash"
-                args: -c "pip3 -qqq install doc8 >/dev/null && doc8 --ignore-path _build --ignore-path scripting/z_esc_reference.rst ."
-
+                args: -c "pip3 -qqq install doc8 >/dev/null && echo \"::set-output name=doc8::$(doc8 --ignore-path _build --ignore-path scripting/z_esc_reference.rst .)\""
+            - uses: LouisBrunner/checks-action@v1.1.1
+              if: always()
+              with:
+                token: ${{ secrets.GITHUB_TOKEN }}
+                name: "Doc8 tests"
+                conclusion: ${{ steps.doc8.outcome }}
+                output: |
+                  {"summary":${{ steps.doc8.outputs.doc8 }}}
