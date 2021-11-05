@@ -15,8 +15,8 @@ Dialogs in Escoria are based on two parts:
 
 - The :doc:`say command </api/SayCommand>` to display text, show speech
   animations and play voice files for a character
-- A dialog chooser that displays a list of options for the player to choose while 
-  engaged in a dialog.
+- A dialog chooser that displays a list of options for the player to choose
+  while engaged in a dialog.
 
 A simple dialog
 ~~~~~~~~~~~~~~~
@@ -62,12 +62,13 @@ Let's break it down.
   character. The dialog starts with two ``say`` commands that will display the
   specified text for the player and the worker respectively.
 - At #2 the dialog chooser is introduced by a single "?" on its own line.
-- #3 and #4 show the different available options for the dialog. They will both 
+- #3 and #4 show the different available options for the dialog. They will both
   be displayed on screen and the player can select from one of them.
   An option starts with a "-" along with the text that should be displayed.
   Depending on the chosen option, the respective ``say`` commands are played,
   creating a complete dialog.
-- The line at #5 concludes the dialog chooser; it is a single "!" on its own line.
+- The line at #5 concludes the dialog chooser; it is a single "!" on its own
+  line.
 
 Conditional options
 ~~~~~~~~~~~~~~~~~~~
@@ -75,7 +76,8 @@ Conditional options
 Like every command in ESC, conditions can also be added to dialog options to
 only show them under specific conditions.
 
-Conditions are a comma-separated list enclosed in brackets and appear after the option.
+Conditions are a comma-separated list enclosed in brackets and appear after the
+option.
 
 .. code-block::
 
@@ -87,8 +89,8 @@ Conditions are a comma-separated list enclosed in brackets and appear after the 
     (...)
 
 In this example, the option will only be shown if the global state "knows_way"
-is either *false* or isn't set. The developer can set the state to *true* once the
-player knows the way to the train station so they don't ask for directions 
+is either *false* or isn't set. The developer can set the state to *true* once
+the player knows the way to the train station so they don't ask for directions
 again.
 
 .. hint::
@@ -109,8 +111,8 @@ additional text key, like this:
     say player WORKER_HELLO:"Hello!"
 
 If Escoria encounters this line, it will look in a specific folder for a file
-with the same name as the key having a specific sound file extension like .ogg, .wav or
-.mp3.
+with the same name as the key having a specific sound file extension like .ogg,
+.wav or .mp3.
 
 The folder and extension can be set using the
 :doc:`Escoria settings </getting_started/z_escoria_settings>` "Speech folder"
@@ -130,7 +132,8 @@ Dialog presentation
 
 Displaying lines on screen or presenting options to the player is the task of
 "Dialog managers". Escoria supports custom dialog managers using
-Godot addons and provides a very simple stock dialog manager to get users started.
+Godot addons and provides a very simple stock dialog manager to get users
+started.
 
 .. hint::
 
