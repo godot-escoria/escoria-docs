@@ -21,12 +21,13 @@ Dialogs in Escoria are based on two parts:
 A simple dialog
 ~~~~~~~~~~~~~~~
 
-The following code shows a simple dialog:
+The following code from an ESC script attached to a character called "worker"
+shows a simple dialog:
 
 .. code-block::
 
     #1
-    :talk worker
+    :talk
 
     say player "Hello!"
     say worker "How can I help you?"
@@ -58,9 +59,9 @@ The following code shows a simple dialog:
 
 Let's break it down.
 
-- The ESC event starts at #1. The player uses the "talk" verb on the "worker"
-  character. The dialog starts with two ``say`` commands that will display the
-  specified text for the player and the worker respectively.
+- The ESC event starts at #1. The player uses the "talk" verb. The dialog
+  starts with two ``say`` commands that will display the specified text for the
+  player and the worker respectively.
 - At #2 the dialog chooser is introduced by a single "?" on its own line.
 - #3 and #4 show the different available options for the dialog. They will both
   be displayed on screen and the player can select from one of them.
