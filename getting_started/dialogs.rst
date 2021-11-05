@@ -1,11 +1,11 @@
 Writing Dialogs
 ================
 
-Dialogs are an essential part of narrative games. Wether it's about world
+Dialogs are an essential part of narrative games. Whether it's about world
 building, fleshing out characters or presenting puzzles, dialogs are usually
 found in every narrative game.
 
-Escoria supports a feature rich dialog system integrated in the
+Escoria supports a feature-rich dialog system integrated in the
 :doc:`ESC language </scripting/z_esc_reference>`.
 
 Dialog concept
@@ -15,8 +15,8 @@ Dialogs in Escoria are based on two parts:
 
 - The :doc:`say command </api/SayCommand>` to display text, show speech
   animations and play voice files for a character
-- A dialog chooser that displays a list of options for the player to choose in
-  a dialog.
+- A dialog chooser that displays a list of options for the player to choose while 
+  engaged in a dialog.
 
 A simple dialog
 ~~~~~~~~~~~~~~~
@@ -34,7 +34,7 @@ The following code shows a simple dialog:
     #2
     ?
         #3
-        - "I sell this fine leather jackets."
+        - "I sell fine leather jackets."
 
             say worker "Aha. Well, I don't like leather."
             stop
@@ -58,24 +58,24 @@ The following code shows a simple dialog:
 
 Let's break it down.
 
-- The ESC event starts at #1. The player used the "talk" verb on the "worker"
+- The ESC event starts at #1. The player uses the "talk" verb on the "worker"
   character. The dialog starts with two ``say`` commands that will display the
   specified text for the player and the worker respectively.
-- At #2 the dialog chooser is introduced by a single "?" on a line.
-- #3 and #4 show the different available options for the dialog. They both will
+- At #2 the dialog chooser is introduced by a single "?" on its own line.
+- #3 and #4 show the different available options for the dialog. They will both 
   be displayed on screen and the player can select from one of them.
-  An option starts with a "-" and the text that should be displayed.
+  An option starts with a "-" along with the text that should be displayed.
   Depending on the chosen option, the respective ``say`` commands are played,
   creating a complete dialog.
-- The line at #5 concludes the dialog chooser. It is a single "!" on a line.
+- The line at #5 concludes the dialog chooser; it is a single "!" on its own line.
 
 Conditional options
 ~~~~~~~~~~~~~~~~~~~
 
 Like every command in ESC, conditions can also be added to dialog options to
-only show them on specific conditions.
+only show them under specific conditions.
 
-Conditions are a comma separated list enclosed in brackets after the option.
+Conditions are a comma-separated list enclosed in brackets and appear after the option.
 
 .. code-block::
 
@@ -86,10 +86,10 @@ Conditions are a comma separated list enclosed in brackets after the option.
 
     (...)
 
-In this example, the option will only be shown, if the global state "knows_way"
-is either not set or false. The developer can set the state to true once the
-player knows the way to the train station so they don't have to ask for it
-anymore.
+In this example, the option will only be shown if the global state "knows_way"
+is either *false* or isn't set. The developer can set the state to *true* once the
+player knows the way to the train station so they don't ask for directions 
+again.
 
 .. hint::
 
@@ -101,7 +101,7 @@ Speech
 
 Escoria features voice support as well.
 
-To use it, every line that should support a voice file as well, requires an
+To use it, every line that should support a voice file requires an
 additional text key, like this:
 
 .. code-block::
@@ -109,7 +109,7 @@ additional text key, like this:
     say player WORKER_HELLO:"Hello!"
 
 If Escoria encounters this line, it will look in a specific folder for a file
-named like the key with a specific sound file extension like .ogg, .wav or
+with the same name as the key having a specific sound file extension like .ogg, .wav or
 .mp3.
 
 The folder and extension can be set using the
@@ -119,18 +119,18 @@ and "Speech extension" in the "Sound" category.
 Translation
 ~~~~~~~~~~~
 
-The text key has another feature. If a game is produced for multiple languages,
-the text key can be used for `Godot's built-in translation features`_.
+The text key has another feature: If a game is produced for multiple languages,
+the text key can be used with `Godot's built-in translation features`_.
 
-Therefore a CSV file is required that uses the text key in the first column
+This feature requires a CSV file that has the text key as the first column
 followed by the different translations for each target language.
 
 Dialog presentation
 ~~~~~~~~~~~~~~~~~~~
 
 Displaying lines on screen or presenting options to the player is the task of
-the "Dialog managers". Escoria supports implementing dialog managers using
-Godot addons and provides a very simple stock dialog manager.
+"Dialog managers". Escoria supports custom dialog managers using
+Godot addons and provides a very simple stock dialog manager to get users started.
 
 .. hint::
 
