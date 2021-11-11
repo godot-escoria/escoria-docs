@@ -17,12 +17,6 @@ Events are triggered from various sources. Common events include
 
 ## Constants Descriptions
 
-### FLAG\_NO\_HUD
-
-```gdscript
-const FLAG_NO_HUD: int = 4
-```
-
 ### FLAG\_NO\_SAVE
 
 ```gdscript
@@ -35,6 +29,12 @@ const FLAG_NO_SAVE: int = 8
 const FLAG_NO_TT: int = 2
 ```
 
+### FLAG\_NO\_UI
+
+```gdscript
+const FLAG_NO_UI: int = 4
+```
+
 ### FLAG\_TK
 
 ```gdscript
@@ -44,7 +44,7 @@ const FLAG_TK: int = 1
 ### REGEX
 
 ```gdscript
-const REGEX: String = "^:(?<name>[^|]+)( \\|\\s*(?<flags>( (TK|NO_TT|NO_HUD|NO_SAVE))+))?$"
+const REGEX: String = "^:(?<name>[^|]+)( \\|\\s*(?<flags>( (TK|NO_TT|NO_UI|NO_SAVE))+))?$"
 ```
 
 Regex identifying an ESC event
