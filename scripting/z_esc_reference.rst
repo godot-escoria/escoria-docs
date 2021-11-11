@@ -91,7 +91,7 @@ are called by Escoria in certain situations:
 -  ``:use <global id>``\ (on an ``ESCItem`` object): Called when the
    inventory item ``<global id>``\ is used with the item running this script
 -  ``:<verb>``\ (on an ESCItem object): Called when a special verb is 
-   used on the item running this script (e.g. ``:look``)
+   used on the item running this script (e.g.ï¿½``:look``)
 
 To initialize a room properly, you may want to use ``:setup`` like this:
 
@@ -112,8 +112,8 @@ implemented include the following:
    to an item before saying a line of dialog
 -  ``NO_TT`` stands for "No tooltip": The tooltip is hidden for the
    duration of the event
--  ``NO_HUD`` stands for "No HUD": The HUD is hidden for the duration of
-   the event. Useful for when you want something to look like a cutscene
+-  ``NO_UI`` stands for "No User Interface": The UI is hidden for the duration
+   of the event. Useful for when you want something to look like a cutscene
    but don't want to disable input for skipping dialog.
 -  ``NO_SAVE`` disables saving: Use this in cutscenes and anywhere a
    badly-timed autosave would leave your game in a messed-up state.
