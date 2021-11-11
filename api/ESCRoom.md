@@ -90,7 +90,37 @@ var compiled_script: ESCScript
 
 Compiled ESCScript
 
+### enabled\_automatic\_transitions
+
+```gdscript
+var enabled_automatic_transitions
+```
+
+ Whether automatic transition are enabled or not
+
+### is\_run\_directly
+
+```gdscript
+var is_run_directly
+```
+
+Whether this room was run directly with Play Scene (F6)
+
+### exited\_previous\_room
+
+```gdscript
+var exited_previous_room
+```
+
+Whether this room was accessed from an exit in a previous room
+
 ## Method Descriptions
+
+### perform\_script\_events
+
+```gdscript
+func perform_script_events()
+```
 
 ### set\_camera\_limits
 
@@ -116,14 +146,7 @@ Set the editor debug mode
 
 - p_editor_debug_mode: The debug mode to set for the room
 
-### run\_script\_event
+## Signals
 
-```gdscript
-func run_script_event(event_name: String)
-```
-
-Runs the script event from the script attached, if any
-
- #### Parameters
-
-- event_name: the name of the event to run
+- signal room_setup_done(): Emitted when room has finished ":setup" event.
+- signal room_ready_done(): Emitted when room has finished ":ready" event.

@@ -13,7 +13,7 @@ Logging framework for Escoria
 ### LOG\_DEBUG
 
 ```gdscript
-const LOG_INFO: int = 2
+const LOG_WARNING: int = 1
 ```
 
 Valid log levels
@@ -21,7 +21,7 @@ Valid log levels
 ### LOG\_ERROR
 
 ```gdscript
-const LOG_INFO: int = 2
+const LOG_WARNING: int = 1
 ```
 
 Valid log levels
@@ -29,7 +29,15 @@ Valid log levels
 ### LOG\_INFO
 
 ```gdscript
-const LOG_INFO: int = 2
+const LOG_WARNING: int = 1
+```
+
+Valid log levels
+
+### LOG\_TRACE
+
+```gdscript
+const LOG_WARNING: int = 1
 ```
 
 Valid log levels
@@ -37,7 +45,7 @@ Valid log levels
 ### LOG\_WARNING
 
 ```gdscript
-const LOG_INFO: int = 2
+const LOG_WARNING: int = 1
 ```
 
 Valid log levels
@@ -54,6 +62,19 @@ The path of the ESC file that was reported last (used for removing
 duplicate warnings
 
 ## Method Descriptions
+
+### trace
+
+```gdscript
+func trace(string: String, args)
+```
+
+Log a trace message
+
+#### Parameters
+
+* string: Text to log
+* args: Additional information
 
 ### debug
 

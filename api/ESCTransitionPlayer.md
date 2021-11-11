@@ -18,12 +18,23 @@ const TRANSITION_MODE: Dictionary = {"IN":0,"OUT":1}
 
 The valid transition modes
 
+## Property Descriptions
+
+### transition\_id
+
+```gdscript
+var transition_id: int = 0
+```
+
+Id of the transition. Allows keeping track of the actual transition
+being played or finished
+
 ## Method Descriptions
 
 ### transition
 
 ```gdscript
-func transition(transition_name: String = "", mode: int, duration: float = 1) -> void
+func transition(transition_name: String = "", mode: int, duration: float = 1) -> int
 ```
 
 ### get\_transition
@@ -57,4 +68,4 @@ to name provided.
 
 ## Signals
 
-- signal transition_done(): Emitted when the transition was played
+- signal transition_done(transition_id): Emitted when the transition was played

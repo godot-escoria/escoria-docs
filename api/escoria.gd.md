@@ -246,6 +246,18 @@ Run a generic action
 - can_interrupt: if true, this command will interrupt any ongoing event
 before it is finished
 
+### apply\_settings
+
+```gdscript
+func apply_settings(p_settings: ESCSaveSettings) -> void
+```
+
+Apply the loaded settings
+
+#### Parameters
+
+* p_settings: Loaded settings
+
 ### set\_game\_paused
 
 ```gdscript

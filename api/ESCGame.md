@@ -24,6 +24,22 @@ MOUSE_TOOLTIP_LIMITS - Visualize the tooltip limits
 
 ## Property Descriptions
 
+### main\_menu
+
+```gdscript
+export var main_menu = ""
+```
+
+The main menu node
+
+### pause\_menu
+
+```gdscript
+export var pause_menu = ""
+```
+
+The main menu node
+
 ### mouse\_tooltip\_margin
 
 ```gdscript
@@ -32,14 +48,6 @@ export var mouse_tooltip_margin = 50
 
 The safe margin around tooltips
 
-### tooltip\_node
-
-```gdscript
-var tooltip_node: Object
-```
-
-A reference to the node handling tooltips
-
 ### editor\_debug\_mode
 
 ```gdscript
@@ -47,6 +55,14 @@ export var editor_debug_mode = 0
 ```
 
 Which (if any) debug mode for the editor is used
+
+### tooltip\_node
+
+```gdscript
+var tooltip_node: Object
+```
+
+A reference to the node handling tooltips
 
 ## Method Descriptions
 
@@ -245,3 +261,35 @@ Function is called if Project setting escoria/ui/tooltip_follows_mouse = true
 #### Parameters
 
 - p_position: Position of the mouse
+
+### pause\_game
+
+```gdscript
+func pause_game()
+```
+
+Pauses the game. Reimplement to eventually show a specific UI.
+
+### unpause\_game
+
+```gdscript
+func unpause_game()
+```
+
+Unpause the game. Reimplement to eventually hide a specific UI.
+
+### show\_main\_menu
+
+```gdscript
+func show_main_menu()
+```
+
+ Shows the main menu. Reimplement to show a specific UI.
+
+### hide\_main\_menu
+
+```gdscript
+func hide_main_menu()
+```
+
+Hides the main menu. Reimplement to hide a specific UI.

@@ -26,6 +26,14 @@ var scheduled_events: Array
 
 A list of currently scheduled events
 
+### can\_process\_next\_event
+
+```gdscript
+var can_process_next_event
+```
+
+ Whether the event manager is allowed to proceed with next event.
+
 ## Method Descriptions
 
 ### queue\_event
@@ -52,7 +60,16 @@ func interrupt_running_event()
 
 Interrupt the event currently running.
 
+### clear\_event\_queue
+
+```gdscript
+func clear_event_queue()
+```
+
+Clears the event queue.
+
 ## Signals
 
+- signal event_started(event_name): Emitted when the event started execution
 - signal event_finished(event_name, return_code): Emitted when the event did finish running
 - signal event_interrupted(event_name, return_code): Emitted when the event was interrupted
