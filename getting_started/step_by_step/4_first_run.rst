@@ -76,11 +76,9 @@ Add this code:
 
    :init
 
-   spawn _main_menu res://game/ui/commons/main_menu/main_menu.tscn false
-   set_active _main_menu true
+   show_menu main
 
-We won't go into details here, but this code creates a new game item for the
-main menu on demand and shows it.
+This instructs the installed UI addon to show the main menu.
 
 The complete file "game.esc" should look like this now:
 
@@ -88,8 +86,7 @@ The complete file "game.esc" should look like this now:
 
    :init
 
-   spawn _main_menu res://game/ui/commons/main_menu/main_menu.tscn false
-   set_active _main_menu true
+   show_menu main
 
    :newgame
 
