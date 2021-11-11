@@ -40,13 +40,16 @@ Conditions to show this dialog
 
 ## Method Descriptions
 
-### \_init
+### load\_string
 
 ```gdscript
-func _init(option_string: String)
+func load_string(option_string: String)
 ```
 
-Create a dialog option from a string
+Create a dialog option from an ESC string
+
+#### Parameter
+- option_string: ESC string for the dialog option
 
 ### get\_option
 

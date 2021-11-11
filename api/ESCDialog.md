@@ -62,13 +62,16 @@ A list of ESCDialogOptions
 
 ## Method Descriptions
 
-### \_init
+### load\_string
 
 ```gdscript
-func _init(dialog_string: String)
+func load_string(dialog_string: String)
 ```
 
-Construct a dialog from a dialog string
+Construct a dialog from an ESC dialog string
+
+#### Parameters
+- dialog_string: ESC dialog string
 
 ### is\_valid
 
