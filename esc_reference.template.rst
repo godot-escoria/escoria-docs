@@ -112,8 +112,8 @@ implemented include the following:
    to an item before saying a line of dialog
 -  ``NO_TT`` stands for "No tooltip": The tooltip is hidden for the
    duration of the event
--  ``NO_HUD`` stands for "No HUD": The HUD is hidden for the duration of
-   the event. Useful for when you want something to look like a cutscene
+-  ``NO_UI`` stands for "No User Interface": The UI is hidden for the duration
+   of the event. Useful for when you want something to look like a cutscene
    but don't want to disable input for skipping dialog.
 -  ``NO_SAVE`` disables saving: Use this in cutscenes and anywhere a
    badly-timed autosave would leave your game in a messed-up state.
