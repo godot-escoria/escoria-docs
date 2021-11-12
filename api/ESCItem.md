@@ -195,6 +195,15 @@ export var animation_player_node: NodePath = ""
 
 The node used to play animations
 
+### camera\_node
+
+```gdscript
+export var camera_node = ""
+```
+
+The node that references the camera position and zoom if this item is used
+as a camera target
+
 ### animations
 
 ```gdscript
@@ -377,6 +386,15 @@ func stop_talking()
 ```
 
 Stop playing the talking animation
+
+### get\_camera\_node
+
+```gdscript
+func get_camera_node()
+```
+
+Return the camera position if a camera_position_node exists or the
+global position of the player
 
 ## Signals
 

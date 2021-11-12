@@ -8,56 +8,6 @@
 
 Camera handling
 
-## Property Descriptions
-
-### tween
-
-```gdscript
-var tween
-```
-
-Reference to the tween node for animating camera movements
-
-### target
-
-```gdscript
-var target: Vector2 = "(0, 0)"
-```
-
-Target position of the camera
-
-### follow\_target
-
-```gdscript
-var follow_target: Node
-```
-
-The object to follow
-
-### zoom\_target
-
-```gdscript
-var zoom_target: Vector2
-```
-
-Target zoom of the camera
-
-### zoom\_time
-
-```gdscript
-var zoom_time
-```
-
-Time of zoom
-
-### zoom\_transform
-
-```gdscript
-var zoom_transform
-```
-
-This is needed to adjust dialog positions and such, see dialog_instance.gd
-
 ## Method Descriptions
 
 ### set\_limits
@@ -84,27 +34,53 @@ func set_drag_margin_enabled(p_dm_h_enabled, p_dm_v_enabled)
 func set_target(p_target, p_speed: float = 0)
 ```
 
+Set the target for the camera
+
+#### Parameters
+- p_target: Object to target
+- p_speed: Number of seconds for the camera to reach the target
+
 ### set\_camera\_zoom
 
 ```gdscript
-func set_camera_zoom(p_zoom_level, p_time)
+func set_camera_zoom(p_zoom_level: float, p_time: float)
 ```
+
+Set the camera zoom level
+
+#### Parameters
+- p_zoom_level: Zoom level to set
+- p_time: Number of seconds for the camera to reach the zoom level
 
 ### push
 
 ```gdscript
-func push(p_target, p_time, p_type)
+func push(p_target, p_time: float = 0, p_type: int = 0)
 ```
+
+Push the camera towards the target in terms of position and zoom level
+using a given transition type and time.
+See
+https://docs.godotengine.org/en/stable/classes/class_tween.html#enumerations
+
+#### Parameters
+- p_target: Target to push to
+- p_time: Number of seconds for the transition to take
+- p_type: Tween transition type
 
 ### shift
 
 ```gdscript
-func shift(p_x, p_y, p_time, p_type)
+func shift(p_target: Vector2, p_time: float, p_type: int)
 ```
 
-### target\_reached
+Shift the camera by the given vector in a given time and using a specific
+Tween transition type.
 
-```gdscript
-func target_reached()
-```
+See
+https://docs.godotengine.org/en/stable/classes/class_tween.html#enumerations
 
+#### Parameters
+- p_target: Vector to shift the camera by
+- p_time: Number of seconds for the transition to take
+- p_type: Tween transition type

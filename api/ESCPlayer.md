@@ -10,14 +10,6 @@ A playable character
 
 ## Property Descriptions
 
-### camera\_position\_node
-
-```gdscript
-export var camera_position_node = ""
-```
-
-The node that references the camera position
-
 ### selectable
 
 ```gdscript
@@ -25,14 +17,3 @@ export var selectable = false
 ```
 
 Wether the player can be selected like an item
-
-## Method Descriptions
-
-### get\_camera\_pos
-
-```gdscript
-func get_camera_pos()
-```
-
-Return the camera position if a camera_position_node exists or the
-global position of the player
