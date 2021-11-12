@@ -122,6 +122,9 @@ Whether this room was accessed from an exit in a previous room
 func perform_script_events()
 ```
 
+Performs the ESC script events "setup" and "ready", in this order, if they are
+present. Also manages automatic transitions.
+
 ### set\_camera\_limits
 
 ```gdscript
