@@ -148,8 +148,3 @@ Set the editor debug mode
 #### Parameters
 
 - p_editor_debug_mode: The debug mode to set for the room
-
-## Signals
-
-- signal room_setup_done(): Emitted when room has finished ":setup" event.
-- signal room_ready_done(): Emitted when room has finished ":ready" event.
