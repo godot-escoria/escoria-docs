@@ -282,6 +282,14 @@ Runs the event "event_name" from the "script" ESC script.
 loaded.
 - event_name: Name of the event to run
 
+### quit
+
+```gdscript
+func quit()
+```
+
+Function called to quit the game.
+
 ## Signals
 
 - signal request_pause_menu(): Signal sent when pause menu has to be displayed

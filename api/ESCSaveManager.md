@@ -4,6 +4,14 @@
 
 ## Constants Descriptions
 
+### CRASH\_SAVE\_NAME\_TEMPLATE
+
+```gdscript
+const CRASH_SAVE_NAME_TEMPLATE: String = "crash_autosave_%s_%s.tres"
+```
+
+Template for crash savegames filenames
+
 ### SAVE\_NAME\_TEMPLATE
 
 ```gdscript
@@ -37,6 +45,14 @@ var save_folder: String
 ```
 
 Variable containing the saves folder obtained from Project Settings
+
+### crash\_savegame\_filename
+
+```gdscript
+var crash_savegame_filename: String
+```
+
+Filename of the latest crash savegame file
 
 ### settings\_folder
 
@@ -79,6 +95,14 @@ This id can help with slots development for the game developer.
  ## Parameters
 - id: integer suffix of the savegame file
 - p_savename: name of the savegame
+
+### save\_game\_crash
+
+```gdscript
+func save_game_crash()
+```
+
+Performs an emergency savegame in case of crash.
 
 ### load\_game
 

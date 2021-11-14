@@ -13,7 +13,7 @@ Logging framework for Escoria
 ### LOG\_DEBUG
 
 ```gdscript
-const LOG_ERROR: int = 0
+const LOG_INFO: int = 2
 ```
 
 Valid log levels
@@ -21,15 +21,23 @@ Valid log levels
 ### LOG\_ERROR
 
 ```gdscript
-const LOG_ERROR: int = 0
+const LOG_INFO: int = 2
 ```
 
 Valid log levels
 
+### LOG\_FILE\_FORMAT
+
+```gdscript
+const LOG_FILE_FORMAT: String = "log_%s_%s.log"
+```
+
+Log file format
+
 ### LOG\_INFO
 
 ```gdscript
-const LOG_ERROR: int = 0
+const LOG_INFO: int = 2
 ```
 
 Valid log levels
@@ -37,7 +45,7 @@ Valid log levels
 ### LOG\_TRACE
 
 ```gdscript
-const LOG_ERROR: int = 0
+const LOG_INFO: int = 2
 ```
 
 Valid log levels
@@ -45,7 +53,7 @@ Valid log levels
 ### LOG\_WARNING
 
 ```gdscript
-const LOG_ERROR: int = 0
+const LOG_INFO: int = 2
 ```
 
 Valid log levels
@@ -60,6 +68,30 @@ var warning_path: String
 
 The path of the ESC file that was reported last (used for removing
 duplicate warnings
+
+### log\_file
+
+```gdscript
+var log_file: File
+```
+
+Log file handler
+
+### crash\_savegame\_filename
+
+```gdscript
+var crash_savegame_filename
+```
+
+Crash save filename
+
+### crashed
+
+```gdscript
+var crashed
+```
+
+Did we crash already?
 
 ## Method Descriptions
 
@@ -118,7 +150,7 @@ Log a warning message
 ### error
 
 ```gdscript
-func error(string: String, args)
+func error(string: String, args, do_savegame: bool = true)
 ```
 
 Log an error message
@@ -154,3 +186,11 @@ Log an error message about an ESC file
 
 * p_path: Path to the file
 * errors: Array of errors to put out
+
+### close\_logs
+
+```gdscript
+func close_logs()
+```
+
+Close the log file cleanly
