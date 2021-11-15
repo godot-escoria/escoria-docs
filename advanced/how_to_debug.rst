@@ -34,7 +34,7 @@ defined in **Project Settings**. In order from finest- to highest-level:
 
 In the example above, the error is explained in the line starting with ``(E)``
 ("E" for "Error", "D" for "Debug", "I" for "Info", "T" for "Trace"). The reason
-for this error is that Escoria attempted to load an non-existant file. The (E)rror
+for this error is that Escoria attempted to load a non-existant file. The (E)rror
 line provides the path to the file that was expected. At this point, fixing the
 issue is easy: Either create the missing file or remove any references to this
 non-existant file in the scenes that use it.
