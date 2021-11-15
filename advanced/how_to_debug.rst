@@ -7,7 +7,7 @@ Console and debugger
 --------------------
 
 When games made with Escoria need testing, some errors and warnings may appear
-in the console. This information can be very useful when debug issues.
+in the console. This information can be very useful when debugging issues.
 
 If Escoria encounters an error or a crash, it will stop the execution of the
 game and return to the editor, showing you the line that broke. Usually, this
