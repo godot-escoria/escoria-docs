@@ -21,8 +21,8 @@ first.
     :align: center
     :alt: Crash error: console
 
-The console shows many lines, the verbosity of which depends on the log level 
-defined in **Project Settings**. In order from finest- to highest-level: 
+The console shows many lines, the verbosity of which depends on the log level
+defined in **Project Settings**. In order from finest- to highest-level:
 
 * **TRACE**
 * **DEBUG**
@@ -34,10 +34,10 @@ defined in **Project Settings**. In order from finest- to highest-level:
 
 In the example above, the error is explained in the line starting with ``(E)``
 ("E" for "Error", "D" for "Debug", "I" for "Info", "T" for "Trace"). The reason
-for this error is that Escoria attempted to load a non-existant file. The (E)rror
-line provides the path to the file that was expected. At this point, fixing the
-issue is easy: Either create the missing file or remove any references to this
-non-existant file in the scenes that use it.
+for this error is that Escoria attempted to load a non-existant file. The 
+(E)rror line provides the path to the file that was expected. At this point, 
+fixing the issue is easy: Either create the missing file or remove any 
+references to this non-existant file in the scenes that use it.
 
 This example is straightforward, of course. Sometimes, the issue can be
 trickier. In this next case, the Debugger panel will be of use.
@@ -56,8 +56,8 @@ Escoria data
 
 Finding the current state of the data held by Escoria during the execution of
 the game or at the moment of a crash is often necessary. These data can be
-easily accessed which can be helpful in understanding why the game is not behaving 
-the way it is supposed to.
+easily accessed which can be helpful in understanding why the game is not 
+behaving the way it is supposed to.
 
 Find current Escoria data during the game execution
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -100,10 +100,11 @@ its label. As an example, here is the result for the **Objects Manager**:
     :align: center
     :alt: Crash error: Objects Manager in inspector
 
-From there, every object can be accessed and checked. Same for the **Globals Manager**:
+From there, every object can be accessed and checked. Same for the 
+**Globals Manager**:
 
 .. image:: img/crash-globals-manager-inspector.png
     :align: center
     :alt: Crash error: Globals Manager in inspector
 
-.. _Debugger panel documentation page: https://docs.godotengine.org/en/stable/tutorials/debug/debugger_panel.html 
+.. _Debugger panel documentation page: https://docs.godotengine.org/en/stable/tutorials/debug/debugger_panel.html
