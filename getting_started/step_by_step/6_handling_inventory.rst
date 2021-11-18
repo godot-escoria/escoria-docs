@@ -113,12 +113,12 @@ need to make the beer combinable with other items when it is used from the
 inventory and then react to it in the ESC script of the blackboard.
 
 So go into the beer item scene again and select the property, ``Use from
-inventory only``. This will restrict usage of the beer to inside the
-inventory only, so the beer mug will not listen to the ``use`` action anymore.
+inventory only``. Now, if you wish to use the verb 'use' with the beer, this
+interaction will only be permitted if the beer is in the inventory.
 
-Add an item to "Combine When Selected Action Is In" and set it to
-"use". This is required to tell Escoria that if the verb "use" is used on
-the beer mug, another object will be required to complete the action:
+Add an item to the list in the setting ``Combine When Selected Action Is In``
+and set it to "use". This enables the player to use another object together
+with the mug when using the verb "use".
 
 .. image:: img/inventory_use.png
    :alt: The display of the previously described options.
