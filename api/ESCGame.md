@@ -293,3 +293,15 @@ func hide_main_menu()
 ```
 
 Hides the main menu. Reimplement to hide a specific UI.
+
+### show\_crash\_popup
+
+```gdscript
+func show_crash_popup() -> void
+```
+
+Shows the crash popup when a crash occurs
+
+## Signals
+
+- signal crash_popup_confirmed(): Emitted when the user has confirmed the crash popup
