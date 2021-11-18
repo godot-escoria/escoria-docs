@@ -147,10 +147,25 @@ Let's set it to "floating".
 Basic configuration
 -------------------
 
-In the general project settings, set the resolution of your game in the
-setting **Display/Window**. The Godot default is 1024x600. The included
-backgrounds have a height of 956 pixels. For this guide, setup an HD resolution
-of 1920x1080 pixels.
+In the general project settings, go to **Display/Window** and set the desired
+resolution of your game in the "width" and "height" settings. The Godot
+default is 1024x600. The included backgrounds have a height of 956 pixels. For
+this guide, setup an HD resolution of 1920x1080 pixels.
+
+.. image:: img/create_project_display_size.png
+   :alt: The required width and height settings
+
+Also make sure that the stretch settings are set to the following:
+
+- Mode: 2d
+- Aspect: keep
+- Shrink: 1
+
+This makes sure, that your game will be resized to match the resolution of the
+devices used by the players.
+
+.. image:: img/create_project_stretch.png
+   :alt: Visual representation of the previously mentioned setting
 
 Continuing
 ----------
