@@ -22,7 +22,7 @@ first.
     :alt: Crash error: console
 
 The console shows many lines, the verbosity of which depends on the log level
-defined in **Project Settings**. In order from finest- to highest-level:
+defined in **Project Settings**. In order from most to least granular:
 
 * **TRACE**
 * **DEBUG**
