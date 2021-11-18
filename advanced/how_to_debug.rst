@@ -75,9 +75,8 @@ Find current Escoria data when a crash occurs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In case of a crash, the ``escoria`` object can easily be accessed in the
-bottom-right corner of the debugger panel by clicking the ``escoria``
-variable in the "Globals" section (framed in yellow in the following
-screenshot):
+bottom-right corner of the debugger panel by clicking the ``escoria`` variable
+in the "Globals" section (framed in yellow in the following screenshot):
 
 .. image:: img/crash-error-debugger-escoria.png
     :align: center
@@ -100,11 +99,46 @@ its label. As an example, here is the result for the **Objects Manager**:
     :align: center
     :alt: Crash error: Objects Manager in inspector
 
-From there, every object can be accessed and checked. Same for the
-**Globals Manager**:
+From there, every object can be accessed and checked. Same for the **Globals
+Manager**:
 
 .. image:: img/crash-globals-manager-inspector.png
     :align: center
     :alt: Crash error: Globals Manager in inspector
 
 .. _Debugger panel documentation page: https://docs.godotengine.org/en/stable/tutorials/debug/debugger_panel.html
+
+Escoria game crash management
+-----------------------------
+
+Escoria comes with auto logfile and emergency savegame generation when a crash
+occurs. When that happens, it is notified in the console and in a crash popup.
+
+.. image:: img/crash-popup.png
+    :align: center
+    :alt: Crash error: popup
+
+As soon as the crash popup is closed, the game will terminate.
+
+Hide or define a custom crash popup
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+By default, Escoria displays a simple ``AcceptDialog`` with the content of
+Project Settings' ``escoria/debug/crash_message`` variable as shown above. It
+is automatically filled with the generated log and savegame paths.
+
+If displaying the popup is not desired, it is then required to override the
+show_crash_popup() function in the game script. For the popup not to show, this
+function simply needs ``pass``.
+
+If however a specifially themed popup needs to be displayed, then it can be
+created in its own scene. The overriden ``show_crash_popup()`` function can
+then instance it and add it as child to the game scene. The text of the popup
+needs to be manually constructed using Project Settings'
+``escoria/debug/crash_message`` variable and the ``files: Array`` parameter of
+the function that contains paths to all generated files when the crash
+happened.
+
+Whatever the way this function is implemented, it needs to finally emit the
+signal ``crash_popup_confirmed`` when it closes: this signal is connected to an
+internal function that terminates the game.
