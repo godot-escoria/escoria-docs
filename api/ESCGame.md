@@ -297,10 +297,14 @@ Hides the main menu. Reimplement to hide a specific UI.
 ### show\_crash\_popup
 
 ```gdscript
-func show_crash_popup() -> void
+func show_crash_popup(files: Array) -> var
 ```
 
 Shows the crash popup when a crash occurs
+
+#### Parameters
+
+- files: Array of strings containing the paths to the files generated on crash
 
 ## Signals
 
