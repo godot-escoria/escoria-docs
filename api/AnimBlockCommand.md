@@ -1,18 +1,18 @@
 <!-- Auto-generated from JSON by GDScript docs maker. Do not edit this document directly. -->
 
-# CutSceneCommand
+# AnimBlockCommand
 
 **Extends:** [ESCBaseCommand](../ESCBaseCommand) < [Node](../Node)
 
 ## Description
 
-`cut_scene object name [reverse]`
+`anim_block object name [reverse]`
 
 Executes the animation specificed with the "name" parameter on the object,
 blocking. The next command in the event will be executed when the animation
 is finished playing. Optional parameters:
 
-* reverse plays the animation in reverse when true
+* `reverse`: plays the animation in reverse when true
 
 @ESC
 

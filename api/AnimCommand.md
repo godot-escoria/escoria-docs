@@ -12,7 +12,7 @@ Executes the animation specificed with the "name" parameter on the object,
 without blocking. The next command in the event will be executed immediately
 after. Optional parameters:
 
-* reverse: plays the animation in reverse when true
+* `reverse`: plays the animation in reverse when true
 
 @ESC
 

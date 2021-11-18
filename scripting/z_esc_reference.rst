@@ -207,6 +207,18 @@ skipped, but also initiate locked#### down cutscenes with accept_input
 NONE in :setup and accept_input ALL later in :ready.
 
 
+``anim_block object name [reverse]`` `API-Doc </api/AnimBlockCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Executes the animation specificed with the "name" parameter on the object,
+blocking. The next command in the event will be executed when the animation
+is finished playing. Optional parameters:
+
+
+* ``reverse``\ : plays the animation in reverse when true
+
+
 ``anim object name [reverse]`` `API-Doc </api/AnimCommand.html>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -216,7 +228,7 @@ without blocking. The next command in the event will be executed immediately
 after. Optional parameters:
 
 
-* reverse: plays the animation in reverse when true
+* ``reverse``\ : plays the animation in reverse when true
 
 
 ``camera_push target [time] [type]`` `API-Doc </api/CameraPushCommand.html>`__
@@ -306,18 +318,6 @@ conflict with the scene's events.
 
 Calls the function ``func_name`` of the node ``node`` of object ``object`` with
 the optional ``params``. This is a blocking function
-
-
-``cut_scene object name [reverse]`` `API-Doc </api/CutSceneCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Executes the animation specificed with the "name" parameter on the object,
-blocking. The next command in the event will be executed when the animation
-is finished playing. Optional parameters:
-
-
-* reverse plays the animation in reverse when true
 
 
 ``debug string [string2 ...]`` `API-Doc </api/DebugCommand.html>`__
@@ -524,10 +524,16 @@ Sets how fast object moves. Speed is an integer.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Changes the state of an object, and executes the state animation if present.
+Changes the state of an object to the given state.
+
+If the associated animation player has an animation with the same name,
+it also plays that animation.
+
 The command can be used to change the appearance of an item or a player
-character.
-If ``immediate`` is set to true, the animation is run directly
+character. See https://docs.escoria-framework.org/states for details.
+
+If ``immediate`` is set to true, the animation is directly skipped to the last
+frame
 
 
 ``show_menu main|pause=main [enable_automatic_transition: true|false=false]`` `API-Doc </api/ShowMenuCommand.html>`__
