@@ -45,6 +45,8 @@ achieve theatrical effects:
   magnitude
 * :doc:`camera_set_zoom_height </api/CameraSetZoomHeightCommand>` zoom the
   camera to achieve a certain pixel height
+* :doc:`camera_shift </api/CameraShiftCommand>` shift the camera by the
+  given location
 
 All commands support a ``speed`` parameter that defines how long the camera
 animation should take to reach the target in seconds.
