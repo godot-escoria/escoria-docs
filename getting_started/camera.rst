@@ -65,8 +65,8 @@ Additionally, the API commands used for the ESC commands support these two
 additional targets:
 
 * ``Vector2D``: The target is a position described by the given vector
-* An array of ``Vector2D`` objects: The target is the average of all items of the
-  array
+* An array of ``Vector2D`` objects: The target is the average of all items of
+  the array
 
 Follow targets are only nodes that have been set to be "movable".
 
