@@ -6,9 +6,14 @@
 
 ## Description
 
-`teleport object1 object2`
+`teleport object target`
 
-Sets the position of object1 to the position of object2.
+Instantly moves an object to a new position
+
+**Parameters**
+
+- *object*: Global ID of the object to move
+- *target*: Global ID of the target object to use as the destination
 
 @ESC
 

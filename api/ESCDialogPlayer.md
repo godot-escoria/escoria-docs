@@ -8,6 +8,16 @@
 
 Escoria dialog player
 
+## Constants Descriptions
+
+### KEYTEXT\_REGEX
+
+```gdscript
+const KEYTEXT_REGEX: String = "^((?<key>[^:]+):)?(?<text>.+)"
+```
+
+A regular expression that separates the translation key from the text
+
 ## Property Descriptions
 
 ### is\_speaking

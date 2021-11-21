@@ -8,7 +8,11 @@
 
 `debug string [string2 ...]`
 
-Takes 1 or more strings, prints them to the console.
+Prints a DEBUG-level message to the log.
+
+**Parameters**
+
+- *string*: One or more strings to log
 
 @ESC
 

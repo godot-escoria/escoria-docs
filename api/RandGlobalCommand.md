@@ -8,7 +8,12 @@
 
 `rand_global name max_value`
 
-Fills the "name" global with a random value between 0 and max-value-1.
+Sets the given global to a random integer between 0 and `max_value` (inclusive).
+
+**Parameters**
+
+- *name*: Name of the global to set
+- *max_value*: Maximum possible integer value (exclusive)
 
 @ESC
 

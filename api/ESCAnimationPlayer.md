@@ -108,6 +108,19 @@ Play an animation and directly skip to the end
 
 - name: Name of the animation to play
 
+### get\_length
+
+```gdscript
+func get_length(name: String) -> float
+```
+
+Get the length of the specified animation
+
+#### Parameters
+
+- name: Name of the animation
+**Returns** The length of the animation in seconds
+
 ### is\_valid
 
 ```gdscript

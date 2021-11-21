@@ -8,8 +8,12 @@
 
 `dec_global name value`
 
-Subtracts the value from global with given "name". Value and global must
-both be integers.
+Subtract the given value from the specified global.
+
+**Parameters**
+
+- *name*: Name of the global to be changed
+- *value*: Value to be subtracted
 
 @ESC
 

@@ -1,19 +1,20 @@
 <!-- Auto-generated from JSON by GDScript docs maker. Do not edit this document directly. -->
 
-# SetSoundStateCommand
+# StopSndCommand
 
 **Extends:** [ESCBaseCommand](../ESCBaseCommand) < [Node](../Node)
 
 ## Description
 
-`set_sound_state player sound loop`
+`stop_snd [player]`
 
-Change the sound playing on `player` to `sound` with optional looping if
-`loop` is true.
-Valid players are "_music" and "_sound".
-Aside from paths to sound or music files, the values *off* and *default*.
-*default* is the default value.
-are also valid for `sound`
+Stops the given sound player's stream.
+
+**Parameters**
+
+- *player*: Sound player to use. Either `_sound`, which is used to play non-
+  looping sound effects; `_music`, which plays looping music; or `_speech`, which
+  plays non-looping voice files (default: `_music`)
 
 @ESC
 

@@ -8,8 +8,14 @@
 
 `play_snd file [player]`
 
-Plays the sound specificed with the "file" parameter on the sound player
-`player`, without blocking. (player defaults to _sound)
+Plays the specified sound without blocking the event.
+
+**Parameters**
+
+- *file*: Sound file to play
+- *player*: Sound player to use. Can either be `_sound`, which is used to play non-
+  looping sound effects; `_music`, which plays looping music; or `_speech`, which
+  plays non-looping voice files (default: `_sound`)
 
 @ESC
 

@@ -6,10 +6,17 @@
 
 ## Description
 
-`spawn identifier path [is_active=true] [object2] `
+`spawn identifier path [is_active] [position_target]`
 
-Instances a scene determined by "path", and places in the position of
-object2 (object2 is optional)
+Programmatically adds a new item to the scene.
+
+**Parameters**
+
+- *identifier*: Global ID to use for the new object
+- *path*: Path to the scene file of the object
+- *is_active*: Whether the new object should be set to active (default: `true`)
+- *position_target*: Global ID of another object that will be used to
+  position the new object (when omitted, the new objet's position is not specified)
 
 @ESC
 

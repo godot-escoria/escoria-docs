@@ -8,9 +8,11 @@
 
 `wait seconds`
 
-Blocks execution of the current script for a number of seconds specified by
- the "seconds" parameter.
-- seconds can be either and integer or a floating value
+Blocks execution of the current event.
+
+**Parameters**
+
+- *seconds*: Number of seconds to block
 
 @ESC
 

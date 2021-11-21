@@ -1,17 +1,18 @@
 <!-- Auto-generated from JSON by GDScript docs maker. Do not edit this document directly. -->
 
-# SetHudVisibleCommand
+# SetGuiVisibleCommand
 
 **Extends:** [ESCBaseCommand](../ESCBaseCommand) < [Node](../Node)
 
 ## Description
 
-`set_hud_visible visible`
+`set_gui_visible visible`
 
-If you have a cutscene like sequence where the player doesn't have control,
-and you also have HUD elements visible, use this to hide the HUD. You want
-to do that because it explicitly signals the player that there is no control
-over the game at the moment. "visible" is true or false.
+Shows or hide the GUI.
+
+**Parameters**
+
+- *visible*: Whether the GUI should be visible
 
 @ESC
 
