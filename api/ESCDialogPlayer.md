@@ -13,7 +13,7 @@ Escoria dialog player
 ### KEYTEXT\_REGEX
 
 ```gdscript
-const KEYTEXT_REGEX: String = "^((?<key>[^:]+):)?(?<text>.+)"
+const KEYTEXT_REGEX: String = "^((?<key>[^:]+):)?\"(?<text>.+)\""
 ```
 
 A regular expression that separates the translation key from the text

@@ -36,15 +36,21 @@ var defaults: Array
 
 The default values for the arguments
 
+### strip\_quotes
+
+```gdscript
+var strip_quotes: Array
+```
+
+Wether to strip quotes on specific arguments
+
 ## Method Descriptions
 
 ### \_init
 
 ```gdscript
-func _init(p_min_args: int = 0, p_types: Array, p_defaults: Array)
+func _init(p_min_args: int = 0, p_types: Array, p_defaults: Array, p_strip_quotes: Array = true)
 ```
-
-Initialize the descriptor
 
 ### prepare\_arguments
 
