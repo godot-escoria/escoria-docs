@@ -40,7 +40,7 @@ Get the content of a reg exp group by name
 ### get\_typed\_value
 
 ```gdscript
-func get_typed_value(value: String)
+func get_typed_value(value: String, type_hint)
 ```
 
 Return a string value in the correct infered type
@@ -48,6 +48,7 @@ Return a string value in the correct infered type
 #### Parameters
 
 - value: The original value
+- type_hint: The type it should be
 **Returns** The typed value according to the type inference
 
 ### sanitize\_whitespace

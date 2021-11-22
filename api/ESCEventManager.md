@@ -7,16 +7,12 @@
 ## Description
 
 A manager for running events
+There are different "channels" an event can run on.
+The usual events happen in the foreground channel _front, but
+additional event queues can be added as required.
+Additionally, events can be scheduled to be queued in the future
 
 ## Property Descriptions
-
-### events\_queue
-
-```gdscript
-var events_queue: Array
-```
-
-A queue of events to run
 
 ### scheduled\_events
 
@@ -26,13 +22,13 @@ var scheduled_events: Array
 
 A list of currently scheduled events
 
-### can\_process\_next\_event
+### events\_queue
 
 ```gdscript
-var can_process_next_event
+var events_queue: Dictionary
 ```
 
- Whether the event manager is allowed to proceed with next event.
+A list of constantly running events in multiple background channels
 
 ## Method Descriptions
 
@@ -42,7 +38,10 @@ var can_process_next_event
 func queue_event(event: ESCEvent) -> void
 ```
 
-Queue a new event to run
+Queue a new event to run in the foreground
+
+#### Parameters
+- event: Event to run
 
 ### schedule\_event
 
@@ -52,13 +51,30 @@ func schedule_event(event: ESCEvent, timeout: float) -> void
 
 Schedule an event to run after a timeout
 
+#### Parameters
+- event: Event to run
+- timeout: Number of seconds to wait before adding the event to the
+  front queue
+
+### queue\_background\_event
+
+```gdscript
+func queue_background_event(channel_name: String, event: ESCEvent) -> void
+```
+
+Queue the run of an event in a background channel
+
+#### Parameters
+- channel_name: Name of the channel to use
+- event: Event to run
+
 ### interrupt\_running\_event
 
 ```gdscript
 func interrupt_running_event()
 ```
 
-Interrupt the event currently running.
+Interrupt the events currently running.
 
 ### clear\_event\_queue
 
@@ -66,10 +82,35 @@ Interrupt the event currently running.
 func clear_event_queue()
 ```
 
-Clears the event queue.
+Clears the event queues.
+
+### is\_channel\_free
+
+```gdscript
+func is_channel_free(name: String) -> bool
+```
+
+Check wether a channel is free to run more events
+
+#### Parameters
+- name: Name of the channel to test
+**Returns** Wether the channel can currently accept a new event
+
+### get\_running\_event
+
+```gdscript
+func get_running_event(name: String) -> ESCEvent
+```
+
+Get the currently running event in a channel
+
+#### Parameters
+- name: Name of the channel
+**Returns** The currently running event or null
 
 ## Signals
 
 - signal event_started(event_name): Emitted when the event started execution
-- signal event_finished(event_name, return_code): Emitted when the event did finish running
-- signal event_interrupted(event_name, return_code): Emitted when the event was interrupted
+- signal background_event_started(channel_name, event_name): Emitted when an event is started in a channel of the background queue
+- signal event_finished(return_code, event_name): Emitted when the event did finish running
+- signal background_event_finished(return_code, event_name, channel_name): Emitted when a background event was finished

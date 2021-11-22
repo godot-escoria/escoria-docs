@@ -507,6 +507,23 @@ Plays the specified sound without blocking the event.
   plays non-looping voice files (default: ``_sound``\ )
 
 
+``queue_event object event [channel] [block]`` `API-Doc </api/QueueEventCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Queue another event to run
+
+**Parameters**
+
+
+* object: Object that holds the ESC script with the event
+* event: Name of the event to queue
+* channel: Channel to run the event on (default: ``_front``\ )
+* block: Whether to wait for the queue to finish. This is only possible, if
+  the queued event is not to be run on the same event as this command
+  (default: ``false``\ )
+
+
 ``queue_resource path [front_of_queue]`` `API-Doc </api/QueueResourceCommand.html>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

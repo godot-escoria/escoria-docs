@@ -44,6 +44,34 @@ Height of one line in the label
 
 ## Property Descriptions
 
+### color
+
+```gdscript
+export var color = "0,0,0,1"
+```
+
+- **Setter**: `set_color`
+
+Color of the label
+
+### offset\_from\_cursor
+
+```gdscript
+export var offset_from_cursor = "(10, 0)"
+```
+
+Vector2 defining the offset from the cursor
+
+### debug\_mode
+
+```gdscript
+export var debug_mode = false
+```
+
+- **Setter**: `set_debug_mode`
+
+Activates debug mode. If enabled, shows the label with a white background.
+
 ### current\_action
 
 ```gdscript
@@ -85,34 +113,6 @@ var waiting_for_target2
 ```
 
 True if tooltip is waiting for a click on second target (use x with y)
-
-### color
-
-```gdscript
-export var color = "0,0,0,1"
-```
-
-- **Setter**: `set_color`
-
-Color of the label
-
-### offset\_from\_cursor
-
-```gdscript
-export var offset_from_cursor = "(10, 0)"
-```
-
-Vector2 defining the offset from the cursor
-
-### debug\_mode
-
-```gdscript
-export var debug_mode = false
-```
-
-- **Setter**: `set_debug_mode`
-
-Activates debug mode. If enabled, shows the label with a white background.
 
 ### debug\_texturerect\_node
 
