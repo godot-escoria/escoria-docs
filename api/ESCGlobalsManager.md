@@ -12,10 +12,16 @@ values. Values can be bool, integer or strings
 
 ## Constants Descriptions
 
+### GLOBAL\_ANIMATION\_RESOURCES
+
+```gdscript
+const GLOBAL_ANIMATION_RESOURCES: String = "ANIMATION_RESOURCES"
+```
+
 ### RESERVED\_GLOBALS
 
 ```gdscript
-const RESERVED_GLOBALS: Array = ["ESC_LAST_SCENE","BYPASS_LAST_SCENE"]
+const RESERVED_GLOBALS: Array = ["ESC_LAST_SCENE","BYPASS_LAST_SCENE","ANIMATION_RESOURCES"]
 ```
 
 A list of reserved globals which can not be overridden
