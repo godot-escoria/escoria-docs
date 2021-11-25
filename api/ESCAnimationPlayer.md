@@ -134,4 +134,4 @@ else false**
 
 ## Signals
 
-- signal animation_finished(name): 
+- signal animation_finished(name): Emitted when the animation finsihed playing
