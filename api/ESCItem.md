@@ -387,6 +387,14 @@ func stop_talking()
 
 Stop playing the talking animation
 
+### update\_idle
+
+```gdscript
+func update_idle()
+```
+
+Replay the last idle animation
+
 ### get\_camera\_node
 
 ```gdscript
