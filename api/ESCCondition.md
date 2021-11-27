@@ -19,7 +19,7 @@ const COMPARISON_ACTIVITY: int = 4
 ### COMPARISON\_DESCRIPTION
 
 ```gdscript
-const COMPARISON_DESCRIPTION: Array = ["Checking if %s %s %s true%s","Checking if %s %s %s equals %s","Checking if %s %s %s greater than %s","Checking if %s %s %s less than %s","Checking if %s is %s active%s"]
+const COMPARISON_DESCRIPTION: Array = ["Checking if %s %s %s true%s","Checking if %s %s %s equals %s","Checking if %s %s %s greater than %s","Checking if %s %s %s less than %s","Checking if %s %s %s active%s"]
 ```
 
 ### COMPARISON\_EQ

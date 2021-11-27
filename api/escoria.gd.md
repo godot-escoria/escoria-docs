@@ -282,6 +282,66 @@ Runs the event "event_name" from the "script" ESC script.
 loaded.
 - event_name: Name of the event to run
 
+### register\_setting
+
+```gdscript
+func register_setting(name: String, default, info: Dictionary)
+```
+
+Register a new project setting if it hasn't been defined already
+
+#### Parameters
+
+- name: Name of the project setting
+- default: Default value
+- info: Property info for the setting
+
+### register\_ui
+
+```gdscript
+func register_ui(game_scene: String)
+```
+
+Register a user interface. This should be called in a deferred way
+from the addon's _enter_tree.
+
+#### Parameters
+- game_scene: Path to the game scene extending ESCGame
+
+### deregister\_ui
+
+```gdscript
+func deregister_ui(game_scene: String)
+```
+
+Deregister a user interface
+
+#### Parameters
+- game_scene: Path to the game scene extending ESCGame
+
+### register\_dialog\_manager
+
+```gdscript
+func register_dialog_manager(manager_class: String)
+```
+
+Register a dialog manager addon. This should be called in a deferred way
+from the addon's _enter_tree.
+
+#### Parameters
+- manager_class: Path to the manager class script
+
+### deregister\_dialog\_manager
+
+```gdscript
+func deregister_dialog_manager(manager_class: String)
+```
+
+Deregister a dialog manager addon
+
+#### Parameters
+- manager_class: Path to the manager class script
+
 ### quit
 
 ```gdscript

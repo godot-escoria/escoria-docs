@@ -250,18 +250,6 @@ func show_ui()
 Called when the UI should be shown
 (Needs to be overridden, if supported)
 
-### update\_tooltip\_following\_mouse\_position
-
-```gdscript
-func update_tooltip_following_mouse_position(p_position: Vector2)
-```
-
-Function is called if Project setting escoria/ui/tooltip_follows_mouse = true
-
-#### Parameters
-
-- p_position: Position of the mouse
-
 ### pause\_game
 
 ```gdscript

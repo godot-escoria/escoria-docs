@@ -8,16 +8,6 @@
 
 Plugin script to initialize Escoria
 
-## Constants Descriptions
-
-### autoloads
-
-```gdscript
-const autoloads: Dictionary = {"escoria":"res://addons/escoria-core/game/escoria.tscn"}
-```
-
-Autoloads to instantiate
-
 ## Method Descriptions
 
 ### set\_escoria\_ui\_settings
