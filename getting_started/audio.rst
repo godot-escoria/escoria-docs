@@ -22,9 +22,8 @@ ESC global IDs:
 - _speech: Used for voice support
 
 Playing music and sound effects is done by using the
-:doc:`play_snd </api/PlaySndCommand>` ESC
-command. It expects the path to the sound effect or music ressource and
-the global id of the audio player.
+:doc:`play_snd </api/PlaySndCommand>` ESC command. It expects the path to the
+sound effect or music ressource and the global id of the audio player.
 
 If the audio is unspecified, it defaults to ``_sound``.
 
@@ -33,7 +32,7 @@ Examples
 
 - ``play_snd res://music/happy.ogg _music``
 
-  Plays the background music `res://music/happy.ogg`
+  Plays the background music ``res://music/happy.ogg``
 
 -  ``play_snd res://sound/door_open.wav``
 
