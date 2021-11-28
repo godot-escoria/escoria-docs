@@ -38,7 +38,7 @@ Examples
 
    Plays the sound effect ``res://sound/door_open.wav``
 
-.. note:: 
+.. note::
 
     Escoria takes care about the looping setting itself. Music is looped
     by default, sound effects are not.
