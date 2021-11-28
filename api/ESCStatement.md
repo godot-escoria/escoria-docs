@@ -52,6 +52,14 @@ func interrupt()
 
 Interrupt the statement in the middle of its execution.
 
+### reset\_interrupt
+
+```gdscript
+func reset_interrupt()
+```
+
+Resets an interrupted event
+
 ## Signals
 
 - signal finished(return_code): Emitted when the event did finish running
