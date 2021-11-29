@@ -18,9 +18,9 @@ Playing music and sound effects
 Escoria features three built-in audio players which are accessible by their
 ESC global IDs:
 
-- `_music`: Used for looping background music
-- `_sound`: Used for playing sound files
-- `_speech`: Used for voice support
+- ``_music``: Used for looping background music
+- ``_sound``: Used for playing sound files
+- ``_speech``: Used for voice support
 
 Playing audio is done by using the
 :doc:`play_snd </api/PlaySndCommand>` ESC command. It expects the path to the
@@ -36,7 +36,7 @@ Examples
 
     Plays the background music ``res://music/happy.ogg``
 
--  ``play_snd res://sound/door_open.wav``
+- ``play_snd res://sound/door_open.wav``
 
     Plays the sound effect ``res://sound/door_open.wav``
 
