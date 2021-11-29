@@ -16,7 +16,15 @@ A menu shown in game
 func set_save_enabled(p_enabled: bool)
 ```
 
-Set wether saving is enabled currently
+Set whether saving is enabled currently
 
 #### Parameters
 - p_enabled: Enable or disable saving
+
+### reset
+
+```gdscript
+func reset()
+```
+
+Resets the UI to initial state

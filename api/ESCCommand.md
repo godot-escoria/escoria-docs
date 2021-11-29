@@ -63,6 +63,16 @@ func is_valid() -> bool
 
 Check, if conditions match
 
+### command\_exists
+
+```gdscript
+func command_exists() -> bool
+```
+
+Checks that the command exists
+
+*Returns* True if the command exists, else false.
+
 ### run
 
 ```gdscript

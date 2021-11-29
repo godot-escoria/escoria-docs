@@ -62,5 +62,5 @@ Resets an interrupted event
 
 ## Signals
 
-- signal finished(return_code): Emitted when the event did finish running
+- signal finished(event, return_code): Emitted when the event did finish running
 - signal interrupted(return_code): Emitted when the event was interrupted

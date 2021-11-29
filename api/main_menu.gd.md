@@ -7,3 +7,13 @@
 ## Description
 
 A simple main menu
+
+## Method Descriptions
+
+### reset
+
+```gdscript
+func reset()
+```
+
+Resets the UI to initial state
