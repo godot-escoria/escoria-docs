@@ -33,7 +33,7 @@ Wether the player is currently speaking
 ### say
 
 ```gdscript
-func say(character: String, type: String, text: String) -> var
+func say(character: String, type: String, text: String) -> void
 ```
 
 Make a character say a text
