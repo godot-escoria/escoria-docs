@@ -43,7 +43,7 @@ Reserved globals which can not be overridden; prefixed with "GLOBAL_"
 ### RESERVED\_GLOBALS
 
 ```gdscript
-const RESERVED_GLOBALS: Dictionary = {"ANIMATION_RESOURCES":[],"ESC_CURRENT_SCENE":"","ESC_LAST_SCENE":"","FORCE_LAST_SCENE_NULL":false}
+const RESERVED_GLOBALS: Dictionary = {"ANIMATION_RESOURCES":{},"ESC_CURRENT_SCENE":"","ESC_LAST_SCENE":"","FORCE_LAST_SCENE_NULL":false}
 ```
 
 Dict of the reserved globals to register and their initial values.
