@@ -10,22 +10,6 @@ A resource that manages the ESC global states
 The ESC global state is basically simply a dictionary of keys with
 values. Values can be bool, integer or strings
 
-## Constants Descriptions
-
-### GLOBAL\_ANIMATION\_RESOURCES
-
-```gdscript
-const GLOBAL_ANIMATION_RESOURCES: String = "ANIMATION_RESOURCES"
-```
-
-### RESERVED\_GLOBALS
-
-```gdscript
-const RESERVED_GLOBALS: Array = ["ESC_LAST_SCENE","FORCE_LAST_SCENE_NULL","ANIMATION_RESOURCES"]
-```
-
-A list of reserved globals which can not be overridden
-
 ## Method Descriptions
 
 ### has
@@ -40,6 +24,19 @@ Check if a global was registered
 
 - key: The global key to check
 **Returns** Wether the global was registered
+
+### register\_reserved\_global
+
+```gdscript
+func register_reserved_global(key: String, value = null) -> void
+```
+
+Registers a global as being reserved and initializes it.
+
+#### Parameters
+
+- key: The key of the global to register
+- value: The initial value (optional)
 
 ### get\_global
 

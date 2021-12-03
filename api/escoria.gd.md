@@ -89,6 +89,14 @@ var globals_manager: ESCGlobalsManager
 
 ESC globals registry instance
 
+### room\_manager
+
+```gdscript
+var room_manager: ESCRoomManager
+```
+
+ESC room manager instance
+
 ### object\_manager
 
 ```gdscript
