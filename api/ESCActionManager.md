@@ -8,6 +8,21 @@
 
 Manages currently carried out actions
 
+## Enumerations
+
+### ACTION\_INPUT\_STATE
+
+```gdscript
+const ACTION_INPUT_STATE: Dictionary = {"AWAITING_ITEM":1,"AWAITING_TARGET_ITEM":2,"AWAITING_VERB":3,"AWAITING_VERB_CONFIRMATION":4,"AWAITING_VERB_OR_ITEM":0,"COMPLETED":5}
+```
+
+States of the action input (verb, item, target)
+(I) -> AWAITING_VERB_OR_ITEM -> AWAITING_ITEM -> COMPLETED -> (E)
+or
+(I) -> AWAITING_VERB_OR_ITEM -> AWAITING_ITEM -> AWAITING_TARGET_ITEM -> COMPLETED -> (E)
+or
+(I) -> AWAITING_VERB_OR_ITEM -> AWAITING_VERB -> AWAITING_VERB_CONFIRMATION -> COMPLETED -> (E)
+
 ## Property Descriptions
 
 ### current\_action
@@ -28,7 +43,36 @@ var current_tool: ESCObject
 
 Current tool (ESCItem/ESCInventoryItem) used
 
+### current\_target
+
+```gdscript
+var current_target: ESCObject
+```
+
+Current target where the tool is being used on/with (if any)
+
+### action\_state
+
+```gdscript
+var action_state
+```
+
+- **Setter**: `set_action_input_state`
+
+Current action input state
+
 ## Method Descriptions
+
+### set\_action\_input\_state
+
+```gdscript
+func set_action_input_state(p_state)
+```
+
+Sets the current state of action input.
+
+## Parameters
+- p_state: the action input state to set
 
 ### set\_current\_action
 
@@ -36,7 +80,10 @@ Current tool (ESCItem/ESCInventoryItem) used
 func set_current_action(action: String)
 ```
 
-Set the current action
+Set the current action verb
+
+## Parameters
+- action: The action verb to set
 
 ### clear\_current\_action
 
@@ -54,13 +101,20 @@ func clear_current_tool()
 
 Clear the current tool
 
-### activate
+### perform\_walk
 
 ```gdscript
-func activate(action: String, target: ESCObject, combine_with: ESCObject = null) -> var
+func perform_walk(moving_obj: ESCObject, destination, is_fast: bool = false)
+```
+
+### perform\_inputevent\_on\_object
+
+```gdscript
+func perform_inputevent_on_object(obj: ESCObject, event: InputEvent, default_action: bool = false)
 ```
 
 ## Signals
 
-- signal action_changed(): The current action was changed
+- signal action_changed(): The current action verb was changed
 - signal action_finished(): Emitted, when an action has been completed
+- signal action_input_state_changed(): Emitted when the action input state has changed

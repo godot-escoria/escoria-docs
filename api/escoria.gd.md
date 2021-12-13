@@ -193,15 +193,6 @@ var save_manager: ESCSaveManager
 
 Savegames and settings manager
 
-### controller
-
-```gdscript
-var controller: ESCController
-```
-
-The controller in charge of converting an action verb on a game object
-into an actual action
-
 ### game\_scene
 
 ```gdscript
