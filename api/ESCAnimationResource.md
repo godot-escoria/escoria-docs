@@ -14,7 +14,7 @@ characters movement.
 ### dir\_angles
 
 ```gdscript
-var dir_angles: Array
+export var dir_angles: Array = []
 ```
 
 Array containing the different angles available for animations.
@@ -26,7 +26,7 @@ Angle 0 and 360 are the same and correspond to UP/NORTH
 ### directions
 
 ```gdscript
-var directions: Array
+export var directions: Array = []
 ```
 
 Array of animations for each direction, from UP to RIGHT_UP clockwise
@@ -36,7 +36,7 @@ the animation
 ### idles
 
 ```gdscript
-var idles: Array
+export var idles: Array = []
 ```
 
 Array containing the idle animations for each direction (in the
@@ -46,7 +46,7 @@ the animation
 ### speaks
 
 ```gdscript
-var speaks: Array
+export var speaks: Array = []
 ```
 
 Array containing the speak animations for each direction (in the
