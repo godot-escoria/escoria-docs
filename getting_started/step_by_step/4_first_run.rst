@@ -122,6 +122,18 @@ Now you're ready to start the game. Click on Godot's run icon to do so.
 Click on "New Game" in the main menu and check out your character walking
 around in the new room!
 
+Troubleshooting black screen
+----------------------------
+
+Escoria handles the start of the game itself, but Godot might create a `main_scene`
+and set this as the start scene. If this `main_scene` is empty you'll experience a
+mysterious black screen instead of the pub scene. If you get a black screen here try
+setting the `Application / Run / Main Scene` configuration parameter like this:
+
+.. image:: img/start_game_project_settings.png
+   :alt: Setting pub_bg.png as the Main Scene in project settings
+
+
 Slowing Graham down
 -------------------
 
