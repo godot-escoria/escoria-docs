@@ -39,6 +39,8 @@ Click on **Download** to download a fresh copy of the template, then click
 
 Enter the project name and the folder for your new game.
 Click **Install & Edit**.
+Note that if you launched Godot from a terminal then this terminal will display
+error messages at this stage. Those messages can be safely ignored.
 
 .. image:: img/create_project_install.png
    :alt: Creating a new game from the template
