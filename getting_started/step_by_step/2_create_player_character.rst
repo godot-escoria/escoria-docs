@@ -187,7 +187,12 @@ These are the settings for the ``Directions`` parameter:
 .. image:: img/character_create_animation_directions.png
    :alt: The settings required for the Direction parameter
 
+Each slot needs to contain a ``ESCAnimationName`` resource.
 Try to set up the ``Directions`` and ``Idle`` animations by yourself.
+Don't forget to click ``Mirrored on`` when the image is facing the
+opposite direction (for instance we have a left animation and
+item numbered 2 in our arrays correspond to moving right so, in the
+above screenshot, item 2 uses a mirrored version of the left animation).
 
 .. hint::
 
