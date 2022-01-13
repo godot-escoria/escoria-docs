@@ -89,3 +89,11 @@ export var skip_dialog: bool = true
 ```
 
 True if skipping dialogs is allowed
+
+### custom\_settings
+
+```gdscript
+export var custom_settings: Dictionary = {}
+```
+
+Dictionary containing all user-defined settings.

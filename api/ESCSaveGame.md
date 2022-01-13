@@ -83,3 +83,11 @@ export var objects: Dictionary = {}
 ```
 
 Escoria objects exported from ESCObjectsManager
+
+### custom\_data
+
+```gdscript
+export var custom_data: Dictionary = {}
+```
+
+Custom data

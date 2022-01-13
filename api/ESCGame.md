@@ -282,6 +282,26 @@ func hide_main_menu()
 
 Hides the main menu. Reimplement to hide a specific UI.
 
+### apply\_custom\_settings
+
+```gdscript
+func apply_custom_settings(custom_settings: Dictionary)
+```
+
+Custom function that is meant to apply custom settings. Called right after
+Escoria settings file was loaded.
+
+### get\_custom\_data
+
+```gdscript
+func get_custom_data() -> Dictionary
+```
+
+Custom function automatically called when save game is created.
+
+*Returns* A Dictionary containing the custom data to be saved within the
+game file.
+
 ### show\_crash\_popup
 
 ```gdscript
