@@ -10,7 +10,7 @@ The main node type for backgrounds is ``ESCBackground``, additionally certain
 features of ``ESCTerrain`` add more feature to the background.
 
 Backgrounds can come in all sizes. They may have the exact size as the screen,
-they may be smaller or even bigger. Escoria uses its 
+they may be smaller or even bigger. Escoria uses its
 :doc:`Camera features </getting_started/camera>` to handle backgrounds of all
 sizes. Camera limits define how the camera follows the player and pans
 it over the background. The developer can enable and disable camera limits
@@ -24,7 +24,7 @@ graphic by moving different layers at diffferent speed when then camera
 pans over them.
 
 Godot has that functionality built-in in the `ParallaxBackground`_ and
-`ParallaxLayer`_ node types. 
+`ParallaxLayer`_ node types.
 
 `This tutorial`_ shows their basic functionality. Basically, after adding
 both a ``ParralaxBackground`` and at least one ``ParallaxLayer`` node to the
@@ -39,7 +39,7 @@ Scaling
 -------
 
 Another addition to the Parallax technique to add depth to a two dimensional
-scene is to change the size of the player character as it walks from 
+scene is to change the size of the player character as it walks from
 front to the back of the scene.
 
 In Escoria, this is achieved using the different parameters of the
