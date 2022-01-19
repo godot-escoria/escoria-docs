@@ -31,7 +31,7 @@ Godot has that functionality built-in with the `ParallaxBackground`_ and
 `This tutorial`_ introduces their functionality.
 
 Basically, after adding both a ``ParralaxBackground`` and at least one
-``ParallaxLayer`` node to the scene, the ``ParallaxLayer``'s parameter 
+``ParallaxLayer`` node to the scene, the ``ParallaxLayer``'s parameter
 ``motion_scale`` specifies how fast the movement of the additional layer
 will be moved in contrast to the static background.
 
@@ -41,13 +41,13 @@ set to 0 to allow the character to move behind the layer.
 Scaling
 -------
 
-In addition to the Parallax method, another technique to add depth to a 
-two-dimensional scene is to change the size of the player character as it 
+In addition to the Parallax method, another technique to add depth to a
+two-dimensional scene is to change the size of the player character as it
 walks from the front to the back of the scene (or vice versa).
 
 In Escoria, this is achieved by using the different parameters of the
 ``ESCTerrain`` node in the scene: The ``scales`` parameter uses a texture.
-Darker areas of the texture result in a smaller sprite, while lighter areas 
+Darker areas of the texture result in a smaller sprite, while lighter areas
 scale the sprite up. ``scale_min`` and ``scale_max`` limit the scaling.
 
 Lighting
@@ -57,8 +57,8 @@ Another feature to make rooms more lively is to give them dynamic lighting,
 so that certain parts of the screen tint the character sprite to make it
 react to different light sources in the show picture.
 
-The parameter ``lightmap`` expects a texture that is to be laid over the 
-scene and tints the character according to the position of the character in 
+The parameter ``lightmap`` expects a texture that is to be laid over the
+scene and tints the character according to the position of the character in
 the scene.
 
 The parameter ``lightmap_modulate`` can be used to additionally tint
