@@ -54,8 +54,8 @@ Lighting
 --------
 
 Another feature to make rooms more lively is to give them dynamic lighting,
-so that certain parts of the screen tint the character sprite as if it would
-walk through different light sources in the background.
+so that certain parts of the screen tint the character sprite as though it
+was walking through different light sources in the background.
 
 The parameter ``lightmap`` expects a texture that is to be laid over the
 scene and tints the character according to the position of the character in
