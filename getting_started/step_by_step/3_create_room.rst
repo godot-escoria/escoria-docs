@@ -141,7 +141,7 @@ pixels big!
 However, using "Camera limits", we can tell Escoria that it can pan over the
 complete background using the game camera.
 
-Select the ``ESCBackground`` node and set the first entry of the
+Select the ``ESCRoom`` node and set the first entry of the
 ``Camera limits`` parameter to 0, 0, 3975, 956:
 
 .. image:: img/create_room_cameralimits.png
