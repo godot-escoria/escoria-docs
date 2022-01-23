@@ -116,10 +116,10 @@ character can move around freely.
    part is considered to be more in front of the viewer.
 
    To fine tune the scaling of the character, use the ``Scale min`` and
-   ``Scale max`` parameters. The character is only scaled between the numbers
-   given in ``Scale min`` and ``Scale max``, with 0 meaning the character is
-   scaled down to non-existence and 1 representing the actual size of the
-   character.
+   ``Scale max`` parameters of the ``ESCTerrain`` node. The character is
+   only scaled between the numbers given in ``Scale min`` and ``Scale max``,
+   with 0 meaning the character is scaled down to non-existence and 1
+   representing the actual size of the character.
 
     .. note::
 
