@@ -10,10 +10,34 @@ A manager for ESC objects
 
 ## Constants Descriptions
 
+### CAMERA
+
+```gdscript
+const CAMERA: String = "_camera"
+```
+
+### MUSIC
+
+```gdscript
+const MUSIC: String = "_music"
+```
+
 ### RESERVED\_OBJECTS
 
 ```gdscript
 const RESERVED_OBJECTS: Array = ["_music","_sound","_speech","_camera"]
+```
+
+### SOUND
+
+```gdscript
+const SOUND: String = "_sound"
+```
+
+### SPEECH
+
+```gdscript
+const SPEECH: String = "_speech"
 ```
 
 ## Property Descriptions

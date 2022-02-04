@@ -12,6 +12,78 @@ The usual events happen in the foreground channel _front, but
 additional event queues can be added as required.
 Additionally, events can be scheduled to be queued in the future
 
+## Constants Descriptions
+
+### CHANNEL\_FRONT
+
+```gdscript
+const CHANNEL_FRONT: String = "_front"
+```
+
+Event channel names
+
+### EVENT\_DEBUG
+
+```gdscript
+const EVENT_DEBUG: String = "debug"
+```
+
+Pre-defined ESC events
+
+### EVENT\_EXIT\_SCENE
+
+```gdscript
+const EVENT_EXIT_SCENE: String = "exit_scene"
+```
+
+### EVENT\_INIT
+
+```gdscript
+const EVENT_INIT: String = "init"
+```
+
+### EVENT\_LOAD
+
+```gdscript
+const EVENT_LOAD: String = "load"
+```
+
+### EVENT\_NEW\_GAME
+
+```gdscript
+const EVENT_NEW_GAME: String = "newgame"
+```
+
+### EVENT\_READY
+
+```gdscript
+const EVENT_READY: String = "ready"
+```
+
+### EVENT\_ROOM\_SELECTOR
+
+```gdscript
+const EVENT_ROOM_SELECTOR: String = "room_selector"
+```
+
+### EVENT\_SETUP
+
+```gdscript
+const EVENT_SETUP: String = "setup"
+```
+
+### EVENT\_TRANSITION\_IN
+
+```gdscript
+const EVENT_TRANSITION_IN: String = "transition_in"
+```
+
+### EVENT\_TRANSITION\_OUT
+
+```gdscript
+const EVENT_TRANSITION_OUT: String = "transition_out"
+```
+
 ## Property Descriptions
 
 ### scheduled\_events
@@ -31,6 +103,24 @@ var events_queue: Dictionary
 A list of constantly running events in multiple background channels
 
 ## Method Descriptions
+
+### queue\_event\_from\_esc
+
+```gdscript
+func queue_event_from_esc(script_object: ESCScript, event: String, channel: String, block: bool) -> var
+```
+
+Queue a new event based on input from an ESC command, most likely "queue_event"
+
+#### Parameters
+- script_object: Compiled script object, i.e. the one with the event to queue
+- event: Name of the event to queue
+- channel: Channel to run the event on (default: `_front`)
+- block: Whether to wait for the queue to finish. This is only possible, if
+  the queued event is not to be run on the same event as this command
+  (default: `false`)
+
+**Returns** indicator of success/status
 
 ### queue\_event
 

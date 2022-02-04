@@ -23,6 +23,41 @@ or
 or
 (I) -> AWAITING_VERB_OR_ITEM -> AWAITING_VERB -> AWAITING_VERB_CONFIRMATION -> COMPLETED -> (E)
 
+### ACTION
+
+```gdscript
+const ACTION: Dictionary = {"BACKGROUND_CLICK":0,"ITEM_LEFT_CLICK":1,"ITEM_RIGHT_CLICK":2,"TRIGGER_IN":3,"TRIGGER_OUT":4}
+```
+
+Actions understood by the do(...) method
+* BACKGROUND_CLICK: Object is to move from its current position
+* ITEM_LEFT_CLICK: Item has been clicked on with LMB.
+* ITEM_RIGHT_CLICK: Item has been clicked on with RMB.
+* TRIGGER_IN: Character has moved into a trigger area.
+* TRIGGER_OUT: Character has moved out of a trigger area.
+
+## Constants Descriptions
+
+### ACTION\_ARRIVED
+
+```gdscript
+const ACTION_ARRIVED: String = "arrived"
+```
+
+Basic required internal actions
+
+### ACTION\_EXIT\_SCENE
+
+```gdscript
+const ACTION_EXIT_SCENE: String = "exit_scene"
+```
+
+### ACTION\_WALK
+
+```gdscript
+const ACTION_WALK: String = "walk"
+```
+
 ## Property Descriptions
 
 ### current\_action
@@ -62,6 +97,21 @@ var action_state
 Current action input state
 
 ## Method Descriptions
+
+### do
+
+```gdscript
+func do(action: int, params: Array, can_interrupt: bool = false) -> void
+```
+
+Run a generic action
+
+#### Parameters
+
+- action: type of the action to run
+- params: Parameters for the action
+- can_interrupt: if true, this command will interrupt any ongoing event
+before it is finished
 
 ### set\_action\_input\_state
 

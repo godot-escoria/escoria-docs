@@ -9,6 +9,45 @@
 A base class for every ESC command.
 Extending classes have to override the configure and run function
 
+## Constants Descriptions
+
+### COMMAND\_NAME\_REGEX
+
+```gdscript
+const COMMAND_NAME_REGEX: String = "(?<path>.+)/(?<file>[^.]+)(?<extension>\\.[^.]*$|$)"
+```
+
+### EXTENSION\_REGEX\_GROUP
+
+```gdscript
+const EXTENSION_REGEX_GROUP: String = "extension"
+```
+
+### FILE\_REGEX\_GROUP
+
+```gdscript
+const FILE_REGEX_GROUP: String = "file"
+```
+
+### PATH\_REGEX\_GROUP
+
+```gdscript
+const PATH_REGEX_GROUP: String = "path"
+```
+
+Regex for creating command name based on the script's filename, including
+named groups
+
+## Property Descriptions
+
+### command\_name\_regex
+
+```gdscript
+var command_name_regex: RegEx
+```
+
+Regex matcher for command names
+
 ## Method Descriptions
 
 ### configure
@@ -34,3 +73,11 @@ func run(command_params: Array) -> int
 ```
 
 Run the command
+
+### get\_command\_name
+
+```gdscript
+func get_command_name() -> String
+```
+
+Return the name of the command based on the script's filename

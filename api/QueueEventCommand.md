@@ -42,7 +42,7 @@ Validate wether the given arguments match the command descriptor
 ### run
 
 ```gdscript
-func run(arguments: Array) -> var
+func run(arguments: Array) -> int
 ```
 
 Run the command

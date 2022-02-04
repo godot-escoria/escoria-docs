@@ -33,6 +33,12 @@ A RegEx for empty lines
 const INDENT_REGEX: String = "^(?<indent>\\s*)"
 ```
 
+### INDENT\_REGEX\_GROUP
+
+```gdscript
+const INDENT_REGEX_GROUP: String = "indent"
+```
+
 A RegEx for finding out the indent of a line
 
 ## Method Descriptions

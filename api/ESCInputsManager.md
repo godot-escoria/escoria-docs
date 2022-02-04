@@ -11,6 +11,14 @@ Catches, handles and distributes input events for the game
 
 ## Constants Descriptions
 
+### ESC\_SHOW\_DEBUG\_PROMPT
+
+```gdscript
+const ESC_SHOW_DEBUG_PROMPT: String = "esc_show_debug_prompt"
+```
+
+Input action for use by InputMap
+
 ### INPUT\_ALL
 
 ```gdscript
@@ -28,6 +36,14 @@ const INPUT_NONE: int = 1
 ```gdscript
 const INPUT_SKIP: int = 2
 ```
+
+### SWITCH\_ACTION\_VERB
+
+```gdscript
+const SWITCH_ACTION_VERB: String = "switch_action_verb"
+```
+
+Input action for use by InputMap
 
 ## Property Descriptions
 

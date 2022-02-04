@@ -41,6 +41,14 @@ const FLAG_NO_UI: int = 4
 const FLAG_TK: int = 1
 ```
 
+### PREFIX
+
+```gdscript
+const PREFIX: String = ":"
+```
+
+Prefix to identify this as an ESC event.
+
 ### REGEX
 
 ```gdscript

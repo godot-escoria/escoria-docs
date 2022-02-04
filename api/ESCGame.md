@@ -66,6 +66,20 @@ A reference to the node handling tooltips
 
 ## Method Descriptions
 
+### do\_walk
+
+```gdscript
+func do_walk(destination, params: Array, can_interrupt: bool = false) -> void
+```
+
+Sets up and performs default walking action
+
+#### Parameters
+
+- destination: Destination to walk to
+- params: Parameters for the action
+- can_interrupt: if true, this command will interrupt any ongoing event
+
 ### left\_click\_on\_bg
 
 ```gdscript

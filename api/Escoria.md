@@ -1,6 +1,6 @@
 <!-- Auto-generated from JSON by GDScript docs maker. Do not edit this document directly. -->
 
-# escoria.gd
+# Escoria
 
 **Extends:** [Node](../Node)
 
@@ -22,6 +22,32 @@ Current game state
 * WAIT: Game is waiting
 
 ## Constants Descriptions
+
+### BUS\_MASTER
+
+```gdscript
+const BUS_MASTER: String = "Master"
+```
+
+Audio bus indices.
+
+### BUS\_MUSIC
+
+```gdscript
+const BUS_MUSIC: String = "Music"
+```
+
+### BUS\_SFX
+
+```gdscript
+const BUS_SFX: String = "SFX"
+```
+
+### BUS\_SPEECH
+
+```gdscript
+const BUS_SPEECH: String = "Speech"
+```
 
 ### ESCORIA\_VERSION
 
@@ -105,6 +131,14 @@ var object_manager: ESCObjectManager
 
 ESC object manager instance
 
+### project\_settings\_manager
+
+```gdscript
+var project_settings_manager: ESCProjectSettingsManager
+```
+
+ESC project settings manager instance
+
 ### command\_registry
 
 ```gdscript
@@ -153,14 +187,6 @@ var settings: ESCSaveSettings
 
 These are settings that the player can affect and save/load later
 
-### current\_state
-
-```gdscript
-var current_state
-```
-
-The current state of the game
-
 ### game\_size
 
 ```gdscript
@@ -176,6 +202,14 @@ var main
 ```
 
 The main scene
+
+### current\_state
+
+```gdscript
+var current_state
+```
+
+The current state of the game
 
 ### inputs\_manager
 
@@ -230,21 +264,6 @@ func new_game()
 
 Called by Main menu "start new game"
 
-### do
-
-```gdscript
-func do(action: String, params: Array, can_interrupt: bool = false) -> void
-```
-
-Run a generic action
-
-#### Parameters
-
-- action: type of the action to run
-- params: Parameters for the action
-- can_interrupt: if true, this command will interrupt any ongoing event
-before it is finished
-
 ### apply\_settings
 
 ```gdscript
@@ -280,20 +299,6 @@ Runs the event "event_name" from the "script" ESC script.
 - script: ESC script containing the event to run. The script must have been
 loaded.
 - event_name: Name of the event to run
-
-### register\_setting
-
-```gdscript
-func register_setting(name: String, default, info: Dictionary)
-```
-
-Register a new project setting if it hasn't been defined already
-
-#### Parameters
-
-- name: Name of the project setting
-- default: Default value
-- info: Property info for the setting
 
 ### register\_ui
 
