@@ -70,8 +70,30 @@ parameter and the text to say as the second parameter. (See the
 :doc:`documentation </api/SayCommand>`)
 
 Try it out! Depending on which UI you chose, select the look verb or the look
-cursor and click on the blackboard. Graham should now walk there and the text
-above should be displayed.
+cursor and click on the blackboard. You should remark that Graham won't walk to
+the blackboard nor say the line we coded.
+
+.. hint::
+
+    By default, Escoria uses the ``ESCItem``'s position when the player
+    attempts to reach it. The blackboard ``ESCItem`` is located at position
+    (0,0) in the room. Since this position is out of reach (ie. it is not
+    included in the NavigationPolygon in the ``ESCTerrain``), Graham is unable
+    to reach it.
+
+    To fix this issue, we need to add an interaction position to the blackboard
+    ``ESCItem`` so that Escoria will now use this specific position instead of
+    the ``ESCItem`` position.
+
+Simply add a new ``ESCLocation`` node as child of the blackboard ``ESCItem``
+and move it in front of the blackboard, around position (1216,912).
+
+.. image:: img/add_blackboard_esclocation.png
+   :alt: The ESCLocation node is positioned in front of the blackboard in the
+     scene
+
+Run the game again: Graham should now walk there and the text above should be
+displayed.
 
 Making the player walk behind items
 -----------------------------------
