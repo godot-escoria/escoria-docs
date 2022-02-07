@@ -80,7 +80,7 @@ Click **Install**. The relevant files should be selected already.
 .. image:: img/create_project_ui_install.png
    :alt: View of the files to install.
 
-Open your project settings and switch to the **Addons** tab to enable the UI
+Open your project settings and switch to the **Plugins** tab to enable the UI
 addon.
 
 .. image:: img/create_project_ui_enable.png
