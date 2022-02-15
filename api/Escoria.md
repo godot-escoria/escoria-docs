@@ -49,14 +49,6 @@ const BUS_SFX: String = "SFX"
 const BUS_SPEECH: String = "Speech"
 ```
 
-### ESCORIA\_VERSION
-
-```gdscript
-const ESCORIA_VERSION: String = "0.1.0"
-```
-
-Escoria version number
-
 ## Property Descriptions
 
 ### logger
