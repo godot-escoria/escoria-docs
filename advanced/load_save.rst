@@ -25,13 +25,13 @@ attached savegame. To load a game, simply call :doc:`ESCSaveManager.load_game()
 Savegames hold multiple "header" data:
 
 - Version of Escoria being used: this is used to manage migration of savegames
-  between Escoria versions. See `How to manage migrations`_. 
+  between Escoria versions. See `How to manage migrations`_.
 
 - Version of the game: this is equally used to manage migrations of savegames
-  between the versions of the game. See `How to manage migrations`_. 
+  between the versions of the game. See `How to manage migrations`_.
 
-- Name that describes the savegame: this can be either provided by the player or
-  managed by the game (and thus transparent for the player). 
+- Name that describes the savegame: this can be either provided by the player
+  or managed by the game (and thus transparent for the player).
 
 - Date: the date of creation of the savegame.
 
@@ -46,7 +46,7 @@ dictionaries:
 - ``objects``: all data about objects registered in Escoria. These data include
   the state, the position, the orientation, etc. Any object that the player
   never encountered in his game is not registered so it will be set at its
-  default value on loading. 
+  default value on loading.
 
 - ``custom_data``: a Dictionary structure containing custom data to be saved.
   See `Save custom data in savegames and settings`_.
@@ -56,7 +56,7 @@ Loading and saving settings
 ---------------------------
 
 Settings file are saved in a :doc:`ESCSaveSettings</api/ESCSaveSettings>`
-resource file. 
+resource file.
 
 Default data included in settings files are:
 
@@ -71,8 +71,8 @@ Default data included in settings files are:
 
 - ``music_volume``: volume of the music (between 0 and 100).
 
-- ``sfx_volume``: volume of sound effects, ie. all sounds that are not music nor
-  speech (value between 0 and 100).
+- ``sfx_volume``: volume of sound effects, ie. all sounds that are not music
+  nor speech (value between 0 and 100).
 
 - ``speech_volume``: volume of speech (value between 0 and 100)
 
@@ -121,9 +121,10 @@ directly in ``escoria.settings.custom_settings`` Dictionary value. The
 ``ESCSaveManager.save_settings()`` function is called to save the settings.
 
 This feature also comes with a ``apply_custom_settings()`` function that needs
-to be implemented in the ``game.gd`` script of the game (extending ``ESCGame``).
-This function is automatically called by the ``escoria.apply_settings()``
-function, which is called right after the settings file is loaded.
+to be implemented in the ``game.gd`` script of the game (extending
+``ESCGame``). This function is automatically called by the
+``escoria.apply_settings()`` function, which is called right after the settings
+file is loaded.
 
 How to manage migrations
 ------------------------
@@ -135,7 +136,7 @@ variable or item id may change. It is then necessary to migrate old savegames
 that contain old names to replace them with new names.
 
 Upon a savegame loading, Escoria automatically manages migrations between
-Escoria versions as well as migrations between game versions. 
+Escoria versions as well as migrations between game versions.
 
 Escoria migrations are automatically managed. This migration process is only
 described for exhaustivity purpose. Game versions migrations are obviously
@@ -154,8 +155,8 @@ Game version migration
 ~~~~~~~~~~~~~~~~~~~~~~
 
 The game must have a defined version set in Project Settings
-``escoria/main/game_version``. This game version number is saved in the savegame
-file. A version follows a ``x.y.z`` pattern where:
+``escoria/main/game_version``. This game version number is saved in the
+savegame file. A version follows a ``x.y.z`` pattern where:
 
 - ``x`` is the *major* version number
 - ``y`` is the *minor* version number
@@ -181,8 +182,9 @@ object contains a member ``_savegame`` that allows the access to the savegame
 data described in `Loading and saving games`_ section.
 
 .. code-block:: gdscript
+
     # File 1.1.0.gd
-    # Migrate to version 1.1.0 of the game. 
+    # Migrate to version 1.1.0 of the game.
     # This version changes the name of the "tets" global to "test".
 
     extends ESCMigration
@@ -193,5 +195,3 @@ data described in `Loading and saving games`_ section.
 
         # Remove the now useless global "tets"
         self._savegame.globals.erase("tets")
-
-
