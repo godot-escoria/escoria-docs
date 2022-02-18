@@ -6,8 +6,8 @@ Game and settings load and save system
 Escoria comes with a complete Save and Load manager that takes care of saving a
 player's game state so that it's possible to load a previously saved game.
 
-It also allows saving and loading settings of the game. Both settings and
-savegames can also contain user-defined settings.
+It also allows for the saving and loading of game settings. Both settings and
+save game files can optionally contain user-defined settings.
 
 Loading and saving games
 ------------------------
