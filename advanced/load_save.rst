@@ -12,174 +12,178 @@ save game files can optionally contain user-defined settings.
 Loading and saving games
 ------------------------
 
-Escoria manages savegames as numbered slots. A savegame requires a slot number
-to be used; if the given slot already has a savegame, it is possible to
+Escoria manages save games as numbered slots. A save game requires a slot number
+to be used; if the given slot already has a save game, it is possible to
 overwrite it. There is no limitation on the number of slots that can be used.
 Saving a game is as simple as calling :doc:`ESCSaveManager.save_game()
 </api/ESCSaveManager>` function.
 
 Loading a game works the same way by providing a slot number to load the
-attached savegame. To load a game, simply call :doc:`ESCSaveManager.load_game()
+attached save game. To load a game, simply call :doc:`ESCSaveManager.load_game()
 </api/ESCSaveManager>` function.
 
-Savegames hold multiple "header" data:
+Save games hold multiple "header" data:
 
-- Version of Escoria being used: this is used to manage migration of savegames
-  between Escoria versions. See `How to manage migrations`_.
+- Version of Escoria being used: this is used to manage the automated migration of save games.
+  between Escoria versions. See `Managing migrations`_.
 
-- Version of the game: this is equally used to manage migrations of savegames
-  between the versions of the game. See `How to manage migrations`_.
+- Version of the game: this is additional information used for the automated migration of save games
+  between different versions of the game. See `Managing migrations`_.
 
 - Name that describes the savegame: this can be either provided by the player
   or managed by the game (and thus transparent for the player).
 
-- Date: the date of creation of the savegame.
+- Date: the saved game's creation date.
 
-And of course, savegames contain the game data. These data are split in 3
+And of course, save games files contain the game data. This data is split into 3
 dictionaries:
 
 - ``main``: contains some internal information, such as the last visited scene
-  ID and the current scene the player is located in.
+  ID, and the scene where the player is currently located.
 
-- ``globals``: all the global variables values at the moment of saving.
+- ``globals``: the contents of all the global variables at the time of saving.
 
-- ``objects``: all data about objects registered in Escoria. These data include
-  the state, the position, the orientation, etc. Any object that the player
-  never encountered in his game is not registered so it will be set at its
-  default value on loading.
+- ``objects``: data about all objects registered in Escoria. This data includes
+  the object's state, position, orientation, etc. Any object that the player
+  has yet to encounter in the game is not registered, so these objects will have 
+  their values set to their default settings on loading.
 
-- ``custom_data``: a Dictionary structure containing custom data to be saved.
-  See `Save custom data in savegames and settings`_.
+- ``custom_data``: a dictionary containing custom data to be saved.
+  See `Saving custom data in save game and settings files`_.
 
 
 Loading and saving settings
 ---------------------------
 
-Settings file are saved in a :doc:`ESCSaveSettings</api/ESCSaveSettings>`
+Settings files are stored in a :doc:`ESCSaveSettings</api/ESCSaveSettings>` resource.
 resource file.
 
-Default data included in settings files are:
+The default data included in the settings file are:
 
-- ``text_lang``: language of displayed text in the game.
+- ``text_lang``: the language of the text displayed in the game.
 
-- ``voice_lang``: speech language.
+- ``voice_lang``: the speech language.
 
-- ``speech_enabled``: boolean value indicating whether speech is enabled in the
+- ``speech_enabled``: a boolean value indicating whether audio speech is enabled in the
   game.
 
-- ``master_volume``: global volume (value between 0 and 100).
+- ``master_volume``: the global volume value (a value between 0 and 100).
 
-- ``music_volume``: volume of the music (between 0 and 100).
+- ``music_volume``: the volume of the music (a value between 0 and 100).
 
-- ``sfx_volume``: volume of sound effects, ie. all sounds that are not music
-  nor speech (value between 0 and 100).
+- ``sfx_volume``: the  sound effects volume, ie. all sounds that are not music
+  or speech (a value between 0 and 100).
 
-- ``speech_volume``: volume of speech (value between 0 and 100)
+- ``speech_volume``: the speech volume (a value between 0 and 100)
 
-- ``fullscreen``: boolean value indicating whether the game is fullscreen or
+- ``fullscreen``: a boolean value indicating whether the game is fullscreen or
   not.
 
-- ``skip_dialog``: boolean value indicating whether dialogs skipping is allowed
+- ``skip_dialog``: a boolean value indicating whether dialogue skipping is allowed
   or not.
 
-- ``custom_settings``: a Dictionary structure containing custom data to be
+- ``custom_settings``: a dictionary containing any custom data to be
   saved. For example, the screen resolution could be added in this field. See
-  `Save custom data in savegames and settings`_.
+  `Saving custom data in save game and settings files`_.
 
-Save custom data in savegames and settings
+Saving custom data in save game and settings files
 ------------------------------------------
 
-As indicated above, both savegames and settings provide a specific field
-allowing the game developer to add custom data to be saved in these files. This
+As indicated above, both save game and settings files provide a specific field
+allowing the game developer to add custom data to these files. This
 section describes how to use these fields.
 
-In savegames
+Adding custom data to save game files
 ~~~~~~~~~~~~
 
 The :doc:`ESCSaveGame </api/ESCSaveSettings>` data structure provides a
-dictionary variable ``custom_data`` allowing saving any data in it.
+dictionary variable ``custom_data`` which custom data can be added to.
 
-This feature comes with a ``get_custom_data()`` function that needs to be
+This feature requires a ``get_custom_data()`` function to be
 implemented in the ``game.gd`` script of the game (extending ``ESCGame``). This
-function must return a Dictionary value that contains the custom data to be
+function must return a dictionary value that contains the custom data to be
 saved.
 
-When the ``ESCSaveManager.save_game()`` function is called,
+When the ``ESCSaveManager.save_game()`` function is called, the
 ``ESCGame.get_custom_data()`` function is automatically called and the returned
-Dictionary is then saved in the ``custom_data`` field of the savegame.
+dictionary is then saved in the ``custom_data`` field of the save game file.
 
 
-In settings
+Adding custom data to settings files
 ~~~~~~~~~~~
 
 The :doc:`ESCSaveSettings </api/ESCSaveSettings>` data structure contains a
-Dictionary variable ``custom_settings`` allowing saving any data in it.
+dictionary variable ``custom_settings`` where the developer can add any data they would like 
+to save.
 
 To save the custom settings, it is simply required to set the values to save,
 directly in ``escoria.settings.custom_settings`` Dictionary value. The
 ``escoria.settings`` parameter is directly saved as-is when the
 ``ESCSaveManager.save_settings()`` function is called to save the settings.
 
-This feature also comes with a ``apply_custom_settings()`` function that needs
+To make use of this feature, an ``apply_custom_settings()`` function needs
 to be implemented in the ``game.gd`` script of the game (extending
 ``ESCGame``). This function is automatically called by the
-``escoria.apply_settings()`` function, which is called right after the settings
-file is loaded.
+``escoria.apply_settings()`` function when the game starts, which is called 
+right after the settings file is loaded.
 
-How to manage migrations
+Managing migrations
 ------------------------
 
 With new versions of Escoria, certain built-in ESC variables may change their
 name. For this reason, upgrading the Escoria version could break older versions
-of a savegame. In the same way, along the development of the game, an ESC
+of a save game. In the same way, during the development of the game, an ESC
 variable or item id may change. It is then necessary to migrate old savegames
-that contain old names to replace them with new names.
+that contain the old names, replacing them with the new ones.
 
-Upon a savegame loading, Escoria automatically manages migrations between
-Escoria versions as well as migrations between game versions.
+When a save game file is loaded, Escoria will automatically initiate the migration between both 
+Escoria and game versions.
 
-Escoria migrations are automatically managed. This migration process is only
-described for exhaustivity purpose. Game versions migrations are obviously
-managed by the game developer.
+While Escoria migrations are automatically managed, migrations between Game versions 
+must be managed by the game developer. See `Game version migration`_ for details.
 
 Escoria migration
 ~~~~~~~~~~~~~~~~~
 
-At savegame loading, Escoria automatically performs a version check: if the
-Escoria version of the savegame is older than current Escoria version used by
+This section of the documentation is for informational purposes only. No developer
+interaction is required.
+
+During the loading of a save game, Escoria automatically performs a version check: if the
+Escoria version listed in the save game file is older than the current Escoria version used by
 the game, the :doc:`ESCMigrationManager.migrate() </api/ESCMigrationManager>`
-function is automatically called to convert the savegame to newer Escoria
+function is automatically called to convert the save game file to match the newer Escoria
 version.
 
 Game version migration
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The game must have a defined version set in Project Settings
+To make use of automated version migration, the game must have a version defined 
+in Godot's Project Settings under 
 ``escoria/main/game_version``. This game version number is saved in the
-savegame file. A version follows a ``x.y.z`` pattern where:
+save game file. The version follows a ``x.y.z`` pattern where:
 
-- ``x`` is the *major* version number
-- ``y`` is the *minor* version number
-- ``z`` is the *patch* version number
+- ``x`` is the *major* version number.
+- ``y`` is the *minor* version number.
+- ``z`` is the *patch* version number.
 
-Let's suppose that a savegame was created with game version ``1.0.0`` and is
-loaded in game version ``1.1.0``. Upon loading a ``1.0.0`` savegame, Escoria
-will migrate it to every intermediar version before migrating it to ``1.1.0``
-version. If required, all versions requiring a migration must have a migration
-script.
+Let's suppose that a save game file was created using game version ``1.0.0`` and is
+then loaded in game version ``1.1.0``. Upon loading the ``1.0.0`` savegame, Escoria
+will migrate it through every intermediary version (if any) before migrating it to the 
+``1.1.0`` version. Where migrations are required, all versions requiring a migration 
+must have an associated migration script.
 
-All game migration scripts are located in a given folder that Escoria will look
-into for migration scripts. This folder is set in Projects Settings, under
+All game migration scripts must be located in a migration scripts folder. 
+This folder is configured in Godot's Projects Settings, under
 ``escoria/main/game_migration_path``.
 
 A migration script filename must follow the version number pattern:
 ``x.y.z.gd``.
 
-Any migration script must extend :doc:`ESCMigration </api/ESCMigration>` class
-and implement the ``migrate()`` function. This function modifies the savegame
-content to move the former variables to the newer ones. To do so, ``self``
-object contains a member ``_savegame`` that allows the access to the savegame
-data described in `Loading and saving games`_ section.
+Any migration script must extend the :doc:`ESCMigration </api/ESCMigration>` class
+and implement the ``migrate()`` function. This function modifies the save game
+content to move the former variables to the newer ones. To do so, the ``self``
+object contains a member ``_savegame`` that allows access to the save game
+data described in the `Loading and saving games`_ section.
 
 .. code-block:: gdscript
 
