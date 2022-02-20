@@ -616,7 +616,12 @@ Inactive objects are invisible in the room.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Turns a movable ``ESCItem`` or ``ESCPlayer``.
+Turns a movable ``ESCItem`` or ``ESCPlayer`` to face a given angle:
+
+0 = North
+90 = East
+180 = South
+270 = West
 
 **Parameters**
 
