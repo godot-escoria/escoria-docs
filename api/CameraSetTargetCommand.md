@@ -8,14 +8,17 @@
 
 `camera_set_target speed object`
 
-Configures the camera to follow the specified target `object`
+Configures the camera to follow the specified target `object` as it moves
+around the current room. The transition to focus on the `object` will appen
+over a time period.
 
 **Parameters**
 
-- *speed*: Number of seconds the transition should take
+- *speed*: Number of seconds the transition should take to move the camera 
+  to follow `object`
 - *object*: Global ID of the target object
 
-For more details see: https://docs.escoria-framework.org/camera
+For more details see: https://docs.escoria-framework.org/en/devel/getting_started/camera.html
 
 @ESC
 

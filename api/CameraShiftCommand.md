@@ -8,7 +8,8 @@
 
 `camera_shift x y [time] [type]`
 
-Shifts the camera by the given horizontal and vertical amounts.
+Shifts the camera by the given horizontal and vertical amounts relative to the 
+current location.
 
 **Parameters**
 
@@ -23,7 +24,7 @@ in the "TransitionType" enum of the "Tween" type (without the "TRANS_" prefix):
 
 https://docs.godotengine.org/en/stable/classes/class_tween.html?highlight=tween#enumerations
 
-For more details see: https://docs.escoria-framework.org/camera
+For more details see: https://docs.escoria-framework.org/en/devel/getting_started/camera.html
 
 @ESC
 

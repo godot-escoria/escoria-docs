@@ -8,7 +8,9 @@
 
 `inventory_remove item`
 
-Removes an item from the inventory
+Removes an item from the inventory. You may wish to use this command in
+conjuction with the `set_active` command to show an item in the scene
+(simulating placing the item somewhere for example.)
 
 **Parameters**
 

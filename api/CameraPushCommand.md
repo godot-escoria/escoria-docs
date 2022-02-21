@@ -8,7 +8,9 @@
 
 `camera_push target [time] [type]`
 
-Pushes the camera to point at a specific `target`.
+Pushes (moves) the camera so it points at a specific `target`. If the camera 
+was following a target (like the player) previously, it will no longer follow
+this target. 
 
 **Parameters**
 
@@ -21,9 +23,9 @@ Pushes the camera to point at a specific `target`.
 Supported transitions include the names of the values used
 in the "TransitionType" enum of the "Tween" type (without the "TRANS_" prefix):
 
-https://docs.godotengine.org/en/stable/classes/class_tween.html?highlight=tween#enumerations
+See https://docs.godotengine.org/en/stable/classes/class_tween.html?highlight=tween#enumerations
 
-For more details see: https://docs.escoria-framework.org/camera
+For more details see: https://docs.escoria-framework.org/en/devel/getting_started/camera.html
 
 @ESC
 

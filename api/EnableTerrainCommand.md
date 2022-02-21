@@ -8,8 +8,10 @@
 
 `enable_terrain node_name`
 
-Enables the `ESCTerrain`'s `NavigationPolygonInstance` defined by the given node name.
-Disables previously-activated `NavigationPolygonInstance`.
+Enables the `ESCTerrain`'s `NavigationPolygonInstance` specified by the given 
+node name. Disables the previously-activated `NavigationPolygonInstance`.
+Use this to change where the player can walk, allowing them to walk into the
+next room once a door has been opened for example.
 
 **Parameters**
 

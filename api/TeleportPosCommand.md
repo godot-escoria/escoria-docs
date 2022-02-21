@@ -8,7 +8,7 @@
 
 `teleport_pos object x y`
 
-Instantly moves an object to the specified position
+Instantly moves an object to the specified (absolute) coordinates.
 
 **Parameters**
 

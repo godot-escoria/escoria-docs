@@ -8,9 +8,9 @@
 
 `anim object name [reverse]`
 
-Executes the animation specified in "name" on "object",
-without blocking. The next command in the event will be executed immediately
-after.
+Executes the animation specified in "name" on "object" without blocking.  
+The next command in the event will be executed immediately after the 
+animation is started.
 
 **Parameters**
 

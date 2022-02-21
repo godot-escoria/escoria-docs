@@ -8,7 +8,7 @@
 
 `camera_set_pos speed x y`
 
-Moves the camera to the given position.
+Moves the camera to the given absolute position over a time period.
 
 **Parameters**
 
@@ -16,7 +16,7 @@ Moves the camera to the given position.
 - *x*: Target X coordinate
 - "y*: Target Y coordinate
 
-For more details see: https://docs.escoria-framework.org/camera
+For more details see: https://docs.escoria-framework.org/en/devel/getting_started/camera.html
 
 @ESC
 

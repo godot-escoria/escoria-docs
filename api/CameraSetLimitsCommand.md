@@ -8,14 +8,18 @@
 
 `camera_set_limits camlimits_id`
 
-Activates the current camera's limits
+Limits the current camera's movement to a limit defined in the ESCRoom's 
+definition. A limit is defined as an upper-left x/y coordinate, a width
+and a height that the camera must stay within. Multiple limits can be
+defined for a room, allowing for new areas to be seen once they have
+been 'unlocked'.
 
 **Parameters**
 
-- *camlimits_id*: Index of the camera limit in the `camera limits`
+- *camlimits_id*: Index of the camera limit defined in the `camera limits`
   list of the current `ESCRoom`
 
-For more details see: https://docs.escoria-framework.org/camera
+For more details see: https://docs.escoria-framework.org/en/devel/getting_started/camera.html
 
 @ESC
 

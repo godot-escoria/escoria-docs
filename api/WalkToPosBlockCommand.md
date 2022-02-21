@@ -8,8 +8,8 @@
 
 `walk_to_pos_block object x y`
 
-Moves the specified `ESCPlayer` or movable `ESCItem` to the target
-position while playing `object`'s walking animation.
+Moves the specified `ESCPlayer` or movable `ESCItem` to the absolute
+coordinates provided while playing the `object`'s walking animation.
 This command is blocking.
 
 **Parameters**

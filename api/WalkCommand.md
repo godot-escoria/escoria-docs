@@ -8,8 +8,8 @@
 
 `walk object target [speed]`
 
-Moves the specified `ESCPlayer` or movable `ESCItem` to `target` w
-hile playing `object`'s walking animation. This command is non-blocking.
+Moves the specified `ESCPlayer` or movable `ESCItem` to `target` 
+while playing the `object`'s walking animation. This command is non-blocking.
 
 **Parameters**
 

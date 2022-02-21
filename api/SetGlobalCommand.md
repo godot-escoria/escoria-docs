@@ -13,9 +13,12 @@ Changes the value of a global.
 **Parameters**
 
 - *name*: Name of the global
-- *value*: Value to set (can be of type string, boolean, integer or float)
+- *value*: Value to set the global to (can be of type string, boolean, integer
+  or float)
 
-@ESC
+
+
+
 
 ## Method Descriptions
 

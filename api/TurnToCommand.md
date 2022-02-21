@@ -16,7 +16,7 @@ Turns `object` to face another object.
 - *object_to_face*: Global ID of the object to turn towards
 - *wait*: Length of time to wait in seconds for each intermediate angle.
   If set to 0, the turnaround is immediate (default: `0`)
-#
+
 @ESC
 
 ## Method Descriptions

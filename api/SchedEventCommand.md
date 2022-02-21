@@ -8,10 +8,10 @@
 
 `sched_event time object event`
 
-Schedules the execution to run at a later time.
+Schedules an event to run at a later time.
 
 If another event is already running when the scheduled
-event is to start, execution of the scheduled event
+event is supposed to start, execution of the scheduled event
 begins when the already-running event ends.
 
 **Parameters**

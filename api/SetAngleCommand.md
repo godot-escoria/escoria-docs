@@ -8,7 +8,10 @@
 
 `set_angle object degrees [wait]`
 
-Turns a movable `ESCItem` or `ESCPlayer`.
+Turns a movable `ESCItem` or `ESCPlayer` to face a given angle.
+
+Angles 0 and 360 are the same and correspond to UP/NORTH,
+90 is RIGHT/EAST, 180 is DOWN/SOUTH, 270 is LEFT/WEST etc.
 
 **Parameters**
 

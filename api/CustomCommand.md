@@ -8,14 +8,15 @@
 
 `custom object node func_name [params]`
 
-Calls the given Godot function on a (child) node of a registered `ESCitem`.
+Executes the specified Godot function. This function must be in a script
+attached to a child node of an `ESCitem`.
 
 **Parameters**
 
 - *object*: Global ID of the target `ESCItem`
 - *node*: Name of the child node of the target `ESCItem`
 - *func_name*: Name of the function to be called
-- *params*: Any primitive, non-array arguments for the function. Multiple
+- *params*: Any non-array arguments to be passed to the function. Multiple
   parameters can be passed by using comma-separated values inside a string
 
 @ESC

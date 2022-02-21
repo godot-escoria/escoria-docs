@@ -8,13 +8,13 @@
 
 `set_active object active`
 
-Changes the "active" state of the object. `active` can be `true` or `false`.
+Changes the "active" state of the object. 
 Inactive objects are invisible in the room.
 
 **Parameters**
 
 - *object* Global ID of the object
-- *active* Whether `object` should be active.
+- *active* Whether `object` should be active. `active` can be `true` or `false`.
 
 @ESC
 

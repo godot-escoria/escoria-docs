@@ -8,21 +8,23 @@
 
 `accept_input [type]`
 
-Sets how much input the game is to accept, allowing for cut scenes
-in which dialog can be skipped (if [type] is set to SKIP).
-Also allows for cut scenes that can be completely locked down.
+Sets how much input the game is to accept. This allows for cut scenes
+in which dialog can be skipped (if [type] is set to SKIP), and ones where
+it can't (if [type] is set to NONE).
+
 
 **Parameters**
 
 - *type*: Type of inputs to accept (ALL)
-  `ALL`: Accept all types of input
+  `ALL`: Accept all types of user input
   `SKIP`: Accept skipping dialogs but nothing else
   `NONE`: Deny all inputs (including opening menus)
 
 **Warning**: `SKIP` and `NONE` also disable autosaves.
 
-**Warning**: The type of input accepted will persist even after the current
-event has ended.
+**Warning**: The type of use input accepted will persist even after the 
+current event has ended. Remember to reset the input type at the end of
+cut-scenes!
 
 @ESC
 

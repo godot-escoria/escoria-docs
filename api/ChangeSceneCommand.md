@@ -8,7 +8,9 @@
 
 `change_scene path [enable_automatic_transition] [run_events]`
 
-Switches the current scene to another scene
+Switches the game from the current scene to another scene. Use this to move
+the player to a new room when they walk through an unlocked door for 
+example.
 
 **Parameters**
 
