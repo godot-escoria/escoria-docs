@@ -12,20 +12,21 @@ save game files can optionally contain user-defined settings.
 Loading and saving games
 ------------------------
 
-Escoria manages save games using numbered slots. A save game slot is required to 
-be provided as part of the save game function call.  If the given slot already has a 
-save game, that saved game will be overwritten. The 
-:doc:`ESCSaveManager.load_game() </api/ESCSaveManager>` function can be used 
-to give the player the opportunity to choose whether to overwrite the existing save 
-game or not. 
+Escoria manages save games using numbered slots. A save game slot is required
+to be provided as part of the save game function call.  If the given slot
+already has a save game, that saved game will be overwritten. The
+:doc:`ESCSaveManager.load_game() </api/ESCSaveManager>` function can be used to
+give the player the opportunity to choose whether to overwrite the existing
+save game or not.
 
 There is no limitation on the number of save slots that can be used.
 
 Saving a game is as simple as calling the :doc:`ESCSaveManager.save_game()
 </api/ESCSaveManager>` function.
 
-Files are saved to the folder specified in the Godot's Project Settings under 
-``escoria/main/game_version``. If not changed, the default is '<game folder>/saves'.
+Files are saved to the folder specified in the Godot's Project Settings under
+``escoria/main/game_version``. If not changed, the default is '<game
+folder>/saves'.
 
 Loading a game works the same way, using a slot number to load the
 relevant save game. To load a game, simply call
@@ -34,8 +35,9 @@ relevant save game. To load a game, simply call
 Attempting to load a saved game that doesn't exist will result in an error
 message being displayed ("Save file <id> doesn't exist").
 
-Files are loaded from the folder specified in the Godot's Project Settings under 
-``escoria/main/game_version``. If not changed, the default is '<game folder>/saves'.
+Files are loaded from the folder specified in the Godot's Project Settings
+under ``escoria/main/game_version``. If not changed, the default is '<game
+folder>/saves'.
 
 .. code-block:: gdscript
 
@@ -49,7 +51,7 @@ Loading and saving settings
 ---------------------------
 
 Game settings are loaded when the game is run. If no settings file exists, a
-new one is created with default values. 
+new one is created with default values.
 
 It is not required to manage settings saving and loading if the player is not
 supposed to change one of them. Otherwise, settings should be saved. It is the
