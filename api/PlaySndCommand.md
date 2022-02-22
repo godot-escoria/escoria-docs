@@ -8,7 +8,7 @@
 
 `play_snd file [player]`
 
-Plays the specified sound without blocking the running event.
+Plays the specified sound without blocking the currently running event.
 
 **Parameters**
 
