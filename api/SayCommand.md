@@ -8,7 +8,7 @@
 
 `say player text [type]`
 
-Displays the specified string as dialog spoken by the player. Thic command
+Displays the specified string as dialog spoken by the player. This command
 blocks further event execution until the dialog has finished being 'said'
 (either as displayed text or as a speech file).
 
