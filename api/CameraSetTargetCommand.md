@@ -9,7 +9,7 @@
 `camera_set_target speed object`
 
 Configures the camera to follow the specified target `object` as it moves
-around the current room. The transition to focus on the `object` will appen
+around the current room. The transition to focus on the `object` will happen
 over a time period.
 
 **Parameters**
