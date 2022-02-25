@@ -285,8 +285,8 @@ Activates the current camera's limits
 For more details see: https://docs.escoria-framework.org/camera
 
 
-``camera_set_pos speed x y`` `API-Doc </api/CameraSetPosCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``camera_set_pos time x y`` `API-Doc </api/CameraSetPosCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Moves the camera to the given position.
@@ -294,15 +294,15 @@ Moves the camera to the given position.
 **Parameters**
 
 
-* *speed*\ : Number of seconds the transition should take
+* *time*\ : Number of seconds the transition should take
 * *x*\ : Target X coordinate
 * "y*: Target Y coordinate
 
 For more details see: https://docs.escoria-framework.org/camera
 
 
-``camera_set_target speed object`` `API-Doc </api/CameraSetTargetCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``camera_set_target time object`` `API-Doc </api/CameraSetTargetCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Configures the camera to follow the specified target ``object``
@@ -310,7 +310,7 @@ Configures the camera to follow the specified target ``object``
 **Parameters**
 
 
-* *speed*\ : Number of seconds the transition should take
+* *time*\ : Number of seconds the transition should take
 * *object*\ : Global ID of the target object
 
 For more details see: https://docs.escoria-framework.org/camera

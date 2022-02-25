@@ -31,14 +31,14 @@ func set_drag_margin_enabled(p_dm_h_enabled, p_dm_v_enabled)
 ### set\_target
 
 ```gdscript
-func set_target(p_target, p_speed: float = 0)
+func set_target(p_target, p_time: float = 0)
 ```
 
 Set the target for the camera
 
 #### Parameters
 - p_target: Object to target
-- p_speed: Number of seconds for the camera to reach the target
+- p_time: Number of seconds for the camera to reach the target
 
 ### set\_camera\_zoom
 
