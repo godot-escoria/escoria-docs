@@ -27,6 +27,16 @@ For more details see: https://docs.escoria-framework.org/camera
 
 @ESC
 
+## Constants Descriptions
+
+### SUPPORTED\_TRANSITIONS
+
+```gdscript
+const SUPPORTED_TRANSITIONS: Array = ["LINEAR","SINE","QUINT","QUART","QUAD","EXPO","ELASTIC","CUBIC","CIRC","BOUNCE","BACK"]
+```
+
+The list of supported transitions as per the link mentioned above
+
 ## Method Descriptions
 
 ### configure
