@@ -8,6 +8,18 @@
 
 The descriptor of the arguments of an ESC command
 
+## Constants Descriptions
+
+### GODOT\_TYPE\_LIST
+
+```gdscript
+const GODOT_TYPE_LIST: Array = ["nil","bool","int","real","string","vector2","rect2","vector3","matrix32","plane","quat","aabb","matrix3","transform","color","image","node_path","rid","object","input_event","dictionary","array","raw_array","int_array","real_array","string_array","vector2_array","vector3_array","color_array","max"]
+```
+
+As the get_type command was deprecated with Godot 2.x w we need a way to determine
+variable types. Ideally these wouldn't be hardcoded but there's no GDScript 3.x command to
+turn a type back to its name.
+
 ## Property Descriptions
 
 ### min\_args
