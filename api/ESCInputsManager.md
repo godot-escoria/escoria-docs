@@ -71,6 +71,24 @@ var hotspot_focused: String = ""
 
 The global id of the topmost item from the hover_stack
 
+### custom\_input\_handler
+
+```gdscript
+var custom_input_handler
+```
+
+Function reference that can be used to intercept and process input events.
+If set, this function must have the following signature:
+
+(event: InputEvent, is_default_state: bool) -> bool
+
+#### Parameters
+
+- event: The event to process
+- is_default_state: Whether the current state is escoria.GAME_STATE.DEFAULT
+
+**Returns** Whether the function processed the event.
+
 ## Method Descriptions
 
 ### register\_core
@@ -94,6 +112,46 @@ Connect the item signals to the local methods
 ```gdscript
 func register_background(background: ESCBackground)
 ```
+
+### register\_custom\_input\_handler
+
+```gdscript
+func register_custom_input_handler(callback) -> void
+```
+
+Registers a function that can be used to intercept and process input events.
+`callback` must have the following signature:
+
+(event: InputEvent, is_default_state: bool) -> bool
+
+where
+
+- event: The event to process
+- is_default_state: Whether the current state is escoria.GAME_STATE.DEFAULT
+- returns whether the function processed the event
+
+`callback` is responsible for calling `get_tree().set_input_as_handled()`,
+if appropriate.
+
+#### Parameters
+- callback: Function reference satisfying the above contract
+
+### try\_custom\_input\_handler
+
+```gdscript
+func try_custom_input_handler(event: InputEvent, is_default_state: bool) -> bool
+```
+
+If a callback was specified via `register_custom_input_handler()`,
+forwards the event to the callback and returns its result; otherwise,
+returns `false`.
+
+#### Parameters
+
+- event: The event to process
+- is_default_state: Whether the current state is escoria.GAME_STATE.DEFAULT
+
+**Returns** Result of `custom_input_handler` if set; otherwise, `false`
 
 ### clear\_stack
 
