@@ -180,7 +180,7 @@ Clears the event queues.
 func is_channel_free(name: String) -> bool
 ```
 
-Check wether a channel is free to run more events
+Check whether a channel is free to run more events
 
 #### Parameters
 - name: Name of the channel to test

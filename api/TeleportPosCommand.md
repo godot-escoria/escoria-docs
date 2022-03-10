@@ -8,7 +8,7 @@
 
 `teleport_pos object x y`
 
-Instantly moves an object to the specified position
+Instantly moves an object to the specified (absolute) coordinates.
 
 **Parameters**
 
@@ -34,7 +34,7 @@ Return the descriptor of the arguments of this command
 func validate(arguments: Array)
 ```
 
-Validate wether the given arguments match the command descriptor
+Validate whether the given arguments match the command descriptor
 
 ### run
 

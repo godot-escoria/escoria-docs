@@ -8,14 +8,15 @@
 
 `walk object target [speed]`
 
-Moves the specified `ESCPlayer` or movable `ESCItem` to `target` w
-hile playing `object`'s walking animation. This command is non-blocking.
+Moves the specified `ESCPlayer` or movable `ESCItem` to `target`
+while playing the `object`'s walking animation. This command is non-blocking.
 
 **Parameters**
 
 - *object*: Global ID of the object to move
 - *target*: Global ID of the target object
-- *speed*: Walking speed to use (default: `object`'s default speed)
+- *speed*: The speed the `object` will walk in pixels per second (will
+  default to the speed configured on the `object`)
 
 @ESC
 
@@ -35,7 +36,7 @@ Return the descriptor of the arguments of this command
 func validate(arguments: Array)
 ```
 
-Validate wether the given arguments match the command descriptor
+Validate whether the given arguments match the command descriptor
 
 ### run
 

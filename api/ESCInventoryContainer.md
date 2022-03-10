@@ -16,7 +16,7 @@ Inventory container handler that acts as a base for UIs inventory containers
 func is_empty() -> bool
 ```
 
-Get wether the inventory container currently is empty
+Get whether the inventory container currently is empty
 **Returns** Wether the container is empty or not
 
 ### add\_item

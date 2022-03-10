@@ -13,7 +13,7 @@ Sets the speed of a `ESCPlayer` or movable `ESCItem`.
 **Parameters**
 
 - *object*: Global ID of the `ESCPlayer` or movable `ESCItem`
-- *speed*: Speed value for `object`
+- *speed*: Speed value for `object` in pixels per second.
 
 @ESC
 
@@ -33,7 +33,7 @@ Return the descriptor of the arguments of this command
 func validate(arguments: Array)
 ```
 
-Validate wether the given arguments match the command descriptor
+Validate whether the given arguments match the command descriptor
 
 ### run
 

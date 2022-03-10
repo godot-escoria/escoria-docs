@@ -8,17 +8,7 @@
 
 `set_angle object degrees [wait]`
 
-Turns a movable `ESCItem` or `ESCPlayer`.
-
-**Parameters**
-
-- *object*: Global ID of the object to turn
-- *degrees*: Number of degrees by which `object` is to be turned
-- *wait*: Number of seconds to wait for each animation occurring between the
-  current angle of `object` and the angle specified. A value of `0` will
-  complete the turn immediately (default: `0`)
-
-@ESC
+Turns a movable `ESCItem` or `ESCPlayer` to face a given angle.
 
 ## Method Descriptions
 
@@ -36,7 +26,7 @@ Return the descriptor of the arguments of this command
 func validate(arguments: Array)
 ```
 
-Validate wether the given arguments match the command descriptor
+Validate whether the given arguments match the command descriptor
 
 ### run
 

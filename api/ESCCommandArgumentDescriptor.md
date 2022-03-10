@@ -78,4 +78,4 @@ Combine the default argument values with the given arguments
 func validate(command: String, arguments: Array) -> bool
 ```
 
-Validate wether the given arguments match the command descriptor
+Validate whether the given arguments match the command descriptor

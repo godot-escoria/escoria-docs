@@ -8,8 +8,8 @@
 
 `walk_to_pos object x y`
 
-Moves the specified `ESCPlayer` or movable `ESCItem` to the target
-position while playing `object`'s walking animation.
+Moves the specified `ESCPlayer` or movable `ESCItem` to the absolute
+coordinates provided while playing the `object`'s walking animation.
 This command is non-blocking.
 
 **Parameters**
@@ -36,7 +36,7 @@ Return the descriptor of the arguments of this command
 func validate(arguments: Array)
 ```
 
-Validate wether the given arguments match the command descriptor
+Validate whether the given arguments match the command descriptor
 
 ### run
 

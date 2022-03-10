@@ -8,7 +8,7 @@
 
 `set_interactive object interactive`
 
-Sets whether an object should be interactive.
+Sets whether an object is interactive.
 
 **Parameters**
 
@@ -33,7 +33,7 @@ Return the descriptor of the arguments of this command
 func validate(arguments: Array)
 ```
 
-Validate wether the given arguments match the command descriptor
+Validate whether the given arguments match the command descriptor
 
 ### run
 

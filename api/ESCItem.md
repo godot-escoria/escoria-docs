@@ -335,7 +335,7 @@ Set the moving speed
 func has_moved() -> bool
 ```
 
-Check wether this item moved
+Check whether this item moved
 
 ### get\_sprite
 

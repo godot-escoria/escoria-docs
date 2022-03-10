@@ -20,8 +20,8 @@ export var dir_angles: Array = []
 Array containing the different angles available for animations.
 Each angle is defined by an array [start_angle, angle_size].
 start_angle must be between 0 and 360.
-Angle 0 and 360 are the same and correspond to UP/NORTH
-90 is RIGHT/EAST, 180 is DOWN/SOUTH, etc
+Angles 0 and 360 are the same and correspond to UP/NORTH,
+90 is RIGHT/EAST, 180 is DOWN/SOUTH, 270 is LEFT/WEST etc.
 
 ### directions
 

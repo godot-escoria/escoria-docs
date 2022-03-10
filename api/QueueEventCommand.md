@@ -8,7 +8,7 @@
 
 `queue_event object event [channel] [block]`
 
-Queue another event to run
+Queue an event to run.
 
 **Parameters**
 
@@ -37,7 +37,7 @@ Return the descriptor of the arguments of this command
 func validate(arguments: Array)
 ```
 
-Validate wether the given arguments match the command descriptor
+Validate whether the given arguments match the command descriptor
 
 ### run
 

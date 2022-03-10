@@ -8,9 +8,9 @@
 
 `anim object name [reverse]`
 
-Executes the animation specified in "name" on "object",
-without blocking. The next command in the event will be executed immediately
-after.
+Executes the animation specified in "name" on "object" without blocking.
+The next command in the event will be executed immediately after the
+animation is started.
 
 **Parameters**
 
@@ -36,7 +36,7 @@ Return the descriptor of the arguments of this command
 func validate(arguments: Array)
 ```
 
-Validate wether the given arguments match the command descriptor
+Validate whether the given arguments match the command descriptor
 
 ### run
 

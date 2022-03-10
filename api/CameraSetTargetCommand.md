@@ -8,11 +8,14 @@
 
 `camera_set_target time object`
 
-Configures the camera to follow the specified target `object`
+Configures the camera to follow the specified target `object` as it moves
+around the current room. The transition to focus on the `object` will happen
+over a time period.
 
 **Parameters**
 
-- *time*: Number of seconds the transition should take
+- *time*: Number of seconds the transition should take to move the camera
+  to follow `object`
 - *object*: Global ID of the target object
 
 For more details see: https://docs.escoria-framework.org/camera
@@ -35,7 +38,7 @@ Return the descriptor of the arguments of this command
 func validate(arguments: Array)
 ```
 
-Validate wether the given arguments match the command descriptor
+Validate whether the given arguments match the command descriptor
 
 ### run
 

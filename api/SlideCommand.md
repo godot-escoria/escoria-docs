@@ -13,7 +13,8 @@ non-blocking.
 
 - *object*: Global ID of the object to move
 - *target*: Global ID of the target object
-- *speed*: Movement speed (default: the default speed of `object`)
+- *speed*: The speed at which to slide in pixels per second (will default to
+  the speed configured on the `object`)
 
 **Warning** This command does not respect the room's navigation polygons, so
 `object` can be moved even when outside walkable areas.
@@ -36,7 +37,7 @@ Return the descriptor of the arguments of this command
 func validate(arguments: Array)
 ```
 
-Validate wether the given arguments match the command descriptor
+Validate whether the given arguments match the command descriptor
 
 ### run
 

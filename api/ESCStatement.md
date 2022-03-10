@@ -34,7 +34,7 @@ Indicates whether this event was finished.
 func is_valid() -> bool
 ```
 
-Check wether the statement should be run based on its conditions
+Check whether the statement should be run based on its conditions
 
 ### run
 

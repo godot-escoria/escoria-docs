@@ -71,7 +71,7 @@ Register the object in the manager
 func has(global_id: String) -> bool
 ```
 
-Check wether an object was registered
+Check whether an object was registered
 
 #### Parameters
 

@@ -8,12 +8,13 @@
 
 `teleport object target`
 
-Instantly moves an object to a new position
+Instantly moves an object to a new position.
 
 **Parameters**
 
 - *object*: Global ID of the object to move
-- *target*: Global ID of the target object to use as the destination
+- *target*: Global ID of the object to use as the destination coordinates
+  for `object`
 
 @ESC
 
@@ -33,7 +34,7 @@ Return the descriptor of the arguments of this command
 func validate(arguments: Array)
 ```
 
-Validate wether the given arguments match the command descriptor
+Validate whether the given arguments match the command descriptor
 
 ### run
 

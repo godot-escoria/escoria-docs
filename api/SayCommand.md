@@ -8,8 +8,9 @@
 
 `say player text [type]`
 
-Displays the specified string as dialog spoken by the player. Blocks execution
-until the dialog has finished playing.
+Displays the specified string as dialog spoken by the player. This command
+blocks further event execution until the dialog has finished being 'said'
+(either as displayed text or as audible speech from a file).
 
 **Parameters**
 
@@ -41,7 +42,7 @@ Return the descriptor of the arguments of this command
 func validate(arguments: Array)
 ```
 
-Validate wether the given arguments match the command descriptor
+Validate whether the given arguments match the command descriptor
 
 ### run
 

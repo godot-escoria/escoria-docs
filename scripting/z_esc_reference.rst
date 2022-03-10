@@ -197,31 +197,33 @@ List of commands
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Sets how much input the game is to accept, allowing for cut scenes
-in which dialog can be skipped (if [type] is set to SKIP).
-Also allows for cut scenes that can be completely locked down.
+Sets how much input the game is to accept. This allows for cut scenes
+in which dialogue can be skipped (if [type] is set to SKIP), and ones where
+it can't (if [type] is set to NONE).
 
 **Parameters**
 
 
 * *type*\ : Type of inputs to accept (ALL)
-  ``ALL``\ : Accept all types of input
-  ``SKIP``\ : Accept skipping dialogs but nothing else
+  ``ALL``\ : Accept all types of user input
+  ``SKIP``\ : Accept skipping dialogues but nothing else
   ``NONE``\ : Deny all inputs (including opening menus)
 
 **Warning**\ : ``SKIP`` and ``NONE`` also disable autosaves.
 
-**Warning**\ : The type of input accepted will persist even after the current
-event has ended.
+**Warning**\ : The type of user input accepted will persist even after the
+current event has ended. Remember to reset the input type at the end of
+cut-scenes!
 
 
 ``anim_block object name [reverse]`` `API-Doc </api/AnimBlockCommand.html>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Executes the animation specified in "name" on "object",
-while blocking. The next command in the event will be executed when the animation
-is finished playing.
+Executes the animation specified in "name" on "object" while blocking other
+events from starting.
+The next command in the event will be executed when the animation is
+finished playing.
 
 **Parameters**
 
@@ -235,9 +237,9 @@ is finished playing.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Executes the animation specified in "name" on "object",
-without blocking. The next command in the event will be executed immediately
-after.
+Executes the animation specified in "name" on "object" without blocking.
+The next command in the event will be executed immediately after the
+animation is started.
 
 **Parameters**
 
@@ -251,7 +253,9 @@ after.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Pushes the camera to point at a specific ``target``.
+Pushes (moves) the camera so it points at a specific ``target``. If the camera
+was following a target (like the player) previously, it will no longer follow
+this target.
 
 **Parameters**
 
@@ -265,7 +269,7 @@ Pushes the camera to point at a specific ``target``.
 Supported transitions include the names of the values used
 in the "TransitionType" enum of the "Tween" type (without the "TRANS_" prefix):
 
-https://docs.godotengine.org/en/stable/classes/class_tween.html?highlight=tween#enumerations
+See https://docs.godotengine.org/en/stable/classes/class_tween.html?highlight=tween#enumerations
 
 For more details see: https://docs.escoria-framework.org/camera
 
@@ -274,12 +278,16 @@ For more details see: https://docs.escoria-framework.org/camera
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Activates the current camera's limits
+Limits the current camera's movement to a limit defined in the ``ESCRoom``\ 's
+definition. A limit is defined as an upper-left (x, y) coordinate, a width
+and a height that the camera must stay within. Multiple limits can be
+defined for a room, allowing for new areas to be seen once they have
+been 'unlocked'.
 
 **Parameters**
 
 
-* *camlimits_id*\ : Index of the camera limit in the ``camera limits``
+* *camlimits_id*\ : Index of the camera limit defined in the ``camera limits``
   list of the current ``ESCRoom``
 
 For more details see: https://docs.escoria-framework.org/camera
@@ -289,7 +297,7 @@ For more details see: https://docs.escoria-framework.org/camera
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Moves the camera to the given position.
+Moves the camera to the given absolute position over a time period.
 
 **Parameters**
 
@@ -305,12 +313,15 @@ For more details see: https://docs.escoria-framework.org/camera
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Configures the camera to follow the specified target ``object``
+Configures the camera to follow the specified target ``object`` as it moves
+around the current room. The transition to focus on the ``object`` will happen
+over a time period.
 
 **Parameters**
 
 
-* *time*\ : Number of seconds the transition should take
+* *time*\ : Number of seconds the transition should take to move the camera
+  to follow ``object``
 * *object*\ : Global ID of the target object
 
 For more details see: https://docs.escoria-framework.org/camera
@@ -320,9 +331,11 @@ For more details see: https://docs.escoria-framework.org/camera
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Zooms the camera in/out to the desired ``magnitude``. Values larger than 1 zoom
-the camera out while smaller values zoom in, relative to the default value
-of 1.
+Zooms the camera in/out to the desired ``magnitude``. Values larger than '1' zoom
+the camera out while smaller values zoom in. These values are relative to the
+default zoom value of '1', not the current value. As such, while using a value
+of '0.5' would double the size of the graphics, running the same command again
+would result in no change. The zoom will happen over the given time period.
 
 **Parameters**
 
@@ -338,7 +351,7 @@ For more details see: https://docs.escoria-framework.org/camera
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Zooms the camera in/out so it occupies the given height in pixels
+Zooms the camera in/out so it occupies the given height in pixels.
 
 **Parameters**
 
@@ -354,7 +367,8 @@ For more details see: https://docs.escoria-framework.org/camera
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Shifts the camera by the given horizontal and vertical amounts.
+Shifts the camera by the given horizontal and vertical amounts relative to the
+current location.
 
 **Parameters**
 
@@ -377,7 +391,9 @@ For more details see: https://docs.escoria-framework.org/camera
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Switches the current scene to another scene
+Switches the game from the current scene to another scene. Use this to move
+the player to a new room when they walk through an unlocked door, for
+example.
 
 **Parameters**
 
@@ -392,7 +408,8 @@ Switches the current scene to another scene
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Calls the given Godot function on a (child) node of a registered ``ESCitem``.
+Executes the specified Godot function. This function must be in a script
+attached to a child node of a registered ``ESCitem``.
 
 **Parameters**
 
@@ -400,7 +417,7 @@ Calls the given Godot function on a (child) node of a registered ``ESCitem``.
 * *object*\ : Global ID of the target ``ESCItem``
 * *node*\ : Name of the child node of the target ``ESCItem``
 * *func_name*\ : Name of the function to be called
-* *params*\ : Any primitive, non-array arguments for the function. Multiple
+* params: Any arguments to be passed to the function (array and object parameters are not supported). Multiple
   parameters can be passed by using comma-separated values inside a string
 
 
@@ -433,8 +450,11 @@ Subtract the given value from the specified global.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Enables the ``ESCTerrain``\ 's ``NavigationPolygonInstance`` defined by the given node name.
-Disables previously-activated ``NavigationPolygonInstance``.
+Enables the ``ESCTerrain``\ 's ``NavigationPolygonInstance`` specified by the given
+node name. It will also disable the previously-activated
+``NavigationPolygonInstance``.
+Use this to change where the player can walk, allowing them to walk into the
+next room once a door has been opened, for example.
 
 **Parameters**
 
@@ -446,12 +466,19 @@ Disables previously-activated ``NavigationPolygonInstance``.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Hides either the main menu or the pause menu.
+Hides either the main menu or the pause menu. The enable_automatic_transition
+parameter can be used to specify if Escoria manages the graphical transition
+for you or not.
+Setting ``enable_automatic_transition`` to false allows you to manage the
+transition effect for your room as it transitions in and out. Place a
+``transition`` command in the room's ``setup`` event to manage the look of the
+transition in, and in the room's ``exit_scene`` event to manage the look of the
+transition out.
 
 **Parameters**
 
 
-* *menu_type*\ : Type of menu to hide. Can be either ``main`` or ``pause`` (default: ``main``\ )
+* *menu_type*\ : Which menu to hide. Can be either ``main`` or ``pause`` (default: ``main``\ )
 * *enable_automatic_transition*\ : Whether to automatically transition from the menu (default: ``false``\ )
 
 
@@ -472,7 +499,9 @@ Adds the given value to the specified global.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Adds an item to the inventory.
+Adds an item to the inventory. If the player is picking up an object, you may
+want to use this command in conjunction with the ``set_active`` command so that
+the object 'disappears' from the scene as it's added to the inventory.
 
 **Parameters**
 
@@ -484,7 +513,9 @@ Adds an item to the inventory.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Removes an item from the inventory
+Removes an item from the inventory. You may wish to use this command in
+conjuction with the ``set_active`` command to show an item in the scene,
+simulating placing the item somewhere, for example.
 
 **Parameters**
 
@@ -496,7 +527,7 @@ Removes an item from the inventory
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Plays the specified sound without blocking the event.
+Plays the specified sound without blocking the currently running event.
 
 **Parameters**
 
@@ -511,7 +542,7 @@ Plays the specified sound without blocking the event.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Queue another event to run
+Queue an event to run.
 
 **Parameters**
 
@@ -563,8 +594,9 @@ group or an event.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Displays the specified string as dialog spoken by the player. Blocks execution
-until the dialog has finished playing.
+Displays the specified string as dialog spoken by the player. This command
+blocks further event execution until the dialog has finished being 'said'
+(either as displayed text or as audible speech from a file).
 
 **Parameters**
 
@@ -584,10 +616,10 @@ Example: ``say player ROOM1_PICTURE:"Picture's looking good."``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Schedules the execution to run at a later time.
+Schedules an event to run at a later time.
 
 If another event is already running when the scheduled
-event is to start, execution of the scheduled event
+event is supposed to start, execution of the scheduled event
 begins when the already-running event ends.
 
 **Parameters**
@@ -602,30 +634,14 @@ begins when the already-running event ends.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Changes the "active" state of the object. ``active`` can be ``true`` or ``false``.
+Changes the "active" state of the object.
 Inactive objects are invisible in the room.
 
 **Parameters**
 
 
 * *object* Global ID of the object
-* *active* Whether ``object`` should be active.
-
-
-``set_angle object degrees [wait]`` `API-Doc </api/SetAngleCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Turns a movable ``ESCItem`` or ``ESCPlayer``.
-
-**Parameters**
-
-
-* *object*\ : Global ID of the object to turn
-* *degrees*\ : Number of degrees by which ``object`` is to be turned
-* *wait*\ : Number of seconds to wait for each animation occurring between the
-  current angle of ``object`` and the angle specified. A value of ``0`` will
-  complete the turn immediately (default: ``0``\ )
+* *active* Whether ``object`` should be active. ``active`` can be ``true`` or ``false``.
 
 
 ``set_animations object animations`` `API-Doc </api/SetAnimationsCommand.html>`__
@@ -651,7 +667,8 @@ Changes the value of a global.
 
 
 * *name*\ : Name of the global
-* *value*\ : Value to set (can be of type string, boolean, integer or float)
+* *value*\ : Value to set the global to (can be of type string, boolean, integer
+  or float)
 
 
 ``set_globals pattern value`` `API-Doc </api/SetGlobalsCommand.html>`__
@@ -673,19 +690,19 @@ character except a period (".").
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Shows or hide the GUI.
+Show or hide the GUI.
 
 **Parameters**
 
 
-* *visible*\ : Whether the GUI should be visible
+* *visible*\ : Whether the GUI should be visible (\ ``true`` or ``false``\ )
 
 
 ``set_interactive object interactive`` `API-Doc </api/SetInteractiveCommand.html>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Sets whether an object should be interactive.
+Sets whether an object is interactive.
 
 **Parameters**
 
@@ -704,7 +721,7 @@ Sets the speed of a ``ESCPlayer`` or movable ``ESCItem``.
 
 
 * *object*\ : Global ID of the ``ESCPlayer`` or movable ``ESCItem``
-* *speed*\ : Speed value for ``object``
+* *speed*\ : Speed value for ``object`` in pixels per second.
 
 
 ``set_state object state [immediate]`` `API-Doc </api/SetStateCommand.html>`__
@@ -731,12 +748,16 @@ character. See https://docs.escoria-framework.org/states for details.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Shows either the main menu or the pause menu.
+Shows either the main menu or the pause menu. The enable_automatic_transition
+parameter can be used to specify if Escoria manages the graphical transition to
+the menu or not. If set to false, you can manage the transition yourself
+instead (if you want to change the transition type from the default for
+example) using the ``transition`` command.
 
 **Parameters**
 
 
-* *menu_type*\ : Type of menu to hide. Can be either ``main`` or ``pause`` (default: ``main``\ )
+* *menu_type*\ : Which menu to show. Can be either ``main`` or ``pause`` (default: ``main``\ )
 * *enable_automatic_transition*\ : Whether to automatically transition to the menu (default: ``false``\ )
 
 
@@ -750,7 +771,8 @@ blocking.
 
 * *object*\ : Global ID of the object to move
 * *target*\ : Global ID of the target object
-* *speed*\ : Movement speed (default: the default speed of ``object``\ )
+* *speed*\ : The speed at which to slide in pixels per second (will default to
+  the speed configured on the ``object``\ )
 
 **Warning** This command does not respect the room's navigation polygons, so
 ``object`` can be moved even when outside walkable areas.
@@ -766,7 +788,8 @@ non-blocking.
 
 * *object*\ : Global ID of the object to move
 * *target*\ : Global ID of the target object
-* *speed*\ : Movement speed (default: the default speed of ``object``\ )
+* *speed*\ : The speed at which to slide in pixels per second (will default to
+  the speed configured on the ``object``\ )
 
 **Warning** This command does not respect the room's navigation polygons, so
 ``object`` can be moved even when outside walkable areas.
@@ -785,7 +808,7 @@ Programmatically adds a new item to the scene.
 * *path*\ : Path to the scene file of the object
 * *is_active*\ : Whether the new object should be set to active (default: ``true``\ )
 * *position_target*\ : Global ID of another object that will be used to
-  position the new object (when omitted, the new objet's position is not specified)
+  position the new object (when omitted, the new object's position is not specified)
 
 
 ``stop`` `API-Doc </api/StopCommand.html>`__
@@ -813,20 +836,21 @@ Stops the given sound player's stream.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Instantly moves an object to a new position
+Instantly moves an object to a new position.
 
 **Parameters**
 
 
 * *object*\ : Global ID of the object to move
-* *target*\ : Global ID of the target object to use as the destination
+* *target*\ : Global ID of the object to use as the destination coordinates
+  for ``object``
 
 
 ``teleport_pos object x y`` `API-Doc </api/TeleportPosCommand.html>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Instantly moves an object to the specified position
+Instantly moves an object to the specified (absolute) coordinates.
 
 **Parameters**
 
@@ -857,6 +881,12 @@ Performs a transition into or out of a room programmatically.
 
 Turns ``object`` to face another object.
 
+Unlike movement commands, ``turn_to`` will not automatically reference an
+``ESCLocation`` that is a child of an ``ESCItem.``
+To turn towards an ``ESCLocation`` that is a child of an ``ESCItem``\ , give the
+``ESCLocation`` a ``Global ID`` and use this value as the ``object_to_face``
+parameter.
+
 **Parameters**
 
 
@@ -864,7 +894,6 @@ Turns ``object`` to face another object.
 * *object_to_face*\ : Global ID of the object to turn towards
 * *wait*\ : Length of time to wait in seconds for each intermediate angle.
   If set to 0, the turnaround is immediate (default: ``0``\ )
-  #
 
 
 ``wait seconds`` `API-Doc </api/WaitCommand.html>`__
@@ -891,30 +920,32 @@ while playing ``object``\ 's walking animation. This command is blocking.
 
 * *object*\ : Global ID of the object to move
 * *target*\ : Global ID of the target object
-* *speed*\ : Walking speed to use (default: ``object``\ 's default speed)
+* *speed*\ : The speed the ``object`` will walk in pixels per second (will
+  default to the speed configured on the ``object``\ )
 
 
 ``walk object target [speed]`` `API-Doc </api/WalkCommand.html>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Moves the specified ``ESCPlayer`` or movable ``ESCItem`` to ``target`` w
-hile playing ``object``\ 's walking animation. This command is non-blocking.
+Moves the specified ``ESCPlayer`` or movable ``ESCItem`` to ``target``
+while playing the ``object``\ 's walking animation. This command is non-blocking.
 
 **Parameters**
 
 
 * *object*\ : Global ID of the object to move
 * *target*\ : Global ID of the target object
-* *speed*\ : Walking speed to use (default: ``object``\ 's default speed)
+* *speed*\ : The speed the ``object`` will walk in pixels per second (will
+  default to the speed configured on the ``object``\ )
 
 
 ``walk_to_pos_block object x y`` `API-Doc </api/WalkToPosBlockCommand.html>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Moves the specified ``ESCPlayer`` or movable ``ESCItem`` to the target
-position while playing ``object``\ 's walking animation.
+Moves the specified ``ESCPlayer`` or movable ``ESCItem`` to the absolute
+coordinates provided while playing the ``object``\ 's walking animation.
 This command is blocking.
 
 **Parameters**
@@ -929,8 +960,8 @@ This command is blocking.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Moves the specified ``ESCPlayer`` or movable ``ESCItem`` to the target
-position while playing ``object``\ 's walking animation.
+Moves the specified ``ESCPlayer`` or movable ``ESCItem`` to the absolute
+coordinates provided while playing the ``object``\ 's walking animation.
 This command is non-blocking.
 
 **Parameters**

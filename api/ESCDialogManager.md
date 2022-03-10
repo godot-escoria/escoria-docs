@@ -16,7 +16,7 @@ A base class for dialog plugins to work with Escoria
 func has_type(type: String) -> bool
 ```
 
-Check wether a specific type is supported by the
+Check whether a specific type is supported by the
 dialog plugin
 
 #### Parameters
@@ -29,7 +29,7 @@ dialog plugin
 func has_chooser_type(type: String) -> bool
 ```
 
-Check wether a specific chooser type is supported by the
+Check whether a specific chooser type is supported by the
 dialog plugin
 
 #### Parameters

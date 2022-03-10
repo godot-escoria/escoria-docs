@@ -8,9 +8,10 @@
 
 `anim_block object name [reverse]`
 
-Executes the animation specified in "name" on "object",
-while blocking. The next command in the event will be executed when the animation
-is finished playing.
+Executes the animation specified in "name" on "object" while blocking other
+events from starting.
+The next command in the event will be executed when the animation is
+finished playing.
 
 **Parameters**
 
@@ -36,7 +37,7 @@ Return the descriptor of the arguments of this command
 func validate(arguments: Array)
 ```
 
-Validate wether the given arguments match the command descriptor
+Validate whether the given arguments match the command descriptor
 
 ### run
 

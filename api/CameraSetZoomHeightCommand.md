@@ -8,7 +8,7 @@
 
 `camera_set_zoom_height pixels [time]`
 
-Zooms the camera in/out so it occupies the given height in pixels
+Zooms the camera in/out so it occupies the given height in pixels.
 
 **Parameters**
 
@@ -36,7 +36,7 @@ Return the descriptor of the arguments of this command
 func validate(arguments: Array)
 ```
 
-Validate wether the given arguments match the command descriptor
+Validate whether the given arguments match the command descriptor
 
 ### run
 
