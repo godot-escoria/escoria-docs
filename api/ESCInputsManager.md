@@ -19,6 +19,16 @@ const ESC_SHOW_DEBUG_PROMPT: String = "esc_show_debug_prompt"
 
 Input action for use by InputMap
 
+### ESC\_UI\_PRIMARY\_ACTION
+
+```gdscript
+const ESC_UI_PRIMARY_ACTION: String = "esc_ui_primary_action"
+```
+
+Input action for use by InputMap that represents a "primary action" from an
+input device, such as a left-click on a mouse or the X button on an XBox
+controller
+
 ### INPUT\_ALL
 
 ```gdscript
