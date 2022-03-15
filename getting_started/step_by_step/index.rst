@@ -41,6 +41,7 @@ The assets used in this guide are available for download as well:
   * :download:`Walkcycle
     extraction (aseprite) <assets/spritesheet-walk.aseprite>`
   * :download:`Idle extraction (aseprite) <assets/spritesheet-idle.aseprite>`
+  * :download:`Park light map <assets/park_lightmap.png>`
 
 * :download:`A mug of beer <assets/mug.png>` by `arispen`_
 
