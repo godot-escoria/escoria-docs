@@ -49,7 +49,7 @@ The editor will open your new game.
     After the editor loads the game for the first time, you may need to
     quit to the project manager and reopen the game
     to let Escoria initialize properly.
-    
+
     If you launched Godot from a terminal then this terminal will display
     error messages at this stage. Those messages can be safely ignored.
 
