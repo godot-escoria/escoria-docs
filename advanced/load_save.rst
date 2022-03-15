@@ -25,7 +25,7 @@ Saving a game is as simple as calling the :doc:`ESCSaveManager.save_game()
 </api/ESCSaveManager>` function.
 
 Files are saved to the folder specified in the Godot's Project Settings under
-``escoria/main/game_version``. If not changed, the default is '<game
+``escoria/main/savegames_path``. If not changed, the default is '<game
 folder>/saves'.
 
 Loading a game works the same way, using a slot number to load the
