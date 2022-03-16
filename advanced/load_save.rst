@@ -36,7 +36,7 @@ Attempting to load a saved game that doesn't exist will result in an error
 message being displayed ("Save file <id> doesn't exist").
 
 Files are loaded from the folder specified in the Godot's Project Settings
-under ``escoria/main/game_version``. If not changed, the default is '<game
+under ``escoria/main/savegames_path``. If not changed, the default is '<game
 folder>/saves'.
 
 .. code-block:: gdscript
@@ -59,9 +59,9 @@ duty of the game developer to manage this in a settings UI included in the game
 menus.
 
 Settings files are stored in a :doc:`ESCSaveSettings</api/ESCSaveSettings>`
-resource. resource file.
+resource file.
 
-The default data included in the settings file are:
+The following settings are stored in the settings file:
 
 - ``text_lang``: the language of the text displayed in the game.
 
@@ -109,8 +109,6 @@ return a dictionary value that contains the custom data to be saved.
 When the ``ESCSaveManager.save_game()`` function is called, the
 ``ESCGame.get_custom_data()`` function is automatically called and the returned
 dictionary is then saved in the ``custom_data`` field of the save game file.
-
-
 Adding custom data to settings files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
