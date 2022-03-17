@@ -50,6 +50,9 @@ The editor will open your new game.
     quit to the project manager and reopen the game
     to let Escoria initialize properly.
 
+    If you launched Godot from a terminal then the terminal will display
+    error messages at this stage: These messages can be safely ignored.
+
 Adding a stock UI
 -----------------
 
