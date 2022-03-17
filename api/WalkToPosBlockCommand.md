@@ -6,17 +6,19 @@
 
 ## Description
 
-`walk_to_pos_block object x y`
+`walk_to_pos_block object x y [walk_fast]`
 
 Moves the specified `ESCPlayer` or movable `ESCItem` to the absolute
 coordinates provided while playing the `object`'s walking animation.
 This command is blocking.
+This command will use the normal walk speed by default.
 
 **Parameters**
 
 - *object*: Global ID of the object to move
 - *x*: X-coordinate of target position
 - *y*: Y-coordinate of target position
+- *walk_fast*: Whether to walk fast (`true`) or normal speed (`false`).
 
 @ESC
 

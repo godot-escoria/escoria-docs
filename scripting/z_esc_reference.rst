@@ -940,13 +940,14 @@ while playing the ``object``\ 's walking animation. This command is non-blocking
   default to the speed configured on the ``object``\ )
 
 
-``walk_to_pos_block object x y`` `API-Doc </api/WalkToPosBlockCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``walk_to_pos_block object x y [walk_fast]`` `API-Doc </api/WalkToPosBlockCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Moves the specified ``ESCPlayer`` or movable ``ESCItem`` to the absolute
 coordinates provided while playing the ``object``\ 's walking animation.
 This command is blocking.
+This command will use the normal walk speed by default.
 
 **Parameters**
 
@@ -954,15 +955,17 @@ This command is blocking.
 * *object*\ : Global ID of the object to move
 * *x*\ : X-coordinate of target position
 * *y*\ : Y-coordinate of target position
+* *walk_fast*\ : Whether to walk fast (\ ``true``\ ) or normal speed (\ ``false``\ ).
 
 
-``walk_to_pos object x y`` `API-Doc </api/WalkToPosCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``walk_to_pos object x y [walk_fast]`` `API-Doc </api/WalkToPosCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Moves the specified ``ESCPlayer`` or movable ``ESCItem`` to the absolute
 coordinates provided while playing the ``object``\ 's walking animation.
 This command is non-blocking.
+This command will use the normal walk speed by default.
 
 **Parameters**
 
@@ -970,6 +973,7 @@ This command is non-blocking.
 * *object*\ : Global ID of the object to move
 * *x*\ : X-coordinate of target position
 * *y*\ : Y-coordinate of target position
+* *walk_fast*\ : Whether to walk fast (\ ``true``\ ) or normal speed (\ ``false``\ ).
 
 
 
