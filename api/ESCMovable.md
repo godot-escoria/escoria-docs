@@ -80,10 +80,10 @@ var last_scale: Vector2
 
 The last scaling applied to the parent
 
-### pose\_scale
+### is\_mirrored
 
 ```gdscript
-var pose_scale: int
+var is_mirrored: bool
 ```
 
 Wether the current direction animation is flipped
