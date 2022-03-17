@@ -908,36 +908,36 @@ Blocks execution of the current event.
 * *seconds*\ : Number of seconds to block
 
 
-``walk_block object target [speed]`` `API-Doc </api/WalkBlockCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``walk_block object target [walk_fast]`` `API-Doc </api/WalkBlockCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Moves the specified ``ESCPlayer`` or movable ``ESCItem`` to ``target``
 while playing ``object``\ 's walking animation. This command is blocking.
+This command will use the normal walk speed by default.
 
 **Parameters**
 
 
 * *object*\ : Global ID of the object to move
 * *target*\ : Global ID of the target object
-* *speed*\ : The speed the ``object`` will walk in pixels per second (will
-  default to the speed configured on the ``object``\ )
+* *walk_fast*\ : Whether to walk fast (\ ``true``\ ) or normal speed (\ ``false``\ ).
 
 
-``walk object target [speed]`` `API-Doc </api/WalkCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``walk object target [walk_fast]`` `API-Doc </api/WalkCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Moves the specified ``ESCPlayer`` or movable ``ESCItem`` to ``target``
-while playing the ``object``\ 's walking animation. This command is non-blocking.
+while playing ``object``\ 's walking animation. This command is non-blocking.
+This command will use the normal walk speed by default.
 
 **Parameters**
 
 
 * *object*\ : Global ID of the object to move
 * *target*\ : Global ID of the target object
-* *speed*\ : The speed the ``object`` will walk in pixels per second (will
-  default to the speed configured on the ``object``\ )
+* *walk_fast*\ : Whether to walk fast (\ ``true``\ ) or normal speed (\ ``false``\ ).
 
 
 ``walk_to_pos_block object x y [walk_fast]`` `API-Doc </api/WalkToPosBlockCommand.html>`__
