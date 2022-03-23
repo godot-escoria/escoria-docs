@@ -117,7 +117,7 @@ dictionary variable ``custom_settings`` where the developer can add any data
 they would like to save.
 
 To save the custom settings, it is simply required to set the values to save,
-directly in ``escoria.settings.custom_settings`` Dictionary value. The
+directly in the ``escoria.settings.custom_settings`` Dictionary value. The
 ``escoria.settings`` parameter is directly saved as-is when the
 ``ESCSaveManager.save_settings()`` function is called to save the settings.
 
@@ -130,7 +130,7 @@ loaded.
 Managing migrations
 -------------------
 
-With new versions of Escoria, certain built-in ESC variables may change their
+With newer versions of Escoria, certain built-in ESC variables may change their
 name. For this reason, upgrading the Escoria version could break older versions
 of a save game. In the same way, during the development of the game, an ESC
 variable or item id may change. It is then necessary to migrate old savegames
@@ -206,37 +206,37 @@ Save game data
 
 This section of the documentation is for informational purposes only.
 
-Save games hold multiple data that is listed and explained here for a better
+Save games hold data that are listed and explained here for a better
 understanding.
 
 Header data
 ~~~~~~~~~~~
 
-Save games hold multiple "header" data:
+Save games hold "header" data:
 
 - Version of Escoria being used: this is used to manage the automated migration
-  of save games. between Escoria versions. See `Managing migrations`_.
+  of save games between Escoria versions. See `Managing migrations`_.
 
 - Version of the game: this is additional information used for the automated
   migration of save games between different versions of the game. See `Managing
   migrations`_.
 
-- Name that describes the savegame: this can be either provided by the player
-  or managed by the game (and thus transparent for the player).
+- Name that describes the savegame: This can be either provided by the player
+  or managed by the game (and thus transparent to the player).
 
 - Date: the saved game's creation date.
 
 Game data
 ~~~~~~~~~
 
-This data is split into 3 dictionaries:
+These data are split into 3 dictionaries:
 
-- ``main``: contains some internal information, such as the last visited scene
+- ``main``: contains internal information such as the last visited scene
   ID, and the scene where the player is currently located.
 
 - ``globals``: the contents of all the global variables at the time of saving.
 
-- ``objects``: data about all objects registered in Escoria. This data includes
+- ``objects``: data about all objects registered in Escoria. These data include
   the object's state, position, orientation, etc. Any object that the player
   has yet to encounter in the game is not registered, so these objects will
   have their values set to their default settings on loading.
