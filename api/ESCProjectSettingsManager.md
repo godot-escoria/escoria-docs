@@ -22,12 +22,6 @@ const AVATARS_PATH: String = "escoria/dialog_simple/avatars_path"
 const COMMAND_DIRECTORIES: String = "escoria/main/command_directories"
 ```
 
-### COMMAND\_PATHS
-
-```gdscript
-const COMMAND_PATHS: String = "escoria/main/command_paths"
-```
-
 ### CRASH\_MESSAGE
 
 ```gdscript

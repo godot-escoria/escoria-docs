@@ -10,6 +10,15 @@ Compiler of the ESC language
 
 ## Constants Descriptions
 
+### COMMAND\_DIRECTORIES
+
+```gdscript
+const COMMAND_DIRECTORIES: String = "escoria/main/command_directories"
+```
+
+This must match ESCProjectSettingsManager.COMMAND_DIRECTORIES.
+We do not reference it directly to avoid circular dependencies.
+
 ### COMMENT\_REGEX
 
 ```gdscript
