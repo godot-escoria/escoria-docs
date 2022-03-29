@@ -17,6 +17,24 @@ To make starting with Escoria as easy as possible, we provide a Godot Game
 Template along with stock user interfaces and dialog managers to get you up and
 running in no time.
 
+
+Game filesystem structure
+-------------------------
+
+Before any files get created, it's important to point out that there is no
+mandated filesystem structure for your game. For example, you may
+choose to organise your files by :
+
+* purpose (e.g. "/items", "/scripts", "/sprites")
+* room (e.g. "/room_ballroom", "/room_study")
+* a combination of the two (e.g. "/room_ballroom/scripts",
+  "/room_ballroom/items" etc.)
+* some other structure
+
+You are not restricted to the structure this demonstration project uses, use
+whatever makes sense for your game.
+
+
 Starting a new Escoria project
 ------------------------------
 
@@ -35,7 +53,7 @@ Click on **Download** to download a fresh copy of the template, then click
 **Install**.
 
 .. image:: img/create_project_downloaded.png
-   :alt: "Installing the gamte template"
+   :alt: "Installing the game template"
 
 Enter the project name and the folder for your new game.
 Click **Install & Edit**.
@@ -52,6 +70,7 @@ The editor will open your new game.
 
     If you launched Godot from a terminal then the terminal will display
     error messages at this stage: These messages can be safely ignored.
+
 
 Adding a stock UI
 -----------------
@@ -139,13 +158,14 @@ player. The stock dialog manager supports the following types:
 * **floating**: The text is shown above the player sprite
 * **avatar**: The text is shown in a box with the player avatar next to it
 
-If the type isn't specificed in the ``say`` command, this default type is used.
+If the type isn't specified in the ``say`` command, this default type is used.
 
 Let's set it to "floating".
 
 .. image:: img/create_project_dialogs_settings.png
    :alt: Set project settings with "Escoria/UI/Default Dialog Type" set to
          "floating"
+
 
 Basic configuration
 -------------------
@@ -169,6 +189,7 @@ devices used by the players.
 
 .. image:: img/create_project_stretch.png
    :alt: Visual representation of the previously mentioned setting
+
 
 Continuing
 ----------
