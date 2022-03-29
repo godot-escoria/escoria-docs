@@ -578,13 +578,15 @@ Queues the loading of the given resource into the resource cache.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Sets the given global to a random integer between 0 and ``max_value`` (inclusive).
+Sets the given global to a random integer between 0 and ``max_value``
+(inclusive). e.g. Setting ``max_value`` to 2 could result in '0', '1' or '2'
+being returned.
 
 **Parameters**
 
 
 * *name*\ : Name of the global to set
-* *max_value*\ : Maximum possible integer value (exclusive)
+* *max_value*\ : Maximum possible integer value (inclusive)
 
 
 ``repeat`` `API-Doc </api/RepeatCommand.html>`__
