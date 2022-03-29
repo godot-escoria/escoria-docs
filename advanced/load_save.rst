@@ -108,6 +108,7 @@ When the ``ESCSaveManager.save_game()`` function is called, the
 ``ESCGame.get_custom_data()`` function is automatically called and the returned
 dictionary is then saved in the ``custom_data`` field of the save game file.
 
+
 Adding custom data to settings files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
