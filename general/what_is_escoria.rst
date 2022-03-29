@@ -138,9 +138,9 @@ ESC Scripts
 
 Escoria uses scripts (a set of Escoria commands that include such actions as
 moving an object to a certain location, or playing a sound) to determine the
-behavior of the game world and the objects within it. ESC scripts are :
+behavior of the game world and the objects within it. ESC scripts:
 
-* plain text files
-* created in any text editor (including the Godot script editor)
+* are plain text files
+* can be created in any text editor (including the Godot script editor)
 * have the file extension ".esc"
 * can be stored in any location within your game's filesystem structure

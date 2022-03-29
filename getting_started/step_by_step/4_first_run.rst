@@ -16,7 +16,7 @@ walk across the room, etc.) are very easy to use.
 
 The game start-up itself is also coordinated using an ESC script.
 
-Scripts are plain text files with a ".esc" extension, created in any text
+Scripts are plain text files with an ".esc" extension, created in any text
 editor you choose to use. Create a new ESC script which will be our main game
 script and call it "game.esc". Switch to Godot's **Editor** tab and select
 "New Text File" from the "File" menu:
