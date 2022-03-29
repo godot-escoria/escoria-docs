@@ -35,9 +35,8 @@ relevant save game. To load a game, simply call
 Attempting to load a saved game that doesn't exist will result in an error
 message being displayed ("Save file <id> doesn't exist").
 
-Files are loaded from the folder specified in the Godot's Project Settings
-under ``escoria/main/savegames_path``. If not changed, the default is '<game
-folder>/saves'.
+Files are loaded from the folder specified in Godot's Project Settings
+under ``escoria/main/savegames_path``. The default is '<game folder>/saves'.
 
 .. code-block:: gdscript
 
@@ -54,7 +53,7 @@ Game settings are loaded when the game is run. If no settings file exists, a
 new one is created with default values.
 
 It is not required to manage settings saving and loading if the player is not
-supposed to change one of them. Otherwise, settings should be saved. It is the
+supposed to change any of them. Otherwise, settings should be saved. It is the
 duty of the game developer to manage this in a settings UI included in the game
 menus.
 
@@ -79,11 +78,10 @@ The following settings are stored in the settings file:
 
 - ``speech_volume``: the speech volume (a value between 0 and 100)
 
-- ``fullscreen``: a boolean value indicating whether the game is fullscreen or
-  not.
+- ``fullscreen``: a boolean value indicating whether the game is fullscreen.
 
 - ``skip_dialog``: a boolean value indicating whether dialogue skipping is
-  allowed or not.
+  allowed.
 
 - ``custom_settings``: a dictionary containing any custom data to be saved. For
   example, the screen resolution could be added in this field. See `Saving
@@ -109,6 +107,7 @@ return a dictionary value that contains the custom data to be saved.
 When the ``ESCSaveManager.save_game()`` function is called, the
 ``ESCGame.get_custom_data()`` function is automatically called and the returned
 dictionary is then saved in the ``custom_data`` field of the save game file.
+
 Adding custom data to settings files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -116,7 +115,7 @@ The :doc:`ESCSaveSettings </api/ESCSaveSettings>` data structure contains a
 dictionary variable ``custom_settings`` where the developer can add any data
 they would like to save.
 
-To save the custom settings, it is simply required to set the values to save,
+To save the custom settings, it is simply required to set the values to save
 directly in the ``escoria.settings.custom_settings`` Dictionary value. The
 ``escoria.settings`` parameter is directly saved as-is when the
 ``ESCSaveManager.save_settings()`` function is called to save the settings.
