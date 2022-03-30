@@ -31,7 +31,7 @@ choose to organise your files by :
   "/room_ballroom/items" etc.)
 * some other structure
 
-You are not restricted to the structure this demonstration project uses, use
+You are not restricted to the structure used by this demonstration project: use
 whatever makes sense for your game.
 
 
