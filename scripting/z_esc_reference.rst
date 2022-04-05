@@ -605,6 +605,10 @@ Displays the specified string as dialog spoken by the player. This command
 blocks further event execution until the dialog has finished being 'said'
 (either as displayed text or as audible speech from a file).
 
+Global variables can be substituted into the text by wrapping the global
+name in braces.
+e.g. say player "I have {coin_count} coins remaining".
+
 **Parameters**
 
 

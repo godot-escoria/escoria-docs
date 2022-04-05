@@ -12,6 +12,10 @@ Displays the specified string as dialog spoken by the player. This command
 blocks further event execution until the dialog has finished being 'said'
 (either as displayed text or as audible speech from a file).
 
+Global variables can be substituted into the text by wrapping the global
+name in braces.
+e.g. say player "I have {coin_count} coins remaining".
+
 **Parameters**
 
 - *player*: Global ID of the `ESCPlayer` or `ESCItem` object that is active
@@ -25,6 +29,16 @@ a colon (`:`) to the text.
 Example: `say player ROOM1_PICTURE:"Picture's looking good."`
 
 @ESC
+
+## Property Descriptions
+
+### globals\_regex
+
+```gdscript
+var globals_regex: RegEx
+```
+
+Regex to match global variables in strings
 
 ## Method Descriptions
 

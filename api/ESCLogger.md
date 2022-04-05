@@ -13,7 +13,7 @@ Logging framework for Escoria
 ### LOG\_DEBUG
 
 ```gdscript
-const LOG_INFO: int = 2
+const LOG_WARNING: int = 1
 ```
 
 Valid log levels
@@ -21,7 +21,7 @@ Valid log levels
 ### LOG\_ERROR
 
 ```gdscript
-const LOG_INFO: int = 2
+const LOG_WARNING: int = 1
 ```
 
 Valid log levels
@@ -37,7 +37,7 @@ Log file format
 ### LOG\_INFO
 
 ```gdscript
-const LOG_INFO: int = 2
+const LOG_WARNING: int = 1
 ```
 
 Valid log levels
@@ -45,7 +45,7 @@ Valid log levels
 ### LOG\_TRACE
 
 ```gdscript
-const LOG_INFO: int = 2
+const LOG_WARNING: int = 1
 ```
 
 Valid log levels
@@ -53,7 +53,7 @@ Valid log levels
 ### LOG\_WARNING
 
 ```gdscript
-const LOG_INFO: int = 2
+const LOG_WARNING: int = 1
 ```
 
 Valid log levels
@@ -93,6 +93,14 @@ var crashed
 
 Did we crash already?
 
+### globals\_regex
+
+```gdscript
+var globals_regex: RegEx
+```
+
+Regex to match globals in debug strings
+
 ## Method Descriptions
 
 ### trace
@@ -102,6 +110,10 @@ func trace(string: String, args)
 ```
 
 Log a trace message
+
+Global variables can be substituted into the text by wrapping the global
+name in braces.
+e.g. trace "There are {coin_count} coins remaining".
 
 #### Parameters
 
@@ -116,6 +128,10 @@ func debug(string: String, args)
 
 Log a debug message
 
+Global variables can be substituted into the text by wrapping the global
+name in braces.
+e.g. debug "There are {coin_count} coins remaining".
+
 #### Parameters
 
 * string: Text to log
@@ -128,6 +144,10 @@ func info(string: String, args)
 ```
 
 Log an info message
+
+Global variables can be substituted into the text by wrapping the global
+name in braces.
+e.g. info "There are {coin_count} coins remaining".
 
 #### Parameters
 
@@ -142,6 +162,10 @@ func warning(string: String, args)
 
 Log a warning message
 
+Global variables can be substituted into the text by wrapping the global
+name in braces.
+e.g. warning "There are {coin_count} coins remaining".
+
 #### Parameters
 
 * string: Text to log
@@ -154,6 +178,10 @@ func error(string: String, args, do_savegame: bool = true)
 ```
 
 Log an error message
+
+Global variables can be substituted into the text by wrapping the global
+name in braces.
+e.g. error "There are {coin_count} coins remaining".
 
 #### Parameters
 
