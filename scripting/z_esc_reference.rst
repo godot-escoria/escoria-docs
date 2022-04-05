@@ -543,6 +543,19 @@ Plays the specified sound without blocking the currently running event.
   plays non-looping voice files (default: ``_sound``\ )
 
 
+``debug string [string2 ...]`` `API-Doc </api/PrintCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Prints a message to the Godot debug window.
+Use this for debugging game state.
+
+**Parameters**
+
+
+* *string*\ : The string to log
+
+
 ``queue_event object event [channel] [block]`` `API-Doc </api/QueueEventCommand.html>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
