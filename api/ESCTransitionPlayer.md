@@ -18,6 +18,24 @@ const TRANSITION_MODE: Dictionary = {"IN":0,"OUT":1}
 
 The valid transition modes
 
+## Constants Descriptions
+
+### TRANSITION\_ID\_INSTANT
+
+```gdscript
+const TRANSITION_ID_INSTANT: int = -1
+```
+
+Id to represent instant/no transitions
+
+### TRANSITION\_INSTANT
+
+```gdscript
+const TRANSITION_INSTANT: String = "instant"
+```
+
+Instant transition type
+
 ## Property Descriptions
 
 ### transition\_id
@@ -65,6 +83,14 @@ to name provided.
 - name: The name of the transition to test
 
 *Returns* true if a transition exists with given name.
+
+### reset\_shader\_cutoff
+
+```gdscript
+func reset_shader_cutoff() -> void
+```
+
+Resets the current material's cutoff parameter instantly.
 
 ## Signals
 

@@ -1,23 +1,25 @@
 <!-- Auto-generated from JSON by GDScript docs maker. Do not edit this document directly. -->
 
-# SetGlobalCommand
+# SetActiveIfExistsCommand
 
 **Extends:** [ESCBaseCommand](../ESCBaseCommand) < [Node](../Node)
 
 ## Description
 
-`set_global name value [force=false]`
+`set_active_if_exists object active`
 
-Changes the value of a global.
+*** FOR INTERNAL USE ONLY ***
+
+Changes the "active" state of the object in the current room if it currently
+exists in the object manager. If it doesn't, then, unlike set_active, we don't
+fail and we just carry on.
+
+Inactive objects are invisible in the room.
 
 **Parameters**
 
-- *name*: Name of the global
-- *value*: Value to set the global to (can be of type string, boolean, integer
-  or float)
-- *force*: if false, setting a global whose name is reserved will
-  trigger an error. Defaults to false. Reserved globals are: ESC_LAST_SCENE,
-  FORCE_LAST_SCENE_NULL, ANIMATION_RESOURCES, ESC_CURRENT_SCENE
+- *object* Global ID of the object
+- *active* Whether `object` should be active. `active` can be `true` or `false`.
 
 @ESC
 

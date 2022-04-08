@@ -18,6 +18,17 @@ chooses to "use" the exit - for example, saying a goodbye, or running a
 cutscene. Place a ``change_scene`` command inside this event to move the
 character to the next room.
 
+## Constants Descriptions
+
+### GROUP\_ITEM\_CAN\_COLLIDE
+
+```gdscript
+const GROUP_ITEM_CAN_COLLIDE: String = "item_can_collide"
+```
+
+Group for ESCItem's that can be collided with in a scene. Used for quick
+retrieval of such nodes to easily change their attributes at the same time.
+
 ## Property Descriptions
 
 ### global\_id

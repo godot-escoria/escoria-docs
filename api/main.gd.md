@@ -26,6 +26,14 @@ var current_scene: Node
 
 Current scene room being displayed
 
+### previous\_scene
+
+```gdscript
+var previous_scene: Node
+```
+
+Scene that was previously the current scene.
+
 ### wait\_level
 
 ```gdscript
@@ -56,13 +64,35 @@ Set current scene
 
 - p_scene: Scene to set
 
+### finish\_current\_scene\_init
+
+```gdscript
+func finish_current_scene_init(p_scene: Node) -> void
+```
+
+Only called by the room manager in the case where it hasn't executed a
+coroutine prior to calling set_scene_finish().
+
+### Parameters
+
+- p_scene: The scene currently being initialized by set_scene.
+
+### set\_scene\_finish
+
+```gdscript
+func set_scene_finish() -> void
+```
+
+Completes the room swap and should be called by the room manager at the
+appropriate time.
+
 ### clear\_scene
 
 ```gdscript
 func clear_scene() -> void
 ```
 
-Cleanup the current scene
+Cleanup the previous scene
 
 ### set\_camera\_limits
 

@@ -106,14 +106,6 @@ var is_run_directly
 
 Whether this room was run directly with Play Scene (F6)
 
-### exited\_previous\_room
-
-```gdscript
-var exited_previous_room
-```
-
-Whether this room was accessed from an exit in a previous room
-
 ## Method Descriptions
 
 ### set\_camera\_limits

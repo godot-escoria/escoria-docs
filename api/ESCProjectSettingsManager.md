@@ -34,10 +34,10 @@ const CRASH_MESSAGE: String = "escoria/debug/crash_message"
 const DEFAULT_DIALOG_TYPE: String = "escoria/ui/default_dialog_type"
 ```
 
-### DEFAULT\_TRANISITION
+### DEFAULT\_TRANSITION
 
 ```gdscript
-const DEFAULT_TRANISITION: String = "escoria/ui/default_transition"
+const DEFAULT_TRANSITION: String = "escoria/ui/default_transition"
 ```
 
 ### DEVELOPMENT\_LANG

@@ -668,6 +668,25 @@ Inactive objects are invisible in the room.
 * *active* Whether ``object`` should be active. ``active`` can be ``true`` or ``false``.
 
 
+``set_active_if_exists object active`` `API-Doc </api/SetActiveIfExistsCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+**\ * FOR INTERNAL USE ONLY *\ **
+
+Changes the "active" state of the object in the current room if it currently
+exists in the object manager. If it doesn't, then, unlike set_active, we don't
+fail and we just carry on.
+
+Inactive objects are invisible in the room.
+
+**Parameters**
+
+
+* *object* Global ID of the object
+* *active* Whether ``object`` should be active. ``active`` can be ``true`` or ``false``.
+
+
 ``set_animations object animations`` `API-Doc </api/SetAnimationsCommand.html>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -681,8 +700,8 @@ Sets the animation resource for the given ``ESCPlayer`` or movable ``ESCItem``.
 * *animations*\ : The path of the animation resource to use
 
 
-``set_global name value`` `API-Doc </api/SetGlobalCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``set_global name value [force=false]`` `API-Doc </api/SetGlobalCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Changes the value of a global.
@@ -693,6 +712,9 @@ Changes the value of a global.
 * *name*\ : Name of the global
 * *value*\ : Value to set the global to (can be of type string, boolean, integer
   or float)
+* *force*\ : if false, setting a global whose name is reserved will
+  trigger an error. Defaults to false. Reserved globals are: ESC_LAST_SCENE,
+  FORCE_LAST_SCENE_NULL, ANIMATION_RESOURCES, ESC_CURRENT_SCENE
 
 
 ``set_globals pattern value`` `API-Doc </api/SetGlobalsCommand.html>`__
