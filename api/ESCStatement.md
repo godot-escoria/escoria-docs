@@ -26,6 +26,14 @@ var is_finished: bool = false
 
 Indicates whether this event was finished.
 
+### source
+
+```gdscript
+var source: String = ""
+```
+
+The source of this statement, e.g. an ESC script or a class.
+
 ## Method Descriptions
 
 ### is\_valid

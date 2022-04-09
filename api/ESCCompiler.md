@@ -63,7 +63,7 @@ Load an ESC file from a file resource
 ### compile
 
 ```gdscript
-func compile(lines: Array) -> ESCScript
+func compile(lines: Array, path: String = "") -> ESCScript
 ```
 
 Compiles an array of ESC script strings to an ESCScript
