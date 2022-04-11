@@ -3,7 +3,7 @@ Create a player character
 
 Escoria is a framework optimized for 3rd person point and click adventure
 games. These type of games usually feature an animated character that can walk
-across a background graphic and operate with items.
+across a background graphic and interact with items.
 
 A character in Escoria is based on the node type :doc:`/api/ESCPlayer`.
 
@@ -21,8 +21,8 @@ type.
 
 When we get to making your game more interactive later using the built-in
 ESC Scripting language, we need a way of identifying the character and the
-various items. ESC uses :dfn:`global ids` for this. The global id for the
-character can be set with the parameter **Global id** in the inspector panel:
+various items. ESC uses :dfn:`global ids` for this. Set the global id for the
+character using the parameter **Global id** in the inspector panel:
 
 .. image:: img/character_globalid.png
    :alt: The parameter global_id set to "graham"
@@ -33,12 +33,18 @@ Adding a walkcycle
 When a character is moved across the screen, usually an animation is played to
 mimic the character walking. This is called a "walkcycle".
 
-Escoria can additionally play different animations based on where the character
-is moving to. For example, Escoria will play a forward walkcycle if the
-character moves from the bottom to the top of the screen, and a right walkcycle
-if the character walks from to the left to the right side.
+Escoria can play different animations based on where the character
+is moving to. For example, Escoria will play an upward facing walkcycle if the
+character moves from the bottom to the top of the screen, and a right facing
+walkcycle if the character walks from to the left to the right hand side.
 
-Start by copying the spritesheet images into the character folder.
+As Escoria can show mirrored animations, if your character looks the same on
+their right and left halves, you will not need animations showing them facing
+both left and right. Escoria can mirror any sideways-facing animations (e.g.
+walking right, walking up and right, walking down and right) to make the
+opposite side's equivalent.
+
+Start by copying the spritesheet image into the character folder.
 
 .. hint::
 
@@ -48,8 +54,8 @@ Start by copying the spritesheet images into the character folder.
 
 Then add a new ``AnimatedSprite`` node to the ``ESCPlayer`` node.
 
-Add new Animationframes and fill these animations using the images from the
-spritesheet:
+Add new animations with the appropriate animation frames using the images from
+the spritesheet:
 
 .. image:: img/character_create_animations.png
    :alt: The required animations in the frames configuration.
@@ -65,7 +71,7 @@ spritesheet:
 * idlefrontleft
 * idleleft
 
-Refer to this `AnimatedSprite tutorial in the Godot docs`_ to learn how to do
+Refer to the `AnimatedSprite tutorial in the Godot docs`_ to learn how to do
 this if you need some help.
 
 Telling Escoria about the walkcycle
@@ -103,10 +109,10 @@ As the possible directions aren't restricted to specific points, a range in
 the circle is defined for one side. In the visualization, the green range
 would be around 340° and is 40° wide, so it will go from 340° to 20°.
 
-Our character supports 8 directions, so we set up the ``Dir angles`` parameter
-like this:
+Our character will support walking in 8 directions, so we set up the
+``Dir angles`` parameter like this:
 
-Click on it and set the size to 8. For each slot, add an
+Click on ``Dir Angles`` and set the size to 8. For each slot, add an
 ``ESCDirectionAngle`` resource.
 
 .. image:: img/character_create_animation_dirangles.png
@@ -168,7 +174,7 @@ Now that we have defined where we want Escoria to play character animations,
 we just need to connect the individual animations with the direction angles.
 
 The additional parameters of the ``ESCAnimationResource`` define the
-specific views for the character for each direction angle:
+specific animations for the character for each direction angle:
 
 * ``Directions``: Walk animation
 * ``Idle``: Idle animations
@@ -179,10 +185,12 @@ specific views for the character for each direction angle:
    The ``Speak`` animations are optional and only required if your game needs
    them.
 
-For each direction angle, the name of the animation to play and whether that
-animation should be played mirrored have to be set up.
+For each direction angle, put the name of the matching animation (with the name
+specified in "Adding a walkcycle" above) in the "Animation" field, and choose
+whether that animation should be played mirrored by selecting the "Mirrored"
+checkbox.
 
-These are the settings for the ``Directions`` parameter:
+These are the the first 3 settings for the ``Directions`` parameter:
 
 .. image:: img/character_create_animation_directions.png
    :alt: The settings required for the Direction parameter
@@ -191,7 +199,7 @@ Each slot needs to contain a ``ESCAnimationName`` resource.
 Try to set up the ``Directions`` and ``Idle`` animations by yourself.
 Don't forget to click ``Mirrored on`` when the image is facing the
 opposite direction (for instance we have a left animation and
-item numbered 2 in our arrays correspond to moving right so, in the
+item numbered 2 in our arrays corresponds to moving right so, in the
 above screenshot, item 2 uses a mirrored version of the left animation).
 
 .. hint::

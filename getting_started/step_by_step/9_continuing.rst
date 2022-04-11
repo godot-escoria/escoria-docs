@@ -30,3 +30,4 @@ Your Escoria project team
 
 .. _`Exporting Godot games`: https://docs.godotengine.org/en/stable/getting_started/workflow/export/exporting_projects.html
 .. _`Complying with Godot and Escoria licenses`: https://docs.godotengine.org/en/stable/tutorials/legal/complying_with_licenses.html
+

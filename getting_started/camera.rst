@@ -16,19 +16,32 @@ the rooms. If the background is larger than the viewport, the camera will also
 pan the room to keep track of the player character.
 
 Sometimes this behaviour is not desired, though. Some rooms are designed so
-that, at first, one part of the room is active and, later, another part of the
-room becomes active. Elevators are a good example: The player character starts
+that, at first, one part of the room is available to the player and later,
+another part of the room becomes available.
+Elevators are a good example: The player character starts
 at the ground floor, enters the elevator, and moves up. After the elevator
 leaves the screen, the view switches to the first floor with the elevator
 opening.
 
-To support this, Escoria rooms use a "Camera Limits" parameter. This is a list
-of rectangular limits that can be activated and deactivated using the ESC
-command :doc:`camera_set_limits </api/CameraSetLimitsCommand>`  with the
-index of the camera limits to set.
+To support limiting the parts of the room the player can see, Escoria rooms use
+"Camera Limits". The limits are a list of
+rectangles which define the boundaries that the camera is allowed to move
+within. The rectangle is defined using a top-left coordinate limit for the
+camera's movement, along with an accompanying width and height.
+The array of limits is found under the `Camera limits` parameter within the
+room's `ESCroom` node.
+
+The active limit rectangle for the camera can be changed during gameplay using
+the ESC command :doc:`camera_set_limits </api/CameraSetLimitsCommand>` with the
+index of the camera limit to enforce.
 
 If no camera limits are set, the size of the background texture is used as the
 default camera limit.
+
+As only one limit is active at a time, limits can overlap. This means, for
+example, that if you had a large room with a locked door in the middle, you
+could have the initial limit as one half of the room, and the second limit -
+for when the door is unlocked - overlapping it as the whole room.
 
 Camera control
 ~~~~~~~~~~~~~~
@@ -51,6 +64,12 @@ achieve theatrical effects:
 
 All commands support a ``speed`` parameter that defines in seconds how long
 the camera animation should take to reach the target.
+
+.. hint::
+
+   Some camera commands may not work as expected if you have camera limits
+   defined. Ensure that the position the camera is told to point at is
+   within the room's active camera limit.
 
 Targets
 ~~~~~~~

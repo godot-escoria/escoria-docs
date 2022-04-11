@@ -2,7 +2,7 @@ Create an Escoria project
 =========================
 
 Escoria's main design is centred around its core addon which supports the
-developer with very basic functionality and features to make developing games
+developer with functionality and features to make developing adventure games
 as easy and streamlined as possible.
 
 At the same time, Escoria aims to give a lot of freedom to the developer with
@@ -10,7 +10,7 @@ regard to the design of the game and its interface.
 
 Because of this, neither a specific user interface nor a dialog manager are
 included in the Escoria core, although either may be installed as
-additional addons from the Godot Asset Library or completely done from scratch
+additional addons from the Godot Asset Library or completely made from scratch
 for the specific game you're making.
 
 To make starting with Escoria as easy as possible, we provide a Godot Game
@@ -94,9 +94,10 @@ addon.
 Adding a stock dialog manager
 -----------------------------
 
-Usually, a game made with Escoria uses dialogs as well as the ``say`` command
-as narrative elements. While the basic dialog handling and the ``say`` command
-are included in the core, a user interface that *displays* those lines isn't.
+Usually, a game made with Escoria uses dialog choices as well as the ``say``
+command as narrative elements. While the basic dialog handling and the ``say``
+command are included in the core, a user interface that *displays* those lines
+isn't.
 
 Again, for simplicity's sake in this guide, we will add the available stock
 dialog manager that Escoria provides. You will probably want to use it as a
@@ -133,13 +134,13 @@ dialog manager.
          and a marker on the enable checkbox.
 
 Switch to the project settings and go to "Escoria/UI" to set the default
-dialog type parameter. The *dialog type* is the way a line is displayed to the
-player. The stock dialog manager supports the following types:
+dialog type parameter. The *dialog type* is the way a line of speech is
+displayed to the player. The stock dialog manager supports the following types:
 
 * **floating**: The text is shown above the player sprite
 * **avatar**: The text is shown in a box with the player avatar next to it
 
-If the type isn't specificed in the ``say`` command, this default type is used.
+If the type isn't specified in the ``say`` command, this default type is used.
 
 Let's set it to "floating".
 
@@ -164,7 +165,7 @@ Also make sure that the stretch settings are set to the following:
 - Aspect: keep
 - Shrink: 1
 
-This makes sure, that your game will be resized to match the resolution of the
+This makes sure that your game will be resized to match the resolution of the
 devices used by the players.
 
 .. image:: img/create_project_stretch.png

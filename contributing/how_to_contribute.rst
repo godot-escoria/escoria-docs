@@ -60,6 +60,9 @@ Contributions
 That's *awesome*. Thanks a lot. Let's talk about how we implement code in
 Escoria.
 
+Code changes
+^^^^^^^^^^^^
+
 We implement all new code in our demo game. That's our testing ground, if you
 will. Clone the `demo game's git repository`_. Checkout the ``develop`` branch
 and then create a new branch named "issue-<your issue number>". (e.g. issue-42)
@@ -89,3 +92,37 @@ Again, thanks a lot for your contributions. ❤️ 🎁
 .. _`demo game's git repository`: https://github.com/godot-escoria/escoria-demo-game
 .. _`semantic-release`: https://github.com/semantic-release/semantic-release
 .. _`this article`: https://dev.to/blakedeboer/beginners-guide-to-interactive-rebasing-1ob
+
+Documentation changes
+^^^^^^^^^^^^^^^^^^^^^
+
+* The documentation is written in the `reStructeredText format
+  https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html`
+* The documentation style is checked by `doc8 https://pypi.org/project/doc8/`
+* The API command documentation is automatically generated from the comments
+  above the functions. Update the comments and submit a pull request as per the
+  `code changes` process above. Once merged into the main repository, the
+  documentation will be automatically updated by GitHub actions.
+* All other documentation is built from the file structure in the documentation
+  repository.
+
+doc8 will run to check the documentation meets the project's style
+standards. Running doc8 locally before submitting a PR is highly encouraged.
+
+Behind the scenes:
+
+These details are provided for interest only - contributors will not need to
+concern themselves with how the documentation gets from code to the website.
+
+After a successful pull request to the main repository, GitHub actions will run
+the following steps automatically :
+
+* extractesc.py will extract information about the ESC commands from the API
+  documentation and make the documentation files in the API folder.
+* These are accessed by the main documentation from a reference in
+  `esc_reference.template.rst`
+* doc8 will confirm the documentation meets the project's style requirements
+  by running .github/workflows/check-docs.yml
+
+
+
