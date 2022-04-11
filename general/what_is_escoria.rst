@@ -131,3 +131,16 @@ by Escoria. This way, the game developer has total control over the inventory.
 
 .. _`Godot Engine`: https://godotengine.org
 .. _`The Interactive Adventures of Dog Mendonça and Pizzaboy`: https://store.steampowered.com/app/330420
+
+
+ESC Scripts
+~~~~~~~~~~~
+
+Escoria uses scripts (a set of Escoria commands that include such actions as
+moving an object to a certain location, or playing a sound) to determine the
+behavior of the game world and the objects within it. ESC scripts:
+
+* are plain text files
+* can be created in any text editor (including the Godot script editor)
+* have the file extension ".esc"
+* can be stored in any location within your game's filesystem structure

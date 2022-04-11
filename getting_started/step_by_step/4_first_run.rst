@@ -16,9 +16,10 @@ walk across the room, etc.) are very easy to use.
 
 The game start-up itself is also coordinated using an ESC script.
 
-Create a new ESC script which will be our main game script and call it
-"game.esc". Switch to the **Editor** tab and select "New Text File" from the
-"File" menu:
+Scripts are plain text files with an ".esc" extension, created in any text
+editor you choose to use. Create a new ESC script which will be our main game
+script and call it "game.esc". Switch to Godot's **Editor** tab and select
+"New Text File" from the "File" menu:
 
 .. image:: img/create_room_newtextfile.png
    :alt: Selecting New Text File from the File menu
