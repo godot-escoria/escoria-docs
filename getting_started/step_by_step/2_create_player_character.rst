@@ -93,15 +93,25 @@ To achieve this degree of freedom, Escoria needs to know which directions are
 available. It does that by defining angle ranges within a 360° circle.
 
 .. image:: img/angles_visualization.png
-   :alt: A visual representation of a circle around the character with angles
-     around it
+   :alt: A visual representation character motion matching set animations to
+     360 degree movement
 
 The angle 0° would show the character facing away from the camera, 90° facing
 to the right, and so forth.
 
-As the possible directions aren't restricted to specific points, a range in
-the circle is defined for one side. In the visualization, the green range
-would be around 340° and is 40° wide, so it will go from 340° to 20°.
+The walkcycles only show very specific angles for the character (e.g. for a 4
+direction character there are only animations for angles 0, 90, 180 and 270
+degrees.) When the player moves the character in a direction that isn't one of
+these angles however, Escoria needs to work out which animation the developer
+would like to use. To do this, when defining a character animation, the
+developer provides the angle range that will match that animation direction.
+In this diagram, the green area shows that the developer has chosen that
+movement in the 40° angle starting from 340° (i.e.  from 340° to 20°) will
+correspond to the up animation.
+
+.. image:: img/angles_visualization2.png
+   :alt: The movement range matching the upward walking animation
+
 
 Our character supports 8 directions, so we set up the ``Dir angles`` parameter
 like this:
@@ -112,47 +122,8 @@ Click on it and set the size to 8. For each slot, add an
 .. image:: img/character_create_animation_dirangles.png
    :alt: Setting the Dir angles array
 
-Click on each resource and set them to the following:
-
-* 0:
-
-  * Angle Start: 340
-  * Angle Size: 40
-
-* 1:
-
-  * Angle Start: 20
-  * Angle Size: 50
-
-* 2:
-
-  * Angle Start: 70
-  * Angle Size: 40
-
-* 3:
-
-  * Angle Start: 110
-  * Angle Size: 50
-
-* 4:
-
-  * Angle Start: 160
-  * Angle Size: 40
-
-* 5:
-
-  * Angle Start: 200
-  * Angle Size: 50
-
-* 6:
-
-  * Angle Start: 250
-  * Angle Size: 40
-
-* 7:
-
-  * Angle Start: 290
-  * Angle Size: 50
+Click on each resource and set its angle start and size settings based on the 8
+direction character table below.
 
 This will define 40° ranges for the upper, left, right and back animations as
 well as 50° ranges for the diagonal directions. This setup will result in a
@@ -160,9 +131,57 @@ very smooth animation.
 
 .. warning::
 
-   Make sure that you always define the complete 360° circle with the direction
-   angles!
+   Make sure that you always define the complete 360° circle when defining a
+   character's direction angles!
 
+2 Direction Character
+
++--------------+------------+-------------+------------+
+| Resource     | Walk       | Character   | Character  |
+| Table Entry  | Direction  | Start Angle | Angle Size |
++==============+============+=============+============+
+| Entry 1      | Up         |           0 |        180 |
++--------------+------------+-------------+------------+
+| Entry 2      | Up Right   |         180 |        180 |
++--------------+------------+-------------+------------+
+
+4 Direction Character
+
++--------------+------------+-------------+------------+
+| Resource     | Walk       | Character   | Character  |
+| Table Entry  | Direction  | Start Angle | Angle Size |
++==============+============+=============+============+
+| Entry 1      | Up         |         315 |         90 |
++--------------+------------+-------------+------------+
+| Entry 2      | Right      |          45 |         90 |
++--------------+------------+-------------+------------+
+| Entry 3      | Down       |         135 |         90 |
++--------------+------------+-------------+------------+
+| Entry 4      | Left       |         225 |         90 |
++--------------+------------+-------------+------------+
+
+8 Direction Character
+
++--------------+------------+-------------+------------+
+| Resource     | Walk       | Character   | Character  |
+| Table Entry  | Direction  | Start Angle | Angle Size |
++==============+============+=============+============+
+| Entry 1      | Up         |         340 |         40 |
++--------------+------------+-------------+------------+
+| Entry 2      | Up Right   |          20 |         50 |
++--------------+------------+-------------+------------+
+| Entry 3      | Right      |          70 |         40 |
++--------------+------------+-------------+------------+
+| Entry 4      | Down Right |         110 |         50 |
++--------------+------------+-------------+------------+
+| Entry 5      | Down       |         160 |         40 |
++--------------+------------+-------------+------------+
+| Entry 6      | Down Left  |         200 |         50 |
++--------------+------------+-------------+------------+
+| Entry 7      | Left       |         250 |         40 |
++--------------+------------+-------------+------------+
+| Entry 8      | Up Left    |         290 |         50 |
++--------------+------------+-------------+------------+
 
 Now that we have defined where we want Escoria to play character animations,
 we just need to connect the individual animations with the direction angles.
