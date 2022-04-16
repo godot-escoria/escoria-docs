@@ -93,7 +93,7 @@ To achieve this degree of freedom, Escoria needs to know which directions are
 available. It does that by defining angle ranges within a 360° circle.
 
 .. image:: img/angles_visualization.png
-   :alt: A visual representation character motion matching set animations to
+   :alt: A visual representation of character motion matching set animations to
      360 degree movement
 
 The angle 0° would show the character facing away from the camera, 90° facing
