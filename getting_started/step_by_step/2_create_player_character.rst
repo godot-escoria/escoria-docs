@@ -101,13 +101,13 @@ to the right, and so forth.
 
 The walkcycles only show very specific angles for the character (e.g. for a 4
 direction character there are only animations for angles 0, 90, 180 and 270
-degrees.) When the player moves the character in a direction that isn't one of
-these angles however, Escoria needs to work out which animation the developer
+degrees). When the player moves the character in a direction that isn't one of
+these angles, however, Escoria needs to work out which animation the developer
 would like to use. To do this, when defining a character animation, the
 developer provides the angle range that will match that animation direction.
 In this diagram, the green area shows that the developer has chosen that
 movement in the 40° angle starting from 340° (i.e.  from 340° to 20°) will
-correspond to the up animation.
+correspond to the "up" animation.
 
 .. image:: img/angles_visualization2.png
    :alt: The movement range matching the upward walking animation
@@ -122,8 +122,8 @@ Click on it and set the size to 8. For each slot, add an
 .. image:: img/character_create_animation_dirangles.png
    :alt: Setting the Dir angles array
 
-Click on each resource and set its angle start and size settings based on the 8
-direction character table below.
+Click on each resource and set its angle start and size settings based on the
+8-direction character table below.
 
 This will define 40° ranges for the upper, left, right and back animations as
 well as 50° ranges for the diagonal directions. This setup will result in a
@@ -134,7 +134,7 @@ very smooth animation.
    Make sure that you always define the complete 360° circle when defining a
    character's direction angles!
 
-2 Direction Character
+2-direction Character
 
 +--------------+------------+-------------+------------+
 | Resource     | Walk       | Character   | Character  |
@@ -145,7 +145,7 @@ very smooth animation.
 | Entry 2      | Up Right   |         180 |        180 |
 +--------------+------------+-------------+------------+
 
-4 Direction Character
+4-direction Character
 
 +--------------+------------+-------------+------------+
 | Resource     | Walk       | Character   | Character  |
@@ -160,7 +160,7 @@ very smooth animation.
 | Entry 4      | Left       |         225 |         90 |
 +--------------+------------+-------------+------------+
 
-8 Direction Character
+8-direction Character
 
 +--------------+------------+-------------+------------+
 | Resource     | Walk       | Character   | Character  |
