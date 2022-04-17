@@ -1,14 +1,11 @@
-Game start sequence
--------------------
-This is an overview of the steps that happen between when the player runs
-your game on their computer to when they can start playing it.
+.. _faq:
 
-.. image:: img/game_start_sequence.png
-   :alt: Game start sequence
+FAQ
+===
 
+How do I specify the first game room?
+-------------------------------------
 
-First game room configuration
------------------------------
 An ESC script is used to tell Escoria which room to open as your game's
 first "room". The script is configured in Godot's settings under "Escoria/Game
 Start Script"
@@ -38,8 +35,9 @@ This script needs to contain two events:
    :newgame
    change_scene res://game/rooms/startroom/startroom.tscn
 
-Puzzles
--------
+How do I implement puzzles?
+---------------------------
+
 Puzzles can be broken down into two broad areas.
 
 - Escoria script puzzles
@@ -109,8 +107,9 @@ of your Godot scene are :
     queue_free()
 
 
-States verses animations
-------------------------
+What's the difference between states and animations?
+----------------------------------------------------
+
 The features offered by the state and animation commands are rather similar.
 This documentation section is to help you choose when to use a particular
 command.
@@ -144,12 +143,11 @@ when you reenter a room - still under discussion
 ** Comment required here once ESC script supports querying the current state
 of an ESCItem
 
-
-
 .. _logo-label:
 
-Adding a company logo or introductory cutscene
-----------------------------------------------
+How do I add a company logo or introductory cutscene?
+-----------------------------------------------------
+
 A company logo or introductory cutscene that plays before the menu of your
 game is displayed is optional for your game. To create one:
 
@@ -203,3 +201,95 @@ game is displayed is optional for your game. To create one:
 
    :newgame
    change_scene res://game/rooms/startroom/startroom.tscn
+
+
+How do I change the characters costume?
+---------------------------------------
+
+There are two ways to change the look of a character. The first is to create
+an entirely new character (i.e. a new Godot Scene with an ESCPlayer node,
+animated sprite, collision area, etc). The second option is to change just the
+animations (i.e. the sprites used) for the character.
+
+Changing the entire player scene
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This option might be appropriate if you needed to change something fundamental
+about a character for a particular scene (e.g. if for a specific level you only
+want the character to be able to walk in 2 directions where they normally have
+8 directions defined). If you choose this option, create the character scene,
+then in your game room (ESCRoom) set the PlayerScene parameter to point at the
+new character scene.
+
+Changing the character animations
+
+Changing the sprite set of a character so they look different (adding a hat,
+glasses, or changing their clothes for example) is an easy task. The process
+involves creating new animations, then telling Escoria to change the character
+to use the animations as the default at the appropriate time.
+
+Create new animations
+^^^^^^^^^^^^^^^^^^^^^
+
+You should already have idle, talk and walk animations defined for your
+character. Open your character's animated sprite.
+
+.. image:: img/character_animated_sprite_node.png
+   :alt: Animated sprite node
+
+Looking at the Animations window you should see the SpriteFrames defined.
+
+.. image:: img/character_animations_original.png
+   :alt: Defined animations
+
+Create new animations matching your new spriteset and call them something
+appropriate. In this example the demonstration character has had put on some
+jester clothes.
+
+.. image:: img/character_animations_additional.png
+   :alt: Updated animations
+
+Go back to your character (ESCPlayer) node and using the dropdown arrow on the
+Animations parameter, select the menu option to create a new
+**ESCAnimationResource**.
+
+.. image:: img/character_animations_tres.png
+   :alt: Updated animations
+
+As when you created your player originally, set up the correct number of
+directions for the character with the associated direction angles, as well as
+the direction, idles and speak animations pointing at your newly created
+animations.
+
+.. image:: img/character_animations_tres2.png
+   :alt: Updated animations
+
+Use the dropdown again choosing the **save** option. Give the file
+an appropriate name and location in the file dialogue window that appears.
+
+Assign the new animations to the character
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Now that you have the animations defined, you need to tell Escoria when you
+want to use them. If the player buys a Jester outfit for example, you may
+script the "use" option for the Jester outfit inventory item to change the
+animation set. The command used is "set_animations", and you pass it the
+path to your **ESCAnimationResource** file.
+
+
+inventory_jester_outfit.esc::
+  :use
+
+  set_animations player res://game/characters/mark/mark_animations_jester.tres
+
+
+How do I translate my game into other languages?
+------------------------------------------------
+
+Escoria takes advantage of Godot's built-in translation functionality for
+providing language support. Translations information is found in Godot's
+Project/Project Settings/Localization menu (text in Translations, audio in
+Remaps).
+
+For details on how to use these, please see Godot's translation documentation
+https://docs.godotengine.org/en/stable/tutorials/i18n/internationalizing_games.html
