@@ -207,31 +207,32 @@ How do I change the characters costume?
 ---------------------------------------
 
 There are two ways to change the look of a character. The first is to create
-an entirely new character (i.e. a new Godot Scene with an ESCPlayer node,
+an entirely new character (i.e. a new Godot Scene with an `ESCPlayer` node,
 animated sprite, collision area, etc). The second option is to change just the
 animations (i.e. the sprites used) for the character.
 
 Changing the entire player scene
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This option might be appropriate if you needed to change something fundamental
+This option might be appropriate if you need to change something fundamental
 about a character for a particular scene (e.g. if for a specific level you only
 want the character to be able to walk in 2 directions where they normally have
 8 directions defined). If you choose this option, create the character scene,
-then in your game room (ESCRoom) set the PlayerScene parameter to point at the
-new character scene.
+then in your game room (`ESCRoom`) set the `Player Scene` parameter to point at
+the new character scene.
 
 Changing the character animations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Changing the sprite set of a character so they look different (adding a hat,
-glasses, or changing their clothes for example) is an easy task. The process
+glasses, or changing their clothes, for example) is an easy task. The process
 involves creating new animations, then telling Escoria to change the character
-to use the animations as the default at the appropriate time.
+to use the animations as its default at the appropriate time.
 
 Create new animations
 ^^^^^^^^^^^^^^^^^^^^^
 
-You should already have idle, talk and walk animations defined for your
+You should already have idle, talk, and walk animations defined for your
 character. Open your character's animated sprite.
 
 .. image:: img/character_animated_sprite_node.png
@@ -243,14 +244,14 @@ Looking at the Animations window you should see the SpriteFrames defined.
    :alt: Defined animations
 
 Create new animations matching your new spriteset and call them something
-appropriate. In this example the demonstration character has had put on some
-jester clothes.
+appropriate. In this example, the demonstration character has had some
+jester clothes put on.
 
 .. image:: img/character_animations_additional.png
    :alt: Updated animations
 
-Go back to your character (ESCPlayer) node and using the dropdown arrow on the
-Animations parameter, select the menu option to create a new
+Go back to your character (`ESCPlayer`) node and, using the dropdown arrow on
+the Animations parameter, select the menu option to create a new
 **ESCAnimationResource**.
 
 .. image:: img/character_animations_tres.png
@@ -264,14 +265,14 @@ animations.
 .. image:: img/character_animations_tres2.png
    :alt: Updated animations
 
-Use the dropdown again choosing the **save** option. Give the file
-an appropriate name and location in the file dialogue window that appears.
+Use the dropdown again, choosing the **save** option. Give the file
+an appropriate name and location in the file dialog window that appears.
 
 Assign the new animations to the character
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Now that you have the animations defined, you need to tell Escoria when you
-want to use them. If the player buys a Jester outfit for example, you may
+want to use them. If the player buys a Jester outfit, for example, you may
 script the "use" option for the Jester outfit inventory item to change the
 animation set. The command used is "set_animations", and you pass it the
 path to your **ESCAnimationResource** file.
@@ -283,13 +284,104 @@ inventory_jester_outfit.esc::
   set_animations player res://game/characters/mark/mark_animations_jester.tres
 
 
+How do I add speech to my game?
+-------------------------------
+
+* Escoria uses a configuration parameter to specify where in your file
+  structure to find your game's audio files. This setting can be found in
+  `Project/Project Settings/Escoria/Sound/Speech Folder`. Set this to a
+  location appropriate for your game - e.g. `res://game/speech`.
+
+* Copy your sound and music files into this folder. These can be any audio
+  format that Godot supports as listed here
+  https://docs.godotengine.org/en/stable/tutorials/assets_pipeline/importing_audio_samples.html?highlight=ogg#supported-files
+
+* The name of the audio file will act as a key for the `say` command so it
+  knows which audio file to play. The name of the file (without any extension)
+  must be the same as the key. As an example, to play file `hello_cat.ogg`,
+  your Escoria code would look like::
+
+    say player hello_cat:"Good morning cat!"
+
+
 How do I translate my game into other languages?
 ------------------------------------------------
 
-Escoria takes advantage of Godot's built-in translation functionality for
-providing language support. Translations information is found in Godot's
-Project/Project Settings/Localization menu (text in Translations, audio in
-Remaps).
-
-For details on how to use these, please see Godot's translation documentation
+The detail below is only a high-level overview of Internationalization support
+in Godot. For more information, please see Godot's translation documentation
 https://docs.godotengine.org/en/stable/tutorials/i18n/internationalizing_games.html
+
+Creating text translations
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Escoria takes advantage of Godot's built-in translation functionality for
+providing language support. Translation information is found in Godot's
+`Project/Project Settings/Localization` menu (text in `Translations`, audio in
+`Remaps`).
+
+Text translation relies on CSV files, an example of which is::
+  keys,en,es
+  ROOM1_greeting,"Hello, friend!","Hola, amigo!"
+
+Once the CSV file containing the translation text has been created, use
+Godot's importer to import it (under
+Project/Project Settings/Localization/Tranlations/Add).
+
+For further details on creating and importing translations see
+https://docs.godotengine.org/en/stable/tutorials/assets_pipeline/importing_translations.html
+
+
+Using text translations in your game
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The key ("ROOM1_greeting" in the above example) is used in the "say" script
+command to tell Escoria which translation to look for. Place this key with
+a colon prior to the text in your script file::
+
+  :look
+  say player ROOM1_greeting:"Hello, friend!"
+
+Creating audio translations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Create your audio files to match the ones in the game's original language.
+Store these files in the same location as your original recordings.
+
+While the files can be called whatever you like, keeping the same name as the
+original file and adding a language identifier is an easy way to keep track of
+your files. e.g. A file called `hello.ogg` might have matching files called
+`hello_de.ogg` for the German translation, and `hello_fr.ogg` for the french.
+
+Using audio translations in your game
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following is a high-level overview of the language remapping functionality
+provided by Godot. For more in-depth documentation, please see
+https://docs.godotengine.org/en/stable/tutorials/i18n/internationalizing_games.html?highlight=remaps#localizing-resources
+
+Godot provides a mechanism to map files between the different languages you
+provide for your game. The mapping function can be found under
+Project/Project Settings/Localization/Remaps.
+
+Use the `Add` button in the `Resources` part of the window, choosing the audio
+file you wish to provide a translation for (e.g. `hello.ogg`). Once you've
+added the file, highlight it, and use the `Add` button in the `Remaps by
+Locale` section of the window. In the file browser that appears, find the
+matching audio file in the new language (e.g. `hello_fr.ogg`). Next to this
+file, use the `Locale` pulldown menu to tell Godot what language that file
+features. Add more remaps if you are supporting additional languages.
+
+Repeat this process for every source file, and every translated
+version you have for it.
+
+Changing the language used by your game
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+How the player chooses the language they wish to play your game in is entirely
+up to you. You may provide them with flags or a pulldown menu, for example, to
+choose from as part of your game menu. Once a language has been chosen, your
+game menu needs to run the following commands to tell Godot to use the
+selected language::
+
+  TranslationServer.set_locale(language)
+  escoria.settings["text_lang"] = language
