@@ -15,7 +15,7 @@ being returned.
 **Parameters**
 
 - *name*: Name of the global to set
-- *max_value*: Maximum possible integer value (inclusive)
+- *max_value*: Maximum possible integer value (inclusive) (default: 1)
 
 @ESC
 

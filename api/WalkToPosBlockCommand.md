@@ -19,6 +19,7 @@ This command will use the normal walk speed by default.
 - *x*: X-coordinate of target position
 - *y*: Y-coordinate of target position
 - *walk_fast*: Whether to walk fast (`true`) or normal speed (`false`).
+  (default: false)
 
 @ESC
 

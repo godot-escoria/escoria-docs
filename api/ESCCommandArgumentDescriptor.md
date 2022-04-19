@@ -22,13 +22,21 @@ turn a type back to its name.
 
 ## Property Descriptions
 
+### max\_args
+
+```gdscript
+var max_args: int = 0
+```
+
+Maximum number of total arugments the command can handle
+
 ### min\_args
 
 ```gdscript
 var min_args: int = 0
 ```
 
-Number of arguments the command expects
+Number of required arguments the command expects
 
 ### types
 

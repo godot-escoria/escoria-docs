@@ -448,7 +448,7 @@ Subtract the given value from the specified global.
 
 
 * *name*\ : Name of the global to be changed
-* *value*\ : Value to be subtracted
+* *value*\ : Value to be subtracted (default: 1)
 
 
 ``enable_terrain node_name`` `API-Doc </api/EnableTerrainCommand.html>`__
@@ -497,7 +497,7 @@ Adds the given value to the specified global.
 
 
 * *name*\ : Name of the global to be changed
-* *value*\ : Value to be added
+* *value*\ : Value to be added (default: 1)
 
 
 ``inventory_add item`` `API-Doc </api/InventoryAddCommand.html>`__
@@ -599,7 +599,7 @@ being returned.
 
 
 * *name*\ : Name of the global to set
-* *max_value*\ : Maximum possible integer value (inclusive)
+* *max_value*\ : Maximum possible integer value (inclusive) (default: 1)
 
 
 ``repeat`` `API-Doc </api/RepeatCommand.html>`__
@@ -918,7 +918,7 @@ Performs a transition into or out of a room programmatically.
 * *transition_name*\ : Name of the transition shader from one of the transition
   directories
 * *mode*\ : Set to ``in`` to transition into or ``out`` to transition out of the room
-* *delay*\ : Delay in seconds before starting the transition (default: ``1``\ )
+* *delay*\ : Delay in seconds before starting the transition (default: ``1.0``\ )
 
 
 ``turn_to object object_to_face [wait]`` `API-Doc </api/TurnToCommand.html>`__
@@ -968,6 +968,7 @@ This command will use the normal walk speed by default.
 * *object*\ : Global ID of the object to move
 * *target*\ : Global ID of the target object
 * *walk_fast*\ : Whether to walk fast (\ ``true``\ ) or normal speed (\ ``false``\ ).
+  (default: false)
 
 
 ``walk object target [walk_fast]`` `API-Doc </api/WalkCommand.html>`__
@@ -983,7 +984,8 @@ This command will use the normal walk speed by default.
 
 * *object*\ : Global ID of the object to move
 * *target*\ : Global ID of the target object
-* *walk_fast*\ : Whether to walk fast (\ ``true``\ ) or normal speed (\ ``false``\ ).
+* *walk_fast*\ : Whether to walk fast (\ ``true``\ ) or normal speed (\ ``false``\ )
+  (default: false)
 
 
 ``walk_to_pos_block object x y [walk_fast]`` `API-Doc </api/WalkToPosBlockCommand.html>`__
@@ -1002,6 +1004,7 @@ This command will use the normal walk speed by default.
 * *x*\ : X-coordinate of target position
 * *y*\ : Y-coordinate of target position
 * *walk_fast*\ : Whether to walk fast (\ ``true``\ ) or normal speed (\ ``false``\ ).
+  (default: false)
 
 
 ``walk_to_pos object x y [walk_fast]`` `API-Doc </api/WalkToPosCommand.html>`__
@@ -1020,6 +1023,7 @@ This command will use the normal walk speed by default.
 * *x*\ : X-coordinate of target position
 * *y*\ : Y-coordinate of target position
 * *walk_fast*\ : Whether to walk fast (\ ``true``\ ) or normal speed (\ ``false``\ ).
+  (default: false)
 
 
 

@@ -13,7 +13,7 @@ Adds the given value to the specified global.
 **Parameters**
 
 - *name*: Name of the global to be changed
-- *value*: Value to be added
+- *value*: Value to be added (default: 1)
 
 @ESC
 

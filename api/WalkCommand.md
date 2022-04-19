@@ -16,7 +16,8 @@ This command will use the normal walk speed by default.
 
 - *object*: Global ID of the object to move
 - *target*: Global ID of the target object
-- *walk_fast*: Whether to walk fast (`true`) or normal speed (`false`).
+- *walk_fast*: Whether to walk fast (`true`) or normal speed (`false`)
+  (default: false)
 
 @ESC
 

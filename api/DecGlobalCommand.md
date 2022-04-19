@@ -13,7 +13,7 @@ Subtract the given value from the specified global.
 **Parameters**
 
 - *name*: Name of the global to be changed
-- *value*: Value to be subtracted
+- *value*: Value to be subtracted (default: 1)
 
 @ESC
 
