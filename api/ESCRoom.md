@@ -74,6 +74,14 @@ var player
 
 The player scene instance
 
+### player\_camera
+
+```gdscript
+var player_camera: ESCCamera
+```
+
+The player camera
+
 ### game
 
 ```gdscript

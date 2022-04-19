@@ -86,18 +86,18 @@ func set_scene_finish() -> void
 Completes the room swap and should be called by the room manager at the
 appropriate time.
 
-### clear\_scene
+### clear\_previous\_scene
 
 ```gdscript
-func clear_scene() -> void
+func clear_previous_scene() -> void
 ```
 
-Cleanup the previous scene
+Cleanup the previous scene if there was one.
 
 ### set\_camera\_limits
 
 ```gdscript
-func set_camera_limits(camera_limit_id: int = 0) -> void
+func set_camera_limits(camera_limit_id: int = 0, scene: Node) -> void
 ```
 
 Set the camera limits
@@ -105,6 +105,9 @@ Set the camera limits
 #### Parameters
 
 * camera_limits_id: The id of the room's camera limits to set
+* scene: The scene to set the camera limits for. We make this optional since
+most times it'll be current_scene that needs setting; however, e.g. when
+starting up Escoria, we might not have already set the current_scene.
 
 ### save\_game
 

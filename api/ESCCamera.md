@@ -10,6 +10,20 @@ Camera handling
 
 ## Method Descriptions
 
+### register
+
+```gdscript
+func register(room = null)
+```
+
+Register this camera with the object manager. We do it out here so we can
+work with the camera before it's made active as part of the current scene
+tree.
+
+#### Parameters
+
+- room: The room with which to register the camera.
+
 ### set\_limits
 
 ```gdscript

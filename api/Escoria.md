@@ -49,6 +49,12 @@ const BUS_SFX: String = "SFX"
 const BUS_SPEECH: String = "Speech"
 ```
 
+### CAMERA\_SCENE\_PATH
+
+```gdscript
+const CAMERA_SCENE_PATH: String = "res://addons/escoria-core/game/scenes/camera_player/camera.tscn"
+```
+
 ## Property Descriptions
 
 ### logger
@@ -226,6 +232,14 @@ var game_scene: ESCGame
 ```
 
  The game scene loaded
+
+### player\_camera
+
+```gdscript
+var player_camera: ESCCamera
+```
+
+The main player camera
 
 ### start\_script
 

@@ -25,7 +25,7 @@ const MUSIC: String = "_music"
 ### RESERVED\_OBJECTS
 
 ```gdscript
-const RESERVED_OBJECTS: Array = ["_music","_sound","_speech","_camera"]
+const RESERVED_OBJECTS: Array = ["_music","_sound","_speech"]
 ```
 
 ### SOUND

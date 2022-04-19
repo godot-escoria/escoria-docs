@@ -61,7 +61,7 @@ Registers all reserved global flags for use.
 ### change\_scene
 
 ```gdscript
-func change_scene(room_path: String, enable_automatic_transitions: bool) -> var
+func change_scene(room_path: String, enable_automatic_transitions: bool) -> void
 ```
 
 Performs the actions needed in order to change the current scene to the one
