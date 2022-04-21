@@ -26,7 +26,7 @@ A regular expression that separates the translation key from the text
 var is_speaking: bool = false
 ```
 
-Wether the player is currently speaking
+Whether the player is currently speaking
 
 ## Method Descriptions
 

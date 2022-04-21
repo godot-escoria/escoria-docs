@@ -21,7 +21,7 @@ dialog plugin
 
 #### Parameters
 - type: required type
-*Returns* Wether the type is supported or not
+*Returns* Whether the type is supported or not
 
 ### has\_chooser\_type
 
@@ -34,7 +34,7 @@ dialog plugin
 
 #### Parameters
 - type: required chooser type
-*Returns* Wether the type is supported or not
+*Returns* Whether the type is supported or not
 
 ### say
 

@@ -16,4 +16,4 @@ A playable character
 export var selectable = false
 ```
 
-Wether the player can be selected like an item
+Whether the player can be selected like an item

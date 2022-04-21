@@ -24,7 +24,7 @@ The global id of the object
 var active: bool = true
 ```
 
-Wether the object is active (visible to the player)
+Whether the object is active (visible to the player)
 
 ### interactive
 
@@ -32,7 +32,7 @@ Wether the object is active (visible to the player)
 var interactive: bool = true
 ```
 
-Wether the object is interactive (clickable by the player)
+Whether the object is interactive (clickable by the player)
 
 ### state
 

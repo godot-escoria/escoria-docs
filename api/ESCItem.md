@@ -96,7 +96,7 @@ If true, the player can interact with this item
 export var is_movable = false
 ```
 
-Wether this item is movable
+Whether this item is movable
 
 ### player\_orients\_on\_arrival
 

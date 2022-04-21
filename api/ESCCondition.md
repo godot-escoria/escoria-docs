@@ -70,7 +70,7 @@ Name of the flag compared
 var negated: bool = false
 ```
 
-Wether this condition is negated
+Whether this condition is negated
 
 ### inventory
 
@@ -78,7 +78,7 @@ Wether this condition is negated
 var inventory: bool = false
 ```
 
-Wether this condition is regarding an inventory item ("i/...")
+Whether this condition is regarding an inventory item ("i/...")
 
 ### comparison
 

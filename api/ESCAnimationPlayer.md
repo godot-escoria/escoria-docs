@@ -47,8 +47,8 @@ Returns a list of all animation names
 func is_playing() -> bool
 ```
 
-Wether the animation is playing
-**Returns: Wether the animation is playing**
+Whether the animation is playing
+**Returns: Whether the animation is playing**
 
 ### stop
 
@@ -94,7 +94,7 @@ Check if the given animation exists
 #### Parameters
 
 - name: Name of the animation to check
-**Returns** Wether the animation player has the animation
+**Returns** Whether the animation player has the animation
 
 ### seek\_end
 

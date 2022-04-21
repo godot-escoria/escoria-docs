@@ -23,7 +23,7 @@ Check if a global was registered
 #### Parameters
 
 - key: The global key to check
-**Returns** Wether the global was registered
+**Returns** Whether the global was registered
 
 ### register\_reserved\_global
 

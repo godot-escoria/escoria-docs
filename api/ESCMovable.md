@@ -62,7 +62,7 @@ The walk context currently carried out by this movable node
 var moved: bool
 ```
 
-Wether the character was moved at all
+Whether the character was moved at all
 
 ### last\_dir
 
@@ -86,7 +86,7 @@ The last scaling applied to the parent
 var is_mirrored: bool
 ```
 
-Wether the current direction animation is flipped
+Whether the current direction animation is flipped
 
 ### parent
 

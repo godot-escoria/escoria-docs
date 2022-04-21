@@ -17,7 +17,7 @@ func is_empty() -> bool
 ```
 
 Get whether the inventory container currently is empty
-**Returns** Wether the container is empty or not
+**Returns** Whether the container is empty or not
 
 ### add\_item
 

@@ -21,7 +21,7 @@ Check if the player has an inventory item
 #### Parameters
 
 - item: Inventory item id
-**Returns** Wether the player has the inventory
+**Returns** Whether the player has the inventory
 
 ### items\_in\_inventory
 

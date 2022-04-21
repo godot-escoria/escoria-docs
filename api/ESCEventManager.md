@@ -184,7 +184,7 @@ Check whether a channel is free to run more events
 
 #### Parameters
 - name: Name of the channel to test
-**Returns** Wether the channel can currently accept a new event
+**Returns** Whether the channel can currently accept a new event
 
 ### get\_running\_event
 

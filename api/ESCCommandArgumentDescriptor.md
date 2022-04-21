@@ -62,7 +62,7 @@ The default values for the arguments
 var strip_quotes: Array
 ```
 
-Wether to strip quotes on specific arguments
+Whether to strip quotes on specific arguments
 
 ## Method Descriptions
 
