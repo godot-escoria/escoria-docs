@@ -22,14 +22,6 @@ const CHANNEL_FRONT: String = "_front"
 
 Event channel names
 
-### EVENT\_DEBUG
-
-```gdscript
-const EVENT_DEBUG: String = "debug"
-```
-
-Pre-defined ESC events
-
 ### EVENT\_EXIT\_SCENE
 
 ```gdscript
@@ -53,6 +45,14 @@ const EVENT_LOAD: String = "load"
 ```gdscript
 const EVENT_NEW_GAME: String = "newgame"
 ```
+
+### EVENT\_PRINT
+
+```gdscript
+const EVENT_PRINT: String = "print"
+```
+
+Pre-defined ESC events
 
 ### EVENT\_READY
 
