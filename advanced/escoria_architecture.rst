@@ -147,3 +147,12 @@ ESC script has an event ``:use``, the
 
 .. _`concept of Godot plugins`: https://docs.godotengine.org/en/stable/tutorials/plugins/editor/making_plugins.html
 .. _`main scene`: https://docs.godotengine.org/en/stable/getting_started/step_by_step/exporting.html#setting-a-main-scene
+
+Game start sequence
+-------------------
+
+This is an overview of the steps that happen between when the player runs
+your game on their computer to when they can start playing it.
+
+.. image:: img/game_start_process.png
+   :alt: Game start sequence
