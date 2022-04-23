@@ -8,6 +8,16 @@
 
 An object handled in Escoria
 
+## Constants Descriptions
+
+### STATE\_DEFAULT
+
+```gdscript
+const STATE_DEFAULT: String = "default"
+```
+
+Default object state
+
 ## Property Descriptions
 
 ### global\_id
@@ -37,7 +47,7 @@ Whether the object is interactive (clickable by the player)
 ### state
 
 ```gdscript
-var state: String = "default"
+var state: String
 ```
 
 The state of the object. If the object has a respective animation,
