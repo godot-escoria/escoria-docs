@@ -10,19 +10,6 @@ Manages currently carried out actions
 
 ## Enumerations
 
-### ACTION\_INPUT\_STATE
-
-```gdscript
-const ACTION_INPUT_STATE: Dictionary = {"AWAITING_ITEM":1,"AWAITING_TARGET_ITEM":2,"AWAITING_VERB":3,"AWAITING_VERB_CONFIRMATION":4,"AWAITING_VERB_OR_ITEM":0,"COMPLETED":5}
-```
-
-States of the action input (verb, item, target)
-(I) -> AWAITING_VERB_OR_ITEM -> AWAITING_ITEM -> COMPLETED -> (E)
-or
-(I) -> AWAITING_VERB_OR_ITEM -> AWAITING_ITEM -> AWAITING_TARGET_ITEM -> COMPLETED -> (E)
-or
-(I) -> AWAITING_VERB_OR_ITEM -> AWAITING_VERB -> AWAITING_VERB_CONFIRMATION -> COMPLETED -> (E)
-
 ### ACTION
 
 ```gdscript
@@ -35,6 +22,19 @@ Actions understood by the do(...) method
 * ITEM_RIGHT_CLICK: Item has been clicked on with RMB.
 * TRIGGER_IN: Character has moved into a trigger area.
 * TRIGGER_OUT: Character has moved out of a trigger area.
+
+### ACTION\_INPUT\_STATE
+
+```gdscript
+const ACTION_INPUT_STATE: Dictionary = {"AWAITING_ITEM":1,"AWAITING_TARGET_ITEM":2,"AWAITING_VERB":3,"AWAITING_VERB_CONFIRMATION":4,"AWAITING_VERB_OR_ITEM":0,"COMPLETED":5}
+```
+
+States of the action input (verb, item, target)
+(I) -> AWAITING_VERB_OR_ITEM -> AWAITING_ITEM -> COMPLETED -> (E)
+or
+(I) -> AWAITING_VERB_OR_ITEM -> AWAITING_ITEM -> AWAITING_TARGET_ITEM -> COMPLETED -> (E)
+or
+(I) -> AWAITING_VERB_OR_ITEM -> AWAITING_VERB -> AWAITING_VERB_CONFIRMATION -> COMPLETED -> (E)
 
 ## Constants Descriptions
 
