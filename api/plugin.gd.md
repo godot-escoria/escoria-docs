@@ -8,6 +8,26 @@
 
 Plugin script to initialize Escoria
 
+## Constants Descriptions
+
+### ESCORIA
+
+```gdscript
+const ESCORIA: String = "/root/escoria"
+```
+
+The path to node 'escoria'.
+
+## Property Descriptions
+
+### escoria\_instance
+
+```gdscript
+var escoria_instance: Node
+```
+
+Reference to "escoria" singleton instance.
+
 ## Method Descriptions
 
 ### set\_escoria\_ui\_settings
