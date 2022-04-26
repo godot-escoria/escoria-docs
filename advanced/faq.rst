@@ -143,6 +143,105 @@ when you reenter a room - still under discussion
 ** Comment required here once ESC script supports querying the current state
 of an ESCItem
 
+How do I create a cutscene?
+---------------------------
+
+A cutscene is a non-interactive part of the game where the player will watch
+part of the story unfold. This could be short, like seeing a sunrise through
+the bedroom window before you're allowed to make the player wake up and move
+around, or long, telling the whole backstory of the game and its characters.
+
+In Escoria, the cutscene is created through Escoria script and just requires
+a series of commands to show graphics or animate sprites in your
+game world.
+
+You can start your cutscene when your room appears by placing the commands
+as part of the `:ready` event.
+:doc:`https://docs.escoria-framework.org/en/devel/scripting/z_esc_reference.html#ready-label`
+
+Alternatively, you can start your cutscene when the player walks through a
+trigger area or interacts with an object. For example, this script is attached
+to a "button" in the scene, and runs a cutscene when the button is "pushed".
+
+.. code-block::
+
+  :push
+  accept_input NONE
+
+Blocking
+~~~~~~~~
+
+Escoria script commands fit into 2 main categories: blocking and non-blocking.
+Using commands of the correct type is essential to your cutscene running the
+way you expect it to. You can mix blocking and non-blocking commands.
+
+Blocking commands have to complete entirely before the next command in the
+script is executed. Non-blocking commands are commands that are started
+and control is passed immediately to the next command in the script.
+Non-blocking scripts allow for commands to run in parallel.
+
+.. hint::
+
+  Though blocking commands generally have "_block" as part of their names,
+  some commands that don't (like `wait`) will also block. See the command
+  reference to confirm if the command you want to use is blocking or not.
+  :doc:https://docs.escoria-framework.org/en/devel/scripting/z_esc_reference.html
+
+
+In this first example
+* The player will walk to location (100,100)
+* Once they arrive, the "queen_arrives" animation will start.
+* As the "queen_arrives" animation is started with the non-blocking `anim`
+command, the "cat_runs_to_throne" animation will also start at the same
+time.
+* Once the blocking "cat_runs_to_throne" animation has completed, the
+"queen_leaves" animation will run.
+
+.. code-block::
+
+  walk_to_pos_block player 100 100
+  anim queen queen_arrives
+  anim_block cat cat_runs_to_throne
+  anim queen queen_leaves
+
+.. image:: img/cutscene_timeline.png
+   :alt: Working cutscene timeline
+
+
+.. hint::
+
+  Be wary of the lengths of animations when mixing blocking and non-blocking
+  commands. In the above example, if the "queen_arrives" animation
+  takes more time to complete than the "cat_runs_to_throne" animation, the
+  cutscene will not work as expected. The "queen_leaves" animation will
+  commence as soon as the cat animation completes
+  (i.e while the "queen_arrives" animation is still playing).
+
+.. image:: img/cutscene_timeline_2.png
+   :alt: Broken cutscene timeline
+
+
+The `accept_input` command
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Another important command for creating cutscenes is the
+:doc:`https://docs.escoria-framework.org/en/devel/scripting/z_esc_reference.html#accept-input-type-api-doc`
+command. It's important that the player can't walk away or
+interact with items while the story component of your game is running. For this
+reason, Escoria provides you the `accept_input` command to limit the actions
+the player can perform in your game. Generally you would want to disable
+input at the start of a cutscene, and re-enable it on completion so the player
+can keep playing your game.
+
+.. code-block::
+
+  accept_input NONE
+  walk_to_pos_block player 100 100
+  anim queen queen_arrives
+  anim_block cat cat_runs_to_throne
+  anim queen queen_leaves
+  accept_input ALL
+
 .. _logo-label:
 
 How do I add a company logo or introductory cutscene?
@@ -284,104 +383,52 @@ inventory_jester_outfit.esc::
   set_animations player res://game/characters/mark/mark_animations_jester.tres
 
 
-How do I add speech to my game?
--------------------------------
+How do I add audio speech to my game?
+-------------------------------------
 
-* Escoria uses a configuration parameter to specify where in your file
-  structure to find your game's audio files. This setting can be found in
-  `Project/Project Settings/Escoria/Sound/Speech Folder`. Set this to a
-  location appropriate for your game - e.g. `res://game/speech`.
-
-* Copy your sound and music files into this folder. These can be any audio
-  format that Godot supports as listed here
-  https://docs.godotengine.org/en/stable/tutorials/assets_pipeline/importing_audio_samples.html?highlight=ogg#supported-files
-
-* The name of the audio file will act as a key for the `say` command so it
-  knows which audio file to play. The name of the file (without any extension)
-  must be the same as the key. As an example, to play file `hello_cat.ogg`,
-  your Escoria code would look like::
-
-    say player hello_cat:"Good morning cat!"
+See :doc:`https://docs.escoria-framework.org/en/devel/getting_started/dialogs.html#recorded-speech`
 
 
 How do I translate my game into other languages?
 ------------------------------------------------
 
-The detail below is only a high-level overview of Internationalization support
-in Godot. For more information, please see Godot's translation documentation
-https://docs.godotengine.org/en/stable/tutorials/i18n/internationalizing_games.html
-
-Creating text translations
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Escoria takes advantage of Godot's built-in translation functionality for
-providing language support. Translation information is found in Godot's
-`Project/Project Settings/Localization` menu (text in `Translations`, audio in
-`Remaps`).
-
-Text translation relies on CSV files, an example of which is::
-  keys,en,es
-  ROOM1_greeting,"Hello, friend!","Hola, amigo!"
-
-Once the CSV file containing the translation text has been created, use
-Godot's importer to import it (under
-Project/Project Settings/Localization/Tranlations/Add).
-
-For further details on creating and importing translations see
-https://docs.godotengine.org/en/stable/tutorials/assets_pipeline/importing_translations.html
+See :doc:`https://docs.escoria-framework.org/en/devel/getting_started/dialogs.html#translations`
 
 
-Using text translations in your game
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+How do I add a score to my game ?
+---------------------------------
 
-The key ("ROOM1_greeting" in the above example) is used in the "say" script
-command to tell Escoria which translation to look for. Place this key with
-a colon prior to the text in your script file::
+* In your initial game room's setup script, create a score global variable
+  and set it to 0.
+* When you pick up an `ESCItem` or interact with an NPC in some way that would
+  score points, add or subtract from the score variable by using the
+  `inc_global` and `dec_global` commands.
+* How you display the score will be dependent on the user interface
+* As the score is a global variable, it will save and load without any extra
+  work as part of Escoria's save/load process.
 
-  :look
-  say player ROOM1_greeting:"Hello, friend!"
+Can you show me a basic room script?
+------------------------------------
 
-Creating audio translations
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+A suggested template for a room script looks like this (using a library
+as an example)
 
-Create your audio files to match the ones in the game's original language.
-Store these files in the same location as your original recordings.
+.. code-block::
 
-While the files can be called whatever you like, keeping the same name as the
-original file and adding a language identifier is an easy way to keep track of
-your files. e.g. A file called `hello.ogg` might have matching files called
-`hello_de.ogg` for the German translation, and `hello_fr.ogg` for the french.
+   :setup
+   # Check if the player has ever been in this room
+   # If not, do first-time setup
+   > [!room_library_visited]
+      # Here you'd have some steps to play a cutscene
+      # e.g the librarian entering the room and sitting at the desk
+      <...>
+      # Set any room specific state. e.g. set a "conversation with librarian
+      # not started" variable so she'll introduce herself when you talk to her
 
-Using audio translations in your game
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      # Make sure the room setup steps don't rerun if the player leaves the
+      # room and comes back in
+      set_global room_library_visited true
 
-The following is a high-level overview of the language remapping functionality
-provided by Godot. For more in-depth documentation, please see
-https://docs.godotengine.org/en/stable/tutorials/i18n/internationalizing_games.html?highlight=remaps#localizing-resources
-
-Godot provides a mechanism to map files between the different languages you
-provide for your game. The mapping function can be found under
-Project/Project Settings/Localization/Remaps.
-
-Use the `Add` button in the `Resources` part of the window, choosing the audio
-file you wish to provide a translation for (e.g. `hello.ogg`). Once you've
-added the file, highlight it, and use the `Add` button in the `Remaps by
-Locale` section of the window. In the file browser that appears, find the
-matching audio file in the new language (e.g. `hello_fr.ogg`). Next to this
-file, use the `Locale` pulldown menu to tell Godot what language that file
-features. Add more remaps if you are supporting additional languages.
-
-Repeat this process for every source file, and every translated
-version you have for it.
-
-Changing the language used by your game
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-How the player chooses the language they wish to play your game in is entirely
-up to you. You may provide them with flags or a pulldown menu, for example, to
-choose from as part of your game menu. Once a language has been chosen, your
-game menu needs to run the following commands to tell Godot to use the
-selected language::
-
-  TranslationServer.set_locale(language)
-  escoria.settings["text_lang"] = language
+   # Position the player depending which room they've entered this one from
+   teleport player door1 [eq ESC_LAST_SCENE room_street_outside_library]
+   teleport player door2 [eq ESC_LAST_SCENE room_library_upstairs]

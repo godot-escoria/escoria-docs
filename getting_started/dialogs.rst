@@ -9,7 +9,7 @@ Escoria supports a feature-rich dialog system integrated in the
 :doc:`ESC language </scripting/z_esc_reference>`.
 
 Dialog concept
-~~~~~~~~~~~~~~
+--------------
 
 Dialogs in Escoria are based on two parts:
 
@@ -19,7 +19,7 @@ Dialogs in Escoria are based on two parts:
   while engaged in a dialog.
 
 A simple dialog
-~~~~~~~~~~~~~~~
+---------------
 
 The following code from an ESC script attached to a character called "worker"
 shows a simple dialog:
@@ -72,7 +72,7 @@ Let's break it down.
   line.
 
 Conditional options
-~~~~~~~~~~~~~~~~~~~
+-------------------
 
 Like every command in ESC, conditions can also be added to dialog options to
 only show them under specific conditions.
@@ -99,37 +99,120 @@ again.
     See :doc:`the ESC reference </scripting/z_esc_reference#conditions>` for
     details about conditions.
 
-Speech
-~~~~~~
+Recorded Speech
+---------------
 
 Escoria features voice support as well.
 
 To use it, every line that should support a voice file requires an
-additional text key, like this:
+additional text key (i.e. a name, followed by a colon, followed by the text to
+say), like this:
 
 .. code-block::
 
-    say player WORKER_HELLO:"Hello!"
+    say player worker_hello:"Hello!"
 
-If Escoria encounters this line, it will look in a specific folder for a file
-with the same name as the key having a specific sound file extension like .ogg,
-.wav or .mp3.
+The name of the audio file serves as a key for the `say` command so it
+knows which audio file to play. The name of the file (without any extension)
+must be the same as the key. As an example, the above `say` command would play
+the audio file "worker_hello.mp3" (or any other supported audio format file
+like "worker_hello.ogg").
 
-The folder and extension can be set using the
-:doc:`Escoria settings </getting_started/z_escoria_settings>` "Speech folder"
-and "Speech extension" in the "Sound" category.
+The audio formats that Godot supports are listed here :
+:doc:`https://docs.godotengine.org/en/stable/tutorials/assets_pipeline/importing_audio_samples.html?highlight=ogg#supported-files`
 
-Translation
-~~~~~~~~~~~
+Escoria uses a configuration parameter to specify where in your directory
+structure to find your game's audio files. This setting can be found in
+`Project/Project Settings/Escoria/Sound/Speech Folder`. Set this to a
+location appropriate for your game - e.g. `res://game/speech`.
 
-The text key has another feature: If a game is produced for multiple languages,
-the text key can be used with `Godot's built-in translation features`_.
+See :doc:`https://docs.escoria-framework.org/en/devel/scripting/z_esc_reference.html#say-player-text-type-api-doc`
+for further details on the `say` command.
 
-This feature requires a CSV file that has the text key as the first column
-followed by the different translations for each target language.
+Translations
+------------
+
+The detail below is only a high-level overview of Internationalization support
+in Godot. For more information, please see Godot's translation documentation
+https://docs.godotengine.org/en/stable/tutorials/i18n/internationalizing_games.html
+
+Creating text translations
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Escoria takes advantage of Godot's built-in translation functionality for
+providing language support. Translation information is found in Godot's
+`Project/Project Settings/Localization` menu (text in `Translations`, audio in
+`Remaps`).
+
+Text translation relies on CSV files, an example of which is::
+  keys,en,es
+  ROOM1_greeting,"Hello, friend!","Hola, amigo!"
+
+Once the CSV file containing the translation text has been created, use
+Godot's importer to import it (under
+`Project/Project Settings/Localization/Tranlations/Add`).
+
+For further details on creating and importing translations see
+https://docs.godotengine.org/en/stable/tutorials/assets_pipeline/importing_translations.html
+
+
+Using text translations in your game
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The key ("ROOM1_greeting" in the above example) is used in the `say` script
+command to tell Escoria which translation to look for. Place this key with
+a colon prior to the text in your script file::
+
+  :look
+  say player ROOM1_greeting:"Hello, friend!"
+
+Creating audio translations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Create your audio files to match the ones in the game's original language.
+Store these files in the same location as your original recordings.
+
+While the files can be called whatever you like, keeping the same name as the
+original file and adding a language identifier is an easy way to keep track of
+your files. e.g. A file called `hello.ogg` might have matching files called
+`hello_de.ogg` for the German translation, and `hello_fr.ogg` for the French.
+
+Using audio translations in your game
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following is a high-level overview of the language remapping functionality
+provided by Godot. For more in-depth documentation, please see
+https://docs.godotengine.org/en/stable/tutorials/i18n/internationalizing_games.html?highlight=remaps#localizing-resources
+
+Godot provides a mechanism to map files between the different languages you
+provide for your game. The mapping function can be found under
+Project/Project Settings/Localization/Remaps.
+
+Use the `Add` button in the `Resources` part of the window, choosing the audio
+file you wish to provide a translation for (e.g. `hello.ogg`). Once you've
+added the file, highlight it, and use the `Add` button in the `Remaps by
+Locale` section of the window. In the file browser that appears, find the
+matching audio file in the new language (e.g. `hello_fr.ogg`). Next to this
+file, use the `Locale` pulldown menu to tell Godot what language that file
+features. Add more remaps if you are supporting additional languages.
+
+Repeat this process for every source file and every translated
+version you have for it.
+
+Changing the language being used by your game
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+How the player chooses the language they wish to play your game in is entirely
+up to you. You may provide them with flags or a pulldown menu, for example, to
+choose from as part of your game menu. Once a language has been chosen, your
+game menu needs to run the following commands to tell Godot to use the
+selected language::
+
+  TranslationServer.set_locale(language)
+  escoria.settings["text_lang"] = language
 
 Dialog presentation
-~~~~~~~~~~~~~~~~~~~
+-------------------
 
 Displaying lines on screen or presenting options to the player is the task of
 "Dialog managers". Escoria supports custom dialog managers using

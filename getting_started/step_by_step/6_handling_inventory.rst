@@ -132,3 +132,49 @@ Save the scene and add the following code to the "blackboard.esc" file:
     say graham "Why should I throw it at the blackboard? I'm not angry!"
 
 Try it out!
+
+Add in some game logic
+----------------------
+
+Let's make the game a little more interesting by adding some logic to change
+how the game reacts to events. From your previous lesson, the
+"blackboard.esc" file should contain the following.
+
+.. code-block::
+
+    :look
+    say graham "That's good to hear. I'm thirsty."
+
+Let's now change how Graham responds based on whether he's picked up the drink.
+To do this, we need a condition statement where we look at whether
+something is in a particular state and act accordingly.
+
+To use a condition, place a ">" at the start of the line of code. This is
+followed by the condition you wish to check inside square brackets.
+The state of boolean (true/false) conditions can be reversed with the use of
+the "!" (not) symbol. Examples of conditional checks are :
+
+* "> [i/beer]" : is the "beer" in your "i"nventory
+* "> [!i/beer]" : is the "beer" NOT in your "i"nventory
+* "> [total_coins gt 5]" : Is the value of the "total_coins" global flag
+  greater than "5"?
+
+Modify your
+"blackboard.esc" to the following :
+
+.. code-block::
+
+    :look
+    # If I've picked up the beer
+    > [i/beer]
+        say graham "I don't need a cocktail, I've got a beer."
+
+    # If I haven't picked up the beer
+    > [!i/beer]
+        say graham "The cocktails might be free, but I feel like a beer."
+
+Run the game again. Try "looking" at the blackboard both before and after
+you've picked up the beer to see how the response changes.
+
+For more information on conditional logic, see
+:doc:`https://docs.escoria-framework.org/en/devel/scripting/z_esc_reference.html#conditions`

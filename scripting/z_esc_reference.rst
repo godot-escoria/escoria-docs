@@ -76,9 +76,67 @@ Events
 All ESC scripts are divided into a series of events which in turn run
 commands or dialogs.
 
-An event has a name and the prefix ``:``, like this:
+To use an event in your script, specify the name of the event preceded by a 
+colon. All commands following the event identifier are considered part of that
+event until another event is defined in the same script file.
 
-``:ready``
+.. code-block::
+
+   :push
+   say player "I pushed the door."
+   say player "It didn't do anything."
+
+   # A new ("pull") event starts here
+   :pull
+   say player "The door is now open"
+
+Built-in events
+^^^^^^^^^^^^^^^
+
+Some events are hard-coded into Escoria. The ones that are 
+"internal engine use only" are
+* print
+* load
+* room_selector
+* transition_in
+* transition_out
+
+
+Ones that are considered "for developer use" are
+* init : Run first as part of your primary Escoria game script. This is where
+  you would place the commands for a company logo cutscene.
+* exit_scene : Will be called when "Is Exit" is enabled on an ESCItem and the
+  player "uses" that item. You might play a closing door sound here for 
+  example.
+* newgame : This is what is called when "Start Game" is chosen from your menu.
+  The main use would be to have a "change_scene" command here to load your
+  first game room.
+* setup : This runs first as part of loading a room. Anything coded here will
+  happen before the room is visible (i.e. before the "transition in").
+* ready : These are commands that will run when a room loads, after it becomes
+  visible (i.e. once ":setup" completes and after the "transition in").
+
+Plugin Events
+^^^^^^^^^^^^^
+
+Any plugins you use may define your their own events that you can script
+actions for. The sample user interfaces, for example, include events for
+"look" and "use". If you are using the 9-verb interface and click the "look"
+button followed by an object, the any code under the ":look" event in that
+objects' script will be run.
+
+User-created events
+^^^^^^^^^^^^^^^^^^^
+
+You can create an event with any name you like (though avoiding terms Escoria
+uses is suggested to avoid bugs and/or confusion.)
+
+Most of the time you'll define events as part of creating your UI (e.g you
+might create a nose icon and attach it to a "sniff" event). See
+https://docs.escoria-framework.org/en/devel/advanced/create_ui.html#verbs
+for further details.
+
+
 
 While you can use arbitrary event names (for example, to schedule them
 with the ``sched_event``\ command), there are some special events that
