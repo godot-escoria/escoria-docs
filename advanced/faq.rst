@@ -432,3 +432,12 @@ as an example)
    # Position the player depending which room they've entered this one from
    teleport player door1 [eq ESC_LAST_SCENE room_street_outside_library]
    teleport player door2 [eq ESC_LAST_SCENE room_library_upstairs]
+
+
+Why isn't my mouse working properly with my ESCItems?
+-----------------------------------------------------
+
+If you use a control node like ``TextureRect`` or ``ColorRect``,
+they will cause problems with mouse interactions. You will need to
+modify the properties of the ``TextureRect`` / ``ColorRect`` and set its
+"Mouse Filter" setting to "Ignore".

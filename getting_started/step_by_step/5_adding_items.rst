@@ -105,8 +105,19 @@ For this, we've added an asset that only includes the barrels on a transparent
 background.
 
 Again, add a new node to the ``ESCRoom`` node and select
-``ESCItem`` as the node type. Name it "Barrels". Add a ``TextureRect`` node to
+``ESCItem`` as the node type. Name it "Barrels". Add a ``Sprite`` node to
 this new item and set the texture to the foreground barrels picture.
+
+.. hint::
+
+    You can use a lot of different node types as children of ``ESCItems``
+    where it makes sense to - ``AnimatedSprite``, ``AnimationPlayer``,
+    or ``Polygon2D`` for example.
+
+    If you use a control node like ``TextureRect`` or ``ColorRect``,
+    they will cause problems with mouse interactions. You will need to
+    modify the properties of the ``TextureRect`` / ``ColorRect`` and set the
+    "Mouse Filter" setting to "Ignore".
 
 Move the new item so it is directly over the barrels in the background. You
 can use the arrow keys of your keyboard for more precision.
