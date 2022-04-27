@@ -3,6 +3,11 @@
 ESC language reference
 ======================
 
+Variables
+---------
+
+See :ref:`global_flags`.
+
 Objects
 -------
 
@@ -40,7 +45,7 @@ active.
 
    :ready
    > [!a/elaine]
-       say player player_no_elaine_yet:"It would appear Elaine hasn't arrived yet."
+      say player player_no_elaine_yet:"It would appear Elaine hasn't arrived yet."
 
 Interactive objects
 ~~~~~~~~~~~~~~~~~~~
@@ -51,12 +56,43 @@ and tooltip texts. In this case, just set ``is_interactive`` to
 ``false`` and the item will not be checked for interactions. Its mouse
 events won't be connected, either.
 
+.. _global_flags:
+
 Global flags
 ------------
 
-Global flags define the state of the game and can be true/false, a number,
-or a string. All commands and groups can be condtionally set based on the
-value of a global flag.
+Global flags (also known as game variables) define the state of the game and
+can be true/false, a number, or a string. All commands and groups can be
+conditionally set based on the value of a global flag.
+
+Global flags are, as the name implies, global, and continue to survive after
+leaving the room where they are created/set. This means that a value set
+early in your game is still able to be queried many rooms later.
+
+Global flags can be created anywhere in an Escoria script as needed using the
+`set_global` command. They don't need to be declared in advance.
+
+.. code-block::
+
+   set_global <global name> <global value>
+
+   e.g. set_global number_of_keys_found 3
+
+By default a flag will return false if you haven't declared or defined it. This
+feature allows for code like the below--that configures a room--to be
+executed the first time the room is visited, but won't be run again should
+the player return to the room.
+
+.. code-block::
+
+   :ready
+
+   > [!room1_visited]
+      # Set room1_visited variable so this code runs only once
+      set_global room1_visited true
+
+      # Play the window's sunrise animation
+      anim window play_sunrise_effect
 
 Inventory
 ~~~~~~~~~
@@ -76,7 +112,7 @@ Events
 All ESC scripts are divided into a series of events which in turn run
 commands or dialogs.
 
-To use an event in your script, specify the name of the event preceded by a 
+To use an event in your script, specify the name of the event preceded by a
 colon. All commands following the event identifier are considered part of that
 event until another event is defined in the same script file.
 
@@ -91,9 +127,9 @@ event until another event is defined in the same script file.
    say player "The door is now open"
 
 Built-in events
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 
-Some events are hard-coded into Escoria. The ones that are 
+Some events are hard-coded into Escoria. The ones that are
 "internal engine use only" are
 * print
 * load
@@ -102,62 +138,41 @@ Some events are hard-coded into Escoria. The ones that are
 * transition_out
 
 
-Ones that are considered "for developer use" are
+Events that are considered "for game developer use" are
 * init : Run first as part of your primary Escoria game script. This is where
-  you would place the commands for a company logo cutscene.
-* exit_scene : Will be called when "Is Exit" is enabled on an ESCItem and the
-  player "uses" that item. You might play a closing door sound here for 
-  example.
+you would place the commands for a company logo cutscene.
+* exit_scene : Will be called when "Is Exit" is enabled on an `ESCItem` and the
+player "uses" that item. You might play a closing door sound here for
+example.
 * newgame : This is what is called when "Start Game" is chosen from your menu.
-  The main use would be to have a "change_scene" command here to load your
-  first game room.
+The main use would be to have a `change_scene` command here to load your
+first game room.
 * setup : This runs first as part of loading a room. Anything coded here will
-  happen before the room is visible (i.e. before the "transition in").
+happen before the room is visible (i.e. before the "transition in").
+.. _ready-label:
 * ready : These are commands that will run when a room loads, after it becomes
-  visible (i.e. once ":setup" completes and after the "transition in").
+visible (i.e. once ":setup" completes and after the "transition in").
 
 Plugin Events
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
-Any plugins you use may define your their own events that you can script
+Any plugins you use may define their own events that you can script
 actions for. The sample user interfaces, for example, include events for
-"look" and "use". If you are using the 9-verb interface and click the "look"
-button followed by an object, the any code under the ":look" event in that
-objects' script will be run.
+`look` and `use`. If you are using the 9-verb interface and click the `look`
+button followed by an object, then any code inside the `:look` event in that
+object's script will be run.
 
 User-created events
-^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~
 
-You can create an event with any name you like (though avoiding terms Escoria
-uses is suggested to avoid bugs and/or confusion.)
+You can create an event with any name you like (though avoiding event names
+Escoria already uses, e.g. `init`, is suggested to avoid bugs and/or
+confusion.)
 
-Most of the time you'll define events as part of creating your UI (e.g you
+Most of the time you'll define events as part of creating your UI (e.g. you
 might create a nose icon and attach it to a "sniff" event). See
-https://docs.escoria-framework.org/en/devel/advanced/create_ui.html#verbs
+:doc:`https://docs.escoria-framework.org/en/devel/advanced/create_ui.html#verbs`
 for further details.
-
-
-
-While you can use arbitrary event names (for example, to schedule them
-with the ``sched_event``\ command), there are some special events that
-are called by Escoria in certain situations:
-
--  ``:setup`` (on an ``ESCScene`` object): Called *before* a transition is
-   performed
--  ``:ready``\ (on an ``ESCScene`` object): Called *after* a transition is
-   performed
--  ``:use <global id>``\ (on an ``ESCItem`` object): Called when the
-   inventory item ``<global id>``\ is used with the item running this script
--  ``:<verb>``\ (on an ESCItem object): Called when a special verb is
-   used on the item running this script (e.g.``:look``)
-
-To initialize a room properly, you may want to use ``:setup`` like this:
-
-.. code-block::
-
-   :setup
-   teleport player door1 [eq ESC_LAST_SCENE scene1]
-   teleport player door2 [eq ESC_LAST_SCENE scene2]
 
 This will teleport the player to the appropriate point in the scene
 depending on the last visited scene. The last visited scene is stored in the
