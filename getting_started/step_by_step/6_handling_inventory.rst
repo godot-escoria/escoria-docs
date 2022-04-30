@@ -36,7 +36,7 @@ Start by copying over the ``mug.png`` file to the "items" directory.
 Then, create a new scene and select ``ESCItem`` as its root node. Rename it
 to "Beer" and set "beer" as its ``global id``.
 
-Add a ``TextureRect`` node with the mug picture. Also, add a
+Add a ``Sprite`` node with the mug picture. Also, add a
 ``CollisionShape2D`` node to define the area of interactivity like before.
 
 Finally, create a new ESC script called "beer.esc" and place it in the "items"
@@ -50,9 +50,9 @@ Copy the path to the script and put it in the ``ESC script`` parameter.
 .. hint::
 
     The parameter ``Inventory texture`` will automatically be set to the
-    texture set in the ``TextureRect`` node. If you want the item to look
-    differently when it's in the inventory, you can simply change this
-    parameter to use a different texture.
+    texture set in the ``Sprite`` node. If you want the item to look
+    different when it's in the inventory, you can simply change this
+    parameter to a different texture.
 
 Save the scene as "beer.tscn" in the items folder.
 

@@ -11,7 +11,12 @@ room scene we'll now create: Let's call it "pub".
 .. image:: img/create_room_pub.png
    :alt: The file explorer with a newly created folder pub.
 
-Create a new scene named "room01" and set ``ESCRoom`` as its root node.
+Create a new scene and set ``ESCRoom`` as its root node. Save the scene as
+"pub.tscn".
+
+* Note that you could call the scene something other than "park.tscn" -
+  "room1.tscn" for example. Make sure you name things in a way that makes sense
+  to your game.
 
 .. image:: img/create_room_rootnode.png
    :alt: A new scene with ESCRoom as the root node

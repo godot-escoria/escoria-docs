@@ -131,27 +131,30 @@ Built-in events
 
 Some events are hard-coded into Escoria. The ones that are
 "internal engine use only" are
-* print
-* load
-* room_selector
-* transition_in
-* transition_out
+
+-  print
+-  load
+-  room_selector
+-  transition_in
+-  transition_out
 
 
 Events that are considered "for game developer use" are
-* init : Run first as part of your primary Escoria game script. This is where
-you would place the commands for a company logo cutscene.
-* exit_scene : Will be called when "Is Exit" is enabled on an `ESCItem` and the
-player "uses" that item. You might play a closing door sound here for
-example.
-* newgame : This is what is called when "Start Game" is chosen from your menu.
-The main use would be to have a `change_scene` command here to load your
-first game room.
-* setup : This runs first as part of loading a room. Anything coded here will
-happen before the room is visible (i.e. before the "transition in").
+
 .. _ready-label:
-* ready : These are commands that will run when a room loads, after it becomes
-visible (i.e. once ":setup" completes and after the "transition in").
+
+-  init : Run first as part of your primary Escoria game script. This is where
+   you would place the commands for a company logo cutscene.
+-  exit_scene : Will be called when "Is Exit" is enabled on an `ESCItem` and
+   the player "uses" that item. You might play a closing door sound here for
+   example.
+-  newgame : This is what is called when "Start Game" is chosen from your menu.
+   The main use would be to have a `change_scene` command here to load your
+   first game room.
+-  setup : This runs first as part of loading a room. Anything coded here will
+   happen before the room is visible (i.e. before the "transition in").
+-  ready : These are commands that will run when a room loads, after it becomes
+   visible (i.e. once ":setup" completes and after the "transition in").
 
 Plugin Events
 ~~~~~~~~~~~~~

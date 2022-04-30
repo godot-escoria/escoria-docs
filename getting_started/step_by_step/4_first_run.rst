@@ -40,6 +40,12 @@ There are several special names for events which you will learn later on. One
 special event name is called ``newgame`` and is run when the player clicks
 on the "New Game" button in the main menu.
 
+.. hint::
+
+   There is also a special event called ``setup``. This is related to
+   the order things happen in more complex game rooms and is not necessary for
+   all scripts. It can be ignored for now.
+
 We basically just want Escoria to switch to our pub scene. For this, we can
 use the command :doc:`change_scene </api/ChangeSceneCommand>`. This command
 expects the path to the target scene as a parameter.
@@ -57,6 +63,12 @@ Add the following to the ESC script ``game.esc``:
    :newgame
 
    change_scene res://rooms/pub/pub.tscn
+
+.. hint::
+
+   If you had saved the scene using a name other than "pub.tscn" (e.g. "room1"
+   instead of "pub.tscn"), the `change_scene` command is where you would need
+   to use that filename.
 
 But what should happen when the game starts *before* the main menu is shown?
 
