@@ -56,6 +56,15 @@ export var editor_debug_mode = 0
 
 Which (if any) debug mode for the editor is used
 
+### ui\_parent\_control\_node
+
+```gdscript
+export var ui_parent_control_node = ""
+```
+
+The Control node underneath which all UI must be placed.
+This should be a Control node and NOT a CanvasLayer (or any other type of) node.
+
 ### tooltip\_node
 
 ```gdscript
@@ -327,6 +336,24 @@ Shows the crash popup when a crash occurs
 #### Parameters
 
 - files: Array of strings containing the paths to the files generated on crash
+
+### escoria\_hide\_ui
+
+```gdscript
+func escoria_hide_ui()
+```
+
+*** FOR USE BY ESCORIA CORE ONLY ***
+Hides everything under the UI Control node.
+
+### escoria\_show\_ui
+
+```gdscript
+func escoria_show_ui()
+```
+
+*** FOR USE BY ESCORIA CORE ONLY ***
+Show everything under the UI Control node.
 
 ## Signals
 
