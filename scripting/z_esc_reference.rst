@@ -499,18 +499,6 @@ attached to a child node of a registered ``ESCitem``.
   parameters can be passed by using comma-separated values inside a string
 
 
-``debug string [string2 ...]`` `API-Doc </api/DebugCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Prints a DEBUG-level message to the log.
-
-**Parameters**
-
-
-* *string*\ : One or more strings to log
-
-
 ``dec_global name value`` `API-Doc </api/DecGlobalCommand.html>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -616,8 +604,8 @@ Plays the specified sound without blocking the currently running event.
   plays non-looping voice files (default: ``_sound``\ )
 
 
-``debug string [string2 ...]`` `API-Doc </api/PrintCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``print string`` `API-Doc </api/PrintCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Prints a message to the Godot debug window.
