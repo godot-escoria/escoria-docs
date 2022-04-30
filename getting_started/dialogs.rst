@@ -120,11 +120,14 @@ like "worker_hello.ogg").
 
 .. hint::
 
-    It is very important to ensure that audio speech files are imported in
-    Godot with import flag `loop` set to `false`. Otherwise, it may happen in certain conditions (such as changing the sound volume while a speech audio is being played), Escoria's speech player loops the speech even if the line was already spoken.
+    It is very important to ensure that any audio speech files are imported into
+    Godot with the import flag `loop` set to `false`. If `loop` is set to `true`,
+    in certain conditions (such as changing the sound volume while a speech
+    audio file is being played), Escoria's speech player will loop the speech
+    even if the line has already been spoken.
 
-    To ensure this, select the audio files in Godot editor's Filesystem. In
-    Import panel, untick the `loop` import parameter and click the Reimport
+    To configure this, select the audio files in Godot editor's Filesystem. In the
+    Import panel, untick the `loop` import parameter and click the `Reimport`
     button.
 
 The audio formats that Godot supports are listed here :
