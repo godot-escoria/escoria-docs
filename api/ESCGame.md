@@ -73,6 +73,16 @@ var tooltip_node: Object
 
 A reference to the node handling tooltips
 
+### room\_ready\_for\_inputs
+
+```gdscript
+var room_ready_for_inputs: bool = false
+```
+
+Boolean indicating whether the game scene is ready to accept inputs
+from the player. This enables using escoria.is_ready_for_inputs() in _input()
+function of game.gd script.
+
 ## Method Descriptions
 
 ### do\_walk

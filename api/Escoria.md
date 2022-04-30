@@ -360,6 +360,20 @@ func quit()
 
 Function called to quit the game.
 
+### is\_ready\_for\_inputs
+
+```gdscript
+func is_ready_for_inputs() -> bool
+```
+
+Used by game.gd to determine whether the game scene is ready to take inputs
+from the _input() function. To do so, the current_scene must be set, the game
+scene must be set, and the game scene must've been notified that the room
+is ready.
+
+*Returns*
+true if game scene is ready for inputs
+
 ## Signals
 
 - signal request_pause_menu(): Signal sent when pause menu has to be displayed
