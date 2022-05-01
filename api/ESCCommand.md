@@ -80,3 +80,13 @@ func run() -> var
 ```
 
 Run this command
+
+### interrupt
+
+```gdscript
+func interrupt()
+```
+
+This function interrupts the command. If it was not started, it will not run.
+If it had already started, the execution will be considered as finished
+immediately and finish. If it was already finished, nothing will happen.

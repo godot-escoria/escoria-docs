@@ -44,3 +44,11 @@ func run(command_params: Array) -> var
 ```
 
 Run the command
+
+### interrupt
+
+```gdscript
+func interrupt()
+```
+
+Function called when the command is interrupted.

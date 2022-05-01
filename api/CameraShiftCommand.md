@@ -63,3 +63,11 @@ func validate(arguments: Array)
 ```
 
 Validate whether the given arguments match the command descriptor
+
+### interrupt
+
+```gdscript
+func interrupt()
+```
+
+Function called when the command is interrupted.

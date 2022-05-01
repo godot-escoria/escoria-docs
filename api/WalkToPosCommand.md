@@ -23,6 +23,16 @@ This command will use the normal walk speed by default.
 
 @ESC
 
+## Property Descriptions
+
+### walking\_object\_node
+
+```gdscript
+var walking_object_node: ESCItem
+```
+
+Walking object
+
 ## Method Descriptions
 
 ### configure
@@ -48,3 +58,11 @@ func run(command_params: Array) -> int
 ```
 
 Run the command
+
+### interrupt
+
+```gdscript
+func interrupt()
+```
+
+Function called when the command is interrupted.

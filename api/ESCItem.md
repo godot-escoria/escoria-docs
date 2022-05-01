@@ -340,6 +340,20 @@ Use the movable node to make the item walk to the given position
 - pos: Position to walk to
 - p_walk_context: Walk context to use
 
+### stop\_walking\_now
+
+```gdscript
+func stop_walking_now(to_target: bool = false) -> void
+```
+
+Stop the movable node immediately and remain where it is at this moment,
+or teleport it directly at destination position if 'to_target' is true.
+
+#### Parameters
+
+- to_target: if true, the movable node is teleport directly at its target
+destination
+
 ### set\_speed
 
 ```gdscript

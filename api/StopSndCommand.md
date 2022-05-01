@@ -18,6 +18,16 @@ Stops the given sound player's stream.
 
 @ESC
 
+## Property Descriptions
+
+### previous\_snd\_state
+
+```gdscript
+var previous_snd_state: String
+```
+
+The previous sound state, saved for interrupting
+
 ## Method Descriptions
 
 ### configure
@@ -43,3 +53,11 @@ func run(command_params: Array) -> int
 ```
 
 Run the command
+
+### interrupt
+
+```gdscript
+func interrupt()
+```
+
+Function called when the command is interrupted.

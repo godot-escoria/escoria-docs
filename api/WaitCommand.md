@@ -16,6 +16,16 @@ Blocks execution of the current event.
 
 @ESC
 
+## Property Descriptions
+
+### timer
+
+```gdscript
+var timer: Timer
+```
+
+Timer to wait for
+
 ## Method Descriptions
 
 ### configure
@@ -41,3 +51,11 @@ func run(command_params: Array) -> var
 ```
 
 Run the command
+
+### interrupt
+
+```gdscript
+func interrupt()
+```
+
+Function called when the command is interrupted.

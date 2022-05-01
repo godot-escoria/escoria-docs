@@ -18,14 +18,6 @@ var statements: Array
 
 The list of ESC commands
 
-### is\_finished
-
-```gdscript
-var is_finished: bool = false
-```
-
-Indicates whether this event was finished.
-
 ### source
 
 ```gdscript

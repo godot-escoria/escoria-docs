@@ -18,9 +18,11 @@ const RC_OK: int = 0
 
 Return codes handled by events
 * RC_OK: Event run okay
-* RC_CANCEL: Cancel all scheduled and queued events
+* RC_CANCEL: Cancel all scheduled and queued events. This return code tells the Event Manager
+that no execution is required for this command (such as "stop" and "repeat")
 * RC_ERROR: Error running a command
 * RC_REPEAT: Repeat the current scope from the beginning
+* RC_INTERRUPTED: Event was interrupted
 
 ### RC\_ERROR
 
@@ -30,9 +32,25 @@ const RC_OK: int = 0
 
 Return codes handled by events
 * RC_OK: Event run okay
-* RC_CANCEL: Cancel all scheduled and queued events
+* RC_CANCEL: Cancel all scheduled and queued events. This return code tells the Event Manager
+that no execution is required for this command (such as "stop" and "repeat")
 * RC_ERROR: Error running a command
 * RC_REPEAT: Repeat the current scope from the beginning
+* RC_INTERRUPTED: Event was interrupted
+
+### RC\_INTERRUPTED
+
+```gdscript
+const RC_OK: int = 0
+```
+
+Return codes handled by events
+* RC_OK: Event run okay
+* RC_CANCEL: Cancel all scheduled and queued events. This return code tells the Event Manager
+that no execution is required for this command (such as "stop" and "repeat")
+* RC_ERROR: Error running a command
+* RC_REPEAT: Repeat the current scope from the beginning
+* RC_INTERRUPTED: Event was interrupted
 
 ### RC\_OK
 
@@ -42,9 +60,11 @@ const RC_OK: int = 0
 
 Return codes handled by events
 * RC_OK: Event run okay
-* RC_CANCEL: Cancel all scheduled and queued events
+* RC_CANCEL: Cancel all scheduled and queued events. This return code tells the Event Manager
+that no execution is required for this command (such as "stop" and "repeat")
 * RC_ERROR: Error running a command
 * RC_REPEAT: Repeat the current scope from the beginning
+* RC_INTERRUPTED: Event was interrupted
 
 ### RC\_REPEAT
 
@@ -54,6 +74,8 @@ const RC_OK: int = 0
 
 Return codes handled by events
 * RC_OK: Event run okay
-* RC_CANCEL: Cancel all scheduled and queued events
+* RC_CANCEL: Cancel all scheduled and queued events. This return code tells the Event Manager
+that no execution is required for this command (such as "stop" and "repeat")
 * RC_ERROR: Error running a command
 * RC_REPEAT: Repeat the current scope from the beginning
+* RC_INTERRUPTED: Event was interrupted
