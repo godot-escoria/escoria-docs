@@ -441,3 +441,106 @@ If you use a control node like ``TextureRect`` or ``ColorRect``,
 they will cause problems with mouse interactions. You will need to
 modify the properties of the ``TextureRect`` / ``ColorRect`` and set its
 "Mouse Filter" setting to "Ignore".
+
+How can I call my own GDScript function from Escoria?
+-----------------------------------------------------
+
+Escoria script makes this possible by providing the `custom` command. The
+function must be associated with the child node of an `ESCItem` in your scene.
+
+(See :doc:`https://docs.escoria-framework.org/en/devel/scripting/z_esc_reference.html#custom-object-node-func-name-params-api-doc`)
+
+To make use of this handy command, follow these steps:
+
+* Create a new node of an appropriate type as a child of an `ESCItem` in your
+  scene. For example, if you have a door in your scene and you want to make a
+  function that does something special when the door opens, you could create a
+  child node of type `Node2D` underneath the `ESCItem` that represents the
+  door.
+
+.. hint::
+
+   Remember the global ID and name of this `ESCItem`.
+   You'll need them when you use the `custom` command.
+
+* Create your GDScript function in a .gd file and attach it to the child node
+  as described above. This function can be called anything you want, but it
+  **must** take exactly one argument. Escoria will pass in to the function any
+  and all arguments specified in the `custom` command as an array. If your
+  function   doesn't require any arguments, Escoria will pass in an empty
+  array.
+
+.. hint::
+
+  It is up to you to unpack the arguments passed in via the `custom` command as
+  well as to perform any validation on these arguments you deem necessary.
+
+* In the appropriate event in an Escoria script file, call the function you
+  made above by using the `custom` command. For example :
+
+   * Your game has a node with a global_id of "treasure_maps"
+   * The "treasure_maps" node a child node called "france_treasure_map".
+   * "france_treasure_map" has a Godot script (in GDscript format) attached.
+      In this script is a function "draw_treasure" to show a map on the screen.
+      In your Escoria script, you would call the script using :
+
+.. code-block::
+
+   :setup
+   # Call the function you defined with some arguments
+   # Format : custom esc_item_global_id child_node_name function_name arg1 arg2 ...
+   # Note no parameters are passed to the "draw_treasure" function
+   custom treasure_maps france_treasure_map draw_treasure
+
+     * The GDScript it calls might look like this :
+
+.. code-block::
+
+   extends Node2D
+
+   # An empty array is passed as a parameter to the function so we ignore it
+   func draw_treasure(_ignored_parameter):
+   get_node("../france_map_sprite").visible = true
+
+* If instead you wanted to pass this script some parameters:
+
+   * If your script took an x and y coordinate to display an "X marks the spot"
+      graphic on the treasure map, your Escoria script code might look like :
+
+.. code-block::
+
+   :setup
+   custom treasure_maps france_treasure_map draw_treasure {xcoordinate} {ycoordinate}
+
+
+.. hint::
+
+   Escoria variables (ESC flags, globals, etc) can be passed as
+   parameters by wrapping them in braces.
+   e.g. {xcoorinate}
+
+   * The matching GDScript code now needs to extract those coordinates from the
+      parameter array that is passed to the function.
+
+.. code-block::
+
+   extends Node2D
+
+   # Extract coordinates from the array of parameters
+   func draw_treasure(list_of_parameters):
+        var xcoord = list_of_parameters[0]
+        var ycoord = list_of_parameters[1]
+        get_node("../france_map_sprite").visible = true
+        [...]
+
+.. hint::
+
+   You can pass in as many arguments you want to your function. If no arguments
+   are required, you don't need to specify anything else after the function's
+   name.
+
+.. hint::
+
+   Any arguments you pass to your function must be literals.
+   Escoria variables (ESC flags, globals, etc) cannot be passed currently.
+
