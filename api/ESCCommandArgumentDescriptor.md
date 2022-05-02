@@ -64,12 +64,20 @@ var strip_quotes: Array
 
 Whether to strip quotes on specific arguments
 
+### has\_varargs
+
+```gdscript
+var has_varargs: bool = false
+```
+
+Whether the final argument is a series of varargs
+
 ## Method Descriptions
 
 ### \_init
 
 ```gdscript
-func _init(p_min_args: int = 0, p_types: Array, p_defaults: Array, p_strip_quotes: Array = true)
+func _init(p_min_args: int = 0, p_types: Array, p_defaults: Array, p_strip_quotes: Array = true, p_has_varargs: bool = false)
 ```
 
 ### prepare\_arguments
