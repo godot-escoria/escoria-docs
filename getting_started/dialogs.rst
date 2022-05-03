@@ -118,6 +118,18 @@ must be the same as the key. As an example, the above `say` command would play
 the audio file "worker_hello.mp3" (or any other supported audio format file
 like "worker_hello.ogg").
 
+.. hint::
+
+    It is very important to ensure that any audio speech files are imported into
+    Godot with the import flag `loop` set to `false`. If `loop` is set to `true`,
+    in certain conditions (such as changing the sound volume while a speech
+    audio file is being played), Escoria's speech player will loop the speech
+    even if the line has already been spoken.
+
+    To configure this, select the audio files in Godot editor's Filesystem. In the
+    Import panel, untick the `loop` import parameter and click the `Reimport`
+    button.
+
 The audio formats that Godot supports are listed here :
 :doc:`https://docs.godotengine.org/en/stable/tutorials/assets_pipeline/importing_audio_samples.html?highlight=ogg#supported-files`
 
