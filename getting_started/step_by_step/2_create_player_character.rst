@@ -82,7 +82,7 @@ the spritesheet:
 .. hint::
 
    All the animations for the character (walk/idle/talk) live inside the
-   one AnimatedSprite node for the character.
+   one `AnimatedSprite` node for the character.
 
 
 Refer to the `AnimatedSprite tutorial in the Godot docs`_ to learn how to do
