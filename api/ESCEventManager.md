@@ -125,7 +125,7 @@ Queue a new event based on input from an ESC command, most likely "queue_event"
 ### queue\_event
 
 ```gdscript
-func queue_event(event: ESCEvent) -> void
+func queue_event(event: ESCEvent, force: bool = false) -> void
 ```
 
 Queue a new event to run in the foreground
@@ -158,13 +158,16 @@ Queue the run of an event in a background channel
 - channel_name: Name of the channel to use
 - event: Event to run
 
-### interrupt\_running\_event
+### interrupt
 
 ```gdscript
-func interrupt_running_event()
+func interrupt(exceptions: PoolStringArray) -> void
 ```
 
-Interrupt the events currently running.
+Interrupt the events currently running and any that are pending.
+
+#### Parameters
+- exceptions: an optional list of events which should be left running or queued
 
 ### clear\_event\_queue
 
@@ -197,6 +200,17 @@ Get the currently running event in a channel
 #### Parameters
 - name: Name of the channel
 **Returns** The currently running event or null
+
+### set\_changing\_scene
+
+```gdscript
+func set_changing_scene(p_is_changing_scene: bool) -> void
+```
+
+Setter for _changing_scene.
+
+#### Parameterse
+- value: boolean value to set _changing_scene to
 
 ## Signals
 

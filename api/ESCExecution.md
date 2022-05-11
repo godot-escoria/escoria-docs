@@ -23,6 +23,7 @@ that no execution is required for this command (such as "stop" and "repeat")
 * RC_ERROR: Error running a command
 * RC_REPEAT: Repeat the current scope from the beginning
 * RC_INTERRUPTED: Event was interrupted
+* RC_WONT_QUEUE: Event won't or can't be queued
 
 ### RC\_ERROR
 
@@ -37,6 +38,7 @@ that no execution is required for this command (such as "stop" and "repeat")
 * RC_ERROR: Error running a command
 * RC_REPEAT: Repeat the current scope from the beginning
 * RC_INTERRUPTED: Event was interrupted
+* RC_WONT_QUEUE: Event won't or can't be queued
 
 ### RC\_INTERRUPTED
 
@@ -51,6 +53,7 @@ that no execution is required for this command (such as "stop" and "repeat")
 * RC_ERROR: Error running a command
 * RC_REPEAT: Repeat the current scope from the beginning
 * RC_INTERRUPTED: Event was interrupted
+* RC_WONT_QUEUE: Event won't or can't be queued
 
 ### RC\_OK
 
@@ -65,6 +68,7 @@ that no execution is required for this command (such as "stop" and "repeat")
 * RC_ERROR: Error running a command
 * RC_REPEAT: Repeat the current scope from the beginning
 * RC_INTERRUPTED: Event was interrupted
+* RC_WONT_QUEUE: Event won't or can't be queued
 
 ### RC\_REPEAT
 
@@ -79,3 +83,19 @@ that no execution is required for this command (such as "stop" and "repeat")
 * RC_ERROR: Error running a command
 * RC_REPEAT: Repeat the current scope from the beginning
 * RC_INTERRUPTED: Event was interrupted
+* RC_WONT_QUEUE: Event won't or can't be queued
+
+### RC\_WONT\_QUEUE
+
+```gdscript
+const RC_OK: int = 0
+```
+
+Return codes handled by events
+* RC_OK: Event run okay
+* RC_CANCEL: Cancel all scheduled and queued events. This return code tells the Event Manager
+that no execution is required for this command (such as "stop" and "repeat")
+* RC_ERROR: Error running a command
+* RC_REPEAT: Repeat the current scope from the beginning
+* RC_INTERRUPTED: Event was interrupted
+* RC_WONT_QUEUE: Event won't or can't be queued

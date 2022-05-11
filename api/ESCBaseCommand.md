@@ -81,3 +81,11 @@ func get_command_name() -> String
 ```
 
 Return the name of the command based on the script's filename
+
+### interrupt
+
+```gdscript
+func interrupt()
+```
+
+Function called when the command is interrupted.

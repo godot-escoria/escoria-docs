@@ -376,6 +376,5 @@ true if game scene is ready for inputs
 
 ## Signals
 
-- signal request_pause_menu(): Signal sent when pause menu has to be displayed
 - signal paused():  Signal sent when Escoria is paused
 - signal resumed(): Signal sent when Escoria is resumed from pause

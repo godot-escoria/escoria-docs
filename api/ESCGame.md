@@ -368,3 +368,4 @@ Show everything under the UI Control node.
 ## Signals
 
 - signal crash_popup_confirmed(): Emitted when the user has confirmed the crash popup
+- signal request_pause_menu(): Signal sent when pause menu has to be displayed
