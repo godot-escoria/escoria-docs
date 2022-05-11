@@ -13,7 +13,7 @@ Logging framework for Escoria
 ### LOG\_DEBUG
 
 ```gdscript
-const LOG_WARNING: int = 1
+const LOG_INFO: int = 2
 ```
 
 Valid log levels
@@ -21,7 +21,7 @@ Valid log levels
 ### LOG\_ERROR
 
 ```gdscript
-const LOG_WARNING: int = 1
+const LOG_INFO: int = 2
 ```
 
 Valid log levels
@@ -37,7 +37,7 @@ Log file format
 ### LOG\_INFO
 
 ```gdscript
-const LOG_WARNING: int = 1
+const LOG_INFO: int = 2
 ```
 
 Valid log levels
@@ -45,7 +45,7 @@ Valid log levels
 ### LOG\_TRACE
 
 ```gdscript
-const LOG_WARNING: int = 1
+const LOG_INFO: int = 2
 ```
 
 Valid log levels
@@ -53,7 +53,7 @@ Valid log levels
 ### LOG\_WARNING
 
 ```gdscript
-const LOG_WARNING: int = 1
+const LOG_INFO: int = 2
 ```
 
 Valid log levels
@@ -93,27 +93,7 @@ var crashed
 
 Did we crash already?
 
-### globals\_regex
-
-```gdscript
-var globals_regex: RegEx
-```
-
-Regex to match globals in debug strings
-
 ## Method Descriptions
-
-### replace\_globals
-
-```gdscript
-func replace_globals(string: String) -> String
-```
-
-Look to see if any globals (names in braces) should be interpreted
-
-#### Parameters
-
-* string: Text to log
 
 ### trace
 

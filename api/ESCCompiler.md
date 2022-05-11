@@ -67,3 +67,15 @@ func compile(lines: Array, path: String = "") -> ESCScript
 ```
 
 Compiles an array of ESC script strings to an ESCScript
+
+### replace\_globals
+
+```gdscript
+func replace_globals(string: String) -> String
+```
+
+Look to see if any globals (names in braces) should be interpreted
+
+#### Parameters
+
+* string: Text to log
