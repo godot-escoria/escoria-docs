@@ -96,7 +96,7 @@ again.
 
 .. hint::
 
-    See :doc:`the ESC reference </scripting/z_esc_reference#conditions>` for
+    See `the ESC reference </scripting/z_esc_reference#conditions>` for
     details about conditions.
 
 Recorded Speech
@@ -130,15 +130,24 @@ like "worker_hello.ogg").
     Import panel, untick the `loop` import parameter and click the `Reimport`
     button.
 
+.. hint::
+
+    Once you add a key to the `say` command's text parameter, the text in
+    quotes will be ignored. Escoria will instead use
+    Godot's translation system to determine the text (translated and
+    non-translated) to display. As the command requires some text inside
+    the quotes to be valid, it is recommended you use the original text so you
+    know what text the label refers to.
+
 The audio formats that Godot supports are listed here :
-:doc:`https://docs.godotengine.org/en/stable/tutorials/assets_pipeline/importing_audio_samples.html?highlight=ogg#supported-files`
+`https://docs.godotengine.org/en/stable/tutorials/assets_pipeline/importing_audio_samples.html?highlight=ogg#supported-files`
 
 Escoria uses a configuration parameter to specify where in your directory
 structure to find your game's audio files. This setting can be found in
 `Project/Project Settings/Escoria/Sound/Speech Folder`. Set this to a
 location appropriate for your game - e.g. `res://game/speech`.
 
-See :doc:`https://docs.escoria-framework.org/en/devel/scripting/z_esc_reference.html#say-player-text-type-api-doc`
+See `https://docs.escoria-framework.org/en/devel/scripting/z_esc_reference.html#say-player-text-type-api-doc`
 for further details on the `say` command.
 
 Translations
@@ -146,7 +155,7 @@ Translations
 
 The detail below is only a high-level overview of Internationalization support
 in Godot. For more information, please see Godot's translation documentation
-https://docs.godotengine.org/en/stable/tutorials/i18n/internationalizing_games.html
+`https://docs.godotengine.org/en/stable/tutorials/i18n/internationalizing_games.html`
 
 Creating text translations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -165,8 +174,9 @@ Godot's importer to import it (under
 `Project/Project Settings/Localization/Tranlations/Add`).
 
 For further details on creating and importing translations see
-https://docs.godotengine.org/en/stable/tutorials/assets_pipeline/importing_translations.html
+`https://docs.godotengine.org/en/stable/tutorials/assets_pipeline/importing_translations.html`
 
+Godot's built-in translation features: `https://docs.godotengine.org/en/stable/tutorials/i18n/internationalizing_games.html`
 
 Using text translations in your game
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -177,6 +187,15 @@ a colon prior to the text in your script file::
 
   :look
   say player ROOM1_greeting:"Hello, friend!"
+
+.. hint::
+
+    Once you add a key to the `say` command's text parameter, the text in
+    quotes will be ignored. Escoria will instead use
+    Godot's translation system to determine the text (translated and
+    non-translated) to display. As the command requires some text inside
+    the quotes to be valid, it is recommended you use the original text so you
+    know what text the label refers to.
 
 Creating audio translations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -194,7 +213,7 @@ Using audio translations in your game
 
 The following is a high-level overview of the language remapping functionality
 provided by Godot. For more in-depth documentation, please see
-https://docs.godotengine.org/en/stable/tutorials/i18n/internationalizing_games.html?highlight=remaps#localizing-resources
+`https://docs.godotengine.org/en/stable/tutorials/i18n/internationalizing_games.html?highlight=remaps#localizing-resources`
 
 Godot provides a mechanism to map files between the different languages you
 provide for your game. The mapping function can be found under
@@ -237,4 +256,4 @@ started.
     found :doc:`in this document </advanced/create_dialog_manager>`
 
 
-.. _`Godot's built-in translation features`: https://docs.godotengine.org/en/stable/tutorials/i18n/internationalizing_games.html
+
