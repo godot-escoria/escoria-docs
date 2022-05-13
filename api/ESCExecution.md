@@ -13,7 +13,7 @@ Basic features and informations about ESC executions
 ### RC\_CANCEL
 
 ```gdscript
-const RC_ERROR: int = 2
+const RC_OK: int = 0
 ```
 
 Return codes handled by events
@@ -28,7 +28,7 @@ that no execution is required for this command (such as "stop" and "repeat")
 ### RC\_ERROR
 
 ```gdscript
-const RC_ERROR: int = 2
+const RC_OK: int = 0
 ```
 
 Return codes handled by events
@@ -43,7 +43,7 @@ that no execution is required for this command (such as "stop" and "repeat")
 ### RC\_INTERRUPTED
 
 ```gdscript
-const RC_ERROR: int = 2
+const RC_OK: int = 0
 ```
 
 Return codes handled by events
@@ -58,7 +58,7 @@ that no execution is required for this command (such as "stop" and "repeat")
 ### RC\_OK
 
 ```gdscript
-const RC_ERROR: int = 2
+const RC_OK: int = 0
 ```
 
 Return codes handled by events
@@ -73,7 +73,7 @@ that no execution is required for this command (such as "stop" and "repeat")
 ### RC\_REPEAT
 
 ```gdscript
-const RC_ERROR: int = 2
+const RC_OK: int = 0
 ```
 
 Return codes handled by events
@@ -88,7 +88,7 @@ that no execution is required for this command (such as "stop" and "repeat")
 ### RC\_WONT\_QUEUE
 
 ```gdscript
-const RC_ERROR: int = 2
+const RC_OK: int = 0
 ```
 
 Return codes handled by events
