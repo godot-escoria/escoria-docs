@@ -60,16 +60,30 @@ the spritesheet:
 .. image:: img/character_create_animations.png
    :alt: The required animations in the frames configuration.
 
-* back
-* backright
-* front
-* frontleft
-* left
+* walkback
+* walkbackright
+* walkfront
+* walkfrontright
+* walkright
 * idleback
 * idlebackright
 * idlefront
-* idlefrontleft
-* idleleft
+* idlefrontright
+* idleright
+
+.. hint::
+
+   These names can be anything that makes sense to you. If you want to use
+   "walk_down_right" or "moving_towards_and_right" for example instead of
+   "walkfrontright" then you can do that. The ``ESCAnimationResource``
+   described below will link the direction the character is walking to the
+   animation you've created.
+
+.. hint::
+
+   All the animations for the character (walk/idle/talk) live inside the
+   one `AnimatedSprite` node for the character.
+
 
 Refer to the `AnimatedSprite tutorial in the Godot docs`_ to learn how to do
 this if you need some help.
