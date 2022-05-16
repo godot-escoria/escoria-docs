@@ -157,7 +157,7 @@ game world.
 
 You can start your cutscene when your room appears by placing the commands
 as part of the `:ready` event.
-:doc:`https://docs.escoria-framework.org/en/devel/scripting/z_esc_reference.html#ready-label`
+`https://docs.escoria-framework.org/en/devel/scripting/z_esc_reference.html#ready-label`
 
 Alternatively, you can start your cutscene when the player walks through a
 trigger area or interacts with an object. For example, this script is attached
@@ -185,7 +185,7 @@ Non-blocking scripts allow for commands to run in parallel.
   Though blocking commands generally have "_block" as part of their names,
   some commands that don't (like `wait`) will also block. See the command
   reference to confirm if the command you want to use is blocking or not.
-  :doc:https://docs.escoria-framework.org/en/devel/scripting/z_esc_reference.html
+  `https://docs.escoria-framework.org/en/devel/scripting/z_esc_reference.html`
 
 
 In this first example
@@ -225,7 +225,7 @@ The `accept_input` command
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Another important command for creating cutscenes is the
-:doc:`https://docs.escoria-framework.org/en/devel/scripting/z_esc_reference.html#accept-input-type-api-doc`
+`https://docs.escoria-framework.org/en/devel/scripting/z_esc_reference.html#accept-input-type-api-doc`
 command. It's important that the player can't walk away or
 interact with items while the story component of your game is running. For this
 reason, Escoria provides you the `accept_input` command to limit the actions
@@ -386,13 +386,13 @@ inventory_jester_outfit.esc::
 How do I add audio speech to my game?
 -------------------------------------
 
-See :doc:`https://docs.escoria-framework.org/en/devel/getting_started/dialogs.html#recorded-speech`
+See `https://docs.escoria-framework.org/en/devel/getting_started/dialogs.html#recorded-speech`
 
 
 How do I translate my game into other languages?
 ------------------------------------------------
 
-See :doc:`https://docs.escoria-framework.org/en/devel/getting_started/dialogs.html#translations`
+See `https://docs.escoria-framework.org/en/devel/getting_started/dialogs.html#translations`
 
 
 How do I add a score to my game ?
