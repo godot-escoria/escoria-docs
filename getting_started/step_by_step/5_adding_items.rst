@@ -69,6 +69,16 @@ The ``say`` command expects the player character's global ID as the first
 parameter and the text to say as the second parameter. (See the
 :doc:`documentation </api/SayCommand>`)
 
+If you don't define an ``ESCLocation`` in your player nodetree, text will appear
+at the top of the screen.
+
+So, add now an ``ESCLocation`` as a child of ``ESCPlayer``.
+
+Name this node as "dialog_position" (this name is mandatory).
+
+By default, text would appear under the character. You can move the node above
+the Graham's head, to get a more regular position.
+
 Try it out! Depending on which UI you chose, select either the look verb or
 the look cursor and click on the blackboard. You should notice that Graham
 will neither walk to the blackboard nor speak the line we coded above.
