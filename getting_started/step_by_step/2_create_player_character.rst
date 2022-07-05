@@ -218,8 +218,7 @@ specific animations for the character for each direction angle:
    The ``Speak`` animations are optional and only required if your game needs
    them.
 
-For each direction angle, put the name of the matching animation (with the name
-specified in "Adding a walkcycle" above) in the "Animation" field, and choose
+For each direction angle, each slot needs to contain a ``ESCAnimationName`` resource. Put the name of the matching walking animation (with the name specified in "Adding a walkcycle" above) in the "Animation" field, and choose
 whether that animation should be played mirrored by selecting the "Mirrored"
 checkbox.
 
@@ -228,7 +227,6 @@ These are the the first 3 settings for the ``Directions`` parameter:
 .. image:: img/character_create_animation_directions.png
    :alt: The settings required for the Direction parameter
 
-Each slot needs to contain a ``ESCAnimationName`` resource.
 Try to set up the ``Directions`` and ``Idle`` animations by yourself.
 Don't forget to click ``Mirrored on`` when the image is facing the
 opposite direction (for instance we have a left animation and
