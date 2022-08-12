@@ -2,7 +2,7 @@
 
 # SlideBlockCommand
 
-**Extends:** [SlideCommand](../SlideCommand) < [ESCBaseCommand](../ESCBaseCommand) < [Node](../Node)
+**Extends:** [SlideCommand](../SlideCommand) < [ESCBaseCommand](../ESCBaseCommand) < [Resource](../Resource)
 
 ## Description
 

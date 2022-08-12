@@ -2,7 +2,7 @@
 
 # ESCProjectSettingsManager
 
-**Extends:** [Node](../Node)
+**Extends:** [Resource](../Resource)
 
 ## Description
 
@@ -94,16 +94,16 @@ const GAME_START_SCRIPT: String = "escoria/main/game_start_script"
 const GAME_VERSION: String = "escoria/main/game_version"
 ```
 
+### INVENTORY\_ITEMS\_PATH
+
+```gdscript
+const INVENTORY_ITEMS_PATH: String = "escoria/ui/inventory_items_path"
+```
+
 ### INVENTORY\_ITEM\_SIZE
 
 ```gdscript
 const INVENTORY_ITEM_SIZE: String = "escoria/ui/inventory_item_size"
-```
-
-### ITEMS\_AUTOREGISTER\_PATH
-
-```gdscript
-const ITEMS_AUTOREGISTER_PATH: String = "escoria/ui/items_autoregister_path"
 ```
 
 ### LOG\_FILE\_PATH
@@ -234,7 +234,7 @@ const VOICE_LANG: String = "escoria/main/voice_lang"
 
 ## Method Descriptions
 
-### register\_setting
+### register\_setting <small>(static)</small>
 
 ```gdscript
 func register_setting(name: String, default, info: Dictionary) -> void
@@ -248,7 +248,7 @@ Register a new project setting if it hasn't been defined already
 - default: Default value
 - info: Property info for the setting
 
-### get\_setting
+### get\_setting <small>(static)</small>
 
 ```gdscript
 func get_setting(key: String)
@@ -262,7 +262,7 @@ Retrieves the specified project setting.
 
 *Returns* the value of the project setting located with key.
 
-### set\_setting
+### set\_setting <small>(static)</small>
 
 ```gdscript
 func set_setting(key: String, value) -> void
@@ -275,7 +275,7 @@ Sets the specified project setting to the provided value.
 - key: Project setting name.
 - value: Project setting value.
 
-### has\_setting
+### has\_setting <small>(static)</small>
 
 ```gdscript
 func has_setting(key: String) -> bool

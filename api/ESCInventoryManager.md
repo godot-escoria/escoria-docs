@@ -2,7 +2,7 @@
 
 # ESCInventoryManager
 
-**Extends:** [Object](../Object)
+**Extends:** [Resource](../Resource)
 
 ## Description
 

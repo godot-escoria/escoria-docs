@@ -2,7 +2,7 @@
 
 # ESCInputsManager
 
-**Extends:** [Node](../Node)
+**Extends:** [Resource](../Resource)
 
 ## Description
 

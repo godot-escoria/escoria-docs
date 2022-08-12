@@ -22,6 +22,12 @@ const CHANNEL_FRONT: String = "_front"
 
 Event channel names
 
+### EVENT\_CANT\_REACH
+
+```gdscript
+const EVENT_CANT_REACH: String = "cant_reach"
+```
+
 ### EVENT\_EXIT\_SCENE
 
 ```gdscript

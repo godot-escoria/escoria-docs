@@ -2,7 +2,7 @@
 
 # CameraSetPosCommand
 
-**Extends:** [ESCBaseCommand](../ESCBaseCommand) < [Node](../Node)
+**Extends:** [ESCBaseCommand](../ESCBaseCommand) < [Resource](../Resource)
 
 ## Description
 
@@ -29,6 +29,14 @@ func configure() -> ESCCommandArgumentDescriptor
 ```
 
 Return the descriptor of the arguments of this command
+
+### validate
+
+```gdscript
+func validate(arguments: Array)
+```
+
+Validate whether the given arguments match the command descriptor
 
 ### run
 

@@ -8,27 +8,33 @@
 
 Plugin script to initialize Escoria
 
-## Constants Descriptions
-
-### ESCORIA
-
-```gdscript
-const ESCORIA: String = "/root/escoria"
-```
-
-The path to node 'escoria'.
-
 ## Property Descriptions
 
-### escoria\_instance
+### popup\_info
 
 ```gdscript
-var escoria_instance: Node
+var popup_info: AcceptDialog
 ```
 
-Reference to "escoria" singleton instance.
+The warning popup displayed on escoria-core enabling.
 
 ## Method Descriptions
+
+### enable\_plugin
+
+```gdscript
+func enable_plugin()
+```
+
+Virtual function called when plugin is enabled.
+
+### disable\_plugin
+
+```gdscript
+func disable_plugin()
+```
+
+Virtual function called when plugin is disabled.
 
 ### set\_escoria\_ui\_settings
 
@@ -70,3 +76,17 @@ func set_escoria_platform_settings()
 
 Prepare the settings in the Escoria platform category and may need special
 setting per build
+
+### register\_setting <small>(static)</small>
+
+```gdscript
+func register_setting(name: String, default, info: Dictionary) -> void
+```
+
+Register a new project setting if it hasn't been defined already
+
+#### Parameters
+
+- name: Name of the project setting
+- default: Default value
+- info: Property info for the setting

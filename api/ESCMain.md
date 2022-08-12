@@ -1,6 +1,6 @@
 <!-- Auto-generated from JSON by GDScript docs maker. Do not edit this document directly. -->
 
-# main\_scene.gd
+# ESCMain
 
 **Extends:** [Node](../Node)
 
@@ -8,3 +8,12 @@
 
 Main_scene is the entry point for Godot Engine.
 This scene sets up the main menu scene to load.
+
+## Property Descriptions
+
+### escoria\_node
+
+```gdscript
+var escoria_node: Escoria
+```
+

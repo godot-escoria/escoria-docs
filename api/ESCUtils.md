@@ -2,7 +2,7 @@
 
 # ESCUtils
 
-**Extends:** [Object](../Object)
+**Extends:** [Reference](../Reference)
 
 ## Description
 
@@ -10,7 +10,7 @@ A set of common utilities
 
 ## Method Descriptions
 
-### get\_deg\_from\_rad
+### get\_deg\_from\_rad <small>(static)</small>
 
 ```gdscript
 func get_deg_from_rad(rad_angle: float)
@@ -23,7 +23,7 @@ Convert radians to degrees
 - rad_angle: Angle in radians
 **Returns** Degrees
 
-### get\_re\_group
+### get\_re\_group <small>(static)</small>
 
 ```gdscript
 func get_re_group(re_match: RegExMatch, group: String) -> String
@@ -37,7 +37,7 @@ Get the content of a reg exp group by name
 - group: The name of the group
 **Returns** The value of the named regex group in the match
 
-### get\_typed\_value
+### get\_typed\_value <small>(static)</small>
 
 ```gdscript
 func get_typed_value(value: String, type_hint)
@@ -51,7 +51,7 @@ Return a string value in the correct infered type
 - type_hint: The type it should be
 **Returns** The typed value according to the type inference
 
-### sanitize\_whitespace
+### sanitize\_whitespace <small>(static)</small>
 
 ```gdscript
 func sanitize_whitespace(value: String) -> String

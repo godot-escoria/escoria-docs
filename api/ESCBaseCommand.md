@@ -2,7 +2,7 @@
 
 # ESCBaseCommand
 
-**Extends:** [Node](../Node)
+**Extends:** [Resource](../Resource)
 
 ## Description
 

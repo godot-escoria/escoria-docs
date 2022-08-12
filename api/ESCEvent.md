@@ -2,7 +2,7 @@
 
 # ESCEvent
 
-**Extends:** [ESCStatement](../ESCStatement) < [Object](../Object)
+**Extends:** [ESCStatement](../ESCStatement) < [Reference](../Reference)
 
 ## Description
 

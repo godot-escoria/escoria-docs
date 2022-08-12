@@ -2,7 +2,7 @@
 
 # CameraShiftCommand
 
-**Extends:** [ESCBaseCommand](../ESCBaseCommand) < [Node](../Node)
+**Extends:** [ESCBaseCommand](../ESCBaseCommand) < [Resource](../Resource)
 
 ## Description
 

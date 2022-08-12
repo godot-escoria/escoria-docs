@@ -233,6 +233,8 @@ as a camera target
 var animations: ESCAnimationResource
 ```
 
+- **Setter**: `set_animations`
+
  ESCAnimationsResource (for walking, idling...)
 
 ### animation\_sprite
@@ -260,6 +262,28 @@ var collision: Node
 Reference to this items collision shape node
 
 ## Method Descriptions
+
+### validate\_animations
+
+```gdscript
+func validate_animations(animations_resource: ESCAnimationResource) -> void
+```
+
+Validates the ESCAnimationResource if it exists. Note that we pass in the
+ESCAnimationResource as an argument so that it can also be used to validate
+an ESCAnimationResource prior to being set.
+
+#### Parameters
+
+- animation_resource: the ESCAnimationResource to validate.
+
+### set\_animations
+
+```gdscript
+func set_animations(p_animations: ESCAnimationResource) -> void
+```
+
+Setter for the animations property.
 
 ### get\_animation\_player
 

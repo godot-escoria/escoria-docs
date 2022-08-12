@@ -42,3 +42,14 @@ Remove an item from the container
 
 #### Parameters
 - inventory_item: Item to remove
+
+### get\_inventory\_button
+
+```gdscript
+func get_inventory_button(inventory_item: ESCInventoryItem) -> ESCInventoryButton
+```
+
+Return an Inventory button from the container, using an ESCInventoryItem
+
+#### Parameters
+- inventory_item: Inventory item to return the button node from

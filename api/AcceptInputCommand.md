@@ -2,7 +2,7 @@
 
 # AcceptInputCommand
 
-**Extends:** [ESCBaseCommand](../ESCBaseCommand) < [Node](../Node)
+**Extends:** [ESCBaseCommand](../ESCBaseCommand) < [Resource](../Resource)
 
 ## Description
 
@@ -26,6 +26,16 @@ current event has ended. Remember to reset the input type at the end of
 cut-scenes!
 
 @ESC
+
+## Constants Descriptions
+
+### SUPPORTED\_INPUT\_TYPES
+
+```gdscript
+const SUPPORTED_INPUT_TYPES: Array = ["ALL","NONE","SKIP"]
+```
+
+The list of supported input types
 
 ## Method Descriptions
 

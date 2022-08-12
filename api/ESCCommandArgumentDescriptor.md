@@ -2,7 +2,7 @@
 
 # ESCCommandArgumentDescriptor
 
-**Extends:** [Object](../Object)
+**Extends:** [Reference](../Reference)
 
 ## Description
 

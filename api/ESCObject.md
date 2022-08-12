@@ -2,11 +2,9 @@
 
 # ESCObject
 
-**Extends:** [Node](../Node)
+**Extends:** [Reference](../Reference)
 
 ## Description
-
-An object handled in Escoria
 
 ## Constants Descriptions
 

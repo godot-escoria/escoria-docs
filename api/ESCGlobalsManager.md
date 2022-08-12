@@ -10,6 +10,16 @@ A resource that manages the ESC global states
 The ESC global state is basically simply a dictionary of keys with
 values. Values can be bool, integer or strings
 
+## Property Descriptions
+
+### globals\_regex
+
+```gdscript
+var globals_regex: RegEx
+```
+
+Use look-ahead/behind to capture the term in braces
+
 ## Method Descriptions
 
 ### has
@@ -94,6 +104,20 @@ for the pattern format
 
 - pattern: The wildcard pattern to match
 - value: The new value
+
+### replace\_globals
+
+```gdscript
+func replace_globals(string: String) -> String
+```
+
+Look to see if any globals (names in braces) should be interpreted
+
+#### Parameters
+
+* string: Text in which to replace globals
+
+*Returns* the provided string with globals variables replaced with their values
 
 ### save\_game
 
