@@ -156,10 +156,11 @@ Events that are considered "for game developer use" are
 -  ready : These are commands that will run when a room loads, after it becomes
    visible (i.e. once ":setup" completes and after the "transition in").
 -  cant_reach : The ":cant_reach" event will fire when the game character has
-   walked as far as it can to try and reach an ESCItem's location, but the
-   current navigation polygon prevents it from reaching the destination. You
-   can use this event to have the character say "Sorry, I can't reach it."
-   for example if there's an obstacle blocking their path.
+   walked as far as it can to try and reach an `ESCItem`'s location, but the
+   current navigation polygon prevents the character from reaching the
+   destination. You can use this event to have the character say,
+   "Sorry, I can't reach it." for example if there's an obstacle blocking the
+   character's path.
 
 Plugin Events
 ~~~~~~~~~~~~~
