@@ -163,6 +163,20 @@ func perform_walk(moving_obj: ESCObject, destination, is_fast: bool = false)
 func perform_inputevent_on_object(obj: ESCObject, event: InputEvent, default_action: bool = false)
 ```
 
+### is\_object\_actionable
+
+```gdscript
+func is_object_actionable(global_id: String) -> bool
+```
+
+Determines whether the object in question can be acted upon.
+
+#### Parameters
+
+- global_id: the global ID of the item to examine
+
+*Returns* True iff the item represented by global_id can be acted upon.
+
 ## Signals
 
 - signal action_changed(): The current action verb was changed
