@@ -18,6 +18,14 @@ the object 'disappears' from the scene as it's added to the inventory.
 
 @ESC
 
+## Constants Descriptions
+
+### ILLEGAL\_STRINGS
+
+```gdscript
+const ILLEGAL_STRINGS: Array = ["/"]
+```
+
 ## Method Descriptions
 
 ### configure

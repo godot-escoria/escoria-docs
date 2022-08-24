@@ -18,6 +18,14 @@ simulating placing the item somewhere, for example.
 
 @ESC
 
+## Constants Descriptions
+
+### ILLEGAL\_STRINGS
+
+```gdscript
+const ILLEGAL_STRINGS: Array = ["/"]
+```
+
 ## Method Descriptions
 
 ### configure
@@ -27,6 +35,14 @@ func configure() -> ESCCommandArgumentDescriptor
 ```
 
 Return the descriptor of the arguments of this command
+
+### validate
+
+```gdscript
+func validate(arguments: Array)
+```
+
+Validate whether the given arguments match the command descriptor
 
 ### run
 
