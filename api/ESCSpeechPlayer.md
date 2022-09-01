@@ -18,6 +18,14 @@ export var global_id: String = "_speech"
 
 Global id of the background music player
 
+### stream
+
+```gdscript
+var stream: AudioStreamPlayer
+```
+
+Reference to the audio player
+
 ## Method Descriptions
 
 ### set\_state
@@ -32,3 +40,19 @@ Set the state of this player
 
 - p_state: New state to use
 - p_force: Override the existing state even if the stream is still playing
+
+### pause
+
+```gdscript
+func pause()
+```
+
+Pause the speech player
+
+### resume
+
+```gdscript
+func resume()
+```
+
+Unpause the speech player

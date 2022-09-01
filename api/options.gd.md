@@ -8,6 +8,16 @@
 
 An options menu
 
+## Constants Descriptions
+
+### CUSTOM\_SETTING
+
+```gdscript
+const CUSTOM_SETTING: String = "a_custom_setting"
+```
+
+Custom setting key
+
 ## Property Descriptions
 
 ### backup\_settings

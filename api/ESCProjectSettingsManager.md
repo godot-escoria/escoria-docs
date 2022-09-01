@@ -52,6 +52,14 @@ const DEVELOPMENT_LANG: String = "escoria/debug/development_lang"
 const DIALOG_MANAGERS: String = "escoria/ui/dialog_managers"
 ```
 
+### DISPLAY
+
+```gdscript
+const DISPLAY: String = "display"
+```
+
+Godot Windows project settings
+
 ### ENABLE\_ROOM\_SELECTOR
 
 ```gdscript
@@ -68,6 +76,12 @@ const FAST_TEXT_SPEED_PER_CHARACTER: String = "escoria/dialog_simple/fast_text_s
 
 ```gdscript
 const FORCE_QUIT: String = "escoria/main/force_quit"
+```
+
+### FULLSCREEN
+
+```gdscript
+const FULLSCREEN: String = "display/window/size/fullscreen"
 ```
 
 ### GAME\_MIGRATION\_PATH
@@ -160,6 +174,12 @@ const SETTINGS_PATH: String = "escoria/main/settings_path"
 const SFX_VOLUME: String = "escoria/sound/sfx_volume"
 ```
 
+### SIZE
+
+```gdscript
+const SIZE: String = "size"
+```
+
 ### SKIP\_CACHE
 
 ```gdscript
@@ -170,6 +190,12 @@ const SKIP_CACHE: String = "escoria/platform/skip_cache"
 
 ```gdscript
 const SKIP_CACHE_MOBILE: String = "escoria/platform/skip_cache.mobile"
+```
+
+### SKIP\_DIALOGS
+
+```gdscript
+const SKIP_DIALOGS: String = "escoria/ui/skip_dialogs"
 ```
 
 ### SPEECH\_ENABLED
@@ -230,6 +256,12 @@ const TRANSITION_PATHS: String = "escoria/ui/transition_paths"
 
 ```gdscript
 const VOICE_LANG: String = "escoria/main/voice_lang"
+```
+
+### WINDOW
+
+```gdscript
+const WINDOW: String = "window"
 ```
 
 ## Method Descriptions

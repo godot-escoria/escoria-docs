@@ -148,6 +148,14 @@ var command_registry: ESCCommandRegistry
 
 ESC command registry instance
 
+### settings\_manager
+
+```gdscript
+var settings_manager: ESCSettingsManager
+```
+
+Manager of game settings (resolution, sound, etc)
+
 ### resource\_cache
 
 ```gdscript
@@ -171,14 +179,6 @@ var inventory
 ```
 
 Inventory scene
-
-### settings
-
-```gdscript
-var settings: ESCSaveSettings
-```
-
-These are settings that the player can affect and save/load later
 
 ### main
 
@@ -283,18 +283,6 @@ Pauses or unpause the game
 
 #### Parameters
 - p_paused: if true, pauses the game. If false, unpauses the game.
-
-### apply\_settings
-
-```gdscript
-func apply_settings(p_settings: ESCSaveSettings) -> void
-```
-
-Apply the loaded settings
-
-#### Parameters
-
-* p_settings: Loaded settings
 
 ### new\_game
 
