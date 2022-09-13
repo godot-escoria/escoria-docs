@@ -10,6 +10,12 @@ Registers and allows access to Escoria-specific project settings.
 
 ## Constants Descriptions
 
+### ACTION\_DEFAULT\_SCRIPT
+
+```gdscript
+const ACTION_DEFAULT_SCRIPT: String = "escoria/main/action_default_script"
+```
+
 ### AVATARS\_PATH
 
 ```gdscript

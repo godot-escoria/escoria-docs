@@ -170,3 +170,16 @@ func clear_stack()
 ```
 
 Clear the stack of hovered items
+
+## Sub\-classes
+
+### HoverStackSorter
+
+#### Method Descriptions
+
+### sort\_ascending\_z\_index <small>(static)</small>
+
+```gdscript
+func sort_ascending_z_index(a, b)
+```
+

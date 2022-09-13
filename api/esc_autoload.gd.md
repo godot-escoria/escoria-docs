@@ -229,6 +229,15 @@ var start_script: ESCScript
 The compiled start script loaded from ProjectSettings
 escoria/main/game_start_script
 
+### action\_default\_script
+
+```gdscript
+var action_default_script: ESCScript
+```
+
+The "fallback" script to use when an action is tried on an item that hasn't
+been explicitly scripted.
+
 ### is\_direct\_room\_run
 
 ```gdscript

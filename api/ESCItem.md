@@ -465,6 +465,17 @@ func get_camera_node()
 Return the camera position if a camera_position_node exists or the
 global position of the player
 
+### is\_moving
+
+```gdscript
+func is_moving() -> bool
+```
+
+Whether the item is currently moving.
+
+*Returns*
+Returns true if the player is currently moving, false otherwise
+
 ## Signals
 
 - signal mouse_entered_item(item): Emitted when the mouse has entered this item

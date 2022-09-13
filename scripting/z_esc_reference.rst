@@ -690,9 +690,12 @@ e.g. say player "I have {coin_count} coins remaining".
 **Parameters**
 
 
-* *player*\ : Global ID of the ``ESCPlayer`` or ``ESCItem`` object that is active
-* *text*\ : Text to display
-* *type*\ : Dialog type to use. One of ``floating`` or ``avatar``
+* *player*\ : Global ID of the ``ESCPlayer`` or ``ESCItem`` object that is active.
+    You can specify ``current_player`` in order to refer to the currently active
+    player, e.g. in cases where multiple players are playable such as in games
+    like Maniac Mansion or Day of the Tentacle.
+* *text*\ : Text to display.
+* *type*\ : Dialog type to use. One of ``floating`` or ``avatar``.
   (default: the value set in the setting "Escoria/UI/Default Dialog Type")
 
 The text supports translation keys by prepending the key followed by
