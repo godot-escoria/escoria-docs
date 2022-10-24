@@ -627,12 +627,19 @@ Use this for debugging game state.
 
 Queue an event to run.
 
+If you queue multiple events on a channel and none of them are blocking
+events, all events will effectively run at the same time. As the events are
+placed on the channel's queue, if one event contains a blocking command, the
+next event on that channel's queue won't be processed until the blocking
+command finishes.
+
 **Parameters**
 
 
 * object: Object that holds the ESC script with the event
 * event: Name of the event to queue
-* channel: Channel to run the event on (default: ``_front``\ )
+* channel: Channel to run the event on (default: ``_front``\ ). Using a
+  previously unused channel name will create a new channel.
 * block: Whether to wait for the queue to finish. This is only possible, if
   the queued event is not to be run on the same event as this command
   (default: ``false``\ )
@@ -671,8 +678,9 @@ being returned.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Restarts the execution of the current scope at the start. A scope can be a
-group or an event.
+Makes the current script loop back to the start. Currently the only way to
+exit the loop is via the ``stop`` command which will stop the script
+completely.
 
 
 ``say player text [type]`` `API-Doc </api/SayCommand.html>`__
@@ -758,6 +766,43 @@ Inactive objects are invisible in the room.
 
 * *object* Global ID of the object
 * *active* Whether ``object`` should be active. ``active`` can be ``true`` or ``false``.
+
+
+``set_angle object target_degrees [wait]`` `API-Doc </api/SetAngleCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Turns a movable ``ESCItem`` or ``ESCPlayer`` to face a given target direction.
+
+Angles 0 and 360 are the same and correspond to UP/NORTH,
+90 is RIGHT/EAST, 180 is DOWN/SOUTH, 270 is LEFT/WEST etc.
+The rotation direction will be determined by the shortest path - e.g.
+rotating from facing up (0 degrees) to left (270) will be a 90 degree turn
+anti-clockwise rather than a 270 degree clockwise turn.
+
+The final animation used is determined by the directions which have
+been configured for the object. If the item has a direction configured which
+has been drawn to show it facing to the right, and this direction has been
+defined to cover the angle from 45 to 135 degrees, setting the target angle
+to 120 degrees will result in the right-facing animation being used.
+
+The number of intermediate animations shown while turning the
+item will depend on the directions specified in the item's definition. A 16
+direction character will turn through 8 different directions to turn 180
+degrees, a 4 direction character only 2. The wait time will determine how
+long the idle animation for each direction is played before using the next
+direction's animation. As such, if wait was set to 1 second, a 16 direction
+character would take 8 seconds to turn 180 degrees, a 4 direction character
+would take 2 seconds.
+
+**Parameters**
+
+
+* *object*\ : Global ID of the object to turn
+* *target_degrees*\ : Number of degrees by which ``object`` is to be turned
+* *wait*\ : Number of seconds to wait for while playing each animation occurring
+  between the current angle of ``object`` and the target angle. A value of
+  ``0`` will complete the turn immediately (default: ``0``\ )
 
 
 ``set_animations object animations`` `API-Doc </api/SetAnimationsCommand.html>`__
@@ -848,12 +893,16 @@ Sets the speed of a ``ESCPlayer`` or movable ``ESCItem``.
 
 
 Changes the state of ``object`` to the one specified.
+This command is primarily used to play animations.
 
 If the specified object's associated animation player has an animation
-with the same name, that that animation is also played.
+with the same name, that animation is also played.
 
-Can be used to change the appearance of an item or player
-character. See https://docs.escoria-framework.org/states for details.
+When the "state" of the object is set - for example, a door may be set
+to a "closed" state - this plays the matching "close" animation if one exists
+(to show the door closing in the game). When you re-enter the room (via a
+different entry), or restore a saved game, the state of the door object
+will be restored - showing the door as a closed door.
 
 **Parameters**
 
@@ -869,9 +918,12 @@ character. See https://docs.escoria-framework.org/states for details.
 
 Shows either the main menu or the pause menu. The enable_automatic_transition
 parameter can be used to specify if Escoria manages the graphical transition to
-the menu or not. If set to false, you can manage the transition yourself
-instead (if you want to change the transition type from the default for
-example) using the ``transition`` command.
+the menu or not.
+Setting ``enable_automatic_transition`` to false allows you to manage the
+transition effect for your menu as it transitions in and out. Place a
+``transition`` command in the menu's ``setup`` event to manage the look of the
+transition in, and in the menu's ``exit_scene`` event to manage the look of the
+transition out.
 
 **Parameters**
 
@@ -934,21 +986,30 @@ Programmatically adds a new item to the scene.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Stops the current event's execution.
+Stops the current event's execution. Note that this will stop the current
+script entirely - if you're within a conditional block, the code after the
+conditional block will not be executed.
 
 
-``stop_snd [player]`` `API-Doc </api/StopSndCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``stop_snd [audio_bus]`` `API-Doc </api/StopSndCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Stops the given sound player's stream.
+Stops the given audio bus's stream.
+
+By default there are 3 audio buses set up by Escoria : ``_sound``\ , which is
+used to play non-looping sound effects; ``_music``\ , which plays looping music;
+and ``_speech``\ , which plays non-looping voice files (default: ``_music``\ ).
+
+Each simultaneous sound (e.g. multiple game sound effects) will require its
+own bus. To create additional buses, see the Godot sound documentation :
+`Audio buses <https://docs.godotengine.org/en/stable/tutorials/audio/audio_buses.html#doc-audio-buses>`_
 
 **Parameters**
 
 
-* *player*\ : Sound player to use. Either ``_sound``\ , which is used to play non-
-  looping sound effects; ``_music``\ , which plays looping music; or ``_speech``\ , which
-  plays non-looping voice files (default: ``_music``\ )
+* *audio_bus*\ : Bus to stop ("_sound", "_music", "_speech", or a custom
+  audio bus you have created.)
 
 
 ``teleport object target`` `API-Doc </api/TeleportCommand.html>`__
@@ -983,7 +1044,10 @@ Instantly moves an object to the specified (absolute) coordinates.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Performs a transition into or out of a room programmatically.
+Runs a transition effect - generally used when entering or leaving a room.
+Transitions are implemented as Godot shaders. Custom transitions can be made
+by creating a shader in the ``game/scenes/transitions/shaders/`` folder within
+the escoria-core plugin folder.
 
 **Parameters**
 
@@ -1005,6 +1069,16 @@ Unlike movement commands, ``turn_to`` will not automatically reference an
 To turn towards an ``ESCLocation`` that is a child of an ``ESCItem``\ , give the
 ``ESCLocation`` a ``Global ID`` and use this value as the ``object_to_face``
 parameter.
+
+While turning, the number of directions the item faces will depend on
+the number of ``directions`` defined for the object. A 16 direction character
+for example will display 8 directions of animation while turning to face an
+object that is 180 degrees away, a 4 direction character would only face 2
+directions to make the same turn. As the idle animation will be played for
+``wait`` seconds for each direction the object faces, a 16 direction character
+would take 8 seconds to rotate 180 degrees with a 1 second ``wait`` time,
+whereas a 4 direction character would only take 2 seconds to make the same
+rotation.
 
 **Parameters**
 
@@ -1031,9 +1105,12 @@ Blocks execution of the current event.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Moves the specified ``ESCPlayer`` or movable ``ESCItem`` to ``target``
-while playing ``object``\ 's walking animation. This command is blocking.
+Moves the specified ``ESCPlayer`` or movable ``ESCItem`` to the ``target``
+ESCItem's location while playing ``object``\ 's walking animation. This command
+is blocking.
 This command will use the normal walk speed by default.
+If the ``target`` ESCItem has a child ESCLocation node, the walk destination
+will be the position of the ESCLocation.
 
 **Parameters**
 
@@ -1048,9 +1125,12 @@ This command will use the normal walk speed by default.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Moves the specified ``ESCPlayer`` or movable ``ESCItem`` to ``target``
-while playing ``object``\ 's walking animation. This command is non-blocking.
+Moves the specified ``ESCPlayer`` or movable ``ESCItem`` to the ``target``
+ESCItem's location while playing ``object``\ 's walking animation. This command
+is non-blocking.
 This command will use the normal walk speed by default.
+If the ``target`` ESCItem has a child ESCLocation node, the walk destination
+will be the position of the ESCLocation.
 
 **Parameters**
 
