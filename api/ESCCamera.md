@@ -98,3 +98,60 @@ https://docs.godotengine.org/en/stable/classes/class_tween.html#enumerations
 - p_target: Vector to shift the camera by
 - p_time: Number of seconds for the transition to take
 - p_type: Tween transition type
+
+### check\_point\_is\_inside\_viewport\_limits
+
+```gdscript
+func check_point_is_inside_viewport_limits(point: Vector2) -> bool
+```
+
+Checks whether the given point is contained within the viewport's limits.
+Note that this is different from the camera's limits when using anchor mode
+DRAG_CENTER.
+
+#### Parameters
+- point: Point to be tested against viewport limits.
+
+**Returns** true iff point is inside the calculated viewport's limits (inclusive)
+
+### get\_current\_valid\_viewport\_values\_x
+
+```gdscript
+func get_current_valid_viewport_values_x() -> Array
+```
+
+Returns the inclusive minimum and maximum values for the x-component of the current valid viewport.
+Mainly used in any logging messages related to same.
+
+**Returns** the inclusive minimum and maximum values for the x-component of the current valid viewport.
+
+### get\_current\_valid\_viewport\_values\_y
+
+```gdscript
+func get_current_valid_viewport_values_y() -> Array
+```
+
+Returns the inclusive minimum and maximum values for the y-component of the current valid viewport.
+Mainly used in any logging messages related to same.
+
+**Returns* the inclusive minimum and maximum values for the y-component of the current valid viewport.
+
+### get\_camera\_limit\_rect
+
+```gdscript
+func get_camera_limit_rect() -> Rect2
+```
+
+Returns the camera's current limits as a Rect2.
+Mainly used in any logging messages related to same.
+
+**Returns** the camera's current limits as a Rect2.
+
+### clamp\_to\_viewport\_limits
+
+```gdscript
+func clamp_to_viewport_limits() -> void
+```
+
+Used when drag margins are enabled. Clamps the camera so it respects the viewport limits inside
+the camera limits.
