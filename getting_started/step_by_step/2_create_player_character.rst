@@ -218,11 +218,11 @@ specific animations for the character for each direction angle:
    The ``Speak`` animations are optional and only required if your game needs
    them.
 
-For each direction angle, add an ``ESCAnimationResource``. Then, click each 
-``ESCAnimationResource`` and put the name of the matching animation (with the name
-specified in "Adding a walkcycle" above) in the "Animation" field, and choose
-whether that animation should be played mirrored by selecting the "Mirrored"
-checkbox.
+For each direction angle, add an ``ESCAnimationResource``. Then, click each
+``ESCAnimationResource`` and put the name of the matching animation
+(with the name specified in "Adding a walkcycle" above) in the "Animation"
+field, and choose whether that animation should be played mirrored by selecting
+the "Mirrored" checkbox.
 
 These are the the first 3 settings for the ``Directions`` parameter:
 
