@@ -18,6 +18,16 @@ const DebugMode: Dictionary = {"LIGHTMAP":2,"NONE":0,"SCALES":1}
 
 Visualize scales or the lightmap for debugging purposes
 
+## Constants Descriptions
+
+### Logger
+
+```gdscript
+const Logger: GDScript = preload("res://addons/escoria-core/game/esc_logger.gd")
+```
+
+Logger class
+
 ## Property Descriptions
 
 ### scales
@@ -100,6 +110,14 @@ var current_active_navigation_instance: NavigationPolygonInstance
 ```
 
 The currently activ navigation polygon
+
+### logger
+
+```gdscript
+var logger
+```
+
+Logger instance
 
 ## Method Descriptions
 
