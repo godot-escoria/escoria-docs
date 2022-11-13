@@ -144,16 +144,16 @@ const LOG_LEVEL: String = "escoria/debug/log_level"
 const MASTER_VOLUME: String = "escoria/sound/master_volume"
 ```
 
-### MAX\_TIME\_TO\_DISAPPEAR
-
-```gdscript
-const MAX_TIME_TO_DISAPPEAR: String = "escoria/dialog_simple/max_time_to_disappear"
-```
-
 ### MUSIC\_VOLUME
 
 ```gdscript
 const MUSIC_VOLUME: String = "escoria/sound/music_volume"
+```
+
+### READING\_SPEED\_IN\_WPM
+
+```gdscript
+const READING_SPEED_IN_WPM: String = "escoria/dialog_simple/reading_speed_in_wpm"
 ```
 
 ### ROOM\_SELECTOR\_ROOM\_DIR

@@ -325,6 +325,220 @@ animation is started.
 * *reverse*\ : Plays the animation in reverse when true
 
 
+``camera_push_block target [time] [type]`` `API-Doc </api/CameraPushBlockCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Pushes (moves) the camera so it points at a specific ``target``. If the camera
+was following a target (like the player) previously, it will no longer follow
+this target. Blocks until the command completes.
+
+Make sure the target is reachable if camera limits have been configured.
+
+**Parameters**
+
+
+* *target*\ : Global ID of the ``ESCItem`` to push the camera to. ``ESCItem``\ s have
+  a "camera_node" property that can be set to point to a node (usually an
+  ``ESCLocation`` node). If the "camera_node" property is empty, ``camera_push_block``
+  will point the camera at the ``ESCItem``\ s location. If however, the ``ESCItem``
+  has its "camera_node" property set, the command will instead point the
+  camera at the node referenced by the ``ESCItem``\ s "camera_node" property.
+* *time*\ : Number of seconds the transition should take (default: ``1``\ )
+* *type*\ : Transition type to use (default: ``QUAD``\ )
+
+Supported transitions include the names of the values used
+in the "TransitionType" enum of the "Tween" type (without the "TRANS_" prefix).
+
+See https://docs.godotengine.org/en/stable/classes/class_tween.html?highlight=tween#enumerations
+
+For more details see: https://docs.escoria-framework.org/camera
+
+
+``camera_push target [time] [type]`` `API-Doc </api/CameraPushCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Pushes (moves) the camera so it points at a specific ``target``. If the camera
+was following a target (like the player) previously, it will no longer follow
+this target.
+
+Make sure the target is reachable if camera limits have been configured.
+
+**Parameters**
+
+
+* *target*\ : Global ID of the ``ESCItem`` to push the camera to. ``ESCItem``\ s have
+  a "camera_node" property that can be set to point to a node (usually an
+  ``ESCLocation`` node). If the "camera_node" property is empty, ``camera_push``
+  will point the camera at the ``ESCItem``\ s location. If however, the ``ESCItem``
+  has its "camera_node" property set, the command will instead point the
+  camera at the node referenced by the ``ESCItem``\ s "camera_node" property.
+* *time*\ : Number of seconds the transition should take (default: ``1``\ )
+* *type*\ : Transition type to use (default: ``QUAD``\ )
+
+Supported transitions include the names of the values used
+in the "TransitionType" enum of the "Tween" type (without the "TRANS_" prefix):
+
+See https://docs.godotengine.org/en/stable/classes/class_tween.html?highlight=tween#enumerations
+
+For more details see: https://docs.escoria-framework.org/camera
+
+
+``camera_set_limits camlimits_id`` `API-Doc </api/CameraSetLimitsCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Limits the current camera's movement to a limit defined in the ``ESCRoom``\ 's
+definition. A limit is defined as an upper-left (x, y) coordinate, a width
+and a height that the camera must stay within. Multiple limits can be
+defined for a room, allowing for new areas to be seen once they have
+been 'unlocked'.
+
+**Parameters**
+
+
+* *camlimits_id*\ : Index of the camera limit defined in the ``camera limits``
+  list of the current ``ESCRoom``
+
+For more details see: https://docs.escoria-framework.org/camera
+
+
+``camera_set_pos_block time x y`` `API-Doc </api/CameraSetPosBlockCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Moves the camera to the given absolute position over a time period. Blocks
+until the command completes.
+
+Make sure the coordinates are reachable if camera limits have been configured.
+
+**Parameters**
+
+
+* *time*\ : Number of seconds the transition should take
+* *x*\ : Target X coordinate
+* "y*: Target Y coordinate
+
+For more details see: https://docs.escoria-framework.org/camera
+
+
+``camera_set_pos time x y`` `API-Doc </api/CameraSetPosCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Moves the camera to the given absolute position over a time period.
+
+**Parameters**
+
+
+* *time*\ : Number of seconds the transition should take
+* *x*\ : Target X coordinate
+* "y*: Target Y coordinate
+
+For more details see: https://docs.escoria-framework.org/camera
+
+
+``camera_set_target_block time object`` `API-Doc </api/CameraSetTargetBlockCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Configures the camera to follow the specified target ``object`` (ESCItem) as it moves
+around the current room. The transition to focus on the ``object`` will happen
+over a time period.  Blocks until the command completes.
+
+The camera will move as close as it can if camera limits have been configured
+and the ``object`` is at coordinates that are not reachable.
+
+**Parameters**
+
+
+* *time*\ : Number of seconds the transition should take to move the camera
+  to follow ``object``
+* *object*\ : Global ID of the target object
+
+For more details see: https://docs.escoria-framework.org/camera
+
+
+``camera_set_target time object`` `API-Doc </api/CameraSetTargetCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Configures the camera to follow the specified target ``object`` as it moves
+around the current room. The transition to focus on the ``object`` will happen
+over a time period.
+
+**Parameters**
+
+
+* *time*\ : Number of seconds the transition should take to move the camera
+  to follow ``object``
+* *object*\ : Global ID of the target object
+
+For more details see: https://docs.escoria-framework.org/camera
+
+
+``camera_set_zoom_block magnitude [time]`` `API-Doc </api/CameraSetZoomBlockCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Zooms the camera in/out to the desired ``magnitude``. Values larger than '1' zoom
+the camera out while smaller values zoom in. These values are relative to the
+default zoom value of '1', not the current value. As such, while using a value
+of '0.5' would double the size of the graphics, running the same command again
+would result in no change. The zoom will happen over the given time period.
+Blocks until the command completes.
+
+Zoom operations might not be as smooth as desired if the requested zoom
+level results in an edge of the camera meeting any defined camera limits.
+
+**Parameters**
+
+
+* *magnitude*\ : Magnitude of zoom
+* *time*\ : Number of seconds the transition should take, with a value of ``0``
+  meaning the zoom should happen instantly (default: ``0``\ )
+
+For more details see: https://docs.escoria-framework.org/camera
+
+
+``camera_set_zoom magnitude [time]`` `API-Doc </api/CameraSetZoomCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Zooms the camera in/out to the desired ``magnitude``. Values larger than '1' zoom
+the camera out while smaller values zoom in. These values are relative to the
+default zoom value of '1', not the current value. As such, while using a value
+of '0.5' would double the size of the graphics, running the same command again
+would result in no change. The zoom will happen over the given time period.
+
+**Parameters**
+
+
+* *magnitude*\ : Magnitude of zoom
+* *time*\ : Number of seconds the transition should take, with a value of ``0``
+  meaning the zoom should happen instantly (default: ``0``\ )
+
+For more details see: https://docs.escoria-framework.org/camera
+
+
+``camera_set_zoom_height_block pixels [time]`` `API-Doc </api/CameraSetZoomHeightBlockCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Zooms the camera in/out so it occupies the given height in pixels.
+Blocks until the command completes.
+
+**Parameters**
+
+
+* *pixels*\ : Target height in pixels (integer values only)
+* *time*\ : Number of seconds the transition should take, with a value of ``0``
+  meaning the zoom should happen instantly (default: ``0``\ )
+
+For more details see: https://docs.escoria-framework.org/camera
+
+
 ``camera_set_zoom_height pixels [time]`` `API-Doc </api/CameraSetZoomHeightCommand.html>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -337,6 +551,57 @@ Zooms the camera in/out so it occupies the given height in pixels.
 * *pixels*\ : Target height in pixels
 * *time*\ : Number of seconds the transition should take, with a value of ``0``
   meaning the zoom should happen instantly (default: ``0``\ )
+
+For more details see: https://docs.escoria-framework.org/camera
+
+
+``camera_shift_block x y [time] [type]`` `API-Doc </api/CameraShiftBlockCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Shifts the camera by the given horizontal and vertical amounts relative to the
+current location. Blocks until the command completes.
+
+Make sure the destination coordinates are reachable if
+camera limits have been configured.
+
+**Parameters**
+
+
+* *x*\ : Shift by x pixels along the x-axis
+* *y*\ : Shift by y pixels along the y-axis
+* *time*\ : Number of seconds the transition should take, with a value of ``0``
+  meaning the zoom should happen instantly (default: ``1``\ )
+* *type*\ : Transition type to use (default: ``QUAD``\ )
+
+Supported transitions include the names of the values used
+in the "TransitionType" enum of the "Tween" type (without the "TRANS_" prefix).
+
+See https://docs.godotengine.org/en/stable/classes/class_tween.html?highlight=tween#enumerations
+
+For more details see: https://docs.escoria-framework.org/camera
+
+
+``camera_shift x y [time] [type]`` `API-Doc </api/CameraShiftCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Shifts the camera by the given horizontal and vertical amounts relative to the
+current location.
+
+**Parameters**
+
+
+* *x*\ : Shift by x pixels along the x-axis
+* *y*\ : Shift by y pixels along the y-axis
+* *time*\ : Number of seconds the transition should take, with a value of ``0``
+  meaning the zoom should happen instantly (default: ``1``\ )
+* *type*\ : Transition type to use (default: ``QUAD``\ )
+
+Supported transitions include the names of the values used
+in the "TransitionType" enum of the "Tween" type (without the "TRANS_" prefix):
+
+https://docs.godotengine.org/en/stable/classes/class_tween.html?highlight=tween#enumerations
 
 For more details see: https://docs.escoria-framework.org/camera
 

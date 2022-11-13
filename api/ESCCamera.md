@@ -24,6 +24,16 @@ tree.
 
 - room: The room with which to register the camera.
 
+### get\_tween
+
+```gdscript
+func get_tween() -> Tween
+```
+
+Returns the camera's tween.
+
+**Returns** the tween owned by this camera.
+
 ### set\_limits
 
 ```gdscript
