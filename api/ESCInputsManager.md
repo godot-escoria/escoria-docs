@@ -163,10 +163,84 @@ returns `false`.
 
 **Returns** Result of `custom_input_handler` if set; otherwise, `false`
 
-### clear\_stack
+### unset\_hovered\_node
 
 ```gdscript
-func clear_stack()
+func unset_hovered_node(item: ESCItem)
+```
+
+Unsets the hovered node.
+
+**Parameters**
+
+- item: the item that was unfocused (mouse_exited)
+
+### set\_hovered\_node
+
+```gdscript
+func set_hovered_node(item: ESCItem) -> bool
+```
+
+Sets the hovered node and calls its mouse_entered() method if it was the top
+most item in hover_stack.
+
+#### Parameters
+
+- item: the item that was focused (mouse_entered)
+
+**Returns**
+True if item is the new top hovered object
+
+### on\_item\_non\_interactive
+
+```gdscript
+func on_item_non_interactive(item: ESCItem) -> void
+```
+
+Function called when the item is set interactive, to re-trigger an input on
+underlying item.
+
+#### Parameters
+
+- item: The ESCCItem that was set non-interactive
+
+### hover\_stack\_add\_item
+
+```gdscript
+func hover_stack_add_item(item)
+```
+
+Add the given item to the stack if not already in it.
+
+#### Parameters
+- item: the item to add to the hover stack
+
+### hover\_stack\_add\_items
+
+```gdscript
+func hover_stack_add_items(items: Array)
+```
+
+Add the items contained in given list to the stack if not already in it.
+
+#### Parameters
+- items: the items list (array) to add to the hover stack
+
+### hover\_stack\_erase\_item
+
+```gdscript
+func hover_stack_erase_item(item)
+```
+
+Remove the given item from the stack
+
+#### Parameters
+- item: the item to remove from the hover stack
+
+### hover\_stack\_clear
+
+```gdscript
+func hover_stack_clear()
 ```
 
 Clear the stack of hovered items

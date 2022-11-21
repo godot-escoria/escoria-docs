@@ -304,6 +304,22 @@ item. That can either be a direct Position2D child or a collision shape
 
 **Returns** The interaction position
 
+### mouse\_entered
+
+```gdscript
+func mouse_entered()
+```
+
+React to the mouse entering the item by emitting the respective signal
+
+### mouse\_exited
+
+```gdscript
+func mouse_exited()
+```
+
+React to the mouse exiting the item by emitting the respective signal
+
 ### element\_entered
 
 ```gdscript
@@ -508,3 +524,16 @@ Returns true if the player is currently moving, false otherwise
 #### Parameters
 
 - walk_context: The walk context of the command
+
+## Sub\-classes
+
+### HoverStackSorter
+
+#### Method Descriptions
+
+### sort\_ascending\_z\_index <small>(static)</small>
+
+```gdscript
+func sort_ascending_z_index(a, b)
+```
+

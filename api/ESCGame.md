@@ -85,6 +85,14 @@ function of game.gd script.
 
 ## Method Descriptions
 
+### clear\_tooltip
+
+```gdscript
+func clear_tooltip()
+```
+
+Clears the tooltip content (if an ESCTooltip node exists in UI)
+
 ### do\_walk
 
 ```gdscript
