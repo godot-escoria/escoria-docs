@@ -16,12 +16,6 @@ Registers and allows access to Escoria-specific project settings.
 const ACTION_DEFAULT_SCRIPT: String = "escoria/main/action_default_script"
 ```
 
-### AVATARS\_PATH
-
-```gdscript
-const AVATARS_PATH: String = "escoria/dialog_simple/avatars_path"
-```
-
 ### COMMAND\_DIRECTORIES
 
 ```gdscript
@@ -70,12 +64,6 @@ Godot Windows project settings
 
 ```gdscript
 const ENABLE_ROOM_SELECTOR: String = "escoria/debug/enable_room_selector"
-```
-
-### FAST\_TEXT\_SPEED\_PER\_CHARACTER
-
-```gdscript
-const FAST_TEXT_SPEED_PER_CHARACTER: String = "escoria/dialog_simple/fast_text_speed_per_character"
 ```
 
 ### FORCE\_QUIT
@@ -150,12 +138,6 @@ const MASTER_VOLUME: String = "escoria/sound/master_volume"
 const MUSIC_VOLUME: String = "escoria/sound/music_volume"
 ```
 
-### READING\_SPEED\_IN\_WPM
-
-```gdscript
-const READING_SPEED_IN_WPM: String = "escoria/dialog_simple/reading_speed_in_wpm"
-```
-
 ### ROOM\_SELECTOR\_ROOM\_DIR
 
 ```gdscript
@@ -196,12 +178,6 @@ const SKIP_CACHE: String = "escoria/platform/skip_cache"
 
 ```gdscript
 const SKIP_CACHE_MOBILE: String = "escoria/platform/skip_cache.mobile"
-```
-
-### SKIP\_DIALOGS
-
-```gdscript
-const SKIP_DIALOGS: String = "escoria/ui/skip_dialogs"
 ```
 
 ### SPEECH\_ENABLED
@@ -246,12 +222,6 @@ const TERMINATE_ON_WARNINGS: String = "escoria/debug/terminate_on_warnings"
 const TEXT_LANG: String = "escoria/main/text_lang"
 ```
 
-### TEXT\_SPEED\_PER\_CHARACTER
-
-```gdscript
-const TEXT_SPEED_PER_CHARACTER: String = "escoria/dialog_simple/text_speed_per_character"
-```
-
 ### TRANSITION\_PATHS
 
 ```gdscript
@@ -275,7 +245,7 @@ const WINDOW: String = "window"
 ### register\_setting <small>(static)</small>
 
 ```gdscript
-func register_setting(name: String, default, info: Dictionary) -> void
+func register_setting(name: String, default_value, info: Dictionary) -> void
 ```
 
 Register a new project setting if it hasn't been defined already
@@ -283,8 +253,20 @@ Register a new project setting if it hasn't been defined already
 #### Parameters
 
 - name: Name of the project setting
-- default: Default value
+- default_value: Default value
 - info: Property info for the setting
+
+### remove\_setting <small>(static)</small>
+
+```gdscript
+func remove_setting(name: String) -> void
+```
+
+Removes the specified project setting.
+
+#### Parameters
+
+- name: Name of the project setting
 
 ### get\_setting <small>(static)</small>
 

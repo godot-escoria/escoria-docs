@@ -84,14 +84,6 @@ export var fullscreen: bool = false
 
  True if game has to be fullscreen
 
-### skip\_dialogs
-
-```gdscript
-export var skip_dialogs: bool = true
-```
-
-True if skipping dialogs is allowed
-
 ### custom\_settings
 
 ```gdscript
