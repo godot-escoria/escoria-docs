@@ -299,7 +299,8 @@ Example:
 
    # character's "talk" event
    :talk
-   ? avatar timeout timeout_option
+   # After 5 seconds default to the second option
+   ? avatar 5 2
        - MAP:"I'd like to buy a map." [!player_has_map]
            say player "I'd like to buy a map"
            say map_vendor "Do you know the secret code?"
@@ -317,15 +318,13 @@ Example:
                    >   [!player_has_money]
                        say map_vendor "You can't afford it"
                        say player "I'll be back"
-             !
                        stop
 
                - "Nevermind"
                    say player "Nevermind"
-           !
                    stop
+           !
        - "Nevermind"
            say player "Nevermind"
-       !
            stop
-   repeat
+   !
