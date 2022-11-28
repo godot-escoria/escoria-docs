@@ -8,17 +8,17 @@ made use of the inventory extensively!
 Escoria has features for handling inventory items as well, of course. Let's
 embed them into our sample game.
 
-The autoregister path
----------------------
+The inventory items path
+------------------------
 
 Inventory items are movable. They don't (usually) stay in just one specific
 room. This poses a problem for Escoria, because when rooms are changed,
 the previous room is removed from Godot's scene tree, together with the items
 in there.
 
-To workaround this, inventory items must be placed in a special path where
-Escoria can find them whenever needed. This path is called the "autoregister
-path", and in the game template it defaults to "items".
+To work around this, inventory items must be placed in a special path where
+Escoria can find them whenever needed. This path is called the "inventory
+items path", and in the game template it defaults to "items".
 
 .. hint::
 

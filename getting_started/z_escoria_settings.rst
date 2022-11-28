@@ -93,8 +93,8 @@ This category defines the following settings:
 +-------------------------+--------------------------------------------------+
 | Game scene              | Path to the Game scene                           |
 +-------------------------+--------------------------------------------------+
-| Items autoregister path | Path to the folder containing items of the game, |
-|                         | allowing Escoria to autoregister them            |
+| Inventory Items path    | Path to the folder containing inventory items    |
+|                         | for the game                                     |
 +-------------------------+--------------------------------------------------+
 | Dialogs chooser         | Path to the dialog chooser scene                 |
 +-------------------------+--------------------------------------------------+
