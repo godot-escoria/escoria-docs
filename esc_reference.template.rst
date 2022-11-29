@@ -24,14 +24,16 @@ Each object can have a "state". This state is stored in the *global state*
 of the game and as part of a savegame. The object's state is set when the
 scene is instanced.
 
-The usual use for states is to execute an animation. Where an animation in
-the object's scene has the same name as a state that is set, the animation is
-run when the state is set. An example for where you might want to use states :
-if your game had a blank canvas and you "used" some paint on it to paint a
+States are most commonly used to execute an animation. Where an animation in
+the object's scene has the same name as a state being set, the animation is
+run when that state is set.
+
+An example for where you might want to use states might be:
+If your game has a blank canvas and you "use" some paint on it to paint a
 picture, setting the state to "painted" would play the corresponding
-animation which would set the graphic to the painted version.
-When the game was saved, the "painted" state of the canvas would be stored,
-so on reload the "painted" rather than the blank image is what would be shown.
+animation which would set the canvas graphic to the "painted" version.
+When the game is saved, the "painted" state of the canvas would be stored,
+so on reload the "painted" rather than the blank image would be shown.
 
 
 For :doc:`bg_sound <../api/EscSoundPlayer>` and
