@@ -156,6 +156,21 @@ Events that are considered "for game developer use" are
 -  ready : These are commands that will run when a room loads, after it becomes
    visible (i.e. once ":setup" completes and after the "transition in").
 
+
+An example of how you might initialize a room is:
+
+.. code-block::
+
+   :setup
+   teleport player door1 [eq ESC_LAST_SCENE scene1]
+   teleport player door2 [eq ESC_LAST_SCENE scene2]
+
+This will teleport the player to the appropriate point in the scene
+(the `ESCLocation` "door1" or "door2") depending on the last visited scene.
+The last visited scene is stored in the special global state
+``ESC_LAST_SCENE``.
+
+
 Plugin Events
 ~~~~~~~~~~~~~
 
@@ -177,9 +192,8 @@ might create a nose icon and attach it to a "sniff" event). See
 :doc:`https://docs.escoria-framework.org/en/devel/advanced/create_ui.html#verbs`
 for further details.
 
-This will teleport the player to the appropriate point in the scene
-depending on the last visited scene. The last visited scene is stored in the
-special global state ``ESC_LAST_SCENE``.
+Event flags
+~~~~~~~~~~~
 
 Events understand a series of flags. The flags that are currently
 implemented include the following:
@@ -193,6 +207,15 @@ implemented include the following:
    but don't want to disable input for skipping dialog.
 -  ``NO_SAVE`` disables saving: Use this in cutscenes and anywhere a
    badly-timed autosave would leave your game in a messed-up state.
+
+Specify a flag using the event name, a pipe character, and then the flag.
+For example:
+
+.. code-block::
+
+   :look | TK
+   say current_player "I don't see anything unusual about it."
+
 
 Commands
 --------
