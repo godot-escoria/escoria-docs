@@ -166,7 +166,7 @@ An example of how you might initialize a room is:
    teleport player door2 [eq ESC_LAST_SCENE scene2]
 
 This will teleport the player to the appropriate point in the scene
-(the ESC location "door1" or "door2") depending on the last visited scene.
+(the `ESCLocation` "door1" or "door2") depending on the last visited scene.
 The last visited scene is stored in the special global state
 ``ESC_LAST_SCENE``.
 
