@@ -209,7 +209,7 @@ implemented include the following:
    badly-timed autosave would leave your game in a messed-up state.
 
 Specify a flag using the event name, a pipe character, and then the flag.
-For example :
+For example:
 
 .. code-block::
 
