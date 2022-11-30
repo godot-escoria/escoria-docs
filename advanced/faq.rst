@@ -544,3 +544,41 @@ To make use of this handy command, follow these steps:
    Any arguments you pass to your function must be literals.
    Escoria variables (ESC flags, globals, etc) cannot be passed currently.
 
+How do I create an avatar to use in conversations?
+--------------------------------------------------
+
+.. image:: img/avatar_creation.gif
+   :alt: How to create an avatar
+
+Escoria's default dialog plugin supports two types of talk animations:
+`floating` (text appears above the character's head) and `avatar` (text appears
+in a box with an animation in its own box displayed beside the text).
+
+The first step is to configure the location where Escoria can find any
+avatars you create. You specify this folder in Escoria's project setting
+under `Escoria/Dialog simple/Avatars Path`.
+
+The next step is to create the avatar animation (usually a close up of the
+character's head with different mouth poses to make a talking animation). You
+will need individual sprites for each animation frame for the avatar.
+
+To create the animation in Godot, create a new **Sprite** node (NOT an
+`AnimatedSprite`) in any scene in your project. Click the dropdown menu related
+to the "Texture" property and select `New AnimatedTexture`. Click this property
+to edit the `AnimatedTexture`. Select the number of frames in the frame
+property. A number of frame properties (Frame 0, Frame 1, ...) will appear
+matching the frame count selected. Click and drag each animation onto the
+Texture of each frame.
+
+Update the FPS setting to make the animation run at an appropriate speed.
+
+Click the down arrow next to the `AnimatedTexture` Texture property and choose
+save from the list. Save the file to the avatar location selected earlier.
+***The file name needs to match the global ID of the character the avatar
+is for!***
+
+To make the avatar appear, on any `say` line, append the word "avatar".
+
+.. code-block::
+
+   say worker "Get back to work!" avatar
