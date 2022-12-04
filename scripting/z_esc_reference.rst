@@ -24,8 +24,17 @@ Each object can have a "state". This state is stored in the *global state*
 of the game and as part of a savegame. The object's state is set when the
 scene is instanced.
 
-Animations in the object's scene can have the same name as a state.
-In this case, the animation is run when the state is set.
+States are most commonly used to execute an animation. Where an animation in
+the object's scene has the same name as a state being set, the animation is
+run when that state is set.
+
+An example for where you might want to use states might be:
+If your game has a blank canvas and you "use" some paint on it to paint a
+picture, setting the state to "painted" would play the corresponding
+animation which would set the canvas graphic to the "painted" version.
+When the game is saved, the "painted" state of the canvas would be stored,
+so on reload the "painted" rather than the blank image would be shown.
+
 
 For :doc:`bg_sound <../api/EscSoundPlayer>` and
 :doc:`bg_music <../api/EscMusicPlayer>` objects, the state also represents
@@ -156,6 +165,21 @@ Events that are considered "for game developer use" are
 -  ready : These are commands that will run when a room loads, after it becomes
    visible (i.e. once ":setup" completes and after the "transition in").
 
+
+An example of how you might initialize a room is:
+
+.. code-block::
+
+   :setup
+   teleport player door1 [eq ESC_LAST_SCENE scene1]
+   teleport player door2 [eq ESC_LAST_SCENE scene2]
+
+This will teleport the player to the appropriate point in the scene
+(the `ESCLocation` "door1" or "door2") depending on the last visited scene.
+The last visited scene is stored in the special global state
+``ESC_LAST_SCENE``.
+
+
 Plugin Events
 ~~~~~~~~~~~~~
 
@@ -177,9 +201,8 @@ might create a nose icon and attach it to a "sniff" event). See
 :doc:`https://docs.escoria-framework.org/en/devel/advanced/create_ui.html#verbs`
 for further details.
 
-This will teleport the player to the appropriate point in the scene
-depending on the last visited scene. The last visited scene is stored in the
-special global state ``ESC_LAST_SCENE``.
+Event flags
+~~~~~~~~~~~
 
 Events understand a series of flags. The flags that are currently
 implemented include the following:
@@ -193,6 +216,15 @@ implemented include the following:
    but don't want to disable input for skipping dialog.
 -  ``NO_SAVE`` disables saving: Use this in cutscenes and anywhere a
    badly-timed autosave would leave your game in a messed-up state.
+
+Specify a flag using the event name, a pipe character, and then the flag.
+For example:
+
+.. code-block::
+
+   :look | TK
+   say current_player "I don't see anything unusual about it."
+
 
 Commands
 --------
@@ -1350,7 +1382,8 @@ Example:
 
    # character's "talk" event
    :talk
-   ? avatar timeout timeout_option
+   # After 5 seconds default to the second option
+   ? avatar 5 2
        - MAP:"I'd like to buy a map." [!player_has_map]
            say player "I'd like to buy a map"
            say map_vendor "Do you know the secret code?"
@@ -1368,15 +1401,13 @@ Example:
                    >   [!player_has_money]
                        say map_vendor "You can't afford it"
                        say player "I'll be back"
-             !
                        stop
 
                - "Nevermind"
                    say player "Nevermind"
-           !
                    stop
+           !
        - "Nevermind"
            say player "Nevermind"
-       !
            stop
-   repeat
+   !
