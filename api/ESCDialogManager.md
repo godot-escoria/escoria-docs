@@ -71,7 +71,15 @@ Present an option chooser to the player and sends the signal
 func speedup()
 ```
 
-Trigger running the dialog faster
+Trigger running the dialogue faster
+
+### finish
+
+```gdscript
+func finish()
+```
+
+Trigger an instant finish of the current dialog
 
 ### interrupt
 
@@ -81,7 +89,16 @@ func interrupt()
 
 The say command has been interrupted, cancel the dialog display
 
+### voice\_audio\_finished
+
+```gdscript
+func voice_audio_finished()
+```
+
+To be called if voice audio has finished.
+
 ## Signals
 
 - signal say_finished(): Emitted when the say function has completed showing the text
+- signal say_visible(): Emitted when text has just become fully visible
 - signal option_chosen(option): Emitted when the player has chosen an option
