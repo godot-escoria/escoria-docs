@@ -12,7 +12,7 @@ the editor if you're just starting out or need a bit of a refresher.
 
 At a minimum, you should make sure that you have a basic understanding of the
 terms :dfn:`node` and :dfn:`scene tree`, and be aware that Godot provides
-different types of nodes for use. See the `nodes documentation`_ for details.
+different types of nodes for use. See the `key concepts`_ for details.
 
 Understanding the Godot scripting language :dfn:`GDScript` is not required for
 this guide, but it is definitely recommended for more advanced development. See
@@ -56,7 +56,7 @@ With that out of the way, let's get started by
    *
 
 .. _editor introduction: https://docs.godotengine.org/en/stable/getting_started/step_by_step/intro_to_the_editor_interface.html
-.. _nodes documentation: https://docs.godotengine.org/en/stable/getting_started/step_by_step/scenes_and_nodes.html
+.. _key concepts: https://docs.godotengine.org/en/stable/getting_started/introduction/key_concepts_overview.html
 .. _GDScript basics: https://docs.godotengine.org/en/stable/getting_started/scripting/gdscript/gdscript_basics.html
 .. _2dpixx: https://opengameart.org/users/2dpixx
 .. _`Technopeasant`: https://opengameart.org/content/cartoon-male-turn-around-and-walk-cycle-sheet
