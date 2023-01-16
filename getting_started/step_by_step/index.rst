@@ -56,7 +56,7 @@ With that out of the way, let's get started by
    *
 
 .. _editor introduction: https://docs.godotengine.org/en/stable/getting_started/step_by_step/intro_to_the_editor_interface.html
-.. _nodes documentation: https://docs.godotengine.org/en/stable/getting_started/step_by_step/scenes_and_nodes.html
+.. _nodes documentation: https://docs.godotengine.org/en/stable/getting_started/step_by_step/nodes_and_scenes.html#nodes
 .. _GDScript basics: https://docs.godotengine.org/en/stable/getting_started/scripting/gdscript/gdscript_basics.html
 .. _2dpixx: https://opengameart.org/users/2dpixx
 .. _`Technopeasant`: https://opengameart.org/content/cartoon-male-turn-around-and-walk-cycle-sheet
