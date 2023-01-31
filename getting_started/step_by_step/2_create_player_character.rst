@@ -210,13 +210,8 @@ The additional parameters of the ``ESCAnimationResource`` define the
 specific animations for the character for each direction angle:
 
 * ``Directions``: Walk animation
-* ``Idle``: Idle animations
-* ``Speak``: Speaking animations
-
-.. hint::
-
-   The ``Speak`` animations are optional and only required if your game needs
-   them.
+* ``Idles``: Idle animations
+* ``Speaks``: Speaking animations
 
 For each direction angle, add an ``ESCAnimationResource``. Then, click each
 ``ESCAnimationResource`` and put the name of the matching animation
@@ -230,7 +225,7 @@ These are the the first 3 settings for the ``Directions`` parameter:
    :alt: The settings required for the Direction parameter
 
 Each slot needs to contain a ``ESCAnimationName`` resource.
-Try to set up the ``Directions`` and ``Idle`` animations by yourself.
+Try to set up the ``Directions``, ``Idles``, and ``Speaks`` animations by yourself.
 Don't forget to click ``Mirrored on`` when the image is facing the
 opposite direction (for instance we have a left animation and
 item numbered 2 in our arrays corresponds to moving right so, in the
