@@ -225,8 +225,8 @@ These are the the first 3 settings for the ``Directions`` parameter:
    :alt: The settings required for the Direction parameter
 
 Each slot needs to contain a ``ESCAnimationName`` resource.
-Try to set up the ``Directions``, ``Idles``, and ``Speaks`` animations by yourself.
-Don't forget to click ``Mirrored on`` when the image is facing the
+Try to set up the ``Directions``, ``Idles``, and ``Speaks`` animations by
+yourself. Don't forget to click ``Mirrored on`` when the image is facing the
 opposite direction (for instance we have a left animation and
 item numbered 2 in our arrays corresponds to moving right so, in the
 above screenshot, item 2 uses a mirrored version of the left animation).
