@@ -69,7 +69,15 @@ the camera animation should take to reach the target.
 
    Some camera commands may not work as expected if you have camera limits
    defined. Ensure that the position the camera is told to point at is
-   within the room's active camera limit.
+   within the room's active camera limit. e.g. If you were making a game in
+   320 x 200 resolution, and your room limits were [100,100,1000,1000], the
+   top left coordinate the camera could reach would be [420,300], while the
+   bottom right coordinate it could reach would be [680,800].
+
+.. hint::
+
+   The coordinates passed in camera script commands refer to where the centre of
+   the camera will point.
 
 Targets
 ~~~~~~~
