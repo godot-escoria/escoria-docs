@@ -8,8 +8,8 @@
 
 `camera_set_pos_block time x y`
 
-Moves the camera to the given absolute position over a time period. Blocks
-until the command completes.
+Moves the centre of the camera view to the given absolute position over a time
+period. Blocks until the command completes.
 
 Make sure the coordinates are reachable if camera limits have been configured.
 
