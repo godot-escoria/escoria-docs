@@ -55,7 +55,7 @@ Output a text said by the item specified by the global id. Emit
 ### choose
 
 ```gdscript
-func choose(dialog_player: Node, dialog: ESCDialog)
+func choose(dialog_player: Node, dialog: ESCDialog, type: String)
 ```
 
 Present an option chooser to the player and sends the signal
@@ -64,6 +64,7 @@ Present an option chooser to the player and sends the signal
 #### Parameters
 - dialog_player: Node of the dialog player in the UI
 - dialog: Information about the dialog to display
+- type: The dialog chooser type to use
 
 ### speedup
 

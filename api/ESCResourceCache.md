@@ -2,31 +2,13 @@
 
 # ESCResourceCache
 
-**Extends:** [Reference](../Reference)
+**Extends:** [Node](../Node)
 
 ## Description
 
 A cache for resources
 
 ## Property Descriptions
-
-### thread
-
-```gdscript
-var thread: Thread
-```
-
-### mutex
-
-```gdscript
-var mutex: Mutex
-```
-
-### sem
-
-```gdscript
-var sem: Semaphore
-```
 
 ### queue
 
@@ -77,20 +59,6 @@ func is_ready(path)
 ```gdscript
 func get_resource(path)
 ```
-
-### thread\_process
-
-```gdscript
-func thread_process()
-```
-
-### thread\_func
-
-```gdscript
-func thread_func(u)
-```
-
-warning-ignore:unused_argument
 
 ### print\_progress
 

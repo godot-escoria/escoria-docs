@@ -12,6 +12,14 @@ automatically use an `ESCLocation` that is a child of the destination node.
 Commands like `turn_to`--which are not movement-based--will ignore child
 `ESCLocation`s and refer to the parent node.
 
+## Constants Descriptions
+
+### MULTIPLE\_START\_LOCATIONS\_WARNING
+
+```gdscript
+const MULTIPLE_START_LOCATIONS_WARNING: String = "Only 1 ESCLocation should have is_start_location set to true in an ESCRoom"
+```
+
 ## Property Descriptions
 
 ### global\_id
@@ -27,6 +35,8 @@ The global ID of this item
 ```gdscript
 export var is_start_location = false
 ```
+
+- **Setter**: `set_is_start_location`
 
 If true, this ESCLocation is considered as a player start location
 
@@ -62,3 +72,19 @@ is the same as p_classname.
 ## Parameters
 
 p_classname: String class to compare against
+
+### set\_multiple\_locations\_exist
+
+```gdscript
+func set_multiple_locations_exist(value: bool) -> void
+```
+
+### set\_is\_start\_location
+
+```gdscript
+func set_is_start_location(value: bool) -> void
+```
+
+## Signals
+
+- signal is_start_location_set(): 

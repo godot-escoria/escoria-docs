@@ -96,7 +96,8 @@ If true, the player can interact with this item
 export var is_movable = false
 ```
 
-Whether this item is movable
+Whether this item is movable. A movable item will be scaled with the terrain
+and be moved with commands like teleport and turn_to.
 
 ### player\_orients\_on\_arrival
 
@@ -447,6 +448,14 @@ Turn to face another object
 
 - deg: The angle degree to set
 - float Wait this amount of seconds until continuing with turning around
+
+### check\_talk\_possible
+
+```gdscript
+func check_talk_possible()
+```
+
+Check everything is in place to play talk animations
 
 ### start\_talking
 

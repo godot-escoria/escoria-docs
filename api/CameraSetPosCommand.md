@@ -8,8 +8,7 @@
 
 `camera_set_pos time x y`
 
-Moves the centre of the camera view to the given absolute position over a time
-period.
+Moves the camera to the given absolute position over a time period.
 
 **Parameters**
 

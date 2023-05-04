@@ -13,7 +13,7 @@ Describes a resource for use in the resource cache
 ### res
 
 ```gdscript
-var res: Resource
+var res
 ```
 
 The resource being described
@@ -31,6 +31,6 @@ Whether the resource is permanent
 ### \_init
 
 ```gdscript
-func _init(res_in: Resource, permanent_in: bool) -> void
+func _init(res_in, permanent_in: bool) -> void
 ```
 
