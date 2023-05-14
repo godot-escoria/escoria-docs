@@ -26,6 +26,33 @@ Used when specifying dialog types in various methods
 
 ## Method Descriptions
 
+### enable\_preserve\_dialog\_box
+
+```gdscript
+func enable_preserve_dialog_box() -> void
+```
+
+Instructs the dialog manager to preserve the next dialog box used by a `say`
+command until a call to `disable_preserve_dialog_box` is made.
+
+This method should be idempotent, i.e. if called after the first time and
+prior to `disable_preserve_dialog_box` being called, the result should be the
+same.
+
+### disable\_preserve\_dialog\_box
+
+```gdscript
+func disable_preserve_dialog_box() -> void
+```
+
+Instructs the dialog manager to no longer preserve the currently-preserved
+dialog box or to not preserve the next dialog box used by a `say` command
+(this is the default state).
+
+This method should be idempotent, i.e. if called after the first time and
+prior to `enable_preserve_dialog_box` being called, the result should be the
+same.
+
 ### say
 
 ```gdscript
