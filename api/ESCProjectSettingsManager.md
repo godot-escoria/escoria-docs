@@ -60,11 +60,21 @@ const DISPLAY: String = "display"
 
 Godot Windows project settings
 
+### ENABLE\_HOVER\_STACK\_VIEWER
+
+```gdscript
+const ENABLE_HOVER_STACK_VIEWER: String = "escoria/debug/enable_hover_stack_viewer"
+```
+
+If enabled, displays the hover stack on screen
+
 ### ENABLE\_ROOM\_SELECTOR
 
 ```gdscript
 const ENABLE_ROOM_SELECTOR: String = "escoria/debug/enable_room_selector"
 ```
+
+If enabled, displays the room selection box for quick room change
 
 ### FORCE\_QUIT
 
