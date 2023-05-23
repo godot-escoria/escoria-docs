@@ -20,6 +20,14 @@ Debugging displays for a room
 NONE: No debug display
 CAMERA_LIMITS: Display the camera limits
 
+## Constants Descriptions
+
+### ESC\_BACKGROUND\_NAME
+
+```gdscript
+const ESC_BACKGROUND_NAME: String = "escbackground"
+```
+
 ## Property Descriptions
 
 ### global\_id
