@@ -6,21 +6,14 @@
 
 ## Description
 
-`show_menu menu_type [enable_automatic_transition]`
+`show_menu menu_type`
 
-Shows either the main menu or the pause menu. The enable_automatic_transition
-parameter can be used to specify if Escoria manages the graphical transition to
-the menu or not.
-Setting `enable_automatic_transition` to false allows you to manage the
-transition effect for your menu as it transitions in and out. Place a
-`transition` command in the menu's `setup` event to manage the look of the
-transition in, and in the menu's `exit_scene` event to manage the look of the
-transition out.
+Shows either the main menu or the pause menu. Transitions to the menu using
+the default transition type (set in the Escoria project settings).
 
 **Parameters**
 
 - *menu_type*: Which menu to show. Can be either `main` or `pause` (default: `main`)
-- *enable_automatic_transition*: Whether to automatically transition to the menu (default: `false`)
 
 @ESC
 

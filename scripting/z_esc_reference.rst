@@ -754,24 +754,17 @@ Example:
 This example will reuse the same dialog box type since they are the same between both ``say`` calls.
 
 
-``hide_menu menu_type [enable_automatic_transition]`` `API-Doc </api/HideMenuCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``hide_menu menu_type`` `API-Doc </api/HideMenuCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Hides either the main menu or the pause menu. The enable_automatic_transition
-parameter can be used to specify if Escoria manages the graphical transition
-for you or not.
-Setting ``enable_automatic_transition`` to false allows you to manage the
-transition effect for your room as it transitions in and out. Place a
-``transition`` command in the room's ``setup`` event to manage the look of the
-transition in, and in the room's ``exit_scene`` event to manage the look of the
-transition out.
+Hides either the main menu or the pause menu. Transitions from the menu using
+the default transition type (set in the Escoria project settings).
 
 **Parameters**
 
 
 * *menu_type*\ : Which menu to hide. Can be either ``main`` or ``pause`` (default: ``main``\ )
-* *enable_automatic_transition*\ : Whether to automatically transition from the menu (default: ``false``\ )
 
 
 ``inc_global name value`` `API-Doc </api/IncGlobalCommand.html>`__
@@ -1134,24 +1127,17 @@ will be restored - showing the door as a closed door.
   whether it is to skip to the last frame. Can be ``true`` or ``false``.
 
 
-``show_menu menu_type [enable_automatic_transition]`` `API-Doc </api/ShowMenuCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``show_menu menu_type`` `API-Doc </api/ShowMenuCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Shows either the main menu or the pause menu. The enable_automatic_transition
-parameter can be used to specify if Escoria manages the graphical transition to
-the menu or not.
-Setting ``enable_automatic_transition`` to false allows you to manage the
-transition effect for your menu as it transitions in and out. Place a
-``transition`` command in the menu's ``setup`` event to manage the look of the
-transition in, and in the menu's ``exit_scene`` event to manage the look of the
-transition out.
+Shows either the main menu or the pause menu. Transitions to the menu using
+the default transition type (set in the Escoria project settings).
 
 **Parameters**
 
 
 * *menu_type*\ : Which menu to show. Can be either ``main`` or ``pause`` (default: ``main``\ )
-* *enable_automatic_transition*\ : Whether to automatically transition to the menu (default: ``false``\ )
 
 
 ``slide_block object target [speed]`` `API-Doc </api/SlideBlockCommand.html>`__
