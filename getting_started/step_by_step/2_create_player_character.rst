@@ -213,8 +213,8 @@ specific animations for the character for each direction angle:
 * ``Idles``: Idle animations
 * ``Speaks``: Speaking animations
 
-For each direction angle, add an ``ESCAnimationResource``. Then, click each
-``ESCAnimationResource`` and put the name of the matching animation
+For each direction angle, add an ``ESCAnimationName``. Then, click each
+``ESCAnimationName`` and put the name of the matching animation
 (with the name specified in "Adding a walkcycle" above) in the "Animation"
 field, and choose whether that animation should be played mirrored by selecting
 the "Mirrored" checkbox.
