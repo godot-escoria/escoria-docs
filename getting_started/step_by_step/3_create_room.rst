@@ -14,7 +14,7 @@ room scene we'll now create: Let's call it "pub".
 Create a new scene and set ``ESCRoom`` as its root node. Save the scene as
 "pub.tscn".
 
-* Note that you could call the scene something other than "park.tscn" -
+* Note that you could call the scene something other than "pub.tscn" -
   "room1.tscn" for example. Make sure you name things in a way that makes sense
   to your game.
 

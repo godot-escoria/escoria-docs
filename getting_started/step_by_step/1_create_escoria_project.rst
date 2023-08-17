@@ -17,6 +17,12 @@ To make starting with Escoria as easy as possible, we provide a Godot Game
 Template along with stock user interfaces and dialog managers to get you up and
 running in no time.
 
+.. hint::
+
+    The version of Escoria in Godot's Template Libraries is out of date.
+    To make sure you have the latest version, clone the develop branch
+    of the [Escoria Demo Game](https://github.com/godot-escoria/escoria-demo-game)
+    and copy over the addons folder.
 
 Game filesystem structure
 -------------------------
