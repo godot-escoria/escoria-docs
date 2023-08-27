@@ -110,6 +110,11 @@ Run a generic action
 
 - action: type of the action to run
 - params: Parameters for the action
+   - BACKGROUND_CLICK: [moving_obj, target, walk_fast]
+   - ITEM_LEFT_CLICK: [item, input_event]
+   - ITEM_RIGHT_CLICK: [item, input_event]
+   - TRIGGER_IN: [trigger_id, object_id, trigger_in_verb]
+   - TRIGGER_OUT: [trigger_id, object_id, trigger_out_verb]
 - can_interrupt: if true, this command will interrupt any ongoing event
 before it is finished
 
