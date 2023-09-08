@@ -113,8 +113,8 @@ and be moved with commands like teleport and turn_to.
 export var player_orients_on_arrival = true
 ```
 
-If true, player orients towards 'interaction_angle' as
-player character arrives.
+If true, player orients towards the direction corresponding to angle 
+'interaction_angle' (in degrees) as player character arrives.
 
 ### interaction\_angle
 
@@ -122,7 +122,8 @@ player character arrives.
 export var interaction_angle = 0
 ```
 
-Let the player turn to this angle when the player arrives at the item
+Let the player turn to the direction corresponding to angle value
+(in degrees) when the player arrives at the item.
 
 ### tooltip\_name
 
