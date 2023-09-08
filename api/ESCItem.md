@@ -20,6 +20,14 @@ character to the next room.
 
 ## Constants Descriptions
 
+### FORBIDDEN\_CHARACTERS
+
+```gdscript
+const FORBIDDEN_CHARACTERS: String = "['\"]"
+```
+
+List of forbidden characters in global_ids
+
 ### GROUP\_ITEM\_CAN\_COLLIDE
 
 ```gdscript
@@ -105,17 +113,16 @@ and be moved with commands like teleport and turn_to.
 export var player_orients_on_arrival = true
 ```
 
-If true, player orients towards 'interaction_direction' as
+If true, player orients towards 'interaction_angle' as
 player character arrives.
 
-### interaction\_direction
+### interaction\_angle
 
 ```gdscript
-export var interaction_direction = 0
+export var interaction_angle = 0
 ```
 
-Let the player turn to this direction when the player arrives at the
-item
+Let the player turn to this angle when the player arrives at the item
 
 ### tooltip\_name
 
@@ -263,6 +270,14 @@ var collision: Node
 Reference to this items collision shape node
 
 ## Method Descriptions
+
+### validate\_exported\_parameters
+
+```gdscript
+func validate_exported_parameters() -> void
+```
+
+Validates the various exported parameters so we get immediate crash.
 
 ### validate\_animations
 

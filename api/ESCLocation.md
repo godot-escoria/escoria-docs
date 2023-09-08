@@ -46,17 +46,16 @@ If true, this ESCLocation is considered as a player start location
 export var player_orients_on_arrival = true
 ```
 
-If true, player orients towards 'interaction_direction' as
+If true, player orients towards 'interaction_angle' as
 player character arrives.
 
-### interaction\_direction
+### interaction\_angle
 
 ```gdscript
-export var interaction_direction = 0
+export var interaction_angle = 0
 ```
 
-Let the player turn to this direction when the player arrives
-at the item
+Let the player turn to this angle when the player arrives at the item
 
 ## Method Descriptions
 
