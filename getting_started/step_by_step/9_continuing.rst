@@ -28,6 +28,6 @@ Thanks for trying Escoria, and we can't wait to see what you've made with it!
 
 Your Escoria project team
 
-.. _`Exporting Godot games`: https://docs.godotengine.org/en/stable/getting_started/workflow/export/exporting_projects.html
-.. _`Complying with Godot and Escoria licenses`: https://docs.godotengine.org/en/stable/tutorials/legal/complying_with_licenses.html
+.. _`Exporting Godot games`: https://docs.godotengine.org/en/3.5/getting_started/workflow/export/exporting_projects.html
+.. _`Complying with Godot and Escoria licenses`: https://docs.godotengine.org/en/3.5/tutorials/legal/complying_with_licenses.html
 

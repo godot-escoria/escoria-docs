@@ -145,8 +145,8 @@ event. The event is based on the ``current_action`` set in the
 ESC script has an event ``:use``, the
 :doc:`event manager <../api/ESCEventManager>` will run that specific event.
 
-.. _`concept of Godot plugins`: https://docs.godotengine.org/en/stable/tutorials/plugins/editor/making_plugins.html
-.. _`main scene`: https://docs.godotengine.org/en/stable/getting_started/step_by_step/exporting.html#setting-a-main-scene
+.. _`concept of Godot plugins`: https://docs.godotengine.org/en/3.5/tutorials/plugins/editor/making_plugins.html
+.. _`main scene`: https://docs.godotengine.org/en/3.5/getting_started/step_by_step/exporting.html#setting-a-main-scene
 
 Game start sequence
 -------------------

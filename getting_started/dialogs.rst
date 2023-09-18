@@ -140,7 +140,7 @@ like "worker_hello.ogg").
     know what text the label refers to.
 
 The audio formats that Godot supports are listed here :
-`https://docs.godotengine.org/en/stable/tutorials/assets_pipeline/importing_audio_samples.html?highlight=ogg#supported-files`
+`https://docs.godotengine.org/en/3.5/tutorials/assets_pipeline/importing_audio_samples.html?highlight=ogg#supported-files`
 
 Escoria uses a configuration parameter to specify where in your directory
 structure to find your game's audio files. This setting can be found in
@@ -155,7 +155,7 @@ Translations
 
 The detail below is only a high-level overview of Internationalization support
 in Godot. For more information, please see Godot's translation documentation
-`https://docs.godotengine.org/en/stable/tutorials/i18n/internationalizing_games.html`
+`https://docs.godotengine.org/en/3.5/tutorials/i18n/internationalizing_games.html`
 
 Creating text translations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -174,9 +174,9 @@ Godot's importer to import it (under
 `Project/Project Settings/Localization/Tranlations/Add`).
 
 For further details on creating and importing translations see
-`https://docs.godotengine.org/en/stable/tutorials/assets_pipeline/importing_translations.html`
+`https://docs.godotengine.org/en/3.5/tutorials/assets_pipeline/importing_translations.html`
 
-Godot's built-in translation features: `https://docs.godotengine.org/en/stable/tutorials/i18n/internationalizing_games.html`
+Godot's built-in translation features: `https://docs.godotengine.org/en/3.5/tutorials/i18n/internationalizing_games.html`
 
 Using text translations in your game
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -213,7 +213,7 @@ Using audio translations in your game
 
 The following is a high-level overview of the language remapping functionality
 provided by Godot. For more in-depth documentation, please see
-`https://docs.godotengine.org/en/stable/tutorials/i18n/internationalizing_games.html?highlight=remaps#localizing-resources`
+`https://docs.godotengine.org/en/3.5/tutorials/i18n/internationalizing_games.html?highlight=remaps#localizing-resources`
 
 Godot provides a mechanism to map files between the different languages you
 provide for your game. The mapping function can be found under

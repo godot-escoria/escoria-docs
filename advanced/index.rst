@@ -17,6 +17,6 @@ features.
     * `The Godot API`_
     * `Singletons (AutoLoad)`_
 
-.. _GDScript: https://docs.godotengine.org/en/stable/getting_started/scripting/gdscript/index.html
-.. _The Godot API: https://docs.godotengine.org/en/stable/classes/index.html
-.. _Singletons (AutoLoad): https://docs.godotengine.org/en/stable/getting_started/step_by_step/singletons_autoload.html
+.. _GDScript: https://docs.godotengine.org/en/3.5/getting_started/scripting/gdscript/index.html
+.. _The Godot API: https://docs.godotengine.org/en/3.5/classes/index.html
+.. _Singletons (AutoLoad): https://docs.godotengine.org/en/3.5/getting_started/step_by_step/singletons_autoload.html
