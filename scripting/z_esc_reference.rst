@@ -416,7 +416,7 @@ Make sure the target is reachable if camera limits have been configured.
 Supported transitions include the names of the values used
 in the "TransitionType" enum of the "Tween" type (without the "TRANS_" prefix).
 
-See https://docs.godotengine.org/en/3.5/classes/class_tween.html?highlight=tween#enumerations
+See https://docs.godotengine.org/en/stable/classes/class_tween.html?highlight=tween#enumerations
 
 For more details see: https://docs.escoria-framework.org/camera
 
@@ -446,7 +446,7 @@ Make sure the target is reachable if camera limits have been configured.
 Supported transitions include the names of the values used
 in the "TransitionType" enum of the "Tween" type (without the "TRANS_" prefix):
 
-See https://docs.godotengine.org/en/3.5/classes/class_tween.html?highlight=tween#enumerations
+See https://docs.godotengine.org/en/stable/classes/class_tween.html?highlight=tween#enumerations
 
 For more details see: https://docs.escoria-framework.org/camera
 
@@ -643,7 +643,7 @@ camera limits have been configured.
 Supported transitions include the names of the values used
 in the "TransitionType" enum of the "Tween" type (without the "TRANS_" prefix).
 
-See https://docs.godotengine.org/en/3.5/classes/class_tween.html?highlight=tween#enumerations
+See https://docs.godotengine.org/en/stable/classes/class_tween.html?highlight=tween#enumerations
 
 For more details see: https://docs.escoria-framework.org/camera
 
@@ -667,7 +667,7 @@ current location.
 Supported transitions include the names of the values used
 in the "TransitionType" enum of the "Tween" type (without the "TRANS_" prefix):
 
-https://docs.godotengine.org/en/3.5/classes/class_tween.html?highlight=tween#enumerations
+https://docs.godotengine.org/en/stable/classes/class_tween.html?highlight=tween#enumerations
 
 For more details see: https://docs.escoria-framework.org/camera
 
@@ -1211,7 +1211,7 @@ and ``_speech``\ , which plays non-looping voice files (default: ``_music``\ ).
 
 Each simultaneous sound (e.g. multiple game sound effects) will require its
 own bus. To create additional buses, see the Godot sound documentation :
-`Audio buses <https://docs.godotengine.org/en/3.5/tutorials/audio/audio_buses.html#doc-audio-buses>`_
+`Audio buses <https://docs.godotengine.org/en/stable/tutorials/audio/audio_buses.html#doc-audio-buses>`_
 
 **Parameters**
 

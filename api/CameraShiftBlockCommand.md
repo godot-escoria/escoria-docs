@@ -25,7 +25,7 @@ camera limits have been configured.
 Supported transitions include the names of the values used
 in the "TransitionType" enum of the "Tween" type (without the "TRANS_" prefix).
 
-See https://docs.godotengine.org/en/3.5/classes/class_tween.html?highlight=tween#enumerations
+See https://docs.godotengine.org/en/stable/classes/class_tween.html?highlight=tween#enumerations
 
 For more details see: https://docs.escoria-framework.org/camera
 

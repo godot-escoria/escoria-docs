@@ -85,7 +85,7 @@ func push(p_target, p_time: float = 0, p_type: int = 0)
 Push the camera towards the target in terms of position and zoom level
 using a given transition type and time.
 See
-https://docs.godotengine.org/en/3.5/classes/class_tween.html#enumerations
+https://docs.godotengine.org/en/stable/classes/class_tween.html#enumerations
 
 #### Parameters
 - p_target: Target to push to
@@ -102,7 +102,7 @@ Shift the camera by the given vector in a given time and using a specific
 Tween transition type.
 
 See
-https://docs.godotengine.org/en/3.5/classes/class_tween.html#enumerations
+https://docs.godotengine.org/en/stable/classes/class_tween.html#enumerations
 
 #### Parameters
 - p_target: Vector to shift the camera by

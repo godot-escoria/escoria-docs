@@ -16,7 +16,7 @@ and `_speech`, which plays non-looping voice files (default: `_music`).
 
 Each simultaneous sound (e.g. multiple game sound effects) will require its
 own bus. To create additional buses, see the Godot sound documentation :
-[Audio buses](https://docs.godotengine.org/en/3.5/tutorials/audio/audio_buses.html#doc-audio-buses)
+[Audio buses](https://docs.godotengine.org/en/stable/tutorials/audio/audio_buses.html#doc-audio-buses)
 
 **Parameters**
 

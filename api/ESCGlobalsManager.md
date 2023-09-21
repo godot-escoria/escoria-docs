@@ -69,7 +69,7 @@ func filter(pattern: String) -> Dictionary
 
 Filter the globals and return all matching keys and their values as
 a dictionary
-Check out [the Godot docs](https://docs.godotengine.org/en/3.5/classes/class_string.html#class-string-method-match)
+Check out [the Godot docs](https://docs.godotengine.org/en/stable/classes/class_string.html#class-string-method-match)
 for the pattern format
 
 #### Parameters
@@ -97,7 +97,7 @@ func set_global_wildcard(pattern: String, value) -> void
 ```
 
 Set all globals that match the pattern to the value
-Check out [the Godot docs](https://docs.godotengine.org/en/3.5/classes/class_string.html#class-string-method-match)
+Check out [the Godot docs](https://docs.godotengine.org/en/stable/classes/class_string.html#class-string-method-match)
 for the pattern format
 
 #### Parameters
