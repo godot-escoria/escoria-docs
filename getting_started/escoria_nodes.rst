@@ -3,7 +3,7 @@ Common Escoria Nodes
 
 To make games in Escoria it's handy to understand the relationship between
 Godot's Scenes and nodes. These are documented here
-https://docs.godotengine.org/en/stable/getting_started/step_by_step/nodes_and_scenes.html#nodes
+https://docs.godotengine.org/en/3.5/getting_started/step_by_step/nodes_and_scenes.html#nodes
 
 Every location the game character can go to in the game will be its own Godot
 scene, and each of these scenes is referred to as an Escoria `room`.

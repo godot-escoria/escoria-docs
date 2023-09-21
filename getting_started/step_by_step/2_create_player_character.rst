@@ -271,5 +271,5 @@ Add a ``CollisionShape2D`` node to the ``ESCPlayer`` and use a
 This concludes creating a player character. Let's
 :doc:`create a room <3_create_room>`.
 
-.. _AnimatedSprite tutorial in the Godot docs: https://docs.godotengine.org/en/stable/tutorials/2d/2d_sprite_animation.html
+.. _AnimatedSprite tutorial in the Godot docs: https://docs.godotengine.org/en/3.5/tutorials/2d/2d_sprite_animation.html
 .. _Discord: https://discordapp.com

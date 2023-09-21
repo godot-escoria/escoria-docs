@@ -64,6 +64,6 @@ the scene.
 The parameter ``lightmap_modulate`` can be used to additionally tint
 the ``lightmap`` texture.
 
-.. _`ParallaxBackground`: https://docs.godotengine.org/en/stable/classes/class_parallaxbackground.html
-.. _`ParallaxLayer`: https://docs.godotengine.org/en/stable/classes/class_parallaxlayer.html
+.. _`ParallaxBackground`: https://docs.godotengine.org/en/3.5/classes/class_parallaxbackground.html
+.. _`ParallaxLayer`: https://docs.godotengine.org/en/3.5/classes/class_parallaxlayer.html
 .. _`This tutorial`: https://www.youtube.com/watch?v=f8z4x6R7OSM

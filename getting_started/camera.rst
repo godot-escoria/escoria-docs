@@ -109,4 +109,4 @@ The transitions that are supported are the names of the values used in the
 When specifying the ``TransitionType``, leave off the ``TRANS_`` prefix for
 any such parameters.
 
-:: _`Tween type` https://docs.godotengine.org/en/stable/classes/class_tween.html?highlight=tween#enumerations
+:: _`Tween type` https://docs.godotengine.org/en/3.5/classes/class_tween.html?highlight=tween#enumerations

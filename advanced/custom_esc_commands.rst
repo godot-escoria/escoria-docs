@@ -228,5 +228,5 @@ by Escoria. The classes are usually available in the
 (e.g. ``escoria.object_manager`` to access the
 :doc:`ESCObjectManager </api/ESCObjectManager>`)
 
-.. _`GDScript`: https://docs.godotengine.org/en/stable/getting_started/scripting/gdscript/gdscript_basics.html
-.. _`GDScript enum Variant.Type`: https://docs.godotengine.org/en/stable/classes/class_@globalscope.html#enumerations
+.. _`GDScript`: https://docs.godotengine.org/en/3.5/getting_started/scripting/gdscript/gdscript_basics.html
+.. _`GDScript enum Variant.Type`: https://docs.godotengine.org/en/3.5/classes/class_@globalscope.html#enumerations

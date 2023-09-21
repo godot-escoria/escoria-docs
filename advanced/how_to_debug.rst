@@ -106,7 +106,7 @@ Manager**:
     :align: center
     :alt: Crash error: Globals Manager in inspector
 
-.. _Debugger panel documentation page: https://docs.godotengine.org/en/stable/tutorials/debug/debugger_panel.html
+.. _Debugger panel documentation page: https://docs.godotengine.org/en/3.5/tutorials/debug/debugger_panel.html
 
 Escoria game crash management
 -----------------------------

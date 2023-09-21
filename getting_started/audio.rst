@@ -57,4 +57,4 @@ Voice support
 See the :doc:`documentation about dialogs </getting_started/dialogs>` for more
 details on using voice files.
 
-.. _`officially supported by Godot`: https://docs.godotengine.org/en/stable/getting_started/workflow/assets/importing_audio_samples.html
+.. _`officially supported by Godot`: https://docs.godotengine.org/en/3.5/getting_started/workflow/assets/importing_audio_samples.html
