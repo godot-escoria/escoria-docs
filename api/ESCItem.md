@@ -188,7 +188,7 @@ The visual representation for this item when its in the inventory
 ### dialog\_color
 
 ```gdscript
-export var dialog_color = "0,0,0,1"
+export var dialog_color = "1,1,1,1"
 ```
 
 Color used for dialogs
