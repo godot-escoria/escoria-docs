@@ -235,6 +235,15 @@ export var camera_node = ""
 The node that references the camera position and zoom if this item is used
 as a camera target
 
+### custom\_data
+
+```gdscript
+export var custom_data = {}
+```
+
+Custom data dictionary to ease customization and custom command creation.
+Avoid name collision using proper key names.
+
 ### animations
 
 ```gdscript
