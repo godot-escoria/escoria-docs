@@ -11,7 +11,7 @@
 ### LOG\_DEBUG
 
 ```gdscript
-const LOG_DEBUG: int = 3
+const LOG_ERROR: int = 0
 ```
 
 Valid log levels
@@ -19,7 +19,7 @@ Valid log levels
 ### LOG\_ERROR
 
 ```gdscript
-const LOG_DEBUG: int = 3
+const LOG_ERROR: int = 0
 ```
 
 Valid log levels
@@ -35,7 +35,7 @@ Log file format
 ### LOG\_INFO
 
 ```gdscript
-const LOG_DEBUG: int = 3
+const LOG_ERROR: int = 0
 ```
 
 Valid log levels
@@ -43,7 +43,7 @@ Valid log levels
 ### LOG\_TRACE
 
 ```gdscript
-const LOG_DEBUG: int = 3
+const LOG_ERROR: int = 0
 ```
 
 Valid log levels
@@ -51,7 +51,7 @@ Valid log levels
 ### LOG\_WARNING
 
 ```gdscript
-const LOG_DEBUG: int = 3
+const LOG_ERROR: int = 0
 ```
 
 Valid log levels
