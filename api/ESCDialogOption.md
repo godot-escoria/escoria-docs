@@ -26,7 +26,7 @@ Regex that matches dialog option lines
 var option: String
 ```
 
-- **Getter**: `get_option`
+- **Getter**: `get_translated_option`
 
 Option displayed in the HUD
 
@@ -51,10 +51,10 @@ Create a dialog option from an ESC string
 #### Parameter
 - option_string: ESC string for the dialog option
 
-### get\_option
+### get\_translated\_option
 
 ```gdscript
-func get_option()
+func get_translated_option()
 ```
 
 ### is\_valid
