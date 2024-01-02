@@ -590,5 +590,5 @@ Why isn't my room being drawn?
 When you create a room it's important that the parent node of the room scene is
 of type `ESCRoom`. If you use a different node type (`Node` for example), this
 may result in the room not being drawn. `ESCRoom` nodes have a `visibility`
-property that nodes of type `Node` do not - the room transition system relies on
-this property to draw the rooms of your game.
+property that nodes of type `Node` do not - the room transition system relies
+on this property to draw the rooms of your game.
