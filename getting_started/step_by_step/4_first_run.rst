@@ -17,7 +17,11 @@ walk across the room, etc.) are very easy to use.
 The game start-up itself is also coordinated using an ESC script.
 
 Scripts are plain text files with an ".esc" extension, created in any text
-editor you choose to use. To create a new ESC script which will be our main game
+editor. The following instructions explain the process to
+create an Escoria script (i.e. a text file) in the Godot editor, but feel
+free to use a different editor to create and edit these files.
+To create "game.esc" in Godot (which will be our 
+main game script), switch to Godot's **Editor** tab and select
 script, switch to Godot's **Editor** tab and select
 "New Text File" from the "File" menu:
 
