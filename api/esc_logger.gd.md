@@ -11,7 +11,7 @@
 ### LOG\_DEBUG
 
 ```gdscript
-const LOG_TRACE: int = 4
+const LOG_ERROR: int = 0
 ```
 
 Valid log levels
@@ -19,7 +19,7 @@ Valid log levels
 ### LOG\_ERROR
 
 ```gdscript
-const LOG_TRACE: int = 4
+const LOG_ERROR: int = 0
 ```
 
 Valid log levels
@@ -35,7 +35,7 @@ Log file format
 ### LOG\_INFO
 
 ```gdscript
-const LOG_TRACE: int = 4
+const LOG_ERROR: int = 0
 ```
 
 Valid log levels
@@ -43,7 +43,7 @@ Valid log levels
 ### LOG\_TRACE
 
 ```gdscript
-const LOG_TRACE: int = 4
+const LOG_ERROR: int = 0
 ```
 
 Valid log levels
@@ -51,7 +51,7 @@ Valid log levels
 ### LOG\_WARNING
 
 ```gdscript
-const LOG_TRACE: int = 4
+const LOG_ERROR: int = 0
 ```
 
 Valid log levels
@@ -70,6 +70,16 @@ func formatted_message(context: String, msg: String, letter: String) -> String
 func trace(owner: Object, msg: String)
 ```
 
+Trace log
+
+### trace\_message
+
+```gdscript
+func trace_message(context: String, msg: String)
+```
+
+Direct message trace log (requiring a string for the context)
+
 ### debug
 
 ```gdscript
@@ -78,11 +88,27 @@ func debug(owner: Object, msg: String)
 
 Debug log
 
+### debug\_message
+
+```gdscript
+func debug_message(context: String, msg: String)
+```
+
+Static debug log (requiring a string for the context)
+
 ### info
 
 ```gdscript
 func info(owner: Object, msg: String)
 ```
+
+### info\_message
+
+```gdscript
+func info_message(context: String, msg: String)
+```
+
+Static info log (requiring a string for the context)
 
 ### warn
 
@@ -92,6 +118,14 @@ func warn(owner: Object, msg: String)
 
 Warning log
 
+### warn\_message
+
+```gdscript
+func warn_message(context: String, msg: String)
+```
+
+Static warning log (requiring a string for the context)
+
 ### error
 
 ```gdscript
@@ -99,6 +133,14 @@ func error(owner: Object, msg: String)
 ```
 
 Error log
+
+### error\_message
+
+```gdscript
+func error_message(context: String, msg: String)
+```
+
+Static error log (requiring a string for the context)
 
 ### get\_log\_level
 
@@ -126,6 +168,16 @@ Log file handler
 func trace(owner: Object, msg: String)
 ```
 
+Trace log
+
+### trace\_message
+
+```gdscript
+func trace_message(context: String, msg: String)
+```
+
+Static trace log
+
 ### debug
 
 ```gdscript
@@ -134,11 +186,29 @@ func debug(owner: Object, msg: String)
 
 Debug log
 
+### debug\_message
+
+```gdscript
+func debug_message(context: String, msg: String)
+```
+
+Static debug log
+
 ### info
 
 ```gdscript
 func info(owner: Object, msg: String)
 ```
+
+Info log
+
+### info\_message
+
+```gdscript
+func info_message(context: String, msg: String)
+```
+
+Static info log
 
 ### warn
 
@@ -148,6 +218,14 @@ func warn(owner: Object, msg: String)
 
 Warning log
 
+### warn\_message
+
+```gdscript
+func warn_message(context: String, msg: String)
+```
+
+Static warning log
+
 ### error
 
 ```gdscript
@@ -155,6 +233,14 @@ func error(owner: Object, msg: String)
 ```
 
 Error log
+
+### error\_message
+
+```gdscript
+func error_message(context: String, msg: String)
+```
+
+Static eror log
 
 ### close\_logs
 
