@@ -72,6 +72,14 @@ var last_dir: int
 
 Player Direction used to reflect the movement to the new position
 
+### last\_angle
+
+```gdscript
+var last_angle: float
+```
+
+Last angle calculated
+
 ### last\_scale
 
 ```gdscript
