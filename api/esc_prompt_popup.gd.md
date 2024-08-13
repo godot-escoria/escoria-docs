@@ -8,6 +8,14 @@
 
 A debug window which can run esc commands
 
+## Constants Descriptions
+
+### COMMANDS\_HISTORY\_LENGTH
+
+```gdscript
+const COMMANDS_HISTORY_LENGTH: int = 20
+```
+
 ## Property Descriptions
 
 ### past\_actions
@@ -25,3 +33,18 @@ var command
 ```
 
 Reference to the command input
+
+### commands\_history
+
+```gdscript
+var commands_history: PoolStringArray
+```
+
+History of typed commands
+
+### commands\_history\_current\_id
+
+```gdscript
+var commands_history_current_id: int
+```
+

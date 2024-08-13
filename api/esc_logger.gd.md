@@ -56,6 +56,17 @@ const LOG_INFO: int = 2
 
 Valid log levels
 
+#### Property Descriptions
+
+### dont\_assert
+
+```gdscript
+var dont_assert: bool = false
+```
+
+If true, assert() functions will not be called, thus the program won't exit or error.
+Resets to false after an assert() call was ignored once.
+
 #### Method Descriptions
 
 ### formatted\_message
