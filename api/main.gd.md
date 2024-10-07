@@ -125,6 +125,30 @@ Sanity check that the game.tscn scene's root node script MUST
 implement the following methods. If they do not exist, stop immediately.
 Implement them, even if empty
 
+### hide\_ui
+
+```gdscript
+func hide_ui() -> void
+```
+
+### hide\_current\_scene
+
+```gdscript
+func hide_current_scene() -> void
+```
+
+### show\_ui
+
+```gdscript
+func show_ui() -> void
+```
+
+### show\_current\_scene
+
+```gdscript
+func show_current_scene() -> void
+```
+
 ## Signals
 
 - signal room_ready(): Signal sent when the room is loaded and ready.
