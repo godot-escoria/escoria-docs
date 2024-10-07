@@ -1,19 +1,19 @@
 <!-- Auto-generated from JSON by GDScript docs maker. Do not edit this document directly. -->
 
-# ESCRoomObjects
+# ESCRoomTerrains
 
 **Extends:** [ESCRoomContainer](../ESCRoomContainer) < [Reference](../Reference)
 
 ## Description
 
-Container for ESCObjects stored in the object manager.
+Container for Navigationpolygons stored in the object manager.
 
 ## Property Descriptions
 
-### objects
+### terrains
 
 ```gdscript
-var objects: Dictionary
+var terrains: Dictionary
 ```
 
-The hash of objects registered to the room specified above.
+The hash of terrains registered to the room specified above.

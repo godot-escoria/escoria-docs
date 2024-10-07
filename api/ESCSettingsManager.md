@@ -62,6 +62,24 @@ Load the game settings from the settings file
 func get_settings() -> ESCSaveSettings
 ```
 
+Load the game settings from the settings file
+**Returns** An ESCSaveSettings resource
+
+### load\_settings\_from\_dict
+
+```gdscript
+func load_settings_from_dict(settings_dict: Dictionary)
+```
+
+### get\_settings\_dict
+
+```gdscript
+func get_settings_dict() -> Dictionary
+```
+
+Load the game settings from the settings file
+**Returns** An Dictionary containing the settings
+
 ### save\_settings
 
 ```gdscript

@@ -55,3 +55,14 @@ Add an item to the inventory
 #### Parameters
 
 - item: Inventory item id
+
+### save\_game
+
+```gdscript
+func save_game(p_savegame: ESCSaveGame) -> void
+```
+
+Save the inventory.
+
+#### Parameters
+- p_savegame: ESCSaveGame resource that holds all data of the save

@@ -26,15 +26,31 @@ var timeout: float
 
 The number of seconds until the event is run
 
+### object
+
+```gdscript
+var object: String
+```
+
+The target object
+
 ## Method Descriptions
 
 ### \_init
 
 ```gdscript
-func _init(p_event: ESCEvent, p_timeout: float)
+func _init(p_event: ESCEvent, p_timeout: float, p_object: String)
 ```
 
 Create a new scheduled event
+
+### exported
+
+```gdscript
+func exported() -> Dictionary
+```
+
+Returns a Dictionary containing statements data for serialization
 
 ### run
 

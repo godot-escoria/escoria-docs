@@ -66,6 +66,12 @@ Pre-defined ESC events
 const EVENT_READY: String = "ready"
 ```
 
+### EVENT\_RESUME
+
+```gdscript
+const EVENT_RESUME: String = "resume"
+```
+
 ### EVENT\_ROOM\_SELECTOR
 
 ```gdscript
@@ -131,18 +137,20 @@ Queue a new event based on input from an ESC command, most likely "queue_event"
 ### queue\_event
 
 ```gdscript
-func queue_event(event: ESCEvent, force: bool = false) -> void
+func queue_event(event: ESCEvent, force: bool = false, as_first = false) -> void
 ```
 
 Queue a new event to run in the foreground
 
 #### Parameters
 - event: Event to run
+- force:
+- as_first: force the event to be the first in queue
 
 ### schedule\_event
 
 ```gdscript
-func schedule_event(event: ESCEvent, timeout: float) -> void
+func schedule_event(event: ESCEvent, timeout: float, object: String) -> void
 ```
 
 Schedule an event to run after a timeout
@@ -151,6 +159,7 @@ Schedule an event to run after a timeout
 - event: Event to run
 - timeout: Number of seconds to wait before adding the event to the
   front queue
+- object: Target object
 
 ### queue\_background\_event
 
@@ -217,6 +226,39 @@ Setter for _changing_scene.
 
 #### Parameterse
 - value: boolean value to set _changing_scene to
+
+### save\_game
+
+```gdscript
+func save_game(p_savegame: ESCSaveGame) -> void
+```
+
+Save the running event in the savegame, if any.
+
+#### Parameters
+- p_savegame: ESCSaveGame resource that holds all data of the save
+
+### set\_running\_event\_from\_savegame
+
+```gdscript
+func set_running_event_from_savegame(p_running_event: Dictionary)
+```
+
+Sets the running event from a Dictionary (loaded from a savegame)
+
+#### Parameters
+- p_running_event: The Dictionary containing the event data
+
+### set\_scheduled\_events\_from\_savegame
+
+```gdscript
+func set_scheduled_events_from_savegame(p_scheduled_events: Array)
+```
+
+Sets the scheduled events from an array (loaded from a savegame)
+
+#### Parameters
+- p_scheduled_events: The array containing the scheduled event data
 
 ## Signals
 

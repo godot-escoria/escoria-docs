@@ -45,3 +45,11 @@ func remove_item_by_id(item_id: String) -> void
 ```
 
 remove item fromInventory UI using its id set in its scene
+
+### clear
+
+```gdscript
+func clear() -> void
+```
+
+Clear the inventory UI of all its items.

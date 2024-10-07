@@ -28,15 +28,6 @@ const FORBIDDEN_CHARACTERS: String = "['\"]"
 
 List of forbidden characters in global_ids
 
-### GROUP\_ITEM\_CAN\_COLLIDE
-
-```gdscript
-const GROUP_ITEM_CAN_COLLIDE: String = "item_can_collide"
-```
-
-Group for ESCItem's that can be collided with in a scene. Used for quick
-retrieval of such nodes to easily change their attributes at the same time.
-
 ## Property Descriptions
 
 ### global\_id
@@ -280,6 +271,12 @@ Reference to this items collision shape node
 
 ## Method Descriptions
 
+### connect\_trigger\_events
+
+```gdscript
+func connect_trigger_events()
+```
+
 ### validate\_exported\_parameters
 
 ```gdscript
@@ -287,6 +284,12 @@ func validate_exported_parameters() -> void
 ```
 
 Validates the various exported parameters so we get immediate crash.
+
+### disconnect\_trigger\_events
+
+```gdscript
+func disconnect_trigger_events()
+```
 
 ### validate\_animations
 
@@ -364,9 +367,10 @@ func element_exited(body)
 ```
 
 Another item (e.g. the player) has exited this element
+
 #### Parameters
 
-- body: Other object that has entered the item
+- body: Other object that has exited the item
 
 ### teleport
 
@@ -460,6 +464,19 @@ Set the angle
 - deg: The angle degree to set
 - wait: Wait this amount of seconds until continuing with turning around
 
+### set\_direction
+
+```gdscript
+func set_direction(direction_id: int, wait: float = 0)
+```
+
+Set the direction id
+
+#### Parameters
+
+- direction_id: The direction id
+- wait: Wait this amount of seconds until continuing with turning around
+
 ### turn\_to
 
 ```gdscript
@@ -524,6 +541,24 @@ Whether the item is currently moving.
 
 *Returns*
 Returns true if the player is currently moving, false otherwise
+
+### get\_directions\_quantity
+
+```gdscript
+func get_directions_quantity() -> int
+```
+
+### get\_custom\_data
+
+```gdscript
+func get_custom_data() -> Dictionary
+```
+
+### set\_custom\_data
+
+```gdscript
+func set_custom_data(data: Dictionary) -> void
+```
 
 ## Signals
 

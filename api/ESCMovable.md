@@ -178,7 +178,7 @@ Update the sprite scale and lighting
 ### set\_angle
 
 ```gdscript
-func set_angle(deg: int, wait: float = 0) -> var
+func set_angle(deg: int, wait: float = 0) -> void
 ```
 
 Sets character's angle and plays according animation.
@@ -187,6 +187,20 @@ Sets character's angle and plays according animation.
 
 - deg int angle to set the character
 - wait float Wait this amount of seconds until continuing with turning around
+
+### set\_direction
+
+```gdscript
+func set_direction(target_dir: int, wait: float = 0) -> var
+```
+
+Sets character's direction (instead of angle, see set_angle()
+and plays according animation.
+
+#### Parameters
+
+- target_dir: int direction to set the character
+- wait: float Wait this amount of seconds until continuing with turning around
 
 ### turn\_to
 

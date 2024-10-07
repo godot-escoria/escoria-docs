@@ -110,3 +110,17 @@ Sets the speaks property.
 #### Parameters
 
 - p_set_idles: array of speak resources to set.
+
+### get\_direction\_id\_from\_animation\_name
+
+```gdscript
+func get_direction_id_from_animation_name(p_animation_name: String) -> int
+```
+
+Returns the direction id from an animation name.
+
+#### Parameters
+
+- p_animation_name: the animation name
+
+**Returns** The int value representing the direction id of the animation, or -1 if not found.

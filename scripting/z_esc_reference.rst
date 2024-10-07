@@ -808,8 +808,8 @@ simulating placing the item somewhere, for example.
 * *item*\ : Global ID of the ``ESCItem`` to remove from the inventory
 
 
-``play_snd file [player]`` `API-Doc </api/PlaySndCommand.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``play_snd file [player] [start_position_seconds]`` `API-Doc </api/PlaySndCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Plays the specified sound without blocking the currently running event.
@@ -896,6 +896,17 @@ being returned.
 Makes the current script loop back to the start. Currently the only way to
 exit the loop is via the ``stop`` command which will stop the script
 completely.
+
+
+``save_game slot_id savegame_description`` `API-Doc </api/SaveGameCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Saves the game in the [slot_id] slot, and sets the [savegame_description] in
+the savegame name/title.
+
+Example:
+``save_game 1 "description of game saved``
 
 
 ``say player text [type]`` `API-Doc </api/SayCommand.html>`__
@@ -1033,6 +1044,40 @@ Sets the animation resource for the given ``ESCPlayer`` or movable ``ESCItem``.
 * *animations*\ : The path of the animation resource to use
 
 
+``set_direction object direction_id [wait]`` `API-Doc </api/SetDirectionCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Turns a movable ``ESCItem`` or ``ESCPlayer`` to face a given target direction id
+(between 0 and 3 for a 4-directional character, or between 0 and 7 for an
+8-directional character).
+
+4-directional :
+0 : UP / NORTH
+1 : RIGHT / EAST
+2 : DOWN / SOUTH
+3 : LEFT / WEST
+
+8-directional :
+0 : UP / NORTH
+1 : UP-RIGHT / NORTH-EAST
+2 : RIGHT / EAST
+3 : DOWN-RIGHT / SOUTH-EAST
+4 : DOWN / SOUTH
+5 : DOWN-LEFT / SOUTH-WEST
+6 : LEFT / WEST
+7 : TOP-LEFT / NORTH-WEST
+
+**Parameters**
+
+
+* *object*\ : Global ID of the object to turn
+* *target_direction_id*\ : id of the direction as defined in the player animations
+* *wait*\ : Number of seconds to wait while playing each animation occurring
+  between the current direction of ``object`` and the target direction. A value of
+  ``0`` will complete the turn immediately (default: ``0``\ )
+
+
 ``set_global name value [force=false]`` `API-Doc </api/SetGlobalCommand.html>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1088,6 +1133,21 @@ Sets whether an object is interactive.
 
 * *object*\ : Global ID of the object to change
 * *interactive*\ : Whether the object should be interactive
+
+
+``set_item_custom_data item custom_data`` `API-Doc </api/SetItemCustomDataCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+**\ * FOR INTERNAL USE ONLY *\ **
+
+Sets the "custom_data" of the item if it currently exists in the object manager.
+
+**Parameters**
+
+
+* *item* Global ID of the item
+* *custom_data* Dictionary with custom data. If null empty dictionary will be assigned.
 
 
 ``set_speed object speed`` `API-Doc </api/SetSpeedCommand.html>`__

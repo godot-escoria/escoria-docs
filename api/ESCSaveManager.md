@@ -62,6 +62,15 @@ var settings_folder: String
 
 Variable containing the settings folder obtained from Project Settings
 
+### is\_loading\_game
+
+```gdscript
+var is_loading_game: bool
+```
+
+True if escoria is currently loading a savegame. This is used to avoid
+RoomManager to execute room's :setup and :ready events when loading a savegame
+
 ## Method Descriptions
 
 ### get\_saves\_list
@@ -115,19 +124,7 @@ Load a savegame file from its id.
  ## Parameters
 - id: integer suffix of the savegame file
 
-### save\_settings
+## Signals
 
-```gdscript
-func save_settings()
-```
-
-Save the game settings in the settings file.
-
-### load\_settings
-
-```gdscript
-func load_settings() -> Resource
-```
-
-Load the game settings from the settings file
-**Returns** The Resource structure loaded from settings file
+- signal game_is_loading(): 
+- signal game_finished_loading(): 

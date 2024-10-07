@@ -45,15 +45,29 @@ var conditions: Array
 A list of ESCConditions to run this command.
 Conditions are combined using logical AND
 
+### commandCalledAsString
+
+```gdscript
+var commandCalledAsString
+```
+
+True if command was called from a string (usual case) instead of passing parameters directly.
+
 ## Method Descriptions
+
+### exported
+
+```gdscript
+func exported() -> Dictionary
+```
 
 ### \_init
 
 ```gdscript
-func _init(command_string)
+func _init(command_string: String, _name: String = "", _parameters: Array, _conditions: Array)
 ```
 
-Create a command from a command string
+Create a command from a command string or from name, parameters and conditions
 
 ### is\_valid
 

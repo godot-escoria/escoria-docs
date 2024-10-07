@@ -85,6 +85,14 @@ Example structure:
 		}
 	]
 
+### room\_terrains
+
+```gdscript
+var room_terrains: Array
+```
+
+Array containing the encountered terrains so they can be properly saved in savegames
+
 ### current\_room\_key
 
 ```gdscript
@@ -129,6 +137,19 @@ Register the object in the manager
 - room: Room to register the object with in the object manager
 - force: Register the object, even if it has already been registered
 - auto_unregister: Automatically unregister object on tree_exited
+
+### register\_terrain
+
+```gdscript
+func register_terrain(object: ESCObject, room: ESCRoom = null) -> void
+```
+
+Register the terrain in the manager
+
+#### Parameters
+
+- object: Object contianing the terrain to register
+- room: Room to register the object with in the object manager
 
 ### has
 

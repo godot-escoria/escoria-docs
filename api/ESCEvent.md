@@ -73,6 +73,14 @@ var name: String
 
 Name of event
 
+### original\_name
+
+```gdscript
+var original_name: String
+```
+
+Original name of the event (in case it is modified when resuming a loaded event)
+
 ### flags
 
 ```gdscript
@@ -82,6 +90,14 @@ var flags: int = 0
 Flags set to this event
 
 ## Method Descriptions
+
+### exported
+
+```gdscript
+func exported() -> Dictionary
+```
+
+Returns a Dictionary containing statements data for serialization
 
 ### \_init
 

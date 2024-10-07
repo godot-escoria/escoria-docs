@@ -55,7 +55,7 @@ export var name: String = ""
 ### date
 
 ```gdscript
-export var date: String = ""
+export var date: Dictionary = {}
 ```
 
  Date of creation of the savegame.
@@ -76,6 +76,14 @@ export var globals: Dictionary = {}
 
 Escoria Global variables exported from ESCGlobalsManager
 
+### inventory
+
+```gdscript
+export var inventory: Array = []
+```
+
+Inventory items
+
 ### objects
 
 ```gdscript
@@ -83,6 +91,30 @@ export var objects: Dictionary = {}
 ```
 
 Escoria objects exported from ESCObjectsManager
+
+### events
+
+```gdscript
+export var events: Dictionary = {}
+```
+
+Running event exported from ESCEventManager
+
+### terrain\_navpolys
+
+```gdscript
+export var terrain_navpolys: Dictionary = {}
+```
+
+Enabled ESCTerrain navpolygons
+
+### settings
+
+```gdscript
+export var settings: Dictionary = {}
+```
+
+Settings
 
 ### custom\_data
 

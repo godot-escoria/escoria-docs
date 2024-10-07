@@ -1,21 +1,18 @@
 <!-- Auto-generated from JSON by GDScript docs maker. Do not edit this document directly. -->
 
-# PlaySndCommand
+# SaveGameCommand
 
 **Extends:** [ESCBaseCommand](../ESCBaseCommand) < [Resource](../Resource)
 
 ## Description
 
-`play_snd file [player] [start_position_seconds]`
+`save_game slot_id savegame_description`
 
-Plays the specified sound without blocking the currently running event.
+Saves the game in the [slot_id] slot, and sets the [savegame_description] in
+the savegame name/title.
 
-**Parameters**
-
-- *file*: Sound file to play
-- *player*: Sound player to use. Can either be `_sound`, which is used to play non-
-  looping sound effects; `_music`, which plays looping music; or `_speech`, which
-  plays non-looping voice files (default: `_sound`)
+Example:
+`save_game 1 "description of game saved`
 
 @ESC
 
@@ -44,3 +41,11 @@ func run(command_params: Array) -> int
 ```
 
 Run the command
+
+### interrupt
+
+```gdscript
+func interrupt()
+```
+
+Function called when the command is interrupted.

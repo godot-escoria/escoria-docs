@@ -121,6 +121,17 @@ Logger instance
 
 ## Method Descriptions
 
+### get\_children\_navpolys
+
+```gdscript
+func get_children_navpolys() -> Array
+```
+
+Returns all NavigationPolygonInstances defined as children of ESCTerrain in an Array.
+
+**Returns**
+A list of NavigationPolygons nodes
+
 ### get\_light
 
 ```gdscript

@@ -35,6 +35,14 @@ Check if a global was registered
 - key: The global key to check
 **Returns** Whether the global was registered
 
+### clear
+
+```gdscript
+func clear()
+```
+
+Clear all globals.
+
 ### register\_reserved\_global
 
 ```gdscript

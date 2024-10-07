@@ -40,7 +40,7 @@ Reference to the audio player
 ### set\_state
 
 ```gdscript
-func set_state(p_state: String, p_force: bool = false) -> void
+func set_state(p_state: String, from_seconds: float = 0, p_force: bool = false) -> void
 ```
 
 Set the state of this player
@@ -48,4 +48,15 @@ Set the state of this player
 #### Parameters
 
 - p_state: New state to use
+- from_seconds: Sets the starting playback position
 - p_force: Override the existing state even if the stream is still playing
+
+### get\_playback\_position
+
+```gdscript
+func get_playback_position() -> float
+```
+
+Returns the playback position of the audio stream in seconds
+
+**Returns** playback position
