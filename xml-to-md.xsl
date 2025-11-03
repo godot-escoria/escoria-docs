@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <xsl:output method="text"/>
+  <xsl:output method="text"/>
     <!-- Convert <class> to top-level header and add inheritance information -->
     <xsl:template match="class">
+  (<xsl:value-of select="@name"/>)=
 # <xsl:value-of select="@name"/>
 <xsl:text>&#10;</xsl:text>
         <xsl:if test="@inherits">
-**Extends:** [<xsl:value-of select="@inherits"/>](../<xsl:value-of select="@inherits"/>)
+**Extends:** {ref}`<xsl:value-of select="@inherits"/><xsl:text>&#160;&lt;</xsl:text><xsl:value-of select="@inherits"/><xsl:text>&gt;</xsl:text>`
         </xsl:if>
 <xsl:apply-templates select="brief_description"/>
 <xsl:apply-templates select="description"/>
@@ -63,6 +64,8 @@ const <xsl:value-of select="@name" /> = <xsl:value-of select="@value" />
     <!-- Convert <method> to Markdown subsection -->
     <xsl:template match="method">
       <xsl:if test="not(starts-with(@name, '_'))">    
+% ...
+---
 ### <xsl:call-template name="replace">
               <xsl:with-param name="text" select="@name" />
             </xsl:call-template>
