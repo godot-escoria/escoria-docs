@@ -10,9 +10,9 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
+import os
+import sys
+sys.path.append(os.path.abspath('./_ext'))
 
 
 # -- Project information -----------------------------------------------------
@@ -31,8 +31,13 @@ release = '4.0.0'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    "myst_parser"
+    "myst_parser",
+    "fallback_ref"
 ]
+
+# Configure the fallback base path
+fallback_ref_baseurl = "https://docs.godotengine.org/en/stable/classes/class_"
+fallback_ref_newtab = "y"
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']

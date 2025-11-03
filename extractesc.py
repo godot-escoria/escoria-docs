@@ -7,7 +7,7 @@ esc_commands = ""
 
 for filename in sorted(Path("api").glob("*.md")):
     test_str = Path(filename).read_text()
-    
+
     if re.search(r"@ESC", test_str):
         test_str = re.sub(r"@ESC", "", test_str)
 
