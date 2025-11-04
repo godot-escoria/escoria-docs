@@ -15,9 +15,11 @@ for filename in sorted(Path("docsource/").glob("*.xml")):
     markdown = str(xslt_tree(xml_tree))
 
     markdown = re.sub(r"\[br\]", "\n", markdown)
-    scrubbed_markdown = markdown.replace(r"@ESC", "").replace("@STUB", "")
+    scrubbed_markdown = markdown.replace(r"@ESC", "").replace("@STUB", "").replace(r"@COMMAND", "").replace(r"@MANAGER", "")
 
-    Path("api/" + filename.name).with_suffix(".md").write_text(scrubbed_markdown)
+    api_sub_dir = "commands" if re.search(r"@COMMAND", markdown) else "managers" if re.search(r"@MANAGER", markdown) else "supporting_classes"
+
+    Path(f"api/{api_sub_dir}/{filename.name}").with_suffix(".md").write_text(scrubbed_markdown)
 
     test_str = markdown
 
@@ -45,7 +47,7 @@ for filename in sorted(Path("docsource/").glob("*.xml")):
         if is_stub:
             esc_commands += "**This command is currently not fully implemented.**\n\n"
 
-        esc_commands += "%s\n\n" % convert(matches.group("description").replace(r"@ESC", "").replace(r"@STUB", ""))
+        esc_commands += "%s\n\n" % convert(matches.group("description").replace(r"@ESC", "").replace(r"@STUB", "").replace(r"@COMMAND", "").replace(r"@MANAGER", ""))
 
 esc_doc = Path("esc_reference.template.rst").read_text()
 
