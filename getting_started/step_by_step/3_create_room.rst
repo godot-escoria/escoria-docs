@@ -107,34 +107,43 @@ character can move around freely.
    The light map is a simple texture in which colors are mapped to the
    character's colors as it walks around in the room.
 
-.. hint:: **Scale mapping**
+Scale mapping
+-------------
 
-   If the background of the room is a three-dimensional image and the upper
-   part of the image appears to be further away, scale mapping is
-   used to create a three-dimensional effect when the character moves from the
-   top to the bottom of the screen by making it smaller when it's
-   on the top of the screen and bigger when it reaches the bottom of the
-   screen.
+If the background of the room is a three-dimensional image and the upper
+part of the image appears to be further away, scale mapping is
+used to create a three-dimensional effect when the character moves from the
+top to the bottom of the screen by making it smaller when it's
+on the top of the screen and bigger when it reaches the bottom of the
+screen.
 
-   This is achieved in Escoria by using a grayscale texture. A darker part of
-   the texture is considered to be further away from the viewer and a lighter
-   part is considered to be more in front of the viewer.
+This is achieved in Escoria by using a grayscale texture. A darker part of
+the texture is considered to be further away from the viewer and a lighter
+part is considered to be more in front of the viewer.
 
-   To fine tune the scaling of the character, use the ``Scale min`` and
-   ``Scale max`` parameters of the ``ESCTerrain`` node. The character is
-   only scaled between the numbers given in ``Scale min`` and ``Scale max``,
-   with 0 meaning the character is scaled down to non-existence and 1
-   representing the actual size of the character.
+To fine tune the scaling of the character, use the ``Scale min`` and
+``Scale max`` parameters of the ``ESCTerrain`` node. The character is
+only scaled between the numbers given in ``Scale min`` and ``Scale max``,
+with 0 meaning the character is scaled down to non-existence and 1
+representing the actual size of the character.
 
-    .. note::
+.. note::
 
-        The scaling can also be bigger than 1, which can result in scaling
-        artifacts.
+   The scaling can also be bigger than 1, which can result in scaling
+   artifacts. Mind using big enough image sprites if you require them to appear
+   bigger in some scenes.
 
-For simplicity's sake, we won't set up a complex scale map right now, but as
-the character is currently smaller than it should be when displayed in the
-room, let's set ``Scale min`` and ``Scale max`` to 2 so that the character
-sprite will be shown at twice its size.
+For our example, we will simply set up the scale map into the pub room by
+selecting its ``ESCTerrain`` node, then loading the ``pub_scalemap.png`` file
+into the ``Scales`` parameter of the node in the Inspector.
+
+For the ``Scale min`` and ``Scale max`` parameters, we propose values of 1.1
+and 2.2 respectively, but you are welcome to try different values to observe
+the changes in the size of the player when you come closer or further of the
+camera.
+
+.. image:: img/add_scale_map_pub_room.png
+   :alt: The Scale, Scale min and Scale max parameters set to 1.1 and 2.2.
 
 Setting camera limits
 ---------------------
