@@ -129,17 +129,18 @@ representing the actual size of the character.
 
 .. note::
 
-The scaling can also be bigger than 1, which can result in scaling
-artifacts. Mind using big enough image sprites if you require them to appear 
-bigger in some scenes. 
+   The scaling can also be bigger than 1, which can result in scaling
+   artifacts. Mind using big enough image sprites if you require them to appear
+   bigger in some scenes.
 
-For our example, we will simply set up the scale map into the pub room by 
-selecting its ``ESCTerrain`` node, then loading the ``pub_scalemap.png`` file 
-into the ``Scales`` parameter of the node in the Inspector. 
+For our example, we will simply set up the scale map into the pub room by
+selecting its ``ESCTerrain`` node, then loading the ``pub_scalemap.png`` file
+into the ``Scales`` parameter of the node in the Inspector.
 
-For the ``Scale min`` and ``Scale max`` parameters, we propose values of 1.1 and 
-2.2 respectively, but you are welcome to try different values to observe the 
-changes in the size of the player when you come closer or further of the camera.
+For the ``Scale min`` and ``Scale max`` parameters, we propose values of 1.1
+and 2.2 respectively, but you are welcome to try different values to observe
+the changes in the size of the player when you come closer or further of the
+camera.
 
 .. image:: img/add_scale_map_pub_room.png
    :alt: The Scale, Scale min and Scale max parameters set to 1.1 and 2.2.
