@@ -4,7 +4,7 @@ What is Escoria?
 Escoria is a framework made for and with `Godot Engine`_ allowing for the
 creation of 3rd person point and click adventure games.
 
-It provides various special nodes and features to help developres focus on
+It provides various special nodes and features to help developers focus on
 creating rooms, items, characters, and puzzles. It takes care of all the
 common tasks that all adventure games need to have: character movements,
 transitions between rooms, item relationships, etc. All that is left to do
@@ -28,8 +28,6 @@ completely rewritten and optimized in 2020.
 
 Contributors
 ------------
-
-## Authors
 
 In alphabetical order:
 
