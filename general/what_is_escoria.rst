@@ -2,7 +2,7 @@ What is Escoria?
 ================
 
 Escoria is a framework made for and with `Godot Engine`_ allowing for the
-creation of 3rd person point and click adventure games.
+creation of 3rd person point-and-click adventure games.
 
 It provides various special nodes and features to help developers focus on
 creating rooms, items, characters, and puzzles. It takes care of all the
@@ -17,14 +17,22 @@ scenes and resources.
 History
 -------
 
-This framework was initially developed in 2016 for the point and click
+This framework was initially developed in 2016 for the point-and-click
 adventure game `The Interactive Adventures of Dog Mendonça and Pizzaboy`_ and
 later streamlined for broader usage and open sourced as promised to the backers
 of the Kickstarter campaign.
 
 Because of maintainability issues, to make the framework easier for new
 developers, and bring it closer to Godot's standards, the framework was
-completely rewritten and optimized in 2020.
+completely rewritten and optimized in 2020 for Godot 3.
+
+Escoria was subsequently ported to Godot 4 in 2024 (and into 2025) after 
+Godot's major rewrite.
+
+As part of this rewrite, the ESCscript language used to allow developers 
+to script their adventure game was replaced with the ASHES language, 
+providing a more consistent experience for those familiar with GDScript and 
+Python.
 
 Contributors
 ------------
@@ -33,6 +41,7 @@ In alphabetical order:
 
 * ArturM
 * Sylvain Beucler - beuc
+* Duncan Brown - @DevOrionGames / @BHSDuncan / dev.orion
 * Fleskevor
 * Ariel Manzur - punto (original author)
 * Julian Murgia - @StraToN
@@ -54,14 +63,14 @@ Licence: CC-BY
 Base concepts
 -------------
 
-Escoria comes with many features designed for point and click adventure game
+Escoria comes with many features designed for point-and-click adventure game
 development. For this purpose, some concepts need to be clearly defined in
 order to create game scenes.
 
 Rooms
 ~~~~~
 
-A room is a specific scene defining an environment for the player to walk in.
+A **room** is a specific scene defining an environment for the player to walk in.
 It is composed of these mandatory elements:
 
 - an ``ESCRoom`` root node
@@ -71,7 +80,7 @@ It is composed of these mandatory elements:
 Additionally, some facultative elements can be added:
 
 - a walkable area (called "terrain"): Defines the area where the player
-  (if any) an walk in
+  (if any) can walk in
 - items (interactive or not)
 - specific location points in the space
 - other visible elements in the room that are not managed by Escoria: Simple
@@ -80,17 +89,17 @@ Additionally, some facultative elements can be added:
 Items
 ~~~~~
 
-Items are central in Escoria. They are multi-purpose as they can be different
+**Items** are central in Escoria. They are multi-purpose as they can be different
 things. All these purposes are combined into one node type as they share many
-details in common:
+details in common. Items can be:
 
 - an interactive item that can react to scripted actions: It can be part of
-  the background (not pickable) or a pickable item that goes into the inventory
+  the background (not pickable) or a pickable item that can go into the inventory
 - an "exit" that triggers rooms transitions
 - an invisible trigger zone that activates a scripted event if an object or the
   player collides with it
 
-NPCs (Non Playable Characters) are also considered as items in Escoria.
+NPCs (Non-Playable Characters) are also considered as items in Escoria.
 Nothing forbids you from creating a game where the player can have a discussion
 with a table, a button on the wall, or a rock on the floor.
 
@@ -104,7 +113,7 @@ for it to be displayed in the inventory.
 Player
 ~~~~~~
 
-The player is the scene that is controlled by Escoria to perform the actions
+The **player** is the scene that is controlled by Escoria to perform the actions
 corresponding to the user inputs, e.g. walking to a destination and performing
 actions on items. This scene also includes base animations defined for the
 character for idling, walking and talking, and other specific animations.
@@ -118,8 +127,8 @@ started after being triggered by user input.
 Inventory and inventory items
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Escoria manages the inventory for the game developer. This includes items that
-are added or removed to the inventory and events and actions happening on
+Escoria manages the **inventory** for the game developer. This includes items that
+are added to or removed from the inventory, and events and actions happening on
 inventory items ("look" and "use" items for example).
 
 Of course, the way the inventory is displayed to the player in terms of UI is
@@ -131,14 +140,23 @@ by Escoria. This way, the game developer has total control over the inventory.
 .. _`The Interactive Adventures of Dog Mendonça and Pizzaboy`: https://store.steampowered.com/app/330420
 
 
-ESC Scripts
-~~~~~~~~~~~
+ASHES Scripts
+~~~~~~~~~~~~~
 
 Escoria uses scripts (a set of Escoria commands that include such actions as
 moving an object to a certain location, or playing a sound) to determine the
-behavior of the game world and the objects within it. ESC scripts:
+behavior of the game world and the objects within it. 
 
-* are plain text files
+These were formerly called "ESC scripts", but have been replaced by an 
+updated scripting language called **ASHES** (short for, "Adventure 
+Scripting Helping EScoria").
+
+These scripts:
+
+* are plain text files,
 * can be created in any text editor (including the Godot script editor)
-* have the file extension ".esc"
+* have the file extension ".esc" (in the future, the extension will become 
+  ".ash", but for compatibility reasons the original ".esc" extension 
+  should be used), and,
 * can be stored in any location within your game's filesystem structure
+
