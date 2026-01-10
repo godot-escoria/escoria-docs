@@ -45,8 +45,10 @@ The assets used in this guide are available for download as well:
 
 * :download:`A mug of beer <assets/mug.png>` by `arispen`_
 
+* :download:`Pub scalemap <assets/pub_scalemap.png>` by Straton
+
 With that out of the way, let's get started by
-:doc:`creating an escoria project in Godot <1_create_escoria_project>`.
+:doc:`creating an Escoria project in Godot <1_create_escoria_project>`.
 
 .. toctree::
    :maxdepth: 1
@@ -55,9 +57,9 @@ With that out of the way, let's get started by
 
    *
 
-.. _editor introduction: https://docs.godotengine.org/en/3.5/getting_started/step_by_step/intro_to_the_editor_interface.html
-.. _nodes documentation: https://docs.godotengine.org/en/3.5/getting_started/step_by_step/nodes_and_scenes.html#nodes
-.. _GDScript basics: https://docs.godotengine.org/en/3.5/getting_started/scripting/gdscript/gdscript_basics.html
+.. _editor introduction: https://docs.godotengine.org/en/stable/getting_started/introduction/first_look_at_the_editor.html
+.. _nodes documentation: https://docs.godotengine.org/en/stable/getting_started/step_by_step/nodes_and_scenes.html#nodes
+.. _GDScript basics: https://docs.godotengine.org/en/stable/getting_started/step_by_step/scripting_first_script.html
 .. _2dpixx: https://opengameart.org/users/2dpixx
 .. _`Technopeasant`: https://opengameart.org/content/cartoon-male-turn-around-and-walk-cycle-sheet
 .. _Discord: https://discordapp.com

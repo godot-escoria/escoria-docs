@@ -2,44 +2,50 @@ Create a player character
 =========================
 
 Escoria is a framework optimized for 3rd person point and click adventure
-games. These type of games usually feature an animated character that can walk
+games. These types of games usually feature an animated character that can walk
 across a background graphic and interact with items.
 
-A character in Escoria is based on the node type :doc:`/api/ESCPlayer`.
+A character in Escoria is based on the node type :doc:`/api/supporting_classes/ESCPlayer`.
 
-Create a new folder in the **characters** folder for the new character. We will
-call our character "Graham".
+Create a new folder in the **characters** folder (be sure to create the folder 
+if it doesn't already exist) for the new character. We will call our character "Graham".
 
 .. image:: img/character_create_folder.png
    :alt: A view of the folders with a folder created for the new character
 
 Inside the folder, create a new scene and select ``ESCPlayer`` as the root node
-type.
+type. Save it as "graham.tscn" under the folder we created above.
 
 .. image:: img/character_create_scene.png
    :alt: The new character scene with an ESCPlayer root node
 
 When we get to making your game more interactive later using the built-in
-ESC Scripting language, we need a way of identifying the character and the
-various items. ESC uses :dfn:`global ids` for this. Set the global id for the
-character using the parameter **Global id** in the inspector panel:
+ASHES scripting language, we need a way of identifying the character and the
+various items. ASHES uses :dfn:`global ids` for this. Set the global id for the
+character using the parameter **Global Id** in the inspector panel:
 
 .. image:: img/character_globalid.png
    :alt: The parameter global_id set to "graham"
 
+.. note::
+
+    ASHES is the replacement for ESCscript. Not all mention of ESCscript has yet 
+    been swapped, so any fields mentioning ESCscript can be considered as meaning 
+    ASHES.
+
 Adding a walkcycle
 ------------------
 
-When a character is moved across the screen, usually an animation is played to
+When a character moves across the screen, usually an animation is played to
 mimic the character walking. This is called a "walkcycle".
 
 Escoria can play different animations based on where the character
-is moving to. For example, Escoria will play an upward facing walkcycle if the
-character moves from the bottom to the top of the screen, and a right facing
-walkcycle if the character walks from to the left to the right hand side.
+is moving to. For example, Escoria will play an upward-facing walkcycle if the
+character moves from the bottom to the top of the screen, and a right-facing
+walkcycle if the character walks from to the left to the righthand side.
 
-As Escoria can show mirrored animations, if your character looks the same on
-their right and left halves, you will not need animations showing them facing
+As Escoria can show mirrored animations: If your character looks the same on
+their left and right halves, you will not need animations showing them facing
 both left and right. Escoria can mirror any sideways-facing animations (e.g.
 walking right, walking up and right, walking down and right) to make the
 opposite side's equivalent.
@@ -52,50 +58,52 @@ Start by copying the spritesheet image into the character folder.
    are a very efficient way of using images in a game engine.
 
 
-Then add a new ``AnimatedSprite`` node to the ``ESCPlayer`` node.
+Then add a new ``AnimatedSprite2D`` node to the ``ESCPlayer`` node.
 
-Add new animations with the appropriate animation frames using the images from
-the spritesheet:
+Next, add new animations with the appropriate animation frames using the images 
+from the spritesheet:
 
 .. image:: img/character_create_animations.png
-   :alt: The required animations in the frames configuration.
+   :alt: The required animations in the frame's configuration.
 
-* walkback
-* walkbackright
-* walkfront
-* walkfrontright
-* walkright
-* idleback
-* idlebackright
-* idlefront
-* idlefrontright
-* idleright
+* ``walkback``
+* ``walkbackright``
+* ``walkfront``
+* ``walkfrontleft``
+* ``walkleft``
+* ``idleback``
+* ``idlebackleft``
+* ``idlefront``
+* ``idlefrontright``
+* ``idleleft``
 
 .. hint::
 
    These names can be anything that makes sense to you. If you want to use
-   "walk_down_right" or "moving_towards_and_right" for example instead of
-   "walkfrontright" then you can do that. The ``ESCAnimationResource``
+   "walk_down_right" or "moving_towards_and_right", for example, instead of
+   "walkfrontright" then you can. The ``ESCAnimationResource``
    described below will link the direction the character is walking to the
    animation you've created.
 
 .. hint::
 
    All the animations for the character (walk/idle/talk) live inside the
-   one `AnimatedSprite` node for the character.
+   one ``AnimatedSprite2D`` node for the character.
 
-
-Refer to the `AnimatedSprite tutorial in the Godot docs`_ to learn how to do
+Refer to the `AnimatedSprite2D tutorial in the Godot docs`_ to learn how to do
 this if you need some help.
+
+Also, as discussed above, we'll be using Escoria's ability to mirror animations in 
+order to create the missing directions.
 
 Telling Escoria about the walkcycle
 -----------------------------------
 
-Now that the basic animations exist, we need to tell Escoria when to play
-which animation.
+Now that the basic animations exist, we need to tell Escoria *when* to play
+*which* animation.
 
 To achieve this, create a new ``ESCAnimationResource`` in the ``ESCPlayer``
-node's ``animations`` parameter:
+node's ``animations`` property:
 
 .. image:: img/character_create_animations_resource.png
    :alt: Creating a new ESCAnimationResource
@@ -107,7 +115,7 @@ Click on the new resource to reveal the relevant settings:
 
 Escoria does not limit the developer in how many walkcycle directions a
 character can have. It can be 4 (left, right, front, back), 8 (with diagonal
-directions) or even more!
+directions) ,or even more!
 
 To achieve this degree of freedom, Escoria needs to know which directions are
 available. It does that by defining angle ranges within a 360° circle.
@@ -120,32 +128,31 @@ The angle 0° would show the character facing away from the camera, 90° facing
 to the right, and so forth.
 
 The walkcycles only show very specific angles for the character (e.g. for a 4
-direction character there are only animations for angles 0, 90, 180 and 270
+direction character, there are only animations for angles 0, 90, 180 and 270
 degrees). When the player moves the character in a direction that isn't one of
 these angles, however, Escoria needs to work out which animation the developer
 would like to use. To do this, when defining a character animation, the
 developer provides the angle range that will match that animation direction.
 In this diagram, the green area shows that the developer has chosen that
-movement in the 40° angle starting from 340° (i.e.  from 340° to 20°) will
+movement in a 40° range starting from 340° (i.e. from 340° to 20°) will
 correspond to the "up" animation.
 
 .. image:: img/angles_visualization2.png
    :alt: The movement range matching the upward walking animation
 
-
-Our character will support walking in 8 directions, so we set up the
-``Dir angles`` parameter like this:
-
-Click on ``Dir Angles`` and set the size to 8. For each slot, add an
-``ESCDirectionAngle`` resource.
+For this example, our character will support walking in 8 directions, so we set 
+up the ``Dir angles`` parameter like this:
 
 .. image:: img/character_create_animation_dirangles.png
    :alt: Setting the Dir angles array
 
-Click on each resource and set its angle start and size settings based on the
-8-direction character table below.
+Click on ``Dir Angles`` and set the size to 8. For each slot, add an
+``ESCDirectionAngle`` resource.
 
-This will define 40° ranges for the upper, left, right and back animations as
+Click on each resource and set its angle start and angle size settings based on 
+the 8-direction character table below.
+
+This will define 40° ranges for the upper, left, right, and back animations as
 well as 50° ranges for the diagonal directions. This setup will result in a
 very smooth animation.
 
@@ -155,6 +162,7 @@ very smooth animation.
    character's direction angles!
 
 2-direction Character
+~~~~~~~~~~~~~~~~~~~~~
 
 +--------------+------------+-------------+------------+
 | Resource     | Walk       | Character   | Character  |
@@ -166,6 +174,7 @@ very smooth animation.
 +--------------+------------+-------------+------------+
 
 4-direction Character
+~~~~~~~~~~~~~~~~~~~~~
 
 +--------------+------------+-------------+------------+
 | Resource     | Walk       | Character   | Character  |
@@ -181,6 +190,7 @@ very smooth animation.
 +--------------+------------+-------------+------------+
 
 8-direction Character
+~~~~~~~~~~~~~~~~~~~~~
 
 +--------------+------------+-------------+------------+
 | Resource     | Walk       | Character   | Character  |
@@ -206,7 +216,7 @@ very smooth animation.
 Now that we have defined where we want Escoria to play character animations,
 we just need to connect the individual animations with the direction angles.
 
-The additional parameters of the ``ESCAnimationResource`` define the
+The additional properties of the ``ESCAnimationResource`` define the
 specific animations for the character for each direction angle:
 
 * ``Directions``: Walk animation
@@ -214,22 +224,29 @@ specific animations for the character for each direction angle:
 * ``Speaks``: Speaking animations
 
 For each direction angle, add an ``ESCAnimationName``. Then, click each
-``ESCAnimationName`` and put the name of the matching animation
-(with the name specified in "Adding a walkcycle" above) in the "Animation"
-field, and choose whether that animation should be played mirrored by selecting
+``ESCAnimationName``, put the name of the matching animation
+(with the name specified in `Adding a walkcycle`_ above) in the "Animation"
+field, and choose whether that animation should be played as mirrored by selecting
 the "Mirrored" checkbox.
 
-These are the the first 3 settings for the ``Directions`` parameter:
+These are the first 3 settings for the ``Directions`` property:
 
 .. image:: img/character_create_animation_directions.png
-   :alt: The settings required for the Direction parameter
+   :alt: The settings required for the Direction property
 
 Each slot needs to contain a ``ESCAnimationName`` resource.
 Try to set up the ``Directions``, ``Idles``, and ``Speaks`` animations by
 yourself. Don't forget to click ``Mirrored on`` when the image is facing the
-opposite direction (for instance we have a left animation and
-item numbered 2 in our arrays corresponds to moving right so, in the
+opposite direction (for instance, we have a left animation and
+item numbered 2 in our arrays corresponding to moving right, so, in the
 above screenshot, item 2 uses a mirrored version of the left animation).
+
+.. hint::
+
+  You can always use the idle animations for the speaking animations to get 
+  you going. Tip: If you click the down arrow beside an ``ESCAnimationName`` 
+  entry, you can select "copy", and then use that to paste into a different 
+  ``ESCAnimationName`` resource slot using its down arrow and selecting "paste"!
 
 .. hint::
 
@@ -244,8 +261,8 @@ Defining the character base position
 ------------------------------------
 
 Escoria will move the character sprite around based on a specific position
-in the character scene, which is usually located at the bottom of the character
-sprite.
+in the character's scene. This position tends to be located at the base of 
+the character sprite.
 
 We can define this position by moving the sprite up so its feet are located
 at the origin of its scene:
@@ -253,6 +270,17 @@ at the origin of its scene:
 .. image:: img/character_create_position.png
    :alt: The character's feet are positioned at the origin of its
      scene
+
+.. hint::
+
+  Be sure to ONLY move the animated sprite and collision shape nodes, and not 
+  the root node. Godot will show a warning in the scene tree panel if you move
+  the root node's origin, telling you that doing so is unlikely to be respected
+  by Godot. 
+
+  If you notice weird placement or rendering behaviour of the character in your
+  game, double check to make sure the correct nodes we re-positioned, and not
+  the root node of the character's scene.
 
 Preparing the character for interactions
 ----------------------------------------
@@ -271,5 +299,5 @@ Add a ``CollisionShape2D`` node to the ``ESCPlayer`` and use a
 This concludes creating a player character. Let's
 :doc:`create a room <3_create_room>`.
 
-.. _AnimatedSprite tutorial in the Godot docs: https://docs.godotengine.org/en/3.5/tutorials/2d/2d_sprite_animation.html
+.. _AnimatedSprite2D tutorial in the Godot docs: https://docs.godotengine.org/en/stable/tutorials/2d/2d_sprite_animation.html
 .. _Discord: https://discordapp.com

@@ -16,24 +16,25 @@ the rooms. If the background is larger than the viewport, the camera will also
 pan the room to keep track of the player character.
 
 Sometimes this behaviour is not desired, though. Some rooms are designed so
-that, at first, one part of the room is available to the player and later,
+that, at first, one part of the room is available to the player and, later,
 another part of the room becomes available.
+
 Elevators are a good example: The player character starts
 at the ground floor, enters the elevator, and moves up. After the elevator
-leaves the screen, the view switches to the first floor with the elevator
+leaves the screen, the view switches to a higher floor with the elevator
 opening.
 
 To support limiting the parts of the room the player can see, Escoria rooms use
 "Camera Limits". The limits are a list of
 rectangles which define the boundaries that the camera is allowed to move
-within. The rectangle is defined using a top-left coordinate limit for the
+within. Each rectangle is defined using a top-left coordinate limit for the
 camera's movement, along with an accompanying width and height.
-The array of limits is found under the `Camera limits` parameter within the
-room's `ESCroom` node.
+This array of limits is found under the `Camera limits` parameter within the
+room's `ESCRoom` node.
 
 The active limit rectangle for the camera can be changed during gameplay using
-the ESC command :doc:`camera_set_limits </api/CameraSetLimitsCommand>` with the
-index of the camera limit to enforce.
+the ASHES command :doc:`camera_set_limits </api/commands/CameraSetLimitsCommand>` 
+with the index of the camera limit to enforce.
 
 If no camera limits are set, the size of the background texture is used as the
 default camera limit.
@@ -46,20 +47,20 @@ for when the door is unlocked - overlapping it as the whole room.
 Camera control
 ~~~~~~~~~~~~~~
 
-There are various ESC commands that can be used to control the camera to
+There are various ASHES commands that can be used to control the camera to
 achieve theatrical effects:
 
-* :doc:`camera_push </api/CameraPushCommand>` push the camera to point at the
+* :doc:`camera_push </api/commands/CameraPushCommand>` pushes the camera to point at the
   given target
-* :doc:`camera_set_pos </api/CameraSetPosCommand>` move the camera to the
+* :doc:`camera_set_pos </api/commands/CameraSetPosCommand>` moves the camera to the
   given position in a linear fashion
-* :doc:`camera_set_target </api/CameraSetTargetCommand>` set the target that
+* :doc:`camera_set_target </api/commands/CameraSetTargetCommand>` sets the target that
   the camera should follow
-* :doc:`camera_set_zoom </api/CameraSetZoomCommand>` zoom the camera by the
+* :doc:`camera_set_zoom </api/commands/CameraSetZoomCommand>` zooms the camera by the
   specified magnitude
-* :doc:`camera_set_zoom_height </api/CameraSetZoomHeightCommand>` zoom the
+* :doc:`camera_set_zoom_height </api/commands/CameraSetZoomHeightCommand>` zooms the
   camera to achieve a certain pixel height
-* :doc:`camera_shift </api/CameraShiftCommand>` shift the camera to the
+* :doc:`camera_shift </api/commands/CameraShiftCommand>` shifts the camera to the
   given location
 
 All commands support a ``speed`` parameter that defines in seconds how long
@@ -69,14 +70,14 @@ the camera animation should take to reach the target.
 
    Some camera commands may not work as expected if you have camera limits
    defined. Ensure that the position the camera is told to point at is
-   within the room's active camera limit. e.g. If you were making a game in
-   320 x 200 resolution, and your room limits were [100,100,1000,1000], the
+   within the room's active camera limit; e.g. if you were making a game using
+   a resolution of 320 x 200, and your room limits were [100,100,1000,1000], the
    top left coordinate the camera could reach would be [420,300], while the
    bottom right coordinate it could reach would be [680,800].
 
 .. hint::
 
-   The coordinates passed in camera script commands refer to where the centre of
+   The coordinates passed in to camera script commands refer to where the centre of
    the camera will point.
 
 Targets
@@ -85,17 +86,15 @@ Targets
 Commands that support a ``target`` object allow the following target types:
 
 * An ``ESCItem`` that has set the parameter ``camera_node`` to a node whose
-  position should be used to position the camera
-* If the parameter is not set, the position of the ``ESCItem`` is used instead
+  position should be used to position the camera. If the parameter is not set, the 
+  position of the ``ESCItem`` is used instead.
 
-Additionally, the API commands used for the ESC commands support these two
-additional targets:
-
-* ``Vector2D``: The target is a position described by the given vector
+* ``Vector2D``: The target is a position described by the given vector.
+  
 * An array of ``Vector2D`` objects: The target is the average of all items of
-  the array
+  the array.
 
-Follow targets are only nodes that have been set to be "movable".
+Follow targets must be nodes that have been set to be "movable".
 
 Transitions
 ~~~~~~~~~~~
@@ -109,4 +108,4 @@ The transitions that are supported are the names of the values used in the
 When specifying the ``TransitionType``, leave off the ``TRANS_`` prefix for
 any such parameters.
 
-:: _`Tween type` https://docs.godotengine.org/en/3.5/classes/class_tween.html?highlight=tween#enumerations
+.. _`Tween type`: https://docs.godotengine.org/en/stable/classes/class_tween.html#enum-tween-transitiontype
