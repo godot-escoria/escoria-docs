@@ -2,27 +2,34 @@ The first run
 =============
 
 We'd like to test out what we have done so far, but first we need to tell
-Escoria what to do when a new game starts.
+Escoria what to do when a new game starts!
 
-Our first ESC script
---------------------
+Our first ASHES script
+----------------------
 
-This is done using **ESC**, the integrated Escoria scripting language.
+This is done using **ASHES**, the integrated Escoria scripting language.
 
 While you could use :dfn:`GDscript` (or other languages supported by Godot)
-directly, we added ESC as a specific language for adventure games,
-so very typical game commands (like making a character speak, letting them
+directly, we added ASHES as a language tailor-made for adventure games,
+so the most typical game commands (like making a character speak, letting them
 walk across the room, etc.) are very easy to use.
 
-The game start-up itself is also coordinated using an ESC script.
+The game's start-up routine itself is also coordinated using an ASHES script.
 
 Scripts are plain text files with an ".esc" extension, created in any text
-editor you choose to use. Create a new ESC script which will be our main game
-script and call it "game.esc". Switch to Godot's **Editor** tab and select
-"New Text File" from the "File" menu:
+editor you choose to use. 
+
+Create a new ASHES script which will be our main game script and call it 
+"game.esc".
+
+Switch to Godot's **Scripts** tab and select "New Text File" from the "File" menu:
 
 .. image:: img/create_room_newtextfile.png
    :alt: Selecting New Text File from the File menu
+
+.. note:: In the future, the ".esc" extension will be replaced by  
+  ".ash", but for compatibility reasons the original ".esc" extension 
+  should be used for the time being.
 
 Save the new file as "game.esc" in your root game folder:
 
@@ -31,103 +38,122 @@ Save the new file as "game.esc" in your root game folder:
 
 This will open the new script directly in the editor.
 
-ESC scripts are built-up using "Events" and "Commands".
+ASHES scripts are built-up using "Events" and "Commands".
 
-An ESC Event starts with the ":" character and is followed by the name of the
-event.
+An ASHES Event starts with a colon (``:``) and is followed by the name of the
+event, e.g. ``:look``
 
-There are several special names for events which you will learn later on. One
-special event name is called ``newgame`` and is run when the player clicks
-on the "New Game" button in the main menu.
+There are several special names for events which you will learn later on, but 
+the one event type we need right now is ``newgame`` which is run when the player 
+clicks on the "New Game" button in the main menu.
 
 .. hint::
 
    There is also a special event called ``setup``. This is related to
    the order things happen in more complex game rooms and is not necessary for
-   all scripts. It can be ignored for now.
+   every script. It can be safely ignored for now.
 
-We basically just want Escoria to switch to our pub scene. For this, we can
-use the command :doc:`change_scene </api/ChangeSceneCommand>`. This command
-expects the path to the target scene as a parameter.
+We basically just want Escoria to switch to our new pub scene. For this, we can
+use the command :doc:`change_scene <../api/commands/ChangeSceneCommand>`. This 
+command expects the path to the target scene as an argument.
 
-That's easy to do in Godot: Just select the pub scene in the file tree,
-right click it and select "Copy Path":
+Getting that path is easy to do in Godot: Just find the pub scene in the file tree,
+right click on it, and select "Copy Path" from the context menu:
 
 .. image:: img/start_game_path.png
-   :alt: Context menu shown when right clicking the pub scene file
+   :alt: The context menu shown when right clicking the pub scene file
 
-Add the following to the ESC script ``game.esc``:
+Now add the following to the ASHES script ``game.esc``:
 
 .. code-block::
 
-   :newgame
+  :newgame
 
-   change_scene res://rooms/pub/pub.tscn
+    change_scene("res://rooms/pub/pub.tscn")
 
 .. hint::
 
-   If you had saved the scene using a name other than "pub.tscn" (e.g. "room1"
-   instead of "pub.tscn"), the `change_scene` command is where you would need
-   to use that filename.
+  All ASHES events should appear as the first word on its own line, without any 
+  spaces or indents to its left!
+    
+.. hint::
+
+  ASHES is similar to GDScript and Python: Make sure to indent script blocks appropriately 
+  (more on this in the :doc:`ASHES Language Reference </scripting/z_esc_reference>`).
+    
+.. hint::
+
+   If you saved the scene using a name other than "pub.tscn" (e.g. "room1"), 
+   the argument above should reflect that scene's path, e.g. "res://rooms/pub/room1.tscn")..
 
 But what should happen when the game starts *before* the main menu is shown?
 
-Well, that's also handled by this script using an "init" event.
+Well, that's also handled by the same script by using an ``init`` event.
 
-You could add introduction sequences, studio logos, etc. For the moment, we
-only want to show the main menu.
+You could add introduction sequences, studio logos, etc. to that event. For the moment, 
+we only want to show the main menu--*further evidence of Escoria being very adaptable to 
+your specific game's needs!*
 
-(Further evidence of Escoria being very adaptable to your specific game's
-needs!)
+Thus, we don't default to any main menu scene. We've added a stock main menu for convenience, 
+though, which we will load now.
 
-Thus, we don't default to any main menu scene by default. We've added a stock
-main menu for convenience, though, which we can load now.
-
-Add this code:
+Add this code to the script:
 
 .. code-block::
 
-   :init
+  :init
 
-   show_menu main
+    show_menu("main")
 
 This instructs the installed UI addon to show the main menu.
 
-The complete file "game.esc" should look like this now:
+The complete script file should look like this now:
 
 .. code-block::
 
-   :init
+  :init
 
-   show_menu main
+    show_menu("main")
 
-   :newgame
+  :newgame
 
-   change_scene res://rooms/pub/pub.tscn
+    change_scene("res://rooms/pub/pub.tscn")
 
 Now that we have our game script ready, we need to set it in the Escoria
-project settings in the "Game Start Script" parameter in the "Main" category.
+project settings using the **Game Start Script** parameter in the **Main** category.
 
 .. hint::
 
-   ESC files aren't directly shown in the file explorer as they're not
-   recognized as Godot resource files (as of the time this was written).
-   As an alternative to copying the path to the ESC file, you can right
-   click the file in the editor:
-
-   .. image:: img/start_game_scriptpath.png
-      :alt: The context menu shown when the script game.esc is right clicked
-        in th editor.
+  Remember that you may need to enable the **Advanced Settings** toggle in order 
+  to see the Escoria-specific project settings!
 
 The setting should look like this.
 
 .. image:: img/start_game_parameter.png
    :alt: The parameter Game Start Script set to res://game.esc
 
+.. hint::
+
+   You can copy the path to the ASHES file by right-clicking the file in the 
+   editor:
+
+   .. image:: img/start_game_scriptpath.png
+      :alt: The context menu shown when the script game.esc is right clicked
+        in th editor.
+
 Starting the game
 -----------------
 
-Now you're ready to start the game. Click on Godot's run icon to do so.
+We need to make sure that Escoria knows which **game scene** to use. A game 
+scene is used by Escoria as the "entry point" for the entire game and typically 
+contains a complete implementation of a user interface (UI).
+
+.. hint::
+
+  Make sure a valid game scene is specified in the Escoria project settings under 
+  "UI" -> "Game Scene".
+
+Now you're ready to start the game! Click on Godot's run icon to do so.
 
 .. image:: img/start_game_start.png
    :alt: The start game button shaped like a triangle
@@ -141,12 +167,14 @@ Slowing Graham down
 As you can see, Graham is pretty much running through the pub. Also, he looks
 a bit like he's skating through it.
 
-So we should make him walk slower and at the same time animate him faster.
+So we should make him walk slower and at the same time speed up the walking 
+animation.
 
-To achieve this, go back to the character and select the ``ESCPlayer`` node
-and set the ``Speed`` parameter to 150. Additionally, select the
-``AnimatedSprite`` node and set the ``Speed scale`` parameter to 1.8.
+To achieve this, go back to the character, select the ``ESCPlayer`` node, 
+and set the ``Speed`` property to "150". Additionally, select the
+``AnimatedSprite2D`` node and set the ``Speed scale`` parameter to "1.8".
 
-Try starting the game again and watch Graham walk much more naturally.
+Try starting the game again. Graham should walk much more naturally.
 
-Let's make the :doc:`room more interactive <5_adding_items>`.
+Next, let's make the :doc:`room more interactive <5_adding_items>`.
+

@@ -21,24 +21,25 @@ ESC global IDs:
 - ``_music``: Used for looping background music
 - ``_sound``: Used for playing sound files
 - ``_speech``: Used for voice support
+- ``_ambient``: Used for continuous background/atmospheric sounds
 
 Playing audio is done by using the
-:doc:`play_snd </api/PlaySndCommand>` ESC command. It expects the path to the
+:doc:`play_snd </api/commands/PlaySndCommand>` ASHES command. It expects the path to the
 specific audio resource to be played and the global ID of the desired audio
 player.
 
-If the audio player is unspecified, it defaults to ``_sound``.
+If no audio player is specified for `play_snd`, it defaults to ``_sound``.
 
 Examples
 --------
 
-- ``play_snd res://music/happy.ogg _music``
+- ``play_snd("res://music/happy.ogg", "_music")``
 
-    Plays the background music ``res://music/happy.ogg``
+    Plays the file ``res://music/happy.ogg`` as background music.
 
-- ``play_snd res://sound/door_open.wav``
+- ``play_snd("res://sound/door_open.wav")``
 
-    Plays the sound effect ``res://sound/door_open.wav``
+    Plays the sound effect ``res://sound/door_open.wav``.
 
 .. note::
 
@@ -46,10 +47,10 @@ Examples
     by default; sound effects are not.
 
 You can stop the currently-playing audio using the
-:doc:`stop_snd </api/StopSndCommand>` ESC command. It expects the global ID of
+:doc:`stop_snd </api/commands/StopSndCommand>` ASHES command. It expects the global ID of
 the audio player as its only argument.
 
-If the audio player is not specified, ``_music`` is used as the default value.
+If no audio player is specified for `stop_snd`, ``_music`` is used as the default value.
 
 Voice support
 ~~~~~~~~~~~~~
@@ -57,4 +58,4 @@ Voice support
 See the :doc:`documentation about dialogs </getting_started/dialogs>` for more
 details on using voice files.
 
-.. _`officially supported by Godot`: https://docs.godotengine.org/en/3.5/getting_started/workflow/assets/importing_audio_samples.html
+.. _`officially supported by Godot`: https://docs.godotengine.org/en/stable/tutorials/assets_pipeline/importing_audio_samples.html
