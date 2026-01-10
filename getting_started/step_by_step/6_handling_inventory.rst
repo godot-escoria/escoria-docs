@@ -195,15 +195,16 @@ Modify your "blackboard.esc" to the following :
   The ``if...else...`` pattern above is used in place of separating mutually-exclusive 
   clauses into their own. In other words, an equivalent block of code would be:
 
-  .. code-block::
-    :look
-      # If I've picked up the beer
-      if $beer in inventory:
-        say($graham, "I don't need a cocktail, I've got a beer.")
+.. code-block::
+  
+  :look
+    # If I've picked up the beer
+    if $beer in inventory:
+      say($graham, "I don't need a cocktail, I've got a beer.")
         
-      if not $beer in inventory::
-        # If I haven't picked up the beer
-        say($graham, "The cocktails might be free, but I feel like a beer.")
+    if not $beer in inventory::
+      # If I haven't picked up the beer
+      say($graham, "The cocktails might be free, but I feel like a beer.")
 
 Run the game again. Try "looking" at the blackboard both before and after
 you've picked up the beer to see how the response changes.
