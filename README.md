@@ -19,7 +19,7 @@ Python to host the documentation locally:
 
 ## Contributors
 
-By alphabetical order:
+In alphabetical order:
 Duncan Brown - Dev Orion
 Dennis Ploeger - dploeger
 Julian Murgia - StraToN
