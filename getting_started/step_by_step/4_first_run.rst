@@ -54,7 +54,7 @@ clicks on the "New Game" button in the main menu.
    every script. It can be safely ignored for now.
 
 We basically just want Escoria to switch to our new pub scene. For this, we can
-use the command :doc:`change_scene <../api/commands/ChangeSceneCommand>`. This 
+use the command :doc:`change_scene </api/commands/ChangeSceneCommand>`. This 
 command expects the path to the target scene as an argument.
 
 Getting that path is easy to do in Godot: Just find the pub scene in the file tree,
@@ -79,7 +79,7 @@ Now add the following to the ASHES script ``game.esc``:
 .. hint::
 
   ASHES is similar to GDScript and Python: Make sure to indent script blocks appropriately 
-  (more on this in the :doc:`ASHES Language Reference </scripting/z_esc_reference>`).
+  (more on this in the `ASHES Language Reference`_).
     
 .. hint::
 
@@ -178,3 +178,4 @@ Try starting the game again. Graham should walk much more naturally.
 
 Next, let's make the :doc:`room more interactive <5_adding_items>`.
 
+.. _ASHES Language Reference: /scripting/z_esc_reference.html

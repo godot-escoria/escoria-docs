@@ -73,7 +73,7 @@ run when the player chooses to "use" the exit - for example, saying a goodbye,
 or running a cutscene. Place a "change_scene" command as inside this event to
 move the character to the next room.
 
-For exits that don't require scripts, the :doc:`ESCExit </api/supporting_classses/ESCExit>` 
+For exits that don't require scripts, the :doc:`ESCExit </api/supporting_classes/ESCExit>` 
 node is provided. The only things you will need to configure on the node are the
 ``Target Scene`` destination, and, optionally, a "switch sound" (the sound to
 play when changing to the destination room).

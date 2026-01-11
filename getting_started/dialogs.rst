@@ -6,7 +6,7 @@ building, fleshing out characters or presenting puzzles, dialogs are usually
 found in every narrative game.
 
 Escoria supports a feature-rich dialog system integrated in the
-:doc:`ASHES language </scripting/z_esc_reference>`.
+`ASHES language`_.
 
 Dialog concept
 --------------
@@ -249,4 +249,4 @@ started.
     found :doc:`in this document </advanced/create_dialog_manager>`.
 
 
-
+.. _`ASHES language`: /scripting/z_esc_reference.html
