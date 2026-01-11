@@ -209,5 +209,6 @@ Modify your "blackboard.esc" to the following :
 Run the game again. Try "looking" at the blackboard both before and after
 you've picked up the beer to see how the response changes.
 
-For more information on conditional logic, see
-:doc:`https://docs.escoria-framework.org/en/devel/scripting/z_esc_reference.html#conditions`
+You can also look up `more information on conditional logic in ASHES`_.
+
+.. _more information on conditional logic in ASHES: /scripting/z_esc_reference.html#conditions
