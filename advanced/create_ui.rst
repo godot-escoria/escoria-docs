@@ -155,14 +155,15 @@ player to select the action. Here are some examples:
 
 |monkey_island_ui| |kings_quest_ui|
 
-.. |monkey_island_ui| image:: /advanced/img/9verbs_monkey_island.png
+.. |monkey_island_ui| 
+    image:: /advanced/img/9verbs_monkey_island.png
     :width: 45%
     :alt: The Secret of Monkey Island's 9 verbs UI
 
-.. |kings_quest_ui| image:: /advanced/img/kings_quest_6_interactions.gif
+.. |kings_quest_ui| 
+    image:: /advanced/img/kings_quest_6_interactions.gif
     :width: 45%
     :alt: King's Quest 6 interactions
-
 
 Escoria does not require you to define a specific scene to allow the player to
 select the verb to be used, but you can do so.
