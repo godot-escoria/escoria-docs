@@ -95,7 +95,7 @@ again.
 .. note::
 
     Dialog option conditions are unique and differ from ordinary conditions in ASHES. 
-    See `the ASHES reference </scripting/z_esc_reference#conditions>` for more
+    See :ref:`the ASHES reference <conditions>` for more
     details about conditions.
 
 Recorded speech
@@ -249,4 +249,4 @@ started.
     found :doc:`in this document </advanced/create_dialog_manager>`.
 
 
-.. _`ASHES language`: /scripting/z_esc_reference.html
+.. _`ASHES language`: /scripting/z_ashes_reference.html
