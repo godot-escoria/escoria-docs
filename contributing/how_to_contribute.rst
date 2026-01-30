@@ -38,14 +38,14 @@ in the `Escoria issue tracker`_.
 Feature requests
 ----------------
 
-Sure. We're always open to new ideas. Please make sure you talk to our
+Sure! We're always open to new ideas! Please make sure you talk to our
 community in the Discord support channel first. Maybe somebody else already
 thought about the same thing and found a solution!
 
 .. image:: https://img.shields.io/discord/884336424780984330.svg?label=Join%20our%20Discord&logo=Discord&colorB=7289da&style=for-the-badge
    :target: https://discord.com/invite/jMxJjuBY5Z
 
-If not, please add a new feature request in the `Escoria issue tracker`_.
+If not, please feel free to add a new feature request in the `Escoria issue tracker`_.
 
 Please note that we're developing Escoria in our free time and can't always
 implement new features as fast as we would like to. We will usually add a
@@ -57,14 +57,14 @@ to Escoria. This, however, might change, so don't bet on it.
 Contributions
 -------------
 
-That's *awesome*. Thanks a lot. Let's talk about how we implement code in
-Escoria.
+That's *awesome*--thank you very much! Let's talk about how we implement code in
+Escoria:
 
 Code changes
 ^^^^^^^^^^^^
 
 We implement all new code in our demo game. That's our testing ground, if you
-will. Clone the `demo game's git repository`_. Checkout the ``develop`` branch
+will. Clone the `demo game's git repository`_. Checkout the ``main`` branch
 and then create a new branch named "issue-<your issue number>". (e.g. issue-42)
 
 If you'd like to submit code for fixing a bug, please recreate the bug in the
@@ -80,15 +80,15 @@ When you're ready, please interactively rebase your branch and remove all
 non-essential commits from your changes. See `this article`_ for information
 about interactively rebasing.
 
-Afterwards, open a pull request in the demo game repository against the
-``develop`` branch. We may possibly ask you to kindly add more changes or
+Next, open a pull request in the demo game repository against the
+``main`` branch. We may possibly ask you to kindly make some edits or
 otherwise communicate more about your changes. Please use the PR UI to answer
 these questions and resolve the conversations once you have implemented the
 requested change.
 
-Again, thanks a lot for your contributions. ❤️ 🎁
+Again, thanks a lot for your contributions! ❤️ 🎁
 
-.. _`Escoria issue tracker`: https://github.com/godot-escoria/escoria-issues/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc
+.. _`Escoria issue tracker`: https://github.com/godot-escoria/escoria-demo-game/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc
 .. _`demo game's git repository`: https://github.com/godot-escoria/escoria-demo-game
 .. _`semantic-release`: https://github.com/semantic-release/semantic-release
 .. _`this article`: https://dev.to/blakedeboer/beginners-guide-to-interactive-rebasing-1ob
@@ -117,12 +117,12 @@ concern themselves with how the documentation gets from code to the website.
 After a successful pull request to the main repository, GitHub actions will run
 the following steps automatically :
 
-* extractesc.py will extract information about the ESC commands from the API
-  documentation and make the documentation files in the API folder.
+* ``extractashes.py`` will extract information about the ASHES commands from the API
+  documentation and compile the documentation files in the API folder.
 * These are accessed by the main documentation from a reference in
-  `esc_reference.template.rst`
+  ``ashes_reference.template.rst``.
 * doc8 will confirm the documentation meets the project's style requirements
-  by running .github/workflows/check-docs.yml
+  by running ``.github/workflows/check-docs.yml``.
 
 
 

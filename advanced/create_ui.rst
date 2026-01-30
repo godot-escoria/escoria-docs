@@ -138,6 +138,8 @@ This ``update_tooltip_text()`` function creates a centered, colored (with the
 
 Save the scene and instance it in the game scene.
 
+.. _verbs:
+
 Verbs
 ~~~~~
 
@@ -233,8 +235,10 @@ Save the scene and instance it in the game scene.
 Dialog player
 ~~~~~~~~~~~~~
 
+**Coming soon**
+
 Inventory
 ~~~~~~~~~
 
-Head to the `Create inventory <create_inventory>`__ page to create this scene.
+**Coming soon**: Head to the `Create inventory <create_inventory>`__ page to create this scene.
 When it's created, instance it in the game scene.
