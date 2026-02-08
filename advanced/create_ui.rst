@@ -64,8 +64,8 @@ ESC script. To simplify this control, it also requires a modified ``Tween`` node
 as a child (don't worry: this is automatically created when the camera is added 
 to the scene tree).
 
-Create a new scene. Add an ``ESCCamera`` node as the root node of the scene.
-In the Inspector, tick the "Current" parameter and leave the other parameters
+Create a new scene. Add an ``ESCCamera`` node as the root node of the scene. In
+the Inspector, tick the "Current" parameter and leave the other parameters
 unchanged from their respective defaults.
 
 Save the scene: You're done. Now, instance this scene into the game scene.
@@ -125,12 +125,9 @@ script attached of this node and create and attach a new one extending
     extends ESCTooltip
 
     func update_tooltip_text():
-        bbcode_text = "[center]"
-        bbcode_text += "[color=#" + color.to_html(false) + "]"
-        bbcode_text += current_target
-        bbcode_text += "[/color]"
-        bbcode_text += "[/center]"
-        update_size()
+        bbcode_text = "[center]" bbcode_text += "[color=#" +
+        color.to_html(false) + "]" bbcode_text += current_target bbcode_text +=
+        "[/color]" bbcode_text += "[/center]" update_size()
 
 This ``update_tooltip_text()`` function creates a centered, colored (with the
 ``ESCTooltip.color`` value) text containing only the value of

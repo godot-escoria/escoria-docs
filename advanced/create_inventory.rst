@@ -9,8 +9,8 @@ simple (look, open, close...) or more complex, such as combining them with
 another inventory item or also a room item.
 
 Escoria allows you to setup and display the player inventory with great
-flexibility. Therefore, you may build your inventory scene in freedom,
-define the way it shows up and hides (possibly with an animation), etc.
+flexibility. Therefore, you may build your inventory scene in freedom, define
+the way it shows up and hides (possibly with an animation), etc.
 
 Build the scene
 ---------------
@@ -23,8 +23,8 @@ script using GDScript at your needs.
 For example, you may want to display your inventory at all time in a given area
 of the screen, or define a clickable button to show it, or hot focus areas
 waiting for the mouse pointer to trigger the inventory. If it is hidden by
-default, you can either pop it on the screen, or define hide and show animations.
-This is totally at your hand to be done fully with Godot features.
+default, you can either pop it on the screen, or define hide and show
+animations. This is totally at your hand to be done fully with Godot features.
 
 Escoria is designed to be no barrier - it only requires 2 specific nodes to be
 present in the inventory scene tree. These 2 nodes are described in the section
@@ -38,8 +38,8 @@ particular:
 
 - ``ESCInventory``: this is the root node of the inventory scene. It inherits
   ``Control`` to allow user inputs (using mouse, keyword or game controller),
-  and its role is mainly to act as a Facade to inventory, allowing the
-  addition and removal of items in its defined container.
+  and its role is mainly to act as a Facade to inventory, allowing the addition
+  and removal of items in its defined container.
 
   .. note::
 
@@ -55,40 +55,42 @@ particular:
 
   .. note::
 
-    Unfortunately Godot doesn't allow adding an ``ESCInventoryContainer``
-    node to the scene and changing its type to any of Godot ``Control/Container/*``
-    while keeping its attached script. We will provide a simplified way to insert
-    this node to your scene, asking you to choose its actual type.
+    Unfortunately Godot doesn't allow adding an ``ESCInventoryContainer`` node
+    to the scene and changing its type to any of Godot ``Control/Container/*``
+    while keeping its attached script. We will provide a simplified way to
+    insert this node to your scene, asking you to choose its actual type.
 
-This is an example of an inventory scene fully composed (part of the simple-mouse
-plugin):
+This is an example of an inventory scene fully composed (part of the
+simple-mouse plugin):
 
 ..  image:: img/inventory_scene_tree_example.png
     :width: 100%
     :alt: Inventory scene tree example from Escoria simple-mouse plugin
 
 After the ``ESCInventoryContainer`` node is added to the scene, it needs to be
-targeted by the ``ESCInventory`` node. To do so, select the ``ESCInventory`` node,
-then in the inspector, select the target ``ESCInventoryContainer`` as Inventory UI
-parameter.
+targeted by the ``ESCInventory`` node. To do so, select the ``ESCInventory``
+node, then in the inspector, select the target ``ESCInventoryContainer`` as
+Inventory UI parameter.
 
 ..  image:: img/inventory_inspector_example.png
     :width: 100%
     :alt: Inventory scene inspector example from Escoria simple-mouse plugin
 
-The scene can then be saved, either in a plugin or in a new ``res://*/`` folder,
-at your preference.
+The scene can then be saved, either in a plugin or in a new ``res://*/``
+folder, at your preference.
 
 Inserting/Removing items to/from inventory
 ------------------------------------------
 
-``ESCItem`` define usable and pickable items. You may select an inventory texture
-in the Inspector, that will be used when the item is added to the inventory.
+``ESCItem`` define usable and pickable items. You may select an inventory
+texture in the Inspector, that will be used when the item is added to the
+inventory.
 
 Adding and removing an item to/from the inventory can be performed in two ways:
 
-- in an ASHES script using ``inventory_add`` and ``inventory_remove`` functions.
-  Both functions take the ``global_id`` of the item as parameter.
+- in an ASHES script using ``inventory_add`` and ``inventory_remove``
+  functions. Both functions take the ``global_id`` of the item as parameter.
 
-- in GDScript, using the ``escoria.inventory_manager.add_item(item_id: String)``
-  and ``escoria.inventory_manager.remove_item(item_id: String)`` functions.
+- in GDScript, using the ``escoria.inventory_manager.add_item(item_id:
+  String)`` and ``escoria.inventory_manager.remove_item(item_id: String)``
+  functions.
