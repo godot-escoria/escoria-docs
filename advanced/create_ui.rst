@@ -236,7 +236,25 @@ Save the scene and instance it in the game scene.
 Dialog player
 ~~~~~~~~~~~~~
 
-**Coming soon**
+The dialog player is an Escoria node (``ESCDialogPlayer``) that needs to be
+added to the game scene. It is automatically called by Escoria when
+a dialog line has to be displayed on the screen, and when the player needs
+to choose a dialog option during gameplay.
+
+When this happens, the ``ESCDialogPlayer`` node will first instance the
+defined dialog manager node (which can be setup in a plugin; see the
+`Create dialog manager <create_dialog_manager>`__ page for more details) as
+a child of the dialog player node, if it hasn't been already. 
+Then, the dialog player calls the appropriate methods of the Dialog Manager,
+either displaying dialog lines or a dialog chooser. Both modes are scenes 
+defined in the dialog manager plugin. When required, they are instanced as 
+children of the Dialog Player and are subsequently destroyed when they've 
+fulfilled their purpose.
+
+The ``ESCDialogPlayer`` node requires almost no customization: It
+may only require a Godot theme resource to be assigned to its ``theme`` 
+property to override the eventual theme defined for the dialog line and 
+dialog chooser scenes.
 
 Inventory
 ~~~~~~~~~
