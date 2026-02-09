@@ -37,7 +37,7 @@ Then, create a new scene and select ``ESCItem`` as its root node. Rename it
 to "Beer" and set "beer" as its ``Global ID``.
 
 Add a ``Sprite2D`` node and use the mug image as its ``Texture``. Also, be
-sure to add a ``CollisionShape2D`` node to define the area of interactivity 
+sure to add a ``CollisionShape2D`` node to define the area of interactivity
 like before.
 
 Finally, create a new ASHES script called "beer.esc" and place it in the "items"
@@ -102,23 +102,23 @@ Try it out: Graham should now be able to pick up the mug!
 
 .. hint::
 
-  Depending on where you place the mug, you may need to set an 
-  ``ESCInteractionLocation`` node as a child of the instantiated beer scene. 
+  Depending on where you place the mug, you may need to set an
+  ``ESCInteractionLocation`` node as a child of the instantiated beer scene.
   This is really only necessary if the mug is in a location that Graham can't
   reach via the walkable area.
 
 Using the mug
 -------------
 
-Usually, items are not only picked up but also used or combined with different 
+Usually, items are not only picked up but also used or combined with different
 items either in the inventory or in a particular room.
 
 This is also done using events in the ASHES script. Apart from the event name
 ``:use``, the target object is also specified.
 
-Let's have Graham react to using the mug with the blackboard. 
+Let's have Graham react to using the mug with the blackboard.
 
-For this, we need to make the beer combinable with other items when it is used 
+For this, we need to make the beer combinable with other items when it is used
 from the inventory and then react to it in the ASHES script of the blackboard.
 
 So go into the beer item scene again and select the property, ``Use from
@@ -146,7 +146,7 @@ Add in some game logic
 ----------------------
 
 Let's make the game a little more interesting by adding some logic to change
-how the game reacts to events. 
+how the game reacts to events.
 
 From your previous lesson, the "blackboard.esc" file should contain the following.
 
@@ -160,11 +160,11 @@ Let's now change how Graham responds based on whether he has picked up the drink
 To do this, we need a conditional statement where we look at whether
 something is in a particular state and act accordingly.
 
-Conditionals in ASHES appear very similarly to those in GDScript and Python. 
-ASHES provides for the use of "if"-statements, allowing one (or more) conditions 
+Conditionals in ASHES appear very similarly to those in GDScript and Python.
+ASHES provides for the use of "if"-statements, allowing one (or more) conditions
 you wish to check.
 
-The state of boolean (true/false) conditions can be negated/reversed with the use of 
+The state of boolean (true/false) conditions can be negated/reversed with the use of
 the ``!`` symbol or the keyword ```not```..
 
 Examples of conditional checks are:
@@ -175,8 +175,8 @@ Examples of conditional checks are:
 
 .. note::
 
-  The ``in inventory`` keywords are special, reserved keywords meant to be used together 
-  for checking whether a global id currently exists in the player's inventory. 
+  The ``in inventory`` keywords are special, reserved keywords meant to be used together
+  for checking whether a global id currently exists in the player's inventory.
 
 Modify your "blackboard.esc" to the following :
 
@@ -192,16 +192,16 @@ Modify your "blackboard.esc" to the following :
 
 .. hint::
 
-  The ``if...else...`` pattern above is used in place of separating mutually-exclusive 
+  The ``if...else...`` pattern above is used in place of separating mutually-exclusive
   clauses into their own. In other words, an equivalent block of code would be:
 
 .. code-block::
-  
+
   :look
     # If I've picked up the beer
     if $beer in inventory:
       say($graham, "I don't need a cocktail, I've got a beer.")
-        
+
     if not $beer in inventory::
       # If I haven't picked up the beer
       say($graham, "The cocktails might be free, but I feel like a beer.")

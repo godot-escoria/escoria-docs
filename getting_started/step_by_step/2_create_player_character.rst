@@ -7,7 +7,7 @@ across a background graphic and interact with items.
 
 A character in Escoria is based on the node type :doc:`/api/supporting_classes/ESCPlayer`.
 
-Create a new folder in the **characters** folder (be sure to create the folder 
+Create a new folder in the **characters** folder (be sure to create the folder
 if it doesn't already exist) for the new character. We will call our character "Graham".
 
 .. image:: img/character_create_folder.png
@@ -29,8 +29,8 @@ character using the parameter **Global Id** in the inspector panel:
 
 .. note::
 
-    ASHES is the replacement for ESCscript. Not all mention of ESCscript has yet 
-    been swapped, so any fields mentioning ESCscript can be considered as meaning 
+    ASHES is the replacement for ESCscript. Not all mention of ESCscript has yet
+    been swapped, so any fields mentioning ESCscript can be considered as meaning
     ASHES.
 
 Adding a walkcycle
@@ -60,7 +60,7 @@ Start by copying the spritesheet image into the character folder.
 
 Then add a new ``AnimatedSprite2D`` node to the ``ESCPlayer`` node.
 
-Next, add new animations with the appropriate animation frames using the images 
+Next, add new animations with the appropriate animation frames using the images
 from the spritesheet:
 
 .. image:: img/character_create_animations.png
@@ -93,7 +93,7 @@ from the spritesheet:
 Refer to the `AnimatedSprite2D tutorial in the Godot docs`_ to learn how to do
 this if you need some help.
 
-Also, as discussed above, we'll be using Escoria's ability to mirror animations in 
+Also, as discussed above, we'll be using Escoria's ability to mirror animations in
 order to create the missing directions.
 
 Telling Escoria about the walkcycle
@@ -140,7 +140,7 @@ correspond to the "up" animation.
 .. image:: img/angles_visualization2.png
    :alt: The movement range matching the upward walking animation
 
-For this example, our character will support walking in 8 directions, so we set 
+For this example, our character will support walking in 8 directions, so we set
 up the ``Dir angles`` parameter like this:
 
 .. image:: img/character_create_animation_dirangles.png
@@ -149,7 +149,7 @@ up the ``Dir angles`` parameter like this:
 Click on ``Dir Angles`` and set the size to 8. For each slot, add an
 ``ESCDirectionAngle`` resource.
 
-Click on each resource and set its angle start and angle size settings based on 
+Click on each resource and set its angle start and angle size settings based on
 the 8-direction character table below.
 
 This will define 40° ranges for the upper, left, right, and back animations as
@@ -243,9 +243,9 @@ above screenshot, item 2 uses a mirrored version of the left animation).
 
 .. hint::
 
-  You can always use the idle animations for the speaking animations to get 
-  you going. Tip: If you click the down arrow beside an ``ESCAnimationName`` 
-  entry, you can select "copy", and then use that to paste into a different 
+  You can always use the idle animations for the speaking animations to get
+  you going. Tip: If you click the down arrow beside an ``ESCAnimationName``
+  entry, you can select "copy", and then use that to paste into a different
   ``ESCAnimationName`` resource slot using its down arrow and selecting "paste"!
 
 .. hint::
@@ -261,7 +261,7 @@ Defining the character base position
 ------------------------------------
 
 Escoria will move the character sprite around based on a specific position
-in the character's scene. This position tends to be located at the base of 
+in the character's scene. This position tends to be located at the base of
 the character sprite.
 
 We can define this position by moving the sprite up so its feet are located
@@ -273,10 +273,10 @@ at the origin of its scene:
 
 .. hint::
 
-  Be sure to ONLY move the animated sprite and collision shape nodes, and not 
+  Be sure to ONLY move the animated sprite and collision shape nodes, and not
   the root node. Godot will show a warning in the scene tree panel if you move
   the root node's origin, telling you that doing so is unlikely to be respected
-  by Godot. 
+  by Godot.
 
   If you notice weird placement or rendering behaviour of the character in your
   game, double check to make sure the correct nodes we re-positioned, and not

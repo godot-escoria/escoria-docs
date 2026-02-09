@@ -49,9 +49,9 @@ Sierra Creative Interpreter (SCI).
 
 LucasArts is well-known for games like Maniac Mansion, the Monkey Island
 series, Day of the Tentacle, the Indiana Jones series, and others. All of these
-examples have in common the use of an engine called SCUMM. The 
-language used is descriptive and was created to allow game designers, 
-scene arists, dialog creators, etc. to modify the game without the help of a 
+examples have in common the use of an engine called SCUMM. The
+language used is descriptive and was created to allow game designers,
+scene arists, dialog creators, etc. to modify the game without the help of a
 programmer at each step.
 
 The genre suffered a big popularity loss in the mid 90's, mostly due to the

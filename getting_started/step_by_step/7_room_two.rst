@@ -16,13 +16,13 @@ As we've already created the first scene, follow the same steps you used on the
 * Give the room a global id (``park``).
 * We still want to play as Graham in this scene, so select it as the
   ``Player Scene`` parameter.
-* Add an ``ESCBackground`` node for the room's background graphics as a child 
+* Add an ``ESCBackground`` node for the room's background graphics as a child
   of the root node.
 * From ``backgrounds.zip``, copy the ``park_bg.png`` file to the **rooms**
   directory and set it as the ``Texture`` parameter in the ``ESCBackground``
-  node. Note that you may need to use the "Scale" parameters of the node's 
+  node. Note that you may need to use the "Scale" parameters of the node's
   "Transform" setting to get the image to properly fit your UI, e.g. using a
-  value of 0.79 for both x- and y-scaling. If you need to do this, 
+  value of 0.79 for both x- and y-scaling. If you need to do this,
   **be sure to do it before proceeding any further!**
 * Create a walkable area for the character: Add an ``ESCTerrain``
   node to the ``ESCRoom`` node. Add a
@@ -49,10 +49,10 @@ less brightly lit when further away from the light source.
 The example light map provided is a very simple one with just 3 colours to make
 it easier to demonstrate how the light map affects how the game character
 looks, but you could replace it with one that uses a gradient to fade nicely
-from white to mid-grey. Coloured light maps can also be used to simulate things 
+from white to mid-grey. Coloured light maps can also be used to simulate things
 like concerts or traffic lights.
 
-Copy the "park_lightmap.png" asset (link on the main :doc:`step-by-step <index>`) 
+Copy the "park_lightmap.png" asset (link on the main :doc:`step-by-step <index>`)
 page into the "park" folder.
 
 In the Godot GUI, select the ``ESCTerrain`` node and set its light map to the
@@ -62,18 +62,18 @@ Room exits in Escoria
 ---------------------
 
 To link room 2 (the park) to room 1 (the pub), you will need an exit node. When
-the player clicks the corresponding area on the screen, Escoria knows that you 
+the player clicks the corresponding area on the screen, Escoria knows that you
 want to change rooms. Each room in Escoria can have multiple exits.
 
 There are 2 different nodes for creating exits in Escoria. The first is an
-:doc:`ESCItem </api/supporting_classes/ESCItem>`. By selecting its ``Is Exit`` checkbox 
-after you create an ``ESCItem`` node, Escoria will look for an ":exit_scene" event 
+:doc:`ESCItem </api/supporting_classes/ESCItem>`. By selecting its ``Is Exit`` checkbox
+after you create an ``ESCItem`` node, Escoria will look for an ":exit_scene" event
 in the attached script file. Any commands you place in the ":exit_scene" event will be
 run when the player chooses to "use" the exit - for example, saying a goodbye,
 or running a cutscene. Place a "change_scene" command as inside this event to
 move the character to the next room.
 
-For exits that don't require scripts, the :doc:`ESCExit </api/supporting_classes/ESCExit>` 
+For exits that don't require scripts, the :doc:`ESCExit </api/supporting_classes/ESCExit>`
 node is provided. The only things you will need to configure on the node are the
 ``Target Scene`` destination, and, optionally, a "switch sound" (the sound to
 play when changing to the destination room).
@@ -129,7 +129,7 @@ road/path. This will be where the character walks to to leave the park.
 
 .. hint::
 
-   Make sure the ``ESCInteractionLocation`` is inside the walkable area (i.e. the navigation 
+   Make sure the ``ESCInteractionLocation`` is inside the walkable area (i.e. the navigation
    polygon you created earlier)!
 
 .. image:: img/create_room_exit_location.png
@@ -138,10 +138,10 @@ road/path. This will be where the character walks to to leave the park.
 * **Set up the tooltip for the exit:**
 
 When you put the mouse over the exit, you want the tooltip in the UI to tell
-you what object your mouse is over. 
+you what object your mouse is over.
 
 Additionally, you want to set the default interaction that will happen with this exit
-in order to make the experience better for the player. In the ``ESCExit`` node, under 
+in order to make the experience better for the player. In the ``ESCExit`` node, under
 ``Tooltip Name``, put "Exit to pub", and, under ``Default Action``, put "use".
 
 .. image:: img/create_room_esc_exit2.png
@@ -186,11 +186,11 @@ activate the exit to leave the pub and go to the park.
 .. image:: img/create_room_pub_door.png
    :alt: The polygon you click to leave the room.
 
-When you originally created the pub room, you set an ``ESCInteractionLocation`` for 
-the character's starting point (e.g. at the bottom of the stairs). If the player comes 
+When you originally created the pub room, you set an ``ESCInteractionLocation`` for
+the character's starting point (e.g. at the bottom of the stairs). If the player comes
 back into the pub from the park scene, they should be at the doorway rather than
-appear at the bottom of the stairs. We therefore need an ``ESCInteractionLocation`` 
-at the doorway that we can send the player to when the player enters the pub again 
+appear at the bottom of the stairs. We therefore need an ``ESCInteractionLocation``
+at the doorway that we can send the player to when the player enters the pub again
 after arriving from the park scene..
 
 Create a new ``ESCInteractionLocation`` as a child of the pub's ``ESCExit``. Set its
@@ -219,16 +219,16 @@ Setup and Ready events
 
 To finish the switch between rooms, we need to explain how the room change
 should work. When you activate an ``ESCExit`` (or ``ESCItem`` with ``Is Exit``
-selected), you use the :doc:`change_scene </api/commands/ChangeSceneCommand>` 
-command to tell Escoria to replace the current room with new room. It doesn't 
-tell Escoria anything about how to set up the new room or where to put 
+selected), you use the :doc:`change_scene </api/commands/ChangeSceneCommand>`
+command to tell Escoria to replace the current room with new room. It doesn't
+tell Escoria anything about how to set up the new room or where to put
 the player: This is the responsibility of the new room.
 
 Each room's root node is an ``ESCRoom`` node, and the script attached to it
 (if there is one) is responsible for setting up anything dynamic in the room.
 When ``change_scene`` loads the room, it will look in the new room's script for
 a ``:setup`` event. Any commands you put as part of this event will run before the
-player sees the new room--use this to reset any movable objects to their 
+player sees the new room--use this to reset any movable objects to their
 respective start positions.
 
 After the ``:setup`` event completes, a **transition** will run (there is a default
@@ -243,16 +243,16 @@ approaching).
 
    If you do not have a script attached to your ``ESCRoom``, the player will
    automatically be placed at a start location called ``player_start`` if you
-   have created an ``ESCInteractionLocation`` node with ``player_start`` as 
+   have created an ``ESCInteractionLocation`` node with ``player_start`` as
    its name as part of the room.
 
-   If an ``ESCInteractionLocation`` (or ``ESCLocation``) with this name does 
-   not exist, the player will start as close to coordinates (0,0) as possible, 
+   If an ``ESCInteractionLocation`` (or ``ESCLocation``) with this name does
+   not exist, the player will start as close to coordinates (0,0) as possible,
    i.e. the scene origin.
 
 .. hint::
 
-   There can only be one of each type of these two events per script. If you want 
+   There can only be one of each type of these two events per script. If you want
    multiple steps to run as part of an event (the ``:ready`` event for example), place
    all the commands within the one event block.
 
@@ -298,7 +298,7 @@ This code says
    they will be placed at the "player_start" ``ESCLocation`` or coordinate
    (0,0) as explained above.
 
-Now follow the same process to create an ASHES script called "room_park.esc" in 
+Now follow the same process to create an ASHES script called "room_park.esc" in
 the park folder for the park scene.
 
 Load the park scene and configure "room_park.esc" as the ``ESC Script`` on the
@@ -315,7 +315,7 @@ Add the following code to "room_park.esc":
        # Have the player look to the right
        set_angle($graham, 90)
 
-Test the scene. You should now be able to click on the door to leave the pub 
+Test the scene. You should now be able to click on the door to leave the pub
 and you will appear in the park. If you click on the lefthand side of the park,
 you will appear in the doorway of the pub.
 
@@ -327,8 +327,8 @@ light.
 
    To stop any further commands from running in a script as part of any event
    (at the end of a conditional statement, for example), add a ``stop``
-   command or use the `stop` keyword. No further commands for the event will be 
-   run until and the event finishes executing. 
+   command or use the `stop` keyword. No further commands for the event will be
+   run until and the event finishes executing.
 
 Creating an exit using an ESCItem instead of an ESCExit
 -------------------------------------------------------
@@ -337,7 +337,7 @@ rather than an ``ESCExit``.
 
 If you wanted to create the pub door using an ``ESCItem``, you would:
 
-* Create an ``ESCItem`` as a child of the ``ESCRoom`` node. Give it a Global ID 
+* Create an ``ESCItem`` as a child of the ``ESCRoom`` node. Give it a Global ID
   of "pub_door_item".
 
 .. hint::
@@ -345,21 +345,21 @@ If you wanted to create the pub door using an ``ESCItem``, you would:
   If you previously created an ``ESCExit`` as part of this
   tutorial, you can right-click on the ``ESCExit`` and change the node's type to
   ``ESCItem``. This should preserve the children nodes as they currently are.)
-  
+
 * Set the ``ESCItem``'s "Is Exit" parameter to "On" (that is, make sure
-  its checkbox is checked). This is important in order for the node to know how 
+  its checkbox is checked). This is important in order for the node to know how
   to behave and what scripts to call (if any) when the player tries to exit the
   pub room.
 
-* Create a new ASHES script file and call it "pub_exit.esc". Where you place this 
-  file is up to you (consider what makes sense for your project). You might 
-  choose to store it with the room, or keep all your game's scripts together in a 
+* Create a new ASHES script file and call it "pub_exit.esc". Where you place this
+  file is up to you (consider what makes sense for your project). You might
+  choose to store it with the room, or keep all your game's scripts together in a
   "scripts" folder.
 
 * In "pub_exit.esc", add an ``:exit_scene`` event to the ASHES file and, within it,
-  use the ``change_scene`` command to make the game switch from the pub room to 
-  the park room whenever the player "uses" the exit. You would add to this script 
-  any other animation/dialog/etc. that you want to be played when 
+  use the ``change_scene`` command to make the game switch from the pub room to
+  the park room whenever the player "uses" the exit. You would add to this script
+  any other animation/dialog/etc. that you want to be played when
   the player activates the exit, e.g.
 
 .. code-block::

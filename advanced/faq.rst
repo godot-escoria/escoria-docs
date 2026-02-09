@@ -43,12 +43,12 @@ Puzzles can be broken down into two broad areas.
 - **Escoria script puzzles**
 
 Escoria script puzzles are ones that can be completely made using Escoria
-script; that is, ASHES. Demo room 9 provides an example of this. Through 
-the use of inventory items and game variables, puzzles can be progressed 
+script; that is, ASHES. Demo room 9 provides an example of this. Through
+the use of inventory items and game variables, puzzles can be progressed
 and their statuses determined.
 
-An example of this is getting past someone guarding a door who requires 
-a pass phrase to proceed. 
+An example of this is getting past someone guarding a door who requires
+a pass phrase to proceed.
 In the game, when the character "looks at" a note on a computer that reads
 "the password is abc123", an ASHES  script can be used to set a
 "password_obtained" variable to ``true``. When the character later talks to the
@@ -259,8 +259,8 @@ game is displayed is optional for your game. To create one:
   game logo / opening scene (remembering to use the ``| NO_UI`` flag so your
   game's user interface is not displayed over the top of the logo/cutscene).
   As this animation will play every time someone starts your
-  game, it is recommended to keep this scene to no more than  a few seconds 
-  in length. An example script for an introductory logo scene driven entirely 
+  game, it is recommended to keep this scene to no more than  a few seconds
+  in length. An example script for an introductory logo scene driven entirely
   by an animation is:
 
 .. code-block::
@@ -380,7 +380,7 @@ path to your **ESCAnimationResource** file.
 
 
 .. code-block::
-   
+
   :use
 
     set_animations("player", "res://game/characters/mark/mark_animations_jester.tres")
@@ -404,8 +404,8 @@ How do I add a score to my game ?
 * In your initial game room's setup script, create a "score" global variable
   and set it to 0.
 * When you pick up an ``ESCItem`` or interact with an NPC in some way that would
-  score points, add or subtract from the score variable either using simple addition 
-  (e.g. ``score = score + 1``) or by using the (now deprecated) `inc_global` and 
+  score points, add or subtract from the score variable either using simple addition
+  (e.g. ``score = score + 1``) or by using the (now deprecated) `inc_global` and
   `dec_global` commands.
 * How you display the score will be dependent on the user interface.
 * As the score is a global variable, it will save and load without any extra
@@ -437,7 +437,7 @@ as an example)
       # room and comes back in.
 
       room_library_visited = true
-      
+
       # Or you can use: set_global room_library_visited true
 
     # Position the player depending which room they've entered this one from

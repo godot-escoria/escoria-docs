@@ -26,12 +26,12 @@ Because of maintainability issues, to make the framework easier for new
 developers, and bring it closer to Godot's standards, the framework was
 completely rewritten and optimized in 2020 for Godot 3.
 
-Escoria was subsequently ported to Godot 4 in 2024 (and into 2025) after 
+Escoria was subsequently ported to Godot 4 in 2024 (and into 2025) after
 Godot's major rewrite.
 
-As part of this rewrite, the ESCscript language used to allow developers 
-to script their adventure game was replaced with the ASHES language, 
-providing a more consistent experience for those familiar with GDScript and 
+As part of this rewrite, the ESCscript language used to allow developers
+to script their adventure game was replaced with the ASHES language,
+providing a more consistent experience for those familiar with GDScript and
 Python.
 
 Contributors
@@ -145,18 +145,18 @@ ASHES Scripts
 
 Escoria uses scripts (a set of Escoria commands that include such actions as
 moving an object to a certain location, or playing a sound) to determine the
-behavior of the game world and the objects within it. 
+behavior of the game world and the objects within it.
 
-These were formerly called "ESC scripts", but have been replaced by an 
-updated scripting language called **ASHES** (short for, "Adventure 
+These were formerly called "ESC scripts", but have been replaced by an
+updated scripting language called **ASHES** (short for, "Adventure
 Scripting Helping EScoria").
 
 These scripts:
 
 * are plain text files,
 * can be created in any text editor (including the Godot script editor)
-* have the file extension ".esc" (in the future, the extension will become 
-  ".ash", but for compatibility reasons the original ".esc" extension 
+* have the file extension ".esc" (in the future, the extension will become
+  ".ash", but for compatibility reasons the original ".esc" extension
   should be used), and,
 * can be stored in any location within your game's filesystem structure
 

@@ -6,16 +6,16 @@ ASHES language reference
 Variables
 ---------
 
-Variables in the ASHES scripting language behave just like those in other 
-programming languages.  They are used to store information that can change 
+Variables in the ASHES scripting language behave just like those in other
+programming languages.  They are used to store information that can change
 and also be referenced in various parts of your script.
 
 A variable in ASHES can store a string, a number, or a boolean value.
 
-Variables also obey scoping rules in a way very similar to GDScript and 
+Variables also obey scoping rules in a way very similar to GDScript and
 Python.
 
-See also :ref:`global_flags` for information on global variables (aka. 
+See also :ref:`global_flags` for information on global variables (aka.
 global flags).
 
 Objects
@@ -43,26 +43,26 @@ If your game has a blank canvas and you "use" some paint on it to paint a
 picture, setting the state to "painted" would play the corresponding
 animation which would set the canvas graphic to the "painted" version.
 When the game is saved, the "painted" state of the canvas would be stored,
-so when the savegame is loaded the "painted" (rather than the blank) image 
+so when the savegame is loaded the "painted" (rather than the blank) image
 would be shown.
 
 
 For :doc:`bg_sound </api/supporting_classes/ESCSoundPlayer>` and
-:doc:`bg_music </api/supporting_classes/ESCMusicPlayer>` objects, the state 
+:doc:`bg_music </api/supporting_classes/ESCMusicPlayer>` objects, the state
 also represents the music or sound that is currently running.
 
 Active objects
 ~~~~~~~~~~~~~~
 
-Objects can be either **active** or **inactive**. Inactive objects are 
+Objects can be either **active** or **inactive**. Inactive objects are
 hidden and not clickable.
 
-You can set whether an object is "active" by using the 
-:doc:`set_active </api/commands/SetActiveCommand>` command or the 
+You can set whether an object is "active" by using the
+:doc:`set_active </api/commands/SetActiveCommand>` command or the
 :doc:`set_active_if_exists </api/commands/SetActiveIfExistsCommand>`.
 
 To check whether an object is "active", you can can use an ``is active`` check:
-If, say, you're checking whether "elaine" is active, you can check using 
+If, say, you're checking whether "elaine" is active, you can check using
 script like this:
 
 .. code-block::
@@ -74,12 +74,12 @@ script like this:
 .. hint::
 
   If you prefix an object's global ID with a `$`, Escoria will treat the
-  global ID as a special variable, as though you were referring to the 
+  global ID as a special variable, as though you were referring to the
   object itself.
 
-  You can also use the object's global ID surrounded by quotes, just like 
+  You can also use the object's global ID surrounded by quotes, just like
   you would any other string, if you prefer.
-      
+
 Interactive objects
 ~~~~~~~~~~~~~~~~~~~
 
@@ -88,8 +88,8 @@ move behind, you probably don't want to bother with interaction areas
 and tooltip texts. In this case, just set ``is_interactive`` to
 ``false`` and the item will not be checked for interactions. Its mouse
 events won't be connected, either. This can be set either by modifying the
-object in the Godot editor, or by using the 
-:doc:`set_interactive </api/commands/SetInteractiveCommand>` command in 
+object in the Godot editor, or by using the
+:doc:`set_interactive </api/commands/SetInteractiveCommand>` command in
 an ASHES script.
 
 .. _global_flags:
@@ -101,7 +101,7 @@ Global flags (also known as global variables) define the state of the game and
 can be true/false, a number, or a string. These are similar to regular
 variables.
 
-You can use flags/variables as conditions when you need to branch code, e.g. by 
+You can use flags/variables as conditions when you need to branch code, e.g. by
 using an ``if`` statement.
 
 Global flags are, as the name implies, global, and continue to survive after
@@ -109,8 +109,8 @@ leaving the room where they are created/set. This means that a value set
 early in your game is still able to be queried many rooms later.
 
 Global flags can be created anywhere in an Escoria script as needed using the
-:doc:`set_global </api/commands/SetGlobalCommand>` command or by using the 
-``global`` keyword. 
+:doc:`set_global </api/commands/SetGlobalCommand>` command or by using the
+``global`` keyword.
 
 .. code-block::
 
@@ -120,13 +120,13 @@ Global flags can be created anywhere in an Escoria script as needed using the
 
 .. hint::
 
-  The use of ``set_global`` is discouraged as it is a legacy command 
+  The use of ``set_global`` is discouraged as it is a legacy command
   leftover from previous versions of Escoria.
-  
-A global flag may produce an error if you haven't declared or defined it. 
 
-If you do define a global flag when declaring it 
-(e.g. ``global some_variable = false``), it will only run this initialization 
+A global flag may produce an error if you haven't declared or defined it.
+
+If you do define a global flag when declaring it
+(e.g. ``global some_variable = false``), it will only run this initialization
 once; that is, subsequent executions of that line will be ignored.
 
 The code below--that configures a room--is
@@ -150,7 +150,7 @@ Inventory
 ~~~~~~~~~
 
 To check whether a particular object is in your inventory, you can use an
-``in inventory`` check with the object's global ID as part of an ``if`` 
+``in inventory`` check with the object's global ID as part of an ``if``
 statement. Example:
 
 .. code-block::
@@ -170,13 +170,13 @@ To use an event in your script, specify the name of the event preceded by a
 colon. All commands following the event identifier are considered part of that
 event until another event is defined in the same script file.
 
-.. note:: 
+.. note::
 
-  Similar to languages like GDScript and Python, all commands and scripts must 
+  Similar to languages like GDScript and Python, all commands and scripts must
   be properly indented. This means that an event definition must appear at
-  the very start of its own line with **no tabs or whitespace** before it. 
-  Any code appearing as part of the event must begin with a single indent, 
-  or the appropriate level of indentation based on what kind of code block 
+  the very start of its own line with **no tabs or whitespace** before it.
+  Any code appearing as part of the event must begin with a single indent,
+  or the appropriate level of indentation based on what kind of code block
   is being used.
 
 .. code-block::
@@ -208,17 +208,17 @@ Events that are considered "for game developer use" are:
 
 .. _ready-label:
 
-- ``:init`` : Run first as part of your primary Escoria game startup script. 
+- ``:init`` : Run first as part of your primary Escoria game startup script.
   This is where  you would place the commands for a company logo cutscene.
-- ``:exit_scene`` : Will be called when "Is Exit" is enabled on an ``ESCItem`` 
+- ``:exit_scene`` : Will be called when "Is Exit" is enabled on an ``ESCItem``
   and the player "uses" that item. You might play a closing door sound here, for
   example.
 - ``:newgame`` : This is what is called when "Start Game" is chosen from your menu.
-  The main use would be to have a :doc:`change_scene </api/commands/ChangeSceneCommand>` 
+  The main use would be to have a :doc:`change_scene </api/commands/ChangeSceneCommand>`
   command here to load your first game room.
 - ``:setup`` : This runs first as part of loading a room. Anything coded here will
   happen before the room is visible (i.e. before the "transition in").
-- ``:ready`` : These are commands that will run when a room loads, but only after 
+- ``:ready`` : These are commands that will run when a room loads, but only after
   it becomes visible (i.e. once ``:setup`` completes and after the "transition in").
 
 
@@ -296,17 +296,17 @@ be a string, number, or boolean.
 
 .. note::
 
-  Recall that if you can prefix an object's global ID with a `$` and Escoria 
-  will treat the global ID as a special variable, as though you were referring to the 
+  Recall that if you can prefix an object's global ID with a `$` and Escoria
+  will treat the global ID as a special variable, as though you were referring to the
   object itself.
 
 .. _conditions:
-   
+
 Conditions
 ~~~~~~~~~~
 
-In order to run a command depending on the value of a flag or variable, you can 
-make use of an ``if``-statement, just like you would in a language like GDScript or 
+In order to run a command depending on the value of a flag or variable, you can
+make use of an ``if``-statement, just like you would in a language like GDScript or
 Python.
 
 .. hint::
@@ -326,7 +326,7 @@ Example:
   if (!door_open and key in inventory):
     say($player, "The door is closed. Maybe I can try this key in my inventory...")
 
-Additionally, there is a set of comparison operators for use with numbers: 
+Additionally, there is a set of comparison operators for use with numbers:
 ``==``, ``>``, ``>=``, ``<``, and ``<=``, all of which can be negated.
 
 Example:
@@ -340,10 +340,10 @@ Example:
 Blocks
 ~~~~~~
 
-Blocks are groups of commands (and other script) that are run after a set of conditions is met 
-or are part of a particular "scope", e.g. an event, or a dialog. Each new block has its own level 
-of indentation, with blocks being able to be nested inside of other blocks which require additional 
-indentation. 
+Blocks are groups of commands (and other script) that are run after a set of conditions is met
+or are part of a particular "scope", e.g. an event, or a dialog. Each new block has its own level
+of indentation, with blocks being able to be nested inside of other blocks which require additional
+indentation.
 
 (In technical terms, each "block" has its own "scope".)
 
@@ -364,7 +364,7 @@ Here's an example of a block as part of an ``if``-statement:
   if "key" in inventory:
     say($player, "I got the key!")
     anim($player, "show_key")
-       
+
 
 Blocking
 ~~~~~~~~
@@ -385,7 +385,7 @@ Dialogs
 Dialogs are specified by writing ``?!`` with optional arguments,
 followed by a list of dialog options starting with ``-``.
 
-Dialog options can be optionally given a predicate at the end of the line that 
+Dialog options can be optionally given a predicate at the end of the line that
 determines whether the dialog option should be presented, e.g.
 
 .. code::
@@ -393,10 +393,10 @@ determines whether the dialog option should be presented, e.g.
   ?!
     - "This option will only be shown if 'my_variable' is true." [my_variable]
 
-Any predicate can be used, including negation, comparison, and other boolean 
+Any predicate can be used, including negation, comparison, and other boolean
 operators.
 
-Like ``if``-statements and event blocks, dialogs have their own scope and so 
+Like ``if``-statements and event blocks, dialogs have their own scope and so
 all options and related script must be appropriately indented.
 
 The following parameters are available:
@@ -412,19 +412,19 @@ The following parameters are available:
 -  ``timeout_option``: Index of option selected when timeout is reached.
    Default value of 0. Index begins at 1.
 
-The keyword ``break`` allows you to end the current nested dialog and moves 
-control up to the dialog that contained the nested  dialog. This is similar 
-to "breaking" out of an inner, nested loop. Unlike breaking out of a loop, 
-however, it is possible to specify an optional parameter to ``break`` in order 
+The keyword ``break`` allows you to end the current nested dialog and moves
+control up to the dialog that contained the nested  dialog. This is similar
+to "breaking" out of an inner, nested loop. Unlike breaking out of a loop,
+however, it is possible to specify an optional parameter to ``break`` in order
 to specify just how many inner dialogs you want to break out of, e.g. if you're
-currently in a dialog that's nested 4 levels deep, using ``break 2`` will move 
+currently in a dialog that's nested 4 levels deep, using ``break 2`` will move
 you back up to the dialog 2 levels higher.
 
-Use the keyword ``done`` in order to terminate the entire dialog, including any 
-that are at higher levels, e.g. if you use ``done`` in a dialog that is nested 
-4 levels deep, **ALL** 4 levels of dialog will be terminated and execution of 
+Use the keyword ``done`` in order to terminate the entire dialog, including any
+that are at higher levels, e.g. if you use ``done`` in a dialog that is nested
+4 levels deep, **ALL** 4 levels of dialog will be terminated and execution of
 any remaining script in the current event will resume.
- 
+
 Options support translation keys by prepending and separating them with
 a ``:`` from the rest of the text.
 
@@ -435,7 +435,7 @@ Example:
   # character's "talk" event
   :talk
     global player_has_map = false
-    
+
     # After 5 seconds default to the second option
     ?! "res://avatar" 5 2
       - MAP:"I'd like to buy a map." [!player_has_map]
@@ -457,6 +457,6 @@ Example:
           - "Nevermind"
             say($player, "Nevermind.")
             done
-            
+
       - "Nevermind"
         say($player, "Nevermind.")
