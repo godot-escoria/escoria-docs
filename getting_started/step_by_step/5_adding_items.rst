@@ -71,16 +71,16 @@ parameter and the text to say as the second parameter. (See the
 
 .. hint::
 
-    Global IDs in ASHES can also be specified without the need for quotation 
+    Global IDs in ASHES can also be specified without the need for quotation
     marks by using a dollar sign (``$``) as a prefix, e.g. ``$graham``.
 
 .. hint::
 
-  Now would be a good time to make sure that a dialog manager plugin is enabled 
-  for your game! You'll probably want to use the provided simple dialog manager, 
-  so Open up your project settings, go to the "Plugins" tab, and 
+  Now would be a good time to make sure that a dialog manager plugin is enabled
+  for your game! You'll probably want to use the provided simple dialog manager,
+  so Open up your project settings, go to the "Plugins" tab, and
   make sure that "Escoria Simple Dialogs" is enabled.
-    
+
 If you don't define an ``ESCDialogLocation`` in your player scene, any dialog will
 appear at the top of the screen.
 
@@ -88,8 +88,8 @@ So let's add an ``ESCDialogLocation`` as a child of ``ESCPlayer``.
 
 Name this node "dialog_position" (**this name is mandatory**).
 
-Now, any dialog will appear under the character by default. You can also move 
-the node in the 2D editor above Graham's head to have dialog appear in a more 
+Now, any dialog will appear under the character by default. You can also move
+the node in the 2D editor above Graham's head to have dialog appear in a more
 regular location.
 
 Try it out! Depending on which UI you chose, select either the look verb or
@@ -109,7 +109,7 @@ will neither walk to the blackboard nor speak the line we coded above.
     the ``ESCItem`` position itself.
 
 Simply add a new ``ESCInteractionLocation`` node as a child of the blackboard ``ESCItem``
-and move it in front of the blackboard, somewhere in the walkable area in front 
+and move it in front of the blackboard, somewhere in the walkable area in front
 of the barrel.
 
 .. image:: img/add_blackboard_esclocation.png
@@ -129,8 +129,8 @@ For this, we've added an asset that only includes the barrels on a transparent
 background.
 
 Again, add a new node to the ``ESCRoom`` node and select
-``ESCItem`` as the node type. Name it "Barrels", assign it a global ID of 
-"barrels", add a ``Sprite2D`` node to this new item, and set the ``Texture`` of 
+``ESCItem`` as the node type. Name it "Barrels", assign it a global ID of
+"barrels", add a ``Sprite2D`` node to this new item, and set the ``Texture`` of
 the sprite node to the foreground barrels' picture.
 
 .. hint::
@@ -144,15 +144,15 @@ the sprite node to the foreground barrels' picture.
     modify the properties of the ``TextureRect`` / ``ColorRect`` and set the
     "Mouse Filter" setting to "Ignore".
 
-In the 2D editor, move the new item so it appears directly over the barrels 
-in the background (the ones furthest to the right). You can use the arrow keys 
+In the 2D editor, move the new item so it appears directly over the barrels
+in the background (the ones furthest to the right). You can use the arrow keys
 of your keyboard for added precision.
 
 To make Graham walk behind the barrels, Escoria uses a little trick:
 The ``z-index`` property is used by Godot to know which object to draw first.
 
 Objects with a lower z-index are drawn first while objects with a higher
-z-index are drawn last and, therefore, over those objects with a lower z-index 
+z-index are drawn last and, therefore, over those objects with a lower z-index
 (this is in addition to the node order in the scene tree where the bottom-most
 nodes are drawn last).
 
@@ -165,7 +165,7 @@ See this graphic:
 .. image:: img/adding_items_zy.png
    :alt: A visual representation of the following explanation
 
-When the character is at y position 95, they stand *behind* the table. At 
+When the character is at y position 95, they stand *behind* the table. At
 position y = 105, they stand *in front* of the table. To achieve this effect in
 Escoria, we would simply set the "z-index" property of the table item to "100".
 
@@ -184,5 +184,5 @@ height of the background.
     Another property, ``Z As Relative``, is checked by default, meaning that
     the ``z-axis`` property will also take the ``z-axis`` property of its
     parent (in this case, the ``ESCRoom`` node). Usually, the ``z-axis``
-    property of the parent is set to 0, but keep this warning in mind in case it 
+    property of the parent is set to 0, but keep this warning in mind in case it
     isn't and the walkbehind effect doesn't work properly.

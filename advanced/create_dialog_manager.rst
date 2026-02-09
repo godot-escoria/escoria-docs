@@ -5,12 +5,12 @@ A dialog manager plugin is responsible for displaying text triggered by the
 ``say`` command and for selecting dialog choices when Escoria runs an
 :doc:`ESCDialog </api/supporting_classes/ESCDialog>`.
 
-In both cases, Escoria supports a "type" which results in the dialog 
+In both cases, Escoria supports a "type" which results in the dialog
 manager presenting different views.
 
 In the current stock dialog addon, for example, there's a ``floating`` type
-and an ``avatar`` type. The ``floating`` type displays text "floating" over 
-the character's sprite. The ``avatar`` type displays a dialog box with an 
+and an ``avatar`` type. The ``floating`` type displays text "floating" over
+the character's sprite. The ``avatar`` type displays a dialog box with an
 avatar and the spoken text inside.
 
 .. note::
@@ -21,9 +21,9 @@ avatar and the spoken text inside.
 Initialization
 --------------
 
-The dialog manager plugin needs to register a class that extend 
-:doc:`ESCDialogManager </api/managers/ESCDialogManager>`. This is 
-done by adding the path to the corresponding .gd file of that class to the 
+The dialog manager plugin needs to register a class that extend
+:doc:`ESCDialogManager </api/managers/ESCDialogManager>`. This is
+done by adding the path to the corresponding .gd file of that class to the
 Escoria project setting ``escoria/ui/dialog_managers``.
 
 This can be done in the following way:
@@ -93,11 +93,11 @@ This can be done in the following way:
 
 This script, which can be used as the main plugin file, does the following:
 
-* ``1``: When the plugin enters the tree (i.e. is enabled), it calls the 
-  ``_register`` function when the engine is idle. This is done in order to 
-  allow Escoria to start first so the plugin can be sure that the project 
+* ``1``: When the plugin enters the tree (i.e. is enabled), it calls the
+  ``_register`` function when the engine is idle. This is done in order to
+  allow Escoria to start first so the plugin can be sure that the project
   setting has been initialized.
-* ``2``: When the plugin exits the tree (i.e. is disabled), it unregisters 
+* ``2``: When the plugin exits the tree (i.e. is disabled), it unregisters
   the dialog manager to clean up after itself.
 * ``3``: For safety reasons, the plugin unregisters the dialog manager
   (when it exists) before registering it by adding it to the list found in
@@ -107,19 +107,19 @@ The dialog manager class
 ------------------------
 
 The dialog manager needs to extend
-:doc:`ESCDialogManager </api/managers/ESCDialogManager>`, which 
+:doc:`ESCDialogManager </api/managers/ESCDialogManager>`, which
 defines the basic functions required for the dialog manager to work.
 
-First, the dialog manager should return which types it supports by 
+First, the dialog manager should return which types it supports by
 implementing these methods:
 
-* ``has_type(type: String) -> bool``: Return whether the provided type is 
+* ``has_type(type: String) -> bool``: Return whether the provided type is
   supported for displaying dialogs.
-* ``has_chooser_type(type: String) -> bool``: Return whether the provided 
+* ``has_chooser_type(type: String) -> bool``: Return whether the provided
   type is supported for displaying the dialog chooser.
 
 The dialog manager will be called by
-:doc:`ESCDialogPlayer </api/supporting_classes/ESCDialogPlayer>` to either 
+:doc:`ESCDialogPlayer </api/supporting_classes/ESCDialogPlayer>` to either
 display a line of dialog or to let the player choose a dialog option.
 
 In the case where a line of dialog is to be displayed, the ``say`` method is
@@ -143,7 +143,7 @@ is called in the dialog manager. These parameters are provided:
 * ``dialog_player``: The dialog player node that the UI should use to display
   the text. The node is added as a child to the scene. This ensures a
   consistent look based on the user interface.
-* ``dialog``: An :doc:`ESCDialog </api/supporting_classes/ESCDialog>` object 
+* ``dialog``: An :doc:`ESCDialog </api/supporting_classes/ESCDialog>` object
   with details about the dialog and the dialog options to display.
 * ``type``: The dialog chooser type to use.
 
@@ -153,7 +153,7 @@ finished processing the choice. The selected option (a :doc:`ESCDialogOption </a
 
 Additionally, these methods also need to be implemented:
 
-* ``speedup``: Handles the player triggering the speed-up of dialog text 
+* ``speedup``: Handles the player triggering the speed-up of dialog text
   on-screen, so the text being rendered should be displayed faster.
 * ``interrupt``: The event has been interrupted and the dialog should be
   concluded immediately.
@@ -171,5 +171,5 @@ supplied ``dialog_player`` node, as well as removing it again, so the scene
 tree is clean.
 
 The player object can be retrieved from the
-:doc:`ESCObjectManager </api/managers/ESCObjectManager>` to get 
+:doc:`ESCObjectManager </api/managers/ESCObjectManager>` to get
 additional information about it, e.g. the player's  position in the room.

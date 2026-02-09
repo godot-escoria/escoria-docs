@@ -11,7 +11,7 @@ room scene we'll now create. Let's call it "pub".
 .. image:: img/create_room_pub.png
    :alt: The file explorer with a newly created folder pub.
 
-Create a new scene and set its root node to be an ``ESCRoom``. 
+Create a new scene and set its root node to be an ``ESCRoom``.
 
 .. image:: img/create_room_rootnode.png
    :alt: A new scene with ESCRoom as the root node
@@ -35,7 +35,7 @@ We want to play as Graham in this scene, so select it as the
 Adding a background to the room
 -------------------------------
 
-Our room requires an ``ESCBackground`` node. This node is necessary in 
+Our room requires an ``ESCBackground`` node. This node is necessary in
 order to capture input events for the background of the room. It can also
 display a background image. Add the node as a child of the root node.
 
@@ -65,13 +65,13 @@ To set the areas in which characters can walk in a room, add an ``ESCTerrain``
 node to the ``ESCRoom`` node: It will manage the walkable areas as well as
 other functionality such as light- and scale-mapping.
 
-To setup a single walkable area, add a new ``NavigationRegion2D`` node 
+To setup a single walkable area, add a new ``NavigationRegion2D`` node
 to the new ``ESCTerrain`` node:
 
 .. image:: img/create_room_terrain.png
    :alt: The ESCTerrain and NavigationRegion2D nodes in the scene tree
 
-Then create a new ``NavigationPolygon`` resource for the ``Navigation Polygon`` 
+Then create a new ``NavigationPolygon`` resource for the ``Navigation Polygon``
 property in the **Inspector** panel.
 
 .. image:: img/create_room_terrain_navpoly.png
@@ -82,9 +82,9 @@ character is allowed to move around freely.
 
 .. warning::
 
-   Remember that Escoria is using the character's **base position** (*not the 
-   character scene's center*) when moving inside the walkable areas, so watch 
-   out that navigating through the room doesn't bring the character too close 
+   Remember that Escoria is using the character's **base position** (*not the
+   character scene's center*) when moving inside the walkable areas, so watch
+   out that navigating through the room doesn't bring the character too close
    to the walls or else the character will be drawn overtop of them!
 
 .. image:: img/create_room_terrain_createdpoly.png
@@ -94,8 +94,8 @@ character is allowed to move around freely.
 
    Escoria supports having multiple walkable areas (represented by multiple
    ``NavigationRegion2D`` instances). These can be switched by using an ASHES
-   command (:doc:`enable_terrain <../../api/commands/EnableTerrainCommand>`) in the game. 
-   This is useful for things like blocked passages which can be unblocked by 
+   command (:doc:`enable_terrain <../../api/commands/EnableTerrainCommand>`) in the game.
+   This is useful for things like blocked passages which can be unblocked by
    pressing a button in the game.
 
 .. hint:: **Light mapping**
@@ -119,8 +119,8 @@ top to the bottom of the screen by making its sprite smaller when it's
 closer to the top of the screen and bigger when the character reaches the 
 bottom of the screen.
 
-This is achieved in Escoria by using a greyscale texture: The darker parts 
-of the texture are considered to be further away from the viewer while the 
+This is achieved in Escoria by using a greyscale texture: The darker parts
+of the texture are considered to be further away from the viewer while the
 lighter parts are considered to be closer to the viewer.
 
 To fine tune the scaling of the character, use the ``Scale min`` and
@@ -132,16 +132,16 @@ representing the actual size of the character.
 .. note::
 
   The scaling can also be greater than 1, which can result in scaling
-  artifacts. Try using sufficiently large images for sprites if you require 
-  the character to appear bigger in some scenes. 
+  artifacts. Try using sufficiently large images for sprites if you require
+  the character to appear bigger in some scenes.
 
-For our example, we will simply add the scale map to the pub room by 
-selecting its ``ESCTerrain`` node, then loading the ``pub_scalemap.png`` file 
-into the ``Scales`` parameter of the node in the Inspector. 
+For our example, we will simply add the scale map to the pub room by
+selecting its ``ESCTerrain`` node, then loading the ``pub_scalemap.png`` file
+into the ``Scales`` parameter of the node in the Inspector.
 
-For the ``Scale min`` and ``Scale max`` parameters, we suggest values of 1.1 
-and 2.2 respectively, but you are welcome to try different values to observe 
-the change in the size of the player when moving closer to or further from 
+For the ``Scale min`` and ``Scale max`` parameters, we suggest values of 1.1
+and 2.2 respectively, but you are welcome to try different values to observe
+the change in the size of the player when moving closer to or further from
 the camera.
 
 .. image:: img/add_scale_map_pub_room.png
@@ -171,7 +171,7 @@ We have to tell Escoria where our character should start in the new scene.
 
 For pointing out specific locations, we can use an ``ESCLocation`` node.
 
-Add one to the scene  and set its name to "start", so that we know what 
+Add one to the scene  and set its name to "start", so that we know what
 this location represents.
 
 .. image:: img/create_room_start.png

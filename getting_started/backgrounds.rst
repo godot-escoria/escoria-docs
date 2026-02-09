@@ -51,7 +51,7 @@ so that certain parts of the screen tint the character sprite as though it
 was walking through different light sources in the background.
 
 The parameter ``lightmap`` expects a texture that will be laid overtop of the
-scene, allowing the character to be tinted/shaded according to the position 
+scene, allowing the character to be tinted/shaded according to the position
 of the character in the scene.
 
 The parameter ``lightmap_modulate`` can be used to additionally tint

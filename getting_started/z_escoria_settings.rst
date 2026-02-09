@@ -6,7 +6,7 @@ Escoria settings
 Review Escoria's settings
 -------------------------
 
-When you open the Project Settings window and look below the list of parameters 
+When you open the Project Settings window and look below the list of parameters
 in the "General" tab, you can find an "Escoria" section with 5 settings categories
 which we'll review in detail in the following sub-sections:
 
@@ -59,7 +59,7 @@ This category defines the following settings:
 | Action Default Script | Optional path to ASHES script containing default      |
 |                       | actions to take if a particular event can't be found. |
 |                       | This is useful for avoiding having to implement every |
-|                       | "invalid" interaction, e.g. trying to pick up a house.| 
+|                       | "invalid" interaction, e.g. trying to pick up a house.|
 +-----------------------+-------------------------------------------------------+
 | Game Migration Path   | Path containing version migration scripts.            |
 +-----------------------+-------------------------------------------------------+
@@ -106,7 +106,7 @@ This category defines the following settings:
 UI
 ~~
 
-Allows you to define the paths to scenes required by Escoria to run correctly 
+Allows you to define the paths to scenes required by Escoria to run correctly
 as well as other settings relevant to the UI.
 
 These scenes have to be created by the game developer.
