@@ -3,26 +3,26 @@
 Creating custom ASHES commands
 ==============================
 
-Escoria is designed to abstract and streamline the most basic (and common)  
-features for game developers and at the same time give them a lot of freedom 
+Escoria is designed to abstract and streamline the most basic (and common)
+features for game developers and at the same time give them a lot of freedom
 so they can design the game they have in mind.
 
-"**ASHES**" (formerly "**ESC**") is the domain specific language (DSL) used by Escoria 
-to make very basic features of narrative and point and click games as easy as 
+"**ASHES**" (formerly "**ESC**") is the domain specific language (DSL) used by Escoria
+to make very basic features of narrative and point and click games as easy as
 possible.
 
-(For those interested, an overview of ASHES and its design can be found in 
+(For those interested, an overview of ASHES and its design can be found in
 `the GitHub repository`_).
 
-There are `a lot of commands`_ already included in Escoria core. If the game 
-developer requires more commands for their specific game, it is very easy to 
+There are `a lot of commands`_ already included in Escoria core. If the game
+developer requires more commands for their specific game, it is very easy to
 create new commands with just a bit of `GDScript`_ knowledge.
 
 What is an ASHES command?
 -------------------------
 
 ASHES commands consist of two things: a name and a group of zero or more
-parameters. 
+parameters.
 
 The following example shows the ``say`` command which requires two parameters:
 
@@ -52,7 +52,7 @@ parameters for validity in depth.
 How are ASHES commands integrated?
 ----------------------------------
 
-When the ASHES compiler encounters a line that it identifies as an ASHES command 
+When the ASHES compiler encounters a line that it identifies as an ASHES command
 in an ASHES script, it searches for a GDScript file with the same name as the
 command in a list of directories (according to the
 `Project setting`_ "Command directories" in the main category).
@@ -175,7 +175,7 @@ Documentation
 ~~~~~~~~~~~~~
 
 The command starts with a documentation block which is used to create the API
-documentation for the command. The ``@ASHES`` and ``@COMMAND`` tags are used 
+documentation for the command. The ``@ASHES`` and ``@COMMAND`` tags are used
 to build up the ASHES reference.
 
 It is recommended that all custom ASHES commands include a similar documentation
@@ -184,17 +184,17 @@ section.
 .. note::
 
    The double hashmarks indicate to Godot 4 that the comments that follow the
-   hashmarks can be used by `Godot 4's docgen facilities`_ to create autodocs. 
-   Escoria also recognizes basic Markdown used in comments, but does use 
+   hashmarks can be used by `Godot 4's docgen facilities`_ to create autodocs.
+   Escoria also recognizes basic Markdown used in comments, but does use
    `[br]` to render proper line breaks.
 
 Class definition
 ~~~~~~~~~~~~~~~~
 
-Every ASHES command must extend the class ``ESCBaseCommand`` (or a class that 
-already extends ``ESCBaseCommand``) and include a ``class_name`` statement. 
-The class name is a PascalCase variant of the comamnd name with an additional 
-"Command" suffix. So the file `my_custom.gd` would have a class name of 
+Every ASHES command must extend the class ``ESCBaseCommand`` (or a class that
+already extends ``ESCBaseCommand``) and include a ``class_name`` statement.
+The class name is a PascalCase variant of the comamnd name with an additional
+"Command" suffix. So the file `my_custom.gd` would have a class name of
 "MyCustomCommand".
 
 Configuration function
@@ -229,13 +229,13 @@ The ``run`` function
 
 Finally, the ``run`` function is executed by the event manager when the
 command is successfully validated. The function should return an
-:doc:`ESCExecution value </api/supporting_classes/ESCExecution>`, which 
+:doc:`ESCExecution value </api/supporting_classes/ESCExecution>`, which
 informs the event manager whether the command was run successfully.
 
 The ``interrupt`` function
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This function is implemented if the command is interrupted and needs 
+This function is implemented if the command is interrupted and needs
 specialized handling past the base implementation in ``ESCBaseCommand``.
 
 An example custom command

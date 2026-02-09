@@ -33,7 +33,7 @@ This array of limits is found under the `Camera limits` parameter within the
 room's `ESCRoom` node.
 
 The active limit rectangle for the camera can be changed during gameplay using
-the ASHES command :doc:`camera_set_limits </api/commands/CameraSetLimitsCommand>` 
+the ASHES command :doc:`camera_set_limits </api/commands/CameraSetLimitsCommand>`
 with the index of the camera limit to enforce.
 
 If no camera limits are set, the size of the background texture is used as the
@@ -86,11 +86,11 @@ Targets
 Commands that support a ``target`` object allow the following target types:
 
 * An ``ESCItem`` that has set the parameter ``camera_node`` to a node whose
-  position should be used to position the camera. If the parameter is not set, the 
+  position should be used to position the camera. If the parameter is not set, the
   position of the ``ESCItem`` is used instead.
 
 * ``Vector2D``: The target is a position described by the given vector.
-  
+
 * An array of ``Vector2D`` objects: The target is the average of all items of
   the array.
 

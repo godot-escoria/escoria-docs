@@ -8,9 +8,9 @@ scene created in your game because it will be automatically called by Escoria
 through an API defined by the class ``ESCGame``. Your job is to override the
 functions provided by this API if and where needed.
 
-With respect to the visual parts of this scene, you may consider that the game 
-scene gathers all the *static* visual parts of your game: a verbs interface 
-(whatever you want it to be: buttons, mouse cursors, ...), inventory (also 
+With respect to the visual parts of this scene, you may consider that the game
+scene gathers all the *static* visual parts of your game: a verbs interface
+(whatever you want it to be: buttons, mouse cursors, ...), inventory (also
 whatever you want it to be), dialog choices, and the tooltip.
 
 This scene is in charge of multiple things:
@@ -60,12 +60,12 @@ ESCCamera node
 --------------
 
 The ``ESCCamera`` is a simple Godot ``Camera2D`` that you can control from an
-ESC script. To simplify this control, it also requires a modified ``Tween`` node 
-as a child (don't worry: this is automatically created when the camera is added 
+ESC script. To simplify this control, it also requires a modified ``Tween`` node
+as a child (don't worry: this is automatically created when the camera is added
 to the scene tree).
 
-Create a new scene. Add an ``ESCCamera`` node as the root node of the scene.
-In the Inspector, tick the "Current" parameter and leave the other parameters
+Create a new scene. Add an ``ESCCamera`` node as the root node of the scene. In
+the Inspector, tick the "Current" parameter and leave the other parameters
 unchanged from their respective defaults.
 
 Save the scene: You're done. Now, instance this scene into the game scene.
@@ -117,7 +117,7 @@ so:
     <current target>
 
 Create a new scene. Add an ``ESCTooltip`` as its root node. Detach the default
-script attached of this node and create and attach a new one extending 
+script attached of this node and create and attach a new one extending
 ``ESCTooltip`` with this script:
 
 .. code-block:: gdscript
@@ -125,12 +125,9 @@ script attached of this node and create and attach a new one extending
     extends ESCTooltip
 
     func update_tooltip_text():
-        bbcode_text = "[center]"
-        bbcode_text += "[color=#" + color.to_html(false) + "]"
-        bbcode_text += current_target
-        bbcode_text += "[/color]"
-        bbcode_text += "[/center]"
-        update_size()
+        bbcode_text = "[center]" bbcode_text += "[color=#" +
+        color.to_html(false) + "]" bbcode_text += current_target bbcode_text +=
+        "[/color]" bbcode_text += "[/center]" update_size()
 
 This ``update_tooltip_text()`` function creates a centered, colored (with the
 ``ESCTooltip.color`` value) text containing only the value of
@@ -145,7 +142,7 @@ Verbs
 
 Depending on your game, you'll have to define some actions in order to allow
 the player to interact with the environment and the items within it. We define
-these actions by using verbs. Among the most classic verbs: look, use, talk, 
+these actions by using verbs. Among the most classic verbs: look, use, talk,
 give, etc.
 
 These actions will need to be selected by the player to perform the action
@@ -155,14 +152,15 @@ player to select the action. Here are some examples:
 
 |monkey_island_ui| |kings_quest_ui|
 
-.. |monkey_island_ui| image:: /advanced/img/9verbs_monkey_island.png
+.. |monkey_island_ui|
+    image:: /advanced/img/9verbs_monkey_island.png
     :width: 45%
     :alt: The Secret of Monkey Island's 9 verbs UI
 
-.. |kings_quest_ui| image:: /advanced/img/kings_quest_6_interactions.gif
+.. |kings_quest_ui|
+    image:: /advanced/img/kings_quest_6_interactions.gif
     :width: 45%
     :alt: King's Quest 6 interactions
-
 
 Escoria does not require you to define a specific scene to allow the player to
 select the verb to be used, but you can do so.
@@ -235,7 +233,25 @@ Save the scene and instance it in the game scene.
 Dialog player
 ~~~~~~~~~~~~~
 
-**Coming soon**
+The dialog player is an Escoria node (``ESCDialogPlayer``) that needs to be
+added to the game scene. It is automatically called by Escoria when
+a dialog line has to be displayed on the screen, and when the player needs
+to choose a dialog option during gameplay.
+
+When this happens, the ``ESCDialogPlayer`` node will first instance the
+defined dialog manager node (which can be setup in a plugin; see the
+`Create dialog manager <create_dialog_manager>`__ page for more details) as
+a child of the dialog player node, if it hasn't been already.
+Then, the dialog player calls the appropriate methods of the Dialog Manager,
+either displaying dialog lines or a dialog chooser. Both modes are scenes
+defined in the dialog manager plugin. When required, they are instanced as
+children of the Dialog Player and are subsequently destroyed when they've
+fulfilled their purpose.
+
+The ``ESCDialogPlayer`` node requires almost no customization: It
+may only require a Godot theme resource to be assigned to its ``theme``
+property to override the eventual theme defined for the dialog line and
+dialog chooser scenes.
 
 Inventory
 ~~~~~~~~~

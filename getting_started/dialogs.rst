@@ -34,7 +34,7 @@ shows a simple dialog:
 
       #2
       ?!
-      
+
         #3
         - "I sell fine leather jackets."
           say worker "Aha. Well, I don't like leather."
@@ -56,10 +56,10 @@ shows a simple dialog:
 
 Let's break it down:
 
-- The ASHES event starts at ``#1`` for when the player uses the "talk" verb. The 
-  dialog starts with two ``say`` commands that will display the specified text 
+- The ASHES event starts at ``#1`` for when the player uses the "talk" verb. The
+  dialog starts with two ``say`` commands that will display the specified text
   for the player and the worker respectively.
-- At ``#2`` the dialog chooser is introduced by a ``?!`` string on its own line 
+- At ``#2`` the dialog chooser is introduced by a ``?!`` string on its own line
   that is appropriately indented.
 - ``#3`` and ``#4`` show the different available options for the dialog. They will both
   be displayed on screen and the player can select either one of them.
@@ -75,7 +75,7 @@ Conditional options
 Like every command in ASHES, conditions can also be added to dialog options to
 only show them under specific conditions.
 
-Dialog option conditions are a comma-separated list enclosed in brackets and appear 
+Dialog option conditions are a comma-separated list enclosed in brackets and appear
 after the option.
 
 .. code-block::
@@ -94,7 +94,7 @@ again.
 
 .. note::
 
-    Dialog option conditions are unique and differ from ordinary conditions in ASHES. 
+    Dialog option conditions are unique and differ from ordinary conditions in ASHES.
     See :ref:`the ASHES reference <conditions>` for more
     details about conditions.
 
@@ -103,7 +103,7 @@ Recorded speech
 
 Escoria features voice support as well.
 
-To use it, just pass a key into the ``say`` command, like this: 
+To use it, just pass a key into the ``say`` command, like this:
 
 .. code-block::
 
@@ -112,7 +112,7 @@ To use it, just pass a key into the ``say`` command, like this:
 The name of the audio file serves as a key for the `say` command so it
 knows which audio file to play. The name of the file (without any extension)
 **must** be the same as the key. As an example, the above `say` command would play
-the audio file "worker_hello.mp3" (or any other supported audio format file, 
+the audio file "worker_hello.mp3" (or any other supported audio format file,
 like "worker_hello.ogg").
 
 .. hint::
@@ -132,7 +132,7 @@ like "worker_hello.ogg").
     Once you add a key to the `say` command's arguments, the text in
     quotes will be ignored. Escoria will instead use
     Godot's translation system to determine the text (translated and
-    untranslated) to display based on the key provided. 
+    untranslated) to display based on the key provided.
     It is recommended you use some descriptive text so you
     know what text the command is referring to.
 
@@ -141,7 +141,7 @@ The audio formats that Godot supports are listed here: (https://docs.godotengine
 Escoria uses a configuration parameter to specify where in your directory
 structure to find your game's audio files. This setting can be found in
 ``Project/Project Settings/Escoria/Sound/Speech Folder`` (note that you may need to
-selected ``Advanced Settings`` to reveal the "Escoria" settings branch). Set this 
+selected ``Advanced Settings`` to reveal the "Escoria" settings branch). Set this
 to a location appropriate for your game - e.g. ``res://game/speech``.
 
 See :doc:`here </api/commands/SayCommand>` for further details on the ``say`` command.
@@ -175,8 +175,8 @@ Godot's built-in translation features can be found here: (https://docs.godotengi
 Using text translations in your game
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The key (``"ROOM1_greeting"`` in the above example) is used in the ``say`` 
-command to tell Escoria which translation to use. This is exactly the same key as 
+The key (``"ROOM1_greeting"`` in the above example) is used in the ``say``
+command to tell Escoria which translation to use. This is exactly the same key as
 the one used for playing a corresponding audio file with the command::
 
   :look
@@ -187,7 +187,7 @@ the one used for playing a corresponding audio file with the command::
     Once you add a key to the `say` command's arguments, the text in
     quotes will be ignored. Escoria will instead use
     Godot's translation system to determine the text (translated and
-    untranslated) to display based on the key provided. 
+    untranslated) to display based on the key provided.
     It is recommended you use some descriptive text so you
     know what text the command is referring to.
 

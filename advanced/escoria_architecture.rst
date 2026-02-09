@@ -23,19 +23,20 @@ files which build up the various resources used in Escoria. See the
 Nodes and objects of the Escoria autoload scene
 -----------------------------------------------
 
-The :doc:`Escoria autoload scene </api/supporting_classes/escoria>` holds 
+The :doc:`Escoria autoload scene </api/supporting_classes/escoria>` holds
 various nodes that provide vital parts of the engine:
 
 Logger
 ~~~~~~
 
-The :doc:`ESC logging framework </api/supporting_classes/addons--escoria-core--tools--logging--esc_logger.gd.ESCLoggerBase>` is 
-responsible for logging various game events throughout the engine.
+The
+:doc:`ESC logging framework </api/supporting_classes/addons--escoria-core--tools--logging--esc_logger.gd.ESCLoggerBase>`
+is responsible for logging various game events throughout the engine.
 
 Utils
 ~~~~~
 
-Some smaller :doc:`utilities </api/supporting_classes/ESCUtils>` used in 
+Some smaller :doc:`utilities </api/supporting_classes/ESCUtils>` used in
 various places in the engine.
 
 Inventory manager
@@ -53,9 +54,9 @@ triggers a verb or uses items.
 ESC Compiler
 ~~~~~~~~~~~~
 
-The :doc:`ASHES compiler </api/supporting_classes/ESCCompiler>` compiles files in 
-the :doc:`ASHES language </scripting/z_ashes_reference>` into a list of 
-events that can be run by the :doc:`ASHES event manager </api/managers/ESCEventManager>` 
+The :doc:`ASHES compiler </api/supporting_classes/ESCCompiler>` compiles files in
+the :doc:`ASHES language </scripting/z_ashes_reference>` into a list of
+events that can be run by the :doc:`ASHES event manager </api/managers/ESCEventManager>`
 using the :doc:`ASHES interpreter </api/supporting_classes/ESCInterpreter>`.
 
 Event manager
@@ -68,7 +69,7 @@ Globals manager
 ~~~~~~~~~~~~~~~
 
 The :doc:`globals manager </api/managers/ESCGlobalsManager>` stores and handles
-global flags as described in the :ref:`ASHES reference <global_flags>`. 
+global flags as described in the :ref:`ASHES reference <global_flags>`.
 
 Object manager
 ~~~~~~~~~~~~~~
@@ -81,8 +82,8 @@ with the object manager and have a unique global ID.
 Command registry
 ~~~~~~~~~~~~~~~~
 
-The :doc:`command registry </api/supporting_classes/ESCCommandRegistry>` stores 
-references to available ASHES commands. By adding additional command directories 
+The :doc:`command registry </api/supporting_classes/ESCCommandRegistry>` stores
+references to available ASHES commands. By adding additional command directories
 via the settings, developers can enrich the ASHES language for their specific needs.
 
 Resource cache
@@ -96,7 +97,7 @@ resources can be cached in the :doc:`resource cache
 Dialog player
 ~~~~~~~~~~~~~
 
-The :doc:`dialog player </api/supporting_classes/ESCDialogPlayer>` is used for 
+The :doc:`dialog player </api/supporting_classes/ESCDialogPlayer>` is used for
 handling dialogs and the :ref:`say </scripting/z_ashes_language_reference#say>` command.
 
 Main
@@ -122,7 +123,7 @@ The Godot main scene of Escoria
 
 The scene that Godot loads when starting a game (the `main scene`_)
 is set to :doc:`addons/escoria-core/game/main_scene.tscn
-</api/supporting_classes/addons--escoria-core--game--main.gd>` which basically instantiates the configured 
+</api/supporting_classes/addons--escoria-core--game--main.gd>` which basically instantiates the configured
 main menu scene and starts it.
 
 The interactivity workflow of Escoria

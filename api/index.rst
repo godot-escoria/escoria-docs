@@ -10,4 +10,3 @@ Escoria API Reference
    commands/index
    managers/index
    supporting_classes/index
-  

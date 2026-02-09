@@ -59,7 +59,7 @@ You will typically assign a few child nodes to each ESCItem:
   displayed on the screen for the player.
 * ``CollisionPolygon2D`` : This is a shape that tells Escoria when the mouse is
   over the object. Set this up to cover the ``Sprite``.
-* ``ESCLocation`` : If you make an ``ESCLocation`` the child of an ``ESCItem``, 
+* ``ESCLocation`` : If you make an ``ESCLocation`` the child of an ``ESCItem``,
   whenever you interact with the item the character will automatically walk to this
   position to perform the interaction. As an example, place an ``ESCLocation``
   underneath a "window" `ESCItem`_ and the player will walk to the window
@@ -104,7 +104,7 @@ opens the door, you would disable the first terrain and enable the
 second, allowing the game character to walk through the entire
 hallway.
 
-Terrains contain a ``NavigationPolygon`` node under a ``NavigationRegion2D`` node  
+Terrains contain a ``NavigationPolygon`` node under a ``NavigationRegion2D`` node
 and are referenced in code by their name rather than a `Global ID`.
 
 .. _`ESCTerrain`: /api/supporting_classes/ESCTerrain.html
