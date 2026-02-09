@@ -29,7 +29,7 @@ various nodes that provide vital parts of the engine:
 Logger
 ~~~~~~
 
-The 
+The
 :doc:`ESC logging framework </api/supporting_classes/addons--escoria-core--tools--logging--esc_logger.gd.ESCLoggerBase>`
 is responsible for logging various game events throughout the engine.
 
