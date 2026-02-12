@@ -116,7 +116,7 @@ If the background of the room is a three-dimensional image and the upper
 part of the image appears to be further away, scale mapping is
 used to create a three-dimensional effect when the character moves from the
 top to the bottom of the screen by making its sprite smaller when it's
-closer to the top of the screen and bigger when the character reaches the 
+closer to the top of the screen and bigger when the character reaches the
 bottom of the screen.
 
 This is achieved in Escoria by using a greyscale texture: The darker parts
