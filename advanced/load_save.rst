@@ -15,8 +15,8 @@ Loading and saving games
 Escoria manages save games using numbered slots. A save game slot is required
 to be provided as part of the save game function call.  If the given slot
 already has a save game, that saved game will be overwritten. The
-:doc:`ESCSaveManager.load_game() </api/managers/ESCSaveManager>` function can 
-be used to give the player the opportunity to choose whether to overwrite the 
+:doc:`ESCSaveManager.load_game() </api/managers/ESCSaveManager>` function can
+be used to give the player the opportunity to choose whether to overwrite the
 existing save game or not.
 
 There is no limitation on the number of save slots that can be used.
@@ -25,17 +25,17 @@ Saving a game is as simple as calling the :doc:`ESCSaveManager.save_game()
 </api/managers/ESCSaveManager>` function.
 
 Files are saved to the folder specified in the Godot's Project Settings under
-``escoria/main/savegames_path``. If not changed, the default is 
+``escoria/main/savegames_path``. If not changed, the default is
 ``<game folder>/saves``.
 
 Loading a saved game works the same way, using a slot number to load the
-relevant game. To load a saved game, simply call the 
+relevant game. To load a saved game, simply call the
 :doc:`ESCSaveManager.load_game() </api/managers/ESCSaveManager>` function.
 
 Attempting to load a saved game that doesn't exist will result in an error
 message being displayed (e.g. "Save file <id> doesn't exist").
 
-Files are loaded from the same folder specified for save game files in 
+Files are loaded from the same folder specified for save game files in
 Godot's Project Settings.
 
 .. code-block:: gdscript
@@ -52,12 +52,12 @@ Loading and saving settings
 Game settings are loaded when the game is run. If no settings file exists, a
 new one is created with default values.
 
-It is not required to manage the saving and loading of settings if the player 
-is not supposed to change any of them. Otherwise, settings should be saved. 
-It is the responsibility of the game developer to manage this in a settings 
+It is not required to manage the saving and loading of settings if the player
+is not supposed to change any of them. Otherwise, settings should be saved.
+It is the responsibility of the game developer to manage this in a settings
 UI included in the game menus.
 
-Settings files are stored in a 
+Settings files are stored in a
 :doc:`ESCSaveSettings </api/supporting_classes/ESCSaveSettings>` resource file.
 
 The following settings are stored in the settings file:
@@ -78,7 +78,7 @@ The following settings are stored in the settings file:
 
 - ``speech_volume``: The audio speech volume (a value between 0 and 100)
 
-- ``fullscreen``: A boolean value indicating whether the game is displayed in 
+- ``fullscreen``: A boolean value indicating whether the game is displayed in
   fullscreen.
 
 - ``skip_dialog``: A boolean value indicating whether dialogue skipping is
@@ -98,7 +98,7 @@ describes how to use these fields.
 Adding custom data to save game files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The :doc:`ESCSaveGame </api/supporting_classes/ESCSaveSettings>` data structure 
+The :doc:`ESCSaveGame </api/supporting_classes/ESCSaveSettings>` data structure
 provides a dictionary variable ``custom_data`` which custom data can be added to.
 
 This feature requires a ``get_custom_data()`` function to be implemented in the
@@ -117,7 +117,7 @@ The :doc:`ESCSaveSettings </api/supporting_classes/ESCSaveSettings>` data struct
 dictionary variable ``custom_settings`` where the developer can add any data
 they would like to save.
 
-To save the custom settings, all that is required is to set the values to be 
+To save the custom settings, all that is required is to set the values to be
 saved directly in the ``escoria.settings.custom_settings`` dictionary value. The
 ``escoria.settings`` parameter is directly saved as-is when the
 ``ESCSaveManager.save_settings()`` function is called to save the settings.
@@ -153,8 +153,8 @@ developer interaction is required.
 During the loading of a save game, Escoria automatically performs a version
 check: If the Escoria version listed in the save game file is older than the
 current Escoria version used by the game, the
-:doc:`ESCMigrationManager.migrate() </api/managers/ESCMigrationManager>` 
-function is automatically called to convert the save game file to match the 
+:doc:`ESCMigrationManager.migrate() </api/managers/ESCMigrationManager>`
+function is automatically called to convert the save game file to match the
 newer Escoria version.
 
 Game version migration
