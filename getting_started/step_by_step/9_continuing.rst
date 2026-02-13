@@ -6,7 +6,7 @@ Congratulations! You've built your very first game with Escoria. Well done!
 But obviously, there's a lot more to do. We recommend checking out the rest
 of the documentation. For example:
 
-* :doc:`The ESC reference </scripting/z_esc_reference>`
+* `The ESC reference`_
 * :doc:`The Escoria settings reference </getting_started/z_escoria_settings>`
 * :doc:`A walk through Escoria's architecture </advanced/escoria_architecture>`
 * :doc:`How to create your own UI </advanced/create_ui>`
@@ -28,6 +28,7 @@ Thanks for trying Escoria, and we can't wait to see what you've made with it!
 
 Your Escoria project team
 
-.. _`Exporting Godot games`: https://docs.godotengine.org/en/3.5/getting_started/workflow/export/exporting_projects.html
-.. _`Complying with Godot and Escoria licenses`: https://docs.godotengine.org/en/3.5/tutorials/legal/complying_with_licenses.html
+.. _`Exporting Godot games`: https://docs.godotengine.org/en/stable/tutorials/export/exporting_projects.html
+.. _`Complying with Godot and Escoria licenses`: https://docs.godotengine.org/en/stable/about/complying_with_licenses.html
+.. _`The ESC reference`: /scripting/z_esc_reference.html
 

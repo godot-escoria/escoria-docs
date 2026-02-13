@@ -1,10 +1,12 @@
-Escoria API reference
+Escoria API Reference
 =====================
 
 .. toctree::
    :maxdepth: 1
+   :caption: Commands
    :name: sec-api
-   :glob:
+   :hidden:
 
-   *
-
+   commands/index
+   managers/index
+   supporting_classes/index

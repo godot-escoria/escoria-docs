@@ -19,7 +19,13 @@ Python to host the documentation locally:
 
 ## Contributors
 
-By alphabetical order:
-Duncan Brown - Dev Orion
-Dennis Ploeger - dploeger
-Julian Murgia - StraToN
+In alphabetical order:
+
+* ArturM
+* Sylvain Beucler - beuc
+* Duncan Brown - @DevOrionGames / @BHSDuncan / dev.orion
+* Fleskevor
+* Ariel Manzur - punto (original author)
+* Julian Murgia - @StraToN
+* Dennis Ploeger - @dploeger
+* Markus Törnqvist - mjtorn

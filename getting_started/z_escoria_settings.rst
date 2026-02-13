@@ -6,15 +6,20 @@ Escoria settings
 Review Escoria's settings
 -------------------------
 
-When you open the Project Settings window and look below the parameters list in
-the General tab, you can find an Escoria section with 5 settings categories
+When you open the Project Settings window and look below the list of parameters
+in the "General" tab, you can find an "Escoria" section with 5 settings categories
 which we'll review in detail in the following sub-sections:
 
 - Main
 - Debug
-- Ui
+- UI
 - Sound
 - Platform
+
+.. hint::
+
+  You may need to click the "Advanced Settings" slider in order for the "Escoria"
+  settings branch to appear in the settings navigation panel.
 
 Main
 ~~~~
@@ -24,33 +29,40 @@ game.
 
 This category defines the following settings:
 
-+---------------------+-------------------------------------------------------+
-| Setting             | Description                                           |
-+=====================+=======================================================+
-| Game version        | The version of your game. This setting is important   |
-|                     | for savegame management between your game versions.   |
-+---------------------+-------------------------------------------------------+
-| Start game script   | The ESC script that Escoria will run immediately when |
-|                     | you start the game.                                   |
-+---------------------+-------------------------------------------------------+
-| Force quit          | (unused) Defines whether Godot will force quit the    |
-|                     | game on a closing attempt.                            |
-+---------------------+-------------------------------------------------------+
-| Command directories | Array of paths containing the ESC scripting language  |
-|                     | commands. If you need to define one or more custom    |
-|                     | ESC commands, you must put their implementations in   |
-|                     | a folder of your project and append this path to      |
-|                     | this array.                                           |
-+---------------------+-------------------------------------------------------+
-| Text lang           | Game base text language's ICU code                    |
-+---------------------+-------------------------------------------------------+
-| Voice lang          | Game base voice language's ICU code                   |
-+---------------------+-------------------------------------------------------+
-| Savegames path      | Path to the savegames' folder. Defaults to            |
-|                     | user://saves/                                         |
-+---------------------+-------------------------------------------------------+
-| Settings path       | Path to user's settings. Defaults to user://          |
-+---------------------+-------------------------------------------------------+
++-----------------------+-------------------------------------------------------+
+| Setting               |   Description                                         |
++=======================+=======================================================+
+| Game Version          | The version of your game. This setting is important   |
+|                       | for savegame management between your game versions.   |
++-----------------------+-------------------------------------------------------+
+| Game Start Script     | The ASHES script that Escoria will run immediately    |
+|                       | when you start the game.                              |
++-----------------------+-------------------------------------------------------+
+| Force Quit            | (unused) Defines whether Godot will force quit the    |
+|                       | game on a closing attempt.                            |
++-----------------------+-------------------------------------------------------+
+| Command Directories   | Array of paths containing the ASHES scripting language|
+|                       | commands. If you need to define one or more custom    |
+|                       | ASHES commands, you must put their implementations in |
+|                       | a folder of your project and append this path to      |
+|                       | this array.                                           |
++-----------------------+-------------------------------------------------------+
+| Text Lang             | Game base text language's ICU code                    |
++-----------------------+-------------------------------------------------------+
+| Voice Lang            | Game base voice language's ICU code                   |
++-----------------------+-------------------------------------------------------+
+| Savegames Path        | Path to the savegames' folder. Defaults to            |
+|                       | "user://saves/".                                      |
++-----------------------+-------------------------------------------------------+
+| Settings Path         | Path to user's settings. Defaults to "user://".       |
++-----------------------+-------------------------------------------------------+
+| Action Default Script | Optional path to ASHES script containing default      |
+|                       | actions to take if a particular event can't be found. |
+|                       | This is useful for avoiding having to implement every |
+|                       | "invalid" interaction, e.g. trying to pick up a house.|
++-----------------------+-------------------------------------------------------+
+| Game Migration Path   | Path containing version migration scripts.            |
++-----------------------+-------------------------------------------------------+
 
 Debug
 ~~~~~
@@ -60,24 +72,43 @@ warning, as well as the log level.
 
 This category defines the following settings:
 
-+-----------------------+----------------------------------------------------+
-| Setting               | Description                                        |
-+=======================+====================================================+
-| Terminate on warnings | If checked, execution will stop when a warning     |
-|                       | is logged by Escoria                               |
-+-----------------------+----------------------------------------------------+
-| Terminate on errors   | If checked, execution will stop when an error      |
-|                       | is logged by Escoria                               |
-+-----------------------+----------------------------------------------------+
-| Development lang      | Game development language's ICU code               |
-+-----------------------+----------------------------------------------------+
-| Log level             | Log level (can be INFO, WARNING or ERROR)          |
-+-----------------------+----------------------------------------------------+
++------------------------+-----------------------------------------------------+
+| Setting                | Description                                         |
++========================+=====================================================+
+| Terminate on Warnings  | If checked, execution will stop when a warning      |
+|                        | is logged by Escoria.                               |
++------------------------+-----------------------------------------------------+
+| Terminate on Errors    | If checked, execution will stop when an error       |
+|                        | is logged by Escoria.                               |
++------------------------+-----------------------------------------------------+
+| Development Lang       | Game development language's ICU code.               |
++------------------------+-----------------------------------------------------+
+| Log Level              | Log level (can be TRACE, DEBUG, INFO, WARNING,      |
+|                        | or ERROR).                                          |
++------------------------+-----------------------------------------------------+
+| Log File Path          | Path where Esscoria logs are to be stored.          |
++------------------------+-----------------------------------------------------+
+| Crash Message          | User-friendly message to display if the game should |
+|                        | crash during execution.                             |
++------------------------+-----------------------------------------------------+
+| Enable Room Selector   | Shows or hides the a selector in the UI to allow    |
+|                        | the developer to quickly start a specific room.     |
++------------------------+-----------------------------------------------------+
+| Room Selector Room Dir | The directory containing the list of rooms to       |
+|                        | selector from the room selector. Rooms must be      |
+|                        | Godot scenes.                                       |
++------------------------+-----------------------------------------------------+
+| Perform Script         | Performs static analysis of ASHES scripts as        |
+| Analysis at Runtime    | encountered at runtime.                             |
++------------------------+-----------------------------------------------------+
+
 
 UI
 ~~
 
-Allows you to define the paths to scenes required by Escoria to run correctly.
+Allows you to define the paths to scenes required by Escoria to run correctly
+as well as other settings relevant to the UI.
+
 These scenes have to be created by the game developer.
 
 This category defines the following settings:
@@ -85,18 +116,27 @@ This category defines the following settings:
 +-------------------------+--------------------------------------------------+
 | Setting                 | Description                                      |
 +=========================+==================================================+
-| Tooltip follows mouse   | If checked, the tooltip is not fixed to the UI   |
-|                         | and will instead follow the mouse cursor         |
+| Game Scene              | Path to the main Game scene.  Typially found as  |
+|                         | part of the UI implementation.                   |
 +-------------------------+--------------------------------------------------+
-| Default dialog scene    | Path to the default scene to be used as the      |
-|                         | dialog scene                                     |
+| Default Transition      | The transition type to use if none is specified  |
+|                         | when called for.                                 |
 +-------------------------+--------------------------------------------------+
-| Game scene              | Path to the Game scene                           |
+| Transition Paths        | Array of paths containing transitions that can   |
+|                         | be used by Escoria.                              |
 +-------------------------+--------------------------------------------------+
-| Inventory Items path    | Path to the folder containing inventory items    |
-|                         | for the game                                     |
+| Inventory Items Path    | Path to the folder containing inventory items    |
 +-------------------------+--------------------------------------------------+
-| Dialogs chooser         | Path to the dialog chooser scene                 |
+| Inventory Items Size    | The dimensions to be used when displaying items  |
+|                         | in the player's inventory.                       |
++-------------------------+--------------------------------------------------+
+| Dialog Managers         | Array of dialog managers available for use by    |
+|                         | Escoria. Each one should be the path to a dialog |
+|                         | manager as a GDScript file, not a scene file.    |
+|                         | for the game.                                    |
++-------------------------+--------------------------------------------------+
+| Default Dialog Type     | Default style of dialog rendering,               |
+|                         | e.g. ``floating`` or ``avatar``.                 |
 +-------------------------+--------------------------------------------------+
 
 Sound
@@ -110,20 +150,23 @@ This category defines the following settings:
 +------------------+------------------------------------------------------+
 | Setting          | Description                                          |
 +==================+======================================================+
-| Music volume     | Default volume of the music (float between 0 and 1)  |
+| Music Volume     | Default volume of the music (float between 0 and 1). |
 +------------------+------------------------------------------------------+
-| Sfx volume       | Default volume of the sound (float between 0 and 1)  |
+| Sfx Volume       | Default volume of the sound (float between 0 and 1). |
 +------------------+------------------------------------------------------+
-| Speech volume    | Default volume of the speech (float between 0 and 1) |
+| Speech Volume    | Default volume of the speech (float between 0 and 1).|
 +------------------+------------------------------------------------------+
-| Master volume    | Default master volume (float between 0 and 1)        |
+| Ambient Volume   | Default volume of ambient sounds                     |
+|                  | (float between 0 and 1).                             |
 +------------------+------------------------------------------------------+
-| Speech enabled   | If true, Escoria will attempt to find speech for     |
-|                  | each encountered dialog key                          |
+| Master Volume    | Default master volume (float between 0 and 1).       |
 +------------------+------------------------------------------------------+
-| Speech folder    | Folder to the speech files                           |
+| Speech Enabled   | If true, Escoria will attempt to find speech for     |
+|                  | each encountered dialog key.                         |
 +------------------+------------------------------------------------------+
-| Speech extension | File extension of speech files. Must be a resource   |
+| Speech Folder    | Folder to the speech audio files.                    |
++------------------+------------------------------------------------------+
+| Speech Extension | File extension of speech files. Must be a resource   |
 |                  | type that can be imported by Godot, either natively  |
 |                  | or through an import plugin                          |
 +------------------+------------------------------------------------------+

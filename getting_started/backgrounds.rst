@@ -2,7 +2,7 @@ Handling backgrounds
 ====================
 
 Backgrounds are the building block art assets for each room in an adventure
-game. They give depth and set the mood.
+game: They give depth and set the mood.
 
 Escoria supports multiple features for backgrounds.
 
@@ -11,12 +11,12 @@ features of ``ESCTerrain`` add more features to the background.
 
 Backgrounds can come in all sizes. They may be the exact size as the screen,
 or they may be bigger or smaller. Escoria uses its
-:doc:`Camera features </getting_started/camera>` to handle different-sized
-backgrounds.
+:doc:`Camera features </getting_started/camera>` to handle backgrounds of
+various sizes.
 
 Camera limits define how the camera follows the player and pans
 over the background. The developer can enable and disable camera limits
-in the game to temporarily hide or show parts of the scene.
+in the game to temporarily hide or show different parts of the scene.
 
 Parallax backgrounds
 --------------------
@@ -25,18 +25,11 @@ Parallax layering is a technique used to add depth to a two-dimensional
 graphic by moving different layers at diffferent speeds as the camera
 pans over them.
 
-Godot has that functionality built-in with the `ParallaxBackground`_ and
-`ParallaxLayer`_ node types.
+Godot has that functionality built-in with the `Parallax2D`_ node type
+(formerly `ParallaxBackground`_ and `ParallaxLayer`_ prior to Godot 4.3).
 
-`This tutorial`_ introduces their functionality.
-
-Basically, after adding both a ``ParralaxBackground`` and at least one
-``ParallaxLayer`` node to the scene, the ``ParallaxLayer``'s parameter
-``motion_scale`` specifies how fast the movement of the additional layer
-will be moved in contrast to the static background.
-
-Additionally, the ``layer`` parameter of the ``ParallaxBackground`` should be
-set to 0 to allow the character to move behind the layer.
+`This video`_ introduces the functionality, and you can also check out
+`this excellent tutorial`_ in the Godot documentation.
 
 Scaling
 -------
@@ -57,13 +50,15 @@ Another feature to make rooms more lively is to give them dynamic lighting,
 so that certain parts of the screen tint the character sprite as though it
 was walking through different light sources in the background.
 
-The parameter ``lightmap`` expects a texture that is to be laid over the
-scene and tints the character according to the position of the character in
-the scene.
+The parameter ``lightmap`` expects a texture that will be laid overtop of the
+scene, allowing the character to be tinted/shaded according to the position
+of the character in the scene.
 
 The parameter ``lightmap_modulate`` can be used to additionally tint
 the ``lightmap`` texture.
 
+.. _`Parallax2D`: https://docs.godotengine.org/en/stable/classes/class_parallax2d.html
 .. _`ParallaxBackground`: https://docs.godotengine.org/en/3.5/classes/class_parallaxbackground.html
 .. _`ParallaxLayer`: https://docs.godotengine.org/en/3.5/classes/class_parallaxlayer.html
-.. _`This tutorial`: https://www.youtube.com/watch?v=f8z4x6R7OSM
+.. _`This video`: https://www.youtube.com/watch?v=dIEGn8uOlwg
+.. _`this excellent tutorial`: https://docs.godotengine.org/en/stable/tutorials/2d/2d_parallax.html

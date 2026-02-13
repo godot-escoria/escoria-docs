@@ -8,26 +8,27 @@ as easy and streamlined as possible.
 At the same time, Escoria aims to give a lot of freedom to the developer with
 regard to the design of the game and its interface.
 
-Because of this, neither a specific user interface nor a dialog manager are
-included in the Escoria core, although either may be installed as
-additional addons from the Godot Asset Library or completely made from scratch
-for the specific game you're making.
+Because of this, user interfaces are kept separate from the core, as are dialog
+managers. This allows for the ease of swapping out implementations of either
+that best suit your game. You can use one made completely from scratch, or, to
+help get you started, you can use one from Escoria's GitHub repositories.
 
-To make starting with Escoria as easy as possible, we provide a Godot Game
-Template along with stock user interfaces and dialog managers to get you up and
+To make starting with Escoria as easy as possible, we provide a demo game
+that comes with stock user interfaces and dialog managers to get you up and
 running in no time.
 
 .. hint::
 
-    The version of Escoria in Godot's Template Libraries is out of date.
-    To make sure you have the latest version, clone the develop branch
-    of the [Escoria Demo Game](https://github.com/godot-escoria/escoria-demo-game)
-    and copy over the addons folder.
+    Previous versions of Escoria were made available in Godot's Asset
+    Library. To make sure you have the latest version of Escoria, we
+    recommend you clone the `Escoria Demo Game`_ repository and modify/replace
+    the addons as needed. We walk through this more below!
+
 
 Game filesystem structure
 -------------------------
 
-Before any files get created, it's important to point out that there is no
+Before any files are created, it's important to point out that there is no
 mandated filesystem structure for your game. For example, you may
 choose to organise your files by :
 
@@ -37,37 +38,27 @@ choose to organise your files by :
   "/room_ballroom/items" etc.)
 * some other structure
 
-You are not restricted to the structure used by this demonstration project: use
+You are not restricted to the structure used by this demonstration project: Use
 whatever makes sense for your game.
 
 
 Starting a new Escoria project
 ------------------------------
 
-Open the Godot project manager, switch to the **Templates** tab, and search for
-the Escoria game template:
+The best way to get started with Escoria is to clone the `Escoria Demo Game`_
+from GitHub. Once cloned, you can add, change, or edit any of the stock plugins
+that come with the cloned repository.
 
-.. image:: img/create_project_search_template.png
-   :alt: Searching for Escoria in the template library
+.. note::
 
-Select the template to view more details:
+    All of the stock plugins for Escoria are available separately through
+    `Escoria's repositories`_, though at the time of writing, the most
+    up-to-date versions of the plugins are in `Escoria Demo Game`_.
 
-.. image:: img/create_project_template.png
-   :alt: Details from the Escoria game template
+Start the Godot editor and, through the Project Manager, navigate to and open
+the Escoria project you just cloned.
 
-Click on **Download** to download a fresh copy of the template, then click
-**Install**.
-
-.. image:: img/create_project_downloaded.png
-   :alt: "Installing the game template"
-
-Enter the project name and the folder for your new game.
-Click **Install & Edit**.
-
-.. image:: img/create_project_install.png
-   :alt: Creating a new game from the template
-
-The editor will open your new game.
+The game will now appear in your editor.
 
 .. warning::
     After the editor loads the game for the first time, you may need to
@@ -77,93 +68,54 @@ The editor will open your new game.
     If you launched Godot from a terminal then the terminal will display
     error messages at this stage: These messages can be safely ignored.
 
+Changing the stock plugins
+--------------------------
 
-Adding a stock UI
------------------
+UI
+~~
 
-For simplicity's sake in this guide, we will add one of the available stock
-UIs that Escoria provides. You will probably want to
-use one of them as a starting point for
-:doc:`your own game UI </advanced/create_ui>`.
+For simplicity's sake in this guide, we will show how to change the UI to one
+of the other available stock UIs that Escoria provides. You will probably want
+to use one of them as a starting point for :doc:`your own game UI </advanced/create_ui>`.
 
-The stock UIs for Escoria are distributed as Godot addons. Switch to the
-Asset Lib and search for "escoria*ui" to find all currently available stock
-UIs.
+The stock UIs for Escoria are distributed as Godot addons, with all of them
+available through the `Escoria Demo Game`_.
 
-.. image:: img/create_project_uis.png
-   :alt: Available Escoria UIs
+Adding a new or completely separate UI is a matter of adding a new directory
+to under the ``addons/`` directory (e.g. ``addons/my-ui/``)  alongside any
+other plugins.
 
-Select one UI to view its details.
-
-.. image:: img/create_project_ui_details.png
-   :alt: The details of the simplemouse ui addon.
-
-Click on **Download**.
-
-.. image:: img/create_project_ui_downloaded.png
-   :alt: The UI addon was downloaded and is ready to install.
-
-Click **Install**. The relevant files should be selected already.
-
-.. image:: img/create_project_ui_install.png
-   :alt: View of the files to install.
-
-Open your project settings and switch to the **Plugins** tab to enable the UI
-addon.
+To select Open your project settings, switch to the **Plugins** tab, find the
+UI addon you want to use, and enable it.
 
 .. image:: img/create_project_ui_enable.png
    :alt: A view of the project settings with the addons tab selected
          and a marker on the enable checkbox.
 
 
-Adding a stock dialog manager
------------------------------
+Dialog manager
+~~~~~~~~~~~~~~
 
 Usually, a game made with Escoria uses dialog choices as well as the ``say``
 command as narrative elements. While the basic dialog handling and the ``say``
 command are included in the core, a user interface that *displays* those lines
 isn't.
 
-Again, for simplicity's sake in this guide, we will add the available stock
-dialog manager that Escoria provides. You will probably want to use it as a
-starting point for
-:doc:`your own dialog manager </advanced/create_dialog_manager>`.
+Like the UI plugin, the available stock dialog manager that Escoria provides
+makes getting started with Escoria easy, and you will probably want to use it
+as a starting point for :doc:`your own dialog manager </advanced/create_dialog_manager>`.
 
-Like the stock UIs, the dialog manager is distributed as a Godot addon. Switch
-back to the Asset Lib and search for "escoria*dialog" to find all currently
-available stock dialog managers.
+Like the stock UIs, the dialog manager is distributed as a Godot addon and can
+be switched in exactly the same way as the UI plugin.
 
-.. image:: img/create_project_dialogs.png
-   :alt: Available Escoria UIs
+To configure the dialog manager, switch to the Project Settings and go to
+"Escoria/UI" to set the default dialog type parameter. The *dialog type* is the
+way a line of speech is displayed in the player.
 
-Select one UI to view its details.
+The stock dialog manager supports the following types:
 
-.. image:: img/create_project_dialogs_details.png
-   :alt: The details of the simplemouse ui addon.
-
-Click on **Download**.
-
-.. image:: img/create_project_dialogs_downloaded.png
-   :alt: The UI addon was downloaded and is ready to install.
-
-Click **Install**. The relevant files should be selected already.
-
-.. image:: img/create_project_dialogs_install.png
-   :alt: View of the files to install.
-
-Open your project settings and switch to the **Addons** tab to enable the
-dialog manager.
-
-.. image:: img/create_project_dialogs_enable.png
-   :alt: A view of the project settings with the addons tab selected
-         and a marker on the enable checkbox.
-
-Switch to the project settings and go to "Escoria/UI" to set the default
-dialog type parameter. The *dialog type* is the way a line of speech is
-displayed to the player. The stock dialog manager supports the following types:
-
-* **floating**: The text is shown above the player sprite
-* **avatar**: The text is shown in a box with the player avatar next to it
+* **floating**: The text is shown above the player sprite.
+* **avatar**: The text is shown in a UI box with the player avatar next to it.
 
 If the type isn't specified in the ``say`` command, this default type is used.
 
@@ -177,19 +129,23 @@ Let's set it to "floating".
 Basic configuration
 -------------------
 
-In the general project settings, go to **Display/Window** and set the desired
-resolution of your game in the "width" and "height" settings. The Godot
-default is 1024x600. The included backgrounds have a height of 956 pixels. For
-this guide, setup an HD resolution of 1920x1080 pixels.
+In the general project settings, make sure the **Advanced Settings** toggle is
+enabled in order to view the settings that are specific to Escoria.
+
+Then, go to **Display/Window** and set the desired resolution of your game in
+the **Viewport Width** and **Viewport Height** settings. The Godot default is 1024x600.
+
+The included backgrounds have a height of 956 pixels. For this guide, setup an
+HD resolution of 1920x1080 pixels.
 
 .. image:: img/create_project_display_size.png
    :alt: The required width and height settings
 
 Also make sure that the stretch settings are set to the following:
 
-- Mode: 2d
-- Aspect: keep
-- Shrink: 1
+- **Mode**: canvas_items (formerly "2d" in Godot 3)
+- **Aspect**: keep
+- **Scale**: 1.0
 
 This makes sure that your game will be resized to match the resolution of the
 devices used by the players.
@@ -201,5 +157,9 @@ devices used by the players.
 Continuing
 ----------
 
-After this basic setup, let's
-:doc:`create a character <2_create_player_character>`.
+With the basic setup done, let's
+:doc:`create a character <2_create_player_character>`!
+
+
+.. _Escoria Demo Game: https://github.com/godot-escoria/escoria-demo-game
+.. _Escoria's repositories: https://github.com/orgs/godot-escoria/repositories
