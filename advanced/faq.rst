@@ -127,7 +127,7 @@ are processed. As an example, if you had separate animations of someone walking
 up to a door and another showing them opening it, using ``anim_block`` to play
 the walking animation would ensure they reached the door before being opened.
 
-``set_state`` is like combining a global varible with an ``anim`` command:
+``set_state`` is like combining a global variable with an ``anim`` command:
 It retains a state which can be queried (e.g. checking if the door is in an
 unlocked or a locked state) and runs an animation (if an animation with the
 same name exists in this room). State is preserved between rooms, meaning that
