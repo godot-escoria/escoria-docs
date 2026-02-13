@@ -177,7 +177,7 @@ height of the background.
 
     To figure out the proper value of the ``z-axis`` parameter, you can use the
     ruler feature of Godot to measure the y position of where the base
-    position of your character needs to be in order to have Grahamto walk in front.
+    position of your character needs to be in order to have Graham walk in front.
 
 .. warning::
 
