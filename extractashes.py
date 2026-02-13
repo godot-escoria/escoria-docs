@@ -20,7 +20,10 @@ for filename in sorted(Path("docsource/").glob("*.xml")):
 
     api_sub_dir = "commands" if re.search(r"@COMMAND", markdown) else "managers" if re.search(r"@MANAGER", markdown) else "supporting_classes"
 
-    Path(f"api/{api_sub_dir}/{filename.name}").with_suffix(".md").write_text(scrubbed_markdown)
+    # Ensure the sub directory exists and write the file
+    api_file_path = Path(f"api/{api_sub_dir}/{filename.name}").with_suffix(".md")
+    api_file_path.parent.mkdir(parents=True, exist_ok=True)
+    api_file_path.write_text(scrubbed_markdown)
 
     test_str = markdown
 
