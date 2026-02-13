@@ -259,7 +259,7 @@ game is displayed is optional for your game. To create one:
   game logo / opening scene (remembering to use the ``| NO_UI`` flag so your
   game's user interface is not displayed over the top of the logo/cutscene).
   As this animation will play every time someone starts your
-  game, it is recommended to keep this scene to no more than  a few seconds
+  game, it is recommended to keep this scene to no more than a few seconds
   in length. An example script for an introductory logo scene driven entirely
   by an animation is:
 
