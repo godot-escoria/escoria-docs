@@ -76,7 +76,7 @@ Object manager
 
 The :doc:`object manager </api/managers/ESCObjectManager>` handles the state of the
 objects used in the game (active/interactive/states). All objects that should
-be handled by the engine - especially by ASBES scripts - are required to register
+be handled by the engine - especially by ASHES scripts - are required to register
 with the object manager and have a unique global ID.
 
 Command registry
