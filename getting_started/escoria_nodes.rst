@@ -57,7 +57,7 @@ You will typically assign a few child nodes to each ESCItem:
 
 * ``Sprite`` / ``Animated Sprite`` : This is an image of the object that will be
   displayed on the screen for the player.
-* ``CollisionPolygon2D`` : This is a shape that tells Escoria when the mouse is
+* ``CollisionPolygon2D`` / ``CollisionShape2D`` : This is a shape that tells Escoria when the mouse is
   over the object. Set this up to cover the ``Sprite``.
 * ``ESCLocation`` : If you make an ``ESCLocation`` the child of an ``ESCItem``,
   whenever you interact with the item the character will automatically walk to this
