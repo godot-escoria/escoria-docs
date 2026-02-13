@@ -389,7 +389,7 @@ path to your **ESCAnimationResource** file.
 How do I add audio speech to my game?
 -------------------------------------
 
-Check `here for information on how to ad audio speech </getting_started/dialogs.html#recorded-speech>`_ to your game.
+Check `here for information on how to add audio speech </getting_started/dialogs.html#recorded-speech>`_ to your game.
 
 
 How do I translate my game into other languages?
