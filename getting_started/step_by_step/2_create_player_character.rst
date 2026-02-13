@@ -19,7 +19,7 @@ type. Save it as "graham.tscn" under the folder we created above.
 .. image:: img/character_create_scene.png
    :alt: The new character scene with an ESCPlayer root node
 
-When we get to making your game more interactive later using the built-in
+When we get to making our game more interactive later using the built-in
 ASHES scripting language, we need a way of identifying the character and the
 various items. ASHES uses :dfn:`global ids` for this. Set the global id for the
 character using the parameter **Global Id** in the inspector panel:
