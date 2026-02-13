@@ -320,7 +320,7 @@ by Escoria. The classes are usually available in the
 :doc:`ESCObjectManager </api/managers/ESCObjectManager>`)
 
 .. _`GDScript`: https://docs.godotengine.org/en/stable/getting_started/scripting/gdscript/gdscript_basics.html
-.. _`GDScript enum Variant.Type`: https://docs.godotengine.org/en/3.5/classes/class_@globalscope.html#enumerations
+.. _`GDScript enum Variant.Type`: https://docs.godotengine.org/en/stable/classes/class_@globalscope.html#enumerations
 .. _`the GitHub repository`: https://github.com/godot-escoria/escoria-demo-game/tree/main/addons/escoria-core/game/core-scripts/esc
 .. _`a lot of commands`: /scripting/z_ashes_reference.html#commands
 .. _`Project setting`: /getting_started/z_escoria_settings.html#main
