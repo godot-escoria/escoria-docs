@@ -34,6 +34,20 @@ to script their adventure game was replaced with the ASHES language,
 providing a more consistent experience for those familiar with GDScript and
 Python.
 
+Contributors
+------------
+
+In alphabetical order:
+
+* ArturM
+* Sylvain Beucler - beuc
+* Duncan Brown - @DevOrionGames / @BHSDuncan / dev.orion
+* Fleskevor
+* Ariel Manzur - punto (original author)
+* Julian Murgia - @StraToN
+* Dennis Ploeger - @dploeger
+* Markus Törnqvist - mjtorn
+
 Licensing
 ---------
 
