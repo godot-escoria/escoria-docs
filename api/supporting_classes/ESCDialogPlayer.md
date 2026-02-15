@@ -2,7 +2,7 @@
   (ESCDialogPlayer)=
 # ESCDialogPlayer
 
-**Extends:** {ref}`Node <Node>`
+**Extends:** {ref}`Control <Control>`
         
 ## Description
 
