@@ -18,7 +18,8 @@ the community on our `Discord`_ server? We're always happy to help.
    :alt: Join our Discord
    :target: https://discord.com/invite/jMxJjuBY5Z
 
-*GOOD NEWS:* **Escoria now works with Godot 4!** Earlier versions that work with Godot 3 are archived in Escoria's GitHub.
+*GOOD NEWS:* **Escoria now works with Godot 4!** Earlier versions that work with Godot 3 are archived in Escoria's
+GitHub.
 
 The table of contents below and in the sidebar should let you easily access the
 documentation for the topic of interest. You can also use the search function
