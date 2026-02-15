@@ -4,7 +4,7 @@ from pathlib import Path
 from m2r2 import convert
 from lxml import etree
 
-esc_commands = ""
+ashes_commands = ""
 script_tag = "@ASHES"
 
 for filename in sorted(Path("docsource/").glob("*.xml")):
@@ -43,17 +43,20 @@ for filename in sorted(Path("docsource/").glob("*.xml")):
             Path(filename).stem
         )
 
-        esc_commands += "%s\n%s\n\n" % (
+        ashes_commands += "%s\n%s\n\n" % (
             heading,
             '~' * len(heading)
         )
 
         if is_stub:
-            esc_commands += "**This command is currently not fully implemented.**\n\n"
+            ashes_commands += "**This command is currently not fully implemented.**\n\n"
 
-        esc_commands += "%s\n\n" % convert(matches.group("description").replace(script_tag, "").replace(r"@STUB", "").replace(r"@COMMAND", "").replace(r"@MANAGER", ""))
+        ashes_commands += "%s\n\n" % convert(matches.group("description").replace(script_tag, "").replace(r"@STUB", "").replace(r"@COMMAND", "").replace(r"@MANAGER", ""))
 
-esc_doc = Path("ashes_reference.template.rst").read_text()
+ashes_doc = Path("ashes_reference.template.rst").read_text()
 
-esc_doc = re.sub(r"(?s)\.\. ESCCOMMANDS.*\.\. /ESCCOMMANDS", ".. ESCCOMMANDS\n\n%s\n\n.. /ESCCOMMANDS" % esc_commands, esc_doc)
-Path("scripting/z_ashes_reference.rst").write_text(esc_doc)
+ashes_doc = re.sub(r"(?s)\.\. ESCCOMMANDS.*\.\. /ESCCOMMANDS", ".. ESCCOMMANDS\n\n%s\n\n.. /ESCCOMMANDS" % ashes_commands, ashes_doc)
+
+ashes_reference = Path("scripting/z_ashes_reference.rst")
+ashes_reference.parent.mkdir(exist_ok=True)
+ashes_reference.write_text(ashes_doc)
