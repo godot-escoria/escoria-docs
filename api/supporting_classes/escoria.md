@@ -353,6 +353,23 @@ None.
     
 % ...
 ---
+### init\_main\_scene
+
+```gdscript
+func init_main_scene() -> void
+```
+
+Initializes the Escoria main scene as child of the Escoria autoloaded scene.
+
+#### Parameters
+
+None. 
+#### Returns
+
+Returns nothing.
+    
+% ...
+---
 ### get\_escoria
 
 ```gdscript

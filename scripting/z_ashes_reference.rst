@@ -774,6 +774,29 @@ Parameters
 
 
 
+``change_scene_godot(path: String)`` `API-Doc </api/commands/ChangeSceneGodotCommand.html>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Switches the game from the current scene to a Godot scene, without using Escoria.
+
+Parameters
+~~~~~~~~~~
+
+.. list-table::
+   :header-rows: 1
+
+   * - Name
+     - Type
+     - Description
+     - Required?
+   * - path
+     - ``String``
+     - Path of the new scene
+     - yes
+
+
+
 ``custom(object: String, node: String, func_name: String[, params...])`` `API-Doc </api/commands/CustomCommand.html>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

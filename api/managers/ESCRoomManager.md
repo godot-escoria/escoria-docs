@@ -92,6 +92,25 @@ Returns nothing.
     
 % ...
 ---
+### change\_scene\_to\_godot\_file
+
+```gdscript
+func change_scene_to_godot_file(room_path: String) -> void
+```
+
+Changes the current scene to a NON-ESCORIA room scene. This allows to use full-Godot scenes in the game, but requires to call Escoria functions from GDScript to change back to an Escoria room. 
+#### Parameters
+
+| Name | Type | Description | Required? |
+|:-----|:-----|:------------|:----------|
+|room_path|`String`|Node path to the scene to change to|yes|
+
+#### Returns
+
+Returns nothing.
+    
+% ...
+---
 ### init\_room
 
 ```gdscript
