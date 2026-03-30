@@ -114,6 +114,23 @@ Returns a `Variant` value representing the global's value, or `null` if not foun
     
 % ...
 ---
+### get\_globals
+
+```gdscript
+func get_globals() -> Dictionary
+```
+
+Returns a snapshot copy of all currently stored globals.
+
+#### Parameters
+
+None. 
+#### Returns
+
+Returns a `Dictionary` containing the current global state. (`Dictionary`)
+    
+% ...
+---
 ### filter
 
 ```gdscript

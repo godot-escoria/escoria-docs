@@ -28,6 +28,14 @@ var parameters: Array
 
 Parameters for this command
     
+### channel\_name
+
+```gdscript
+var channel_name: String
+```
+
+Channel where this command's owning event is running.
+    
 ### parser\_token
 
 ```gdscript

@@ -55,6 +55,23 @@ Returns the dictionary containing any and all global variables. (`Dictionary`)
     
 % ...
 ---
+### get\_channel\_name
+
+```gdscript
+func get_channel_name() -> String
+```
+
+Gets the event-manager channel this interpreter is executing on.
+
+#### Parameters
+
+None. 
+#### Returns
+
+Returns the channel name associated with this interpreter run. (`String`)
+    
+% ...
+---
 ### reset
 
 ```gdscript
@@ -232,7 +249,7 @@ Returns nothing.
 ### visit\_pass\_stmt
 
 ```gdscript
-func visit_pass_stmt(stmt: ESCGrammarStmts.Pass) -> void
+func visit_pass_stmt(_stmt: ESCGrammarStmts.Pass) -> void
 ```
 
 Executes code relevant to interpreting a `pass` statement.
@@ -332,7 +349,7 @@ Returns nothing.
 ### visit\_dialog\_option\_stmt
 
 ```gdscript
-func visit_dialog_option_stmt(stmt: ESCGrammarStmts.DialogOption) -> void
+func visit_dialog_option_stmt(_stmt: ESCGrammarStmts.DialogOption) -> void
 ```
 
 Executes code relevant to interpreting a dialog option, although this is more of a placeholder to keep the processing of the syntax tree going since dialog options are handled by the overall dialog block.
