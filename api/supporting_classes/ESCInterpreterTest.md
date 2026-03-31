@@ -341,3 +341,11 @@ func test_immediate_command_preserves_statement_ordering() -> void
 ```gdscript
 func test_delayed_command_preserves_statement_ordering() -> void
 ```
+    
+% ...
+---
+### test\_set\_animations\_updates\_persisted\_player\_resource\_on\_repeat\_calls
+
+```gdscript
+func test_set_animations_updates_persisted_player_resource_on_repeat_calls() -> void
+```
