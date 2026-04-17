@@ -36,7 +36,7 @@ say("worker", "Because I work here.")
 ### init
 
 ```gdscript
-func init(option: ESCGrammarExpr, condition: ESCGrammarExpr, body: ESCGrammarStmt) -> void
+func init(translation_key: String, option: ESCGrammarExpr, condition: ESCGrammarExpr, body: ESCGrammarStmt) -> void
 ```
 
 Initialization method. Must be called after instantiation.
@@ -45,6 +45,7 @@ Initialization method. Must be called after instantiation.
 
 | Name | Type | Description | Required? |
 |:-----|:-----|:------------|:----------|
+|translation_key|`String`|an optional translation key for the option text|yes|
 |option|`ESCGrammarExpr`|the expression whose results will be displayed on screen as an option to be selected alongside any other options at the current level|yes|
 |condition|`ESCGrammarExpr`|an optional condition to be evaluated that is used to determine whether the option should be displayed at all|yes|
 |body|`ESCGrammarStmt`|the block of statements to be executed should this dialog option be selected|yes|
@@ -52,6 +53,23 @@ Initialization method. Must be called after instantiation.
 #### Returns
 
 Returns nothing.
+    
+% ...
+---
+### get\_translation\_key
+
+```gdscript
+func get_translation_key() -> String
+```
+
+The translation key for this option, if one exists.
+
+#### Parameters
+
+None. 
+#### Returns
+
+Returns the translation key for this option, if one exists. (`String`)
     
 % ...
 ---

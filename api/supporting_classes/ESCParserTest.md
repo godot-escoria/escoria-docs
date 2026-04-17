@@ -54,6 +54,30 @@ func test_dialog_option_missing_indented_body_returns_parse_error() -> void
     
 % ...
 ---
+### test\_dialog\_start\_arguments\_without\_parens\_parse\_and\_are\_preserved
+
+```gdscript
+func test_dialog_start_arguments_without_parens_parse_and_are_preserved() -> void
+```
+    
+% ...
+---
+### test\_dialog\_start\_arguments\_with\_parens\_parse\_and\_are\_preserved
+
+```gdscript
+func test_dialog_start_arguments_with_parens_parse_and_are_preserved() -> void
+```
+    
+% ...
+---
+### test\_dialog\_option\_translation\_key\_is\_parsed\_explicitly
+
+```gdscript
+func test_dialog_option_translation_key_is_parsed_explicitly() -> void
+```
+    
+% ...
+---
 ### test\_grouping\_missing\_right\_paren\_returns\_parse\_error
 
 ```gdscript

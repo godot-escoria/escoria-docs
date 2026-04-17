@@ -37,3 +37,11 @@ func get_choices_consumed() -> int
 ```gdscript
 func get_remaining_choices() -> int
 ```
+    
+% ...
+---
+### get\_dialogs\_started
+
+```gdscript
+func get_dialogs_started() -> Array
+```

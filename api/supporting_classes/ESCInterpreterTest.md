@@ -349,3 +349,75 @@ func test_delayed_command_preserves_statement_ordering() -> void
 ```gdscript
 func test_set_animations_updates_persisted_player_resource_on_repeat_calls() -> void
 ```
+    
+% ...
+---
+### test\_dialog\_start\_args\_are\_passed\_to\_runtime\_dialog
+
+```gdscript
+func test_dialog_start_args_are_passed_to_runtime_dialog() -> void
+```
+    
+% ...
+---
+### test\_dialog\_start\_invalid\_avatar\_type\_returns\_error
+
+```gdscript
+func test_dialog_start_invalid_avatar_type_returns_error() -> void
+```
+    
+% ...
+---
+### test\_dialog\_start\_invalid\_timeout\_type\_returns\_error
+
+```gdscript
+func test_dialog_start_invalid_timeout_type_returns_error() -> void
+```
+    
+% ...
+---
+### test\_dialog\_option\_translation\_key\_is\_passed\_to\_runtime\_dialog
+
+```gdscript
+func test_dialog_option_translation_key_is_passed_to_runtime_dialog() -> void
+```
+    
+% ...
+---
+### test\_dialog\_start\_invalid\_timeout\_option\_type\_returns\_error
+
+```gdscript
+func test_dialog_start_invalid_timeout_option_type_returns_error() -> void
+```
+    
+% ...
+---
+### test\_dialog\_start\_invalid\_timeout\_option\_negative\_returns\_error
+
+```gdscript
+func test_dialog_start_invalid_timeout_option_negative_returns_error() -> void
+```
+    
+% ...
+---
+### test\_dialog\_option\_translation\_key\_beats\_legacy\_prefix\_fallback
+
+```gdscript
+func test_dialog_option_translation_key_beats_legacy_prefix_fallback() -> void
+```
+    
+% ...
+---
+### test\_dialog\_option\_translation\_key\_with\_condition\_survives\_runtime\_filtering
+
+```gdscript
+func test_dialog_option_translation_key_with_condition_survives_runtime_filtering() -> void
+```
+    
+% ...
+---
+### test\_dialog\_option\_translation\_key\_with\_expression\_preserves\_key\_and\_value
+
+```gdscript
+func test_dialog_option_translation_key_with_expression_preserves_key_and_value() -> void
+```

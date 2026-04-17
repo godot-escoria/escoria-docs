@@ -20,6 +20,14 @@ var option: String
 
 Option text displayed in the HUD.
     
+### translation\_key
+
+```gdscript
+var translation_key: String
+```
+
+Explicit translation key for the option text.
+    
 ### source\_option
 
 ```gdscript
