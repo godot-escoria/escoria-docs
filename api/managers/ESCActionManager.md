@@ -14,37 +14,37 @@ Manages actions currently being carried out.
 
 ### AWAITING\_VERB\_OR\_ITEM
 ```gdscript
-const AWAITING_VERB_OR_ITEM = 0 # enum "ACTION\_INPUT\_STATE"
+const AWAITING_VERB_OR_ITEM = 0 # enum "ActionInputState"
 
 ```
 Initial state
 ### AWAITING\_ITEM
 ```gdscript
-const AWAITING_ITEM = 1 # enum "ACTION\_INPUT\_STATE"
+const AWAITING_ITEM = 1 # enum "ActionInputState"
 
 ```
 After initial state, verb is defined
 ### AWAITING\_TARGET\_ITEM
 ```gdscript
-const AWAITING_TARGET_ITEM = 2 # enum "ACTION\_INPUT\_STATE"
+const AWAITING_TARGET_ITEM = 2 # enum "ActionInputState"
 
 ```
 Item defined requires combine, waiting for target
 ### AWAITING\_VERB
 ```gdscript
-const AWAITING_VERB = 3 # enum "ACTION\_INPUT\_STATE"
+const AWAITING_VERB = 3 # enum "ActionInputState"
 
 ```
 After initial state, item is defined
 ### AWAITING\_VERB\_CONFIRMATION
 ```gdscript
-const AWAITING_VERB_CONFIRMATION = 4 # enum "ACTION\_INPUT\_STATE"
+const AWAITING_VERB_CONFIRMATION = 4 # enum "ActionInputState"
 
 ```
 Item was defined first, next verb, need verb confirmation
 ### COMPLETED
 ```gdscript
-const COMPLETED = 5 # enum "ACTION\_INPUT\_STATE"
+const COMPLETED = 5 # enum "ActionInputState"
 
 ```
 Final state
