@@ -12,6 +12,12 @@ Represents an object that is able to be handled by Escoria.
 
 ## Constants
 
+### ESC\_EVENTS\_CONTAINER\_SCRIPT
+```gdscript
+const ESC_EVENTS_CONTAINER_SCRIPT = <Object>
+
+```
+
 ### STATE\_DEFAULT
 ```gdscript
 const STATE_DEFAULT = "default"
@@ -55,10 +61,10 @@ The state of the object. If the object has a respective animation, it will be pl
 ### events
 
 ```gdscript
-var events: Dictionary
+var events: Variant
 ```
 
-The events registered with the object.
+The events registered with the object
     
 ### node
 
@@ -141,3 +147,40 @@ None.
 #### Returns
 
 Returns a `Dictionary` value. (`Dictionary`)
+    
+% ...
+---
+### has\_event\_with\_target
+
+```gdscript
+func has_event_with_target(event_name: String, event_target: Variant) -> bool
+```
+
+Determines whether the specified events list contains an event with the
+specified event name and event target, e.g. `:give "filled_out_form"`
+
+#### Parameters
+
+- event_name: the event name to search for
+- event_target: the target for the specified event to check; may be null
+
+*Returns* true iff events contains an event matching both event_name and event_target
+    
+% ...
+---
+### get\_event\_with\_target
+
+```gdscript
+func get_event_with_target(event_name: String, event_target: Variant) -> Variant
+```
+
+Returns the event matching the specified event name and target, e.g. `:give "filled_out_form"`
+if it exists; returns null otherwise.
+
+#### Parameters
+
+- event_name: the event name to search for
+- event_target: the target for the specified event to check; may be null
+
+*Returns* the event in `events` iff `events` contains an event matching both `event_name` and `event_target`;
+returns null otherwise.

@@ -184,6 +184,14 @@ func test_invalid_command_in_loop_does_not_continue_event() -> void
     
 % ...
 ---
+### test\_script\_preserves\_multi\_target\_use\_events\_without\_creating\_untargeted\_use
+
+```gdscript
+func test_script_preserves_multi_target_use_events_without_creating_untargeted_use() -> void
+```
+    
+% ...
+---
 ### test\_dialog\_option\_scope\_shadowing\_restores\_outer\_local
 
 ```gdscript
@@ -352,6 +360,14 @@ func test_set_animations_updates_persisted_player_resource_on_repeat_calls() -> 
     
 % ...
 ---
+### test\_trigger\_actions\_select\_targeted\_events\_for\_activating\_object
+
+```gdscript
+func test_trigger_actions_select_targeted_events_for_activating_object() -> void
+```
+    
+% ...
+---
 ### test\_dialog\_start\_args\_are\_passed\_to\_runtime\_dialog
 
 ```gdscript
@@ -420,4 +436,12 @@ func test_dialog_option_translation_key_with_condition_survives_runtime_filterin
 
 ```gdscript
 func test_dialog_option_translation_key_with_expression_preserves_key_and_value() -> void
+```
+    
+% ...
+---
+### test\_compiler\_rejects\_exact\_duplicate\_event\_targets
+
+```gdscript
+func test_compiler_rejects_exact_duplicate_event_targets() -> void
 ```

@@ -1,48 +1,40 @@
 
-  (ESCScript)=
-# ESCScript
+  (ESCEventsContainer)=
+# ESCEventsContainer
 
-**Extends:** {ref}`Resource <Resource>`
+**Extends:** {ref}`RefCounted <RefCounted>`
         
 ## Description
 
-Represents a compiled ASHES script.
+Container for storing events in Escoria, providing a consistent way to provide visibility and access to events.
 
 
-
-## Constants
-
-### ESC\_EVENTS\_CONTAINER\_SCRIPT
-```gdscript
-const ESC_EVENTS_CONTAINER_SCRIPT = <Object>
-
-```
 
 ## Members
     
 ### events
 
 ```gdscript
-var events: Variant
+var events: Array
 ```
 
-The events registered with the script.
-    
-### parsed\_events
-
-```gdscript
-var parsed_events: Variant
-```
-    
-### filename
-
-```gdscript
-var filename: String
-```
-
-The name of the ASHES file parsed for this script, if this script was in fact loaded from a file (as opposed to being from an internal string).
+The list of events being tracked.
 
 ## Methods
+    
+% ...
+---
+### add
+
+```gdscript
+func add(event: Variant) -> void
+```
+
+Adds an event to the container.
+
+#### Parameters
+
+- event: the event to be stored
     
 % ...
 ---

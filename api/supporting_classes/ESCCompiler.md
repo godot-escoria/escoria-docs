@@ -90,7 +90,7 @@ Returns a `ESCScript` value. (`ESCScript`)
 ### compile
 
 ```gdscript
-func compile(script: String, path: String) -> ESCScript
+func compile(script: String, _path: String) -> ESCScript
 ```
 
 Compiles the passed-in script. TODO: `path` is extraneous and left in for legacy purposes; at some point, this will be removed which will require updating other methods that reference this one to ensure they don't pass in a second argument.
