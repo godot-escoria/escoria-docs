@@ -10,6 +10,14 @@
 
 
 
+## Constants
+
+### MARK\_SCENE
+```gdscript
+const MARK_SCENE = <Object>
+
+```
+
 ## Members
 
 ## Methods
@@ -356,6 +364,14 @@ func test_delayed_command_preserves_statement_ordering() -> void
 
 ```gdscript
 func test_set_animations_updates_persisted_player_resource_on_repeat_calls() -> void
+```
+    
+% ...
+---
+### test\_set\_speed\_rejects\_negative\_values\_but\_accepts\_zero
+
+```gdscript
+func test_set_speed_rejects_negative_values_but_accepts_zero() -> void
 ```
     
 % ...
