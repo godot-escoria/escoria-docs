@@ -110,24 +110,26 @@ Try it out: Graham should now be able to pick up the mug!
 Using the mug
 -------------
 
-Usually, items are not only picked up but also used or combined with different
-items either in the inventory or in a particular room.
+Usually, items are not only picked up but also used with different items either
+in the inventory or in a particular room.
 
 This is also done using events in the ASHES script. Apart from the event name
 ``:use``, the target object is also specified.
 
 Let's have Graham react to using the mug with the blackboard.
 
-For this, we need to make the beer combinable with other items when it is used
-from the inventory and then react to it in the ASHES script of the blackboard.
+For this, we need to tell Escoria that using the beer from the inventory should
+wait for a second clicked target object. Then we can react to that targeted
+action in the ASHES script of the blackboard.
 
 So go into the beer item scene again and select the property, ``Use from
 inventory only``. Now, if you wish to use the verb "use" with the beer, this
 interaction will only be permitted if the beer is in the inventory.
 
-Add an item to the list in the setting ``Combine When Selected Action Is In``
-and set it to "use". This enables the player to use another object together
-with the mug when using the verb "use".
+Add an item to the list in the setting ``Actions Requiring Target Object`` and
+set it to "use". This means that when the player selects "use" on the beer,
+Escoria treats the beer as the source object and waits for the player to click
+another target object.
 
 .. image:: img/inventory_use.png
    :alt: The display of the previously described options.
@@ -141,6 +143,14 @@ Save the scene and add the following code to the "blackboard.esc" file:
     say($graham, "Why should I throw it at the blackboard? I'm not angry!")
 
 Try it out!
+
+.. note::
+
+  ``Actions Requiring Target Object`` is not the same setting as
+  ``Default Action Inventory``. The default action controls which verb is used
+  when the player clicks the item in the inventory. If that verb needs another
+  clicked object, the same verb must also be listed in
+  ``Actions Requiring Target Object``.
 
 Add in some game logic
 ----------------------
