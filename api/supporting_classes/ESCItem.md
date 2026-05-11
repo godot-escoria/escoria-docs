@@ -387,6 +387,42 @@ Emitted when the item walked to a destination
 
 
 
+### started\_talking
+
+```gdscript
+signal started_talking()
+```
+
+Emitted when the item started talking. 
+
+
+### stopped\_talking
+
+```gdscript
+signal stopped_talking()
+```
+
+Emitted when the item stopped talking. 
+
+
+### started\_walking
+
+```gdscript
+signal started_walking()
+```
+
+Emitted when the item started walking. 
+
+
+### stopped\_walking
+
+```gdscript
+signal stopped_walking()
+```
+
+Emitted when the item stopped walking. 
+
+
 ## Methods
     
 % ...
