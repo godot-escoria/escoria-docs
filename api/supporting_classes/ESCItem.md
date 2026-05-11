@@ -78,13 +78,13 @@ var default_action: String
 
 Default action to use if object is not in the inventory.
     
-### combine\_when\_selected\_action\_is\_in
+### actions\_requiring\_target\_object
 
 ```gdscript
-var combine_when_selected_action_is_in: PackedStringArray
+var actions_requiring_target_object: PackedStringArray
 ```
 
-If action used by player is in this list, the game will wait for a second click on another item to combine objects together (typically `USE <X> WITH <Y>`, `GIVE <X> TO <Y>`)
+Actions in this list make the item act as a source object and wait for a second clicked target object before running the action, typically `USE <X> WITH <Y>` or `GIVE <X> TO <Y>`.
     
 ### is\_exit
 

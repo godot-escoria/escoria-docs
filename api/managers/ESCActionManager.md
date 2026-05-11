@@ -29,7 +29,7 @@ After initial state, verb is defined
 const AWAITING_TARGET_ITEM = 2 # enum "ActionInputState"
 
 ```
-Item defined requires combine, waiting for target
+Item defined requires a target object
 ### AWAITING\_VERB
 ```gdscript
 const AWAITING_VERB = 3 # enum "ActionInputState"
