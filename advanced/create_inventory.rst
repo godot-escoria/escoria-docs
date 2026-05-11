@@ -157,7 +157,7 @@ should use a second clicked object, configure the item as described below.
 Targeted inventory interactions
 -------------------------------
 
-Some inventory actions need two objects: a **source item** and a **target 
+Some inventory actions need two objects: a **source item** and a **target
 object**.
 
 Examples include:
@@ -181,7 +181,7 @@ then selecting ``use`` on the pen does not immediately run plain ``:use``.
 Escoria treats the pen as the current source item, waits for the player to
 click another object, and then looks for a targeted event.
 
-.. hint:: 
+.. hint::
 
   You can set the property directly in the Godot editor, as well!
 
