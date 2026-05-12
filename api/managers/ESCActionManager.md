@@ -229,8 +229,7 @@ Returns nothing.
 func set_current_action(action: String) -> void
 ```
 
-Sets the current action verb. ## Parameters
-
+Sets the current action verb. 
 #### Parameters
 
 | Name | Type | Description | Required? |
