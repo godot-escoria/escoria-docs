@@ -384,6 +384,14 @@ func test_trigger_actions_select_targeted_events_for_activating_object() -> void
     
 % ...
 ---
+### test\_trigger\_actions\_fall\_back\_to\_targetless\_events
+
+```gdscript
+func test_trigger_actions_fall_back_to_targetless_events() -> void
+```
+    
+% ...
+---
 ### test\_dialog\_start\_args\_are\_passed\_to\_runtime\_dialog
 
 ```gdscript
