@@ -114,6 +114,23 @@ To avoid having to look this up all the time, we hold a reference.
     
 % ...
 ---
+### reset\_game\_state
+
+```gdscript
+func reset_game_state() -> void
+```
+
+Clears all room-specific object and terrain state while preserving reserved objects managed by Escoria itself.
+
+#### Parameters
+
+None. 
+#### Returns
+
+Returns nothing.
+    
+% ...
+---
 ### set\_current\_room
 
 ```gdscript
