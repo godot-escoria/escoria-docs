@@ -81,7 +81,7 @@ Function reference that can be used to intercept and process input events. If se
 #### Parameters
 
 - event: The event to process
-- is_default_state: Whether the current state is escoria.GAME_STATE.DEFAULT
+- is_default_state: Whether the current state is escoria.GameState.DEFAULT
 
 **Returns** Whether the function processed the event.
 
@@ -158,7 +158,7 @@ Registers a function that can be used to intercept and process input events. `ca
 
 | Name | Type | Description | Required? |
 |:-----|:-----|:------------|:----------|
-|callback|`Variant`|Function reference satisfying the above contract event The event to process is_default_state Whether the current state is escoria.GAME_STATE.DEFAULT returns whether the function processed the event `callback` is responsible for calling `get_tree().set_input_as_handled()`, if appropriate.|yes|
+|callback|`Variant`|Function reference satisfying the above contract event The event to process is_default_state Whether the current state is escoria.GameState.DEFAULT returns whether the function processed the event `callback` is responsible for calling `get_tree().set_input_as_handled()`, if appropriate.|yes|
 
 #### Returns
 
@@ -179,7 +179,7 @@ If a callback was specified via `register_custom_input_handler()`, forwards the 
 | Name | Type | Description | Required? |
 |:-----|:-----|:------------|:----------|
 |event|`InputEvent`|The event to process|yes|
-|is_default_state|`bool`|Whether the current state is escoria.GAME_STATE.DEFAULT|yes|
+|is_default_state|`bool`|Whether the current state is escoria.GameState.DEFAULT|yes|
 
 #### Returns
 

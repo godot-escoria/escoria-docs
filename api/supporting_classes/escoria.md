@@ -14,31 +14,31 @@ This is Escoria's singleton script. It holds accessors to some utils, such as Es
 
 ### DEFAULT
 ```gdscript
-const DEFAULT = 0 # enum "GAME\_STATE"
+const DEFAULT = 0 # enum "GameState"
 
 ```
 
 ### DIALOG
 ```gdscript
-const DIALOG = 1 # enum "GAME\_STATE"
+const DIALOG = 1 # enum "GameState"
 
 ```
 
 ### WAIT
 ```gdscript
-const WAIT = 2 # enum "GAME\_STATE"
+const WAIT = 2 # enum "GameState"
 
 ```
 
 ### LOADING
 ```gdscript
-const LOADING = 3 # enum "GAME\_STATE"
+const LOADING = 3 # enum "GameState"
 
 ```
 
 ### PAUSED
 ```gdscript
-const PAUSED = 4 # enum "GAME\_STATE"
+const PAUSED = 4 # enum "GameState"
 
 ```
 
@@ -319,7 +319,7 @@ Game actual resolution obtained from viewport.
 var current_state: Variant
 ```
 
-Current state of Escoria (GAME_STATE enum)
+Current state of Escoria (GameState enum)
 
 ## Signals
 
