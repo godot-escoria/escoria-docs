@@ -18,6 +18,12 @@ const MARK_SCENE = <Object>
 
 ```
 
+### SIMPLE\_CHOOSER\_SCENE
+```gdscript
+const SIMPLE_CHOOSER_SCENE = <Object>
+
+```
+
 ## Members
 
 ## Methods
@@ -396,6 +402,38 @@ func test_trigger_actions_fall_back_to_targetless_events() -> void
 
 ```gdscript
 func test_dialog_start_args_are_passed_to_runtime_dialog() -> void
+```
+    
+% ...
+---
+### test\_dialog\_timeout\_option\_uses\_authored\_index\_after\_filtering
+
+```gdscript
+func test_dialog_timeout_option_uses_authored_index_after_filtering() -> void
+```
+    
+% ...
+---
+### test\_dialog\_timeout\_option\_hidden\_after\_filtering\_is\_not\_available
+
+```gdscript
+func test_dialog_timeout_option_hidden_after_filtering_is_not_available() -> void
+```
+    
+% ...
+---
+### test\_simple\_chooser\_does\_not\_start\_timer\_when\_timeout\_default\_is\_hidden
+
+```gdscript
+func test_simple_chooser_does_not_start_timer_when_timeout_default_is_hidden() -> void
+```
+    
+% ...
+---
+### test\_simple\_chooser\_starts\_timer\_when\_timeout\_default\_is\_visible
+
+```gdscript
+func test_simple_chooser_starts_timer_when_timeout_default_is_visible() -> void
 ```
     
 % ...

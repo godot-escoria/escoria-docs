@@ -36,6 +36,14 @@ var timeout_option: int
 
 The dialog option to select when timeout is reached.
     
+### authored\_options\_count
+
+```gdscript
+var authored_options_count: int
+```
+
+Total number of options authored in this dialog, including currently hidden options.
+    
 ### options
 
 ```gdscript
@@ -62,6 +70,23 @@ None.
 #### Returns
 
 Returns true iff the dialog and its settings are valid. (`bool`)
+    
+% ...
+---
+### get\_timeout\_option
+
+```gdscript
+func get_timeout_option() -> ESCDialogOption
+```
+
+Returns the currently visible option configured as the timeout default, if any.
+
+#### Parameters
+
+None. 
+#### Returns
+
+Returns the currently visible timeout option as an `ESCDialogOption`, or `null` if the configured option is not visible.
     
 % ...
 ---

@@ -35,6 +35,14 @@ var source_option: Variant
 ```
 
 Maps back to the parsed source option.
+    
+### source\_option\_index
+
+```gdscript
+var source_option_index: int
+```
+
+One-based index of this option in its authored dialog block.
 
 ## Methods
     

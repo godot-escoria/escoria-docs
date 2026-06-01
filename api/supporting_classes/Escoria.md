@@ -67,7 +67,7 @@ Returns nothing.
 ### run\_event\_from\_script
 
 ```gdscript
-func run_event_from_script(script: ESCScript, event_name: String, _from_statement_id: int) -> void
+func run_event_from_script(script: ESCScript, event_name: String, _from_statement_id: int) -> Variant
 ```
 
 Runs the event "event_name" from the "script" ESC script.
@@ -82,7 +82,7 @@ Runs the event "event_name" from the "script" ESC script.
 
 #### Returns
 
-Returns Nothing. Waits for the event to finish before returning. (`Variant`)
+Returns ESCExecution. Waits for the event to finish before returning. (`Variant`)
     
 % ...
 ---

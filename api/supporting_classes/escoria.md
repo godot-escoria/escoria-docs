@@ -323,6 +323,19 @@ Current state of Escoria (GameState enum)
 
 ## Signals
 
+### new\_game\_started
+
+```gdscript
+signal new_game_started()
+```
+
+Signal sent when Escoria starts a new game
+
+#### Parameters
+
+None. 
+
+
 ### paused
 
 ```gdscript
