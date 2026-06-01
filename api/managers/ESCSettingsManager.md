@@ -162,3 +162,13 @@ None.
 #### Returns
 
 Returns nothing.
+    
+% ...
+---
+### get\_custom\_setting
+
+```gdscript
+func get_custom_setting(key: String, default_value: Variant) -> Variant
+```
+
+Returns a custom setting by key or an optional default value. Returns null if not found and no default value is defined.
