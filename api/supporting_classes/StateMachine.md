@@ -12,13 +12,13 @@ Base interface for a generic state machine It handles initializing, setting the 
 
 ## Members
     
-### START\_STATE
+### start\_state
 
 ```gdscript
-var START_STATE: Node
+var start_state: Node
 ```
 
-Starting state. This node has to be set *before* the initialize(START_STATE) command is called.
+Starting state. This node has to be set *before* the initialize(start_state) command is called.
     
 ### states\_map
 
