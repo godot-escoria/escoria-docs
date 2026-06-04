@@ -12,12 +12,6 @@
 
 ## Constants
 
-### ONE\_LINE\_HEIGHT
-```gdscript
-const ONE_LINE_HEIGHT = 16
-
-```
-
 ### MIN\_HEIGHT
 ```gdscript
 const MIN_HEIGHT = 30
@@ -30,25 +24,13 @@ const MAX_HEIGHT = 500
 
 ```
 
+### ONE\_LINE\_HEIGHT
+```gdscript
+const ONE_LINE_HEIGHT = 16
+
+```
+
 ## Members
-    
-### screen\_width
-
-```gdscript
-var screen_width: Variant
-```
-    
-### screen\_height
-
-```gdscript
-var screen_height: Variant
-```
-    
-### global\_distance\_to\_clamp
-
-```gdscript
-var global_distance_to_clamp: Variant
-```
     
 ### path\_to\_richtextlabel
 
@@ -60,6 +42,24 @@ var path_to_richtextlabel: NodePath
 
 ```gdscript
 var max_width: int
+```
+    
+### global\_distance\_to\_clamp
+
+```gdscript
+var global_distance_to_clamp: Variant
+```
+    
+### screen\_width
+
+```gdscript
+var screen_width: Variant
+```
+    
+### screen\_height
+
+```gdscript
+var screen_height: Variant
 ```
 
 ## Signals
