@@ -27,7 +27,7 @@ const CURRENT_PLAYER_KEYWORD = "CURRENT_PLAYER"
 ### analyze
 
 ```gdscript
-func analyze(statements: Array) -> void
+func analyze(_statements: Array) -> void
 ```
     
 % ...
@@ -91,7 +91,7 @@ func visit_while_stmt(stmt: ESCGrammarStmts.While) -> Variant
 ### visit\_pass\_stmt
 
 ```gdscript
-func visit_pass_stmt(stmt: ESCGrammarStmts.Pass) -> void
+func visit_pass_stmt(_stmt: ESCGrammarStmts.Pass) -> void
 ```
     
 % ...
@@ -123,7 +123,7 @@ func visit_global_stmt(stmt: ESCGrammarStmts.Global) -> Variant
 ### visit\_dialog\_stmt
 
 ```gdscript
-func visit_dialog_stmt(stmt: ESCGrammarStmts.Dialog) -> Variant
+func visit_dialog_stmt(_stmt: ESCGrammarStmts.Dialog) -> Variant
 ```
     
 % ...
@@ -131,7 +131,7 @@ func visit_dialog_stmt(stmt: ESCGrammarStmts.Dialog) -> Variant
 ### visit\_dialog\_option\_stmt
 
 ```gdscript
-func visit_dialog_option_stmt(stmt: ESCGrammarStmts.DialogOption) -> void
+func visit_dialog_option_stmt(_stmt: ESCGrammarStmts.DialogOption) -> void
 ```
     
 % ...

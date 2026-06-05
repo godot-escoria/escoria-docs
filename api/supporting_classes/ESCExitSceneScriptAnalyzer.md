@@ -50,22 +50,22 @@ const BULLET_CHARACTER = "- "
 
 ## Members
     
-### TRANSITION\_COMMAND\_NAME
+### transition\_command\_name
 
 ```gdscript
-var TRANSITION_COMMAND_NAME: Variant
+var transition_command_name: Variant
 ```
     
-### CHANGE\_SCENE\_COMMAND\_NAME
+### change\_scene\_command\_name
 
 ```gdscript
-var CHANGE_SCENE_COMMAND_NAME: Variant
+var change_scene_command_name: Variant
 ```
     
-### ACCEPT\_INPUT\_COMMAND\_NAME
+### accept\_input\_command\_name
 
 ```gdscript
-var ACCEPT_INPUT_COMMAND_NAME: Variant
+var accept_input_command_name: Variant
 ```
 
 ## Methods
