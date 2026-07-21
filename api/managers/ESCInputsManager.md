@@ -85,6 +85,16 @@ Function reference that can be used to intercept and process input events. If se
 
 **Returns** Whether the function processed the event.
 
+## Signals
+
+### input\_mode\_changed
+
+```gdscript
+signal input_mode_changed(new_mode: int)
+```
+
+Emitted when input mode changes.
+
 ## Methods
     
 % ...
