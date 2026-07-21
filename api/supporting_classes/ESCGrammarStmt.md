@@ -17,7 +17,7 @@ All inheriting classes must implement an `accept` method to invoke the visitor. 
 ### accept
 
 ```gdscript
-func accept(visitor: Variant) -> void
+func accept(_visitor: Variant) -> void
 ```
 
 Method that invokes another method in the visitor against this, the implementing class.

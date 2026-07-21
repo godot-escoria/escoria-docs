@@ -39,7 +39,7 @@ Returns the descriptor of the arguments of this command. The argument descriptor
 ### run
 
 ```gdscript
-func run(command_params: Array) -> int
+func run(_command_params: Array) -> int
 ```
 
 Runs the command.

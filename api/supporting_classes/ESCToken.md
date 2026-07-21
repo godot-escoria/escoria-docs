@@ -19,7 +19,7 @@ This class contains any information required by the parser but also carries with
 ### init
 
 ```gdscript
-func init(tokenType: int, lexeme: String, literal: Variant, source: String, line: int, filename: String) -> void
+func init(token_type: int, lexeme: String, literal: Variant, source: String, line: int, filename: String) -> void
 ```
 
 Initialization method. Must be called after instantiation.

@@ -14,13 +14,13 @@ Base class for ESC game scenes An extending class can be used in the project set
 
 ### NONE
 ```gdscript
-const NONE = 0 # enum "EDITOR\_GAME\_DEBUG\_DISPLAY"
+const NONE = 0 # enum "EditorGameDebugDisplay"
 
 ```
 
 ### MOUSE\_TOOLTIP\_LIMITS
 ```gdscript
-const MOUSE_TOOLTIP_LIMITS = 1 # enum "EDITOR\_GAME\_DEBUG\_DISPLAY"
+const MOUSE_TOOLTIP_LIMITS = 1 # enum "EditorGameDebugDisplay"
 
 ```
 
@@ -258,7 +258,7 @@ Returns nothing.
 ### element\_focused
 
 ```gdscript
-func element_focused(element_id: String) -> void
+func element_focused(_element_id: String) -> void
 ```
 
 Called when an element in the scene was focused. (Needs to be overridden, if supported)
@@ -358,7 +358,7 @@ Returns nothing.
 ### left\_click\_on\_inventory\_item
 
 ```gdscript
-func left_click_on_inventory_item(inventory_item_global_id: String, event: InputEvent) -> void
+func left_click_on_inventory_item(_inventory_item_global_id: String, _event: InputEvent) -> void
 ```
 
 Called when an inventory item was left clicked (Needs to be overridden, if supported)
@@ -379,7 +379,7 @@ Returns nothing.
 ### right\_click\_on\_inventory\_item
 
 ```gdscript
-func right_click_on_inventory_item(inventory_item_global_id: String, event: InputEvent) -> void
+func right_click_on_inventory_item(_inventory_item_global_id: String, _event: InputEvent) -> void
 ```
 
 Called when an inventory item was right clicked. (Needs to be overridden, if supported)
@@ -400,7 +400,7 @@ Returns nothing.
 ### left\_double\_click\_on\_inventory\_item
 
 ```gdscript
-func left_double_click_on_inventory_item(inventory_item_global_id: String, event: InputEvent) -> void
+func left_double_click_on_inventory_item(_inventory_item_global_id: String, _event: InputEvent) -> void
 ```
 
 Called when an inventory item was double clicked. (Needs to be overridden, if supported)
@@ -421,7 +421,7 @@ Returns nothing.
 ### inventory\_item\_focused
 
 ```gdscript
-func inventory_item_focused(inventory_item_global_id: String) -> void
+func inventory_item_focused(_inventory_item_global_id: String) -> void
 ```
 
 Called when an inventory item was focused. (Needs to be overridden, if supported)
@@ -492,7 +492,7 @@ Returns nothing.
 ### mousewheel\_action
 
 ```gdscript
-func mousewheel_action(direction: int) -> void
+func mousewheel_action(_direction: int) -> void
 ```
 
 Called when the mousewheel was used. (Needs to be overridden, if supported)
@@ -614,7 +614,7 @@ Returns nothing.
 ### apply\_custom\_settings
 
 ```gdscript
-func apply_custom_settings(custom_settings: Dictionary) -> void
+func apply_custom_settings(_custom_settings: Dictionary) -> void
 ```
 
 Custom function that is meant to apply custom settings. Called right after Escoria settings file was loaded.

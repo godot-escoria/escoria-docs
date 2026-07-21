@@ -139,7 +139,7 @@ Returns nothing.
 ### visit\_pass\_stmt
 
 ```gdscript
-func visit_pass_stmt(stmt: ESCGrammarStmts.Pass) -> void
+func visit_pass_stmt(_stmt: ESCGrammarStmts.Pass) -> void
 ```
 
 `pass` statements contain nothing to resolve, so are skipped over.
@@ -159,7 +159,7 @@ Returns nothing.
 ### visit\_stop\_stmt
 
 ```gdscript
-func visit_stop_stmt(stmt: ESCGrammarStmts.Stop) -> void
+func visit_stop_stmt(_stmt: ESCGrammarStmts.Stop) -> void
 ```
 
 `stop` statements contain nothing to resolve, so are skipped over.
@@ -199,7 +199,7 @@ Returns nothing.
 ### visit\_global\_stmt
 
 ```gdscript
-func visit_global_stmt(stmt: ESCGrammarStmts.Global) -> void
+func visit_global_stmt(_stmt: ESCGrammarStmts.Global) -> void
 ```
 
 `global` statements are available at all scoping levels and so require no resolution.
@@ -259,7 +259,7 @@ Returns nothing.
 ### visit\_done\_stmt
 
 ```gdscript
-func visit_done_stmt(stmt: ESCGrammarStmts.Done) -> void
+func visit_done_stmt(_stmt: ESCGrammarStmts.Done) -> void
 ```
 
 `done` statements contain nothing to resolve, so are skipped over.
@@ -299,7 +299,7 @@ Returns nothing.
 ### visit\_literal\_expr
 
 ```gdscript
-func visit_literal_expr(expr: ESCGrammarExprs.Literal) -> void
+func visit_literal_expr(_expr: ESCGrammarExprs.Literal) -> void
 ```
 
 Literals contain nothing to resolve, so are skipped over.

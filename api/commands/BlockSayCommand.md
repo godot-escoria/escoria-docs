@@ -39,7 +39,7 @@ Returns the descriptor of the arguments of this command. The argument descriptor
 ### validate
 
 ```gdscript
-func validate(arguments: Array) -> Variant
+func validate(_arguments: Array) -> Variant
 ```
 
 Validates whether the given arguments match the command descriptor.
@@ -59,7 +59,7 @@ Returns True if the arguments are valid, false otherwise. (`bool`)
 ### run
 
 ```gdscript
-func run(command_params: Array) -> int
+func run(_command_params: Array) -> int
 ```
 
 Runs the command.

@@ -72,7 +72,7 @@ Returns a `bool` value. (`bool`)
 ### run
 
 ```gdscript
-func run(command_params: Array) -> int
+func run(_command_params: Array) -> int
 ```
 
 Runs the command.

@@ -61,7 +61,7 @@ Emitted when the player has chosen an option
 ### has\_type
 
 ```gdscript
-func has_type(type: String) -> bool
+func has_type(_type: String) -> bool
 ```
 
 Checks whether a specific type is supported by the dialog plugin.
@@ -81,7 +81,7 @@ Returns whether the type is supported or not. (`bool`)
 ### has\_chooser\_type
 
 ```gdscript
-func has_chooser_type(type: String) -> bool
+func has_chooser_type(_type: String) -> bool
 ```
 
 Checks whether a specific chooser type is supported by the dialog plugin.
@@ -101,7 +101,7 @@ Returns whether the type is supported or not. (`bool`)
 ### say
 
 ```gdscript
-func say(dialog_player: Node, global_id: String, text: String, type: String, key: String) -> void
+func say(_dialog_player: Node, _global_id: String, _text: String, _type: String, _key: String) -> void
 ```
 
 Outputs a text said by the item specified by the global id and emits `say_finished` after finishing displaying the text.
@@ -159,7 +159,7 @@ Returns nothing.
 ### choose
 
 ```gdscript
-func choose(dialog_player: Node, dialog: ESCDialog, type: String) -> void
+func choose(_dialog_player: Node, _dialog: ESCDialog, _type: String) -> void
 ```
 
 Presents an option chooser to the player and sends the signal `option_chosen` with the chosen dialog option.

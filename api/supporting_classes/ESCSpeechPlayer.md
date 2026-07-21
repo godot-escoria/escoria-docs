@@ -35,7 +35,7 @@ Reference to the audio player.
 ### set\_state
 
 ```gdscript
-func set_state(p_state: String, from_seconds: float, p_force: bool) -> void
+func set_state(p_state: String, from_seconds: float, _p_force: bool) -> void
 ```
 
 Sets the state of this player.

@@ -14,13 +14,13 @@ A transition player for scene changes
 
 ### IN
 ```gdscript
-const IN = 0 # enum "TRANSITION\_MODE"
+const IN = 0 # enum "TransitionMode"
 
 ```
 
 ### OUT
 ```gdscript
-const OUT = 1 # enum "TRANSITION\_MODE"
+const OUT = 1 # enum "TransitionMode"
 
 ```
 
