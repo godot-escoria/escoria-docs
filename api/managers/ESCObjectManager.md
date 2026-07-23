@@ -313,3 +313,22 @@ None.
 #### Returns
 
 Returns the current room's starting location. If more than one exists, the first one encountered is returned. or `null` if no `ESCLocation` with `is_start_location` enabled can be found. (`ESCLocation`)
+    
+% ...
+---
+### disconnect\_tree\_exit\_for\_room\_items
+
+```gdscript
+func disconnect_tree_exit_for_room_items(room_key: ESCRoomObjectsKey) -> void
+```
+
+Disconnect all existing items from registered ESCObjects for the given room. 
+#### Parameters
+
+| Name | Type | Description | Required? |
+|:-----|:-----|:------------|:----------|
+|room_key|`ESCRoomObjectsKey`|The key representing the desired room in the object manager array|yes|
+
+#### Returns
+
+Returns nothing.

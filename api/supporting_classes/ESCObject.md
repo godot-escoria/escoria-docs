@@ -73,6 +73,14 @@ var node: Node
 ```
 
 The node representing the object in the scene.
+    
+### unregister\_object\_callback
+
+```gdscript
+var unregister_object_callback: Callable
+```
+
+Variable that stores the Callable method to unregister the object from Object Manager
 
 ## Methods
     

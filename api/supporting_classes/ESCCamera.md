@@ -16,26 +16,6 @@ Camera handling for Escoria scenes.
     
 % ...
 ---
-### register
-
-```gdscript
-func register(room: Variant) -> void
-```
-
-Register this camera with the object manager so it can be used before being made active as part of the current scene tree.
-
-#### Parameters
-
-| Name | Type | Description | Required? |
-|:-----|:-----|:------------|:----------|
-|room|`Variant`|The room with which to register the camera|no|
-
-#### Returns
-
-Returns nothing.
-    
-% ...
----
 ### get\_tween
 
 ```gdscript
