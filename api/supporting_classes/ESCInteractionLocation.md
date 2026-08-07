@@ -2,7 +2,7 @@
   (ESCInteractionLocation)=
 # ESCInteractionLocation
 
-**Extends:** {ref}`ESCLocation <ESCLocation>`
+**Extends:** {ref}`Marker2D <Marker2D>`
         
 ## Description
 

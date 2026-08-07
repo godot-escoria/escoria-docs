@@ -44,6 +44,14 @@ var wait_level: Variant
 
 The Escoria context currently in wait state
     
+### camera\_limit\_id\_by\_room\_global\_id
+
+```gdscript
+var camera_limit_id_by_room_global_id: Dictionary
+```
+
+Last used camera limit id by room global id
+    
 ### scene\_transition
 
 ```gdscript
@@ -139,6 +147,60 @@ Cleanup the previous scene if there was one.
 #### Parameters
 
 None. 
+#### Returns
+
+Returns nothing.
+    
+% ...
+---
+### clear\_camera\_limit\_id\_for\_room
+
+```gdscript
+func clear_camera_limit_id_for_room(scene_global_id: String) -> void
+```
+
+Clears stored camera limit id for the specified scene global id.
+
+#### Parameters
+
+|scene_global_id|`String`|The global id of the scene.|yes|
+
+#### Returns
+
+Returns nothing.
+    
+% ...
+---
+### get\_camera\_limit\_id\_for\_room
+
+```gdscript
+func get_camera_limit_id_for_room(room: Node) -> Variant
+```
+
+Returns the stored camera limit id for the scene if it is valid.
+
+#### Parameters
+
+|room|`Node`|The room to get the camera limit id for.|yes|
+
+#### Returns
+
+Returns the stored camera limit id for the scene if it is valid.
+    
+% ...
+---
+### restore\_camera\_limit\_for\_room\_global\_id
+
+```gdscript
+func restore_camera_limit_for_room_global_id(room_global_id: String, camera_limit_id: Variant) -> void
+```
+
+Restores camera limits for a scene global id iff the id belongs to that scene. 
+#### Parameters
+
+|room_global_id|`String`|The room to get the camera limit id for.|yes|
+|camera_limit_id|`int`|The camera limit id to restore for the room.|yes|
+
 #### Returns
 
 Returns nothing.
