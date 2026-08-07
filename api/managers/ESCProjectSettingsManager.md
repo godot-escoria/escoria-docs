@@ -114,6 +114,12 @@ const VOICE_LANG = "escoria/main/voice_lang"
 
 ```
 Path to the voice language setting.
+### SAVE\_SOUNDS\_PLAYBACK\_POSITION
+```gdscript
+const SAVE_SOUNDS_PLAYBACK_POSITION = "escoria/main/save_sounds_playback_position"
+
+```
+Save sounds playback position in savegames. If this is false, playback will resume from beginning after loading.
 ### CRASH\_MESSAGE
 ```gdscript
 const CRASH_MESSAGE = "escoria/debug/crash_message"

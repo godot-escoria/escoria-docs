@@ -268,3 +268,20 @@ None.
 #### Returns
 
 Returns nothing.
+    
+% ...
+---
+### stop\_all\_sounds
+
+```gdscript
+func stop_all_sounds() -> void
+```
+
+Stops all sound channels.
+
+#### Parameters
+
+None. 
+#### Returns
+
+Returns nothing.

@@ -27,6 +27,15 @@ var line_number: int
 ```
 
 The line number from the file the relevant command is being called from.
+    
+### run\_in\_ready\_allowed\_during\_savegame\_loading
+
+```gdscript
+var run_in_ready_allowed_during_savegame_loading: bool
+```
+
+Whether the command is allowed to be ran in a room's :ready event during a savegame loading. This is especially the case for sound control commands, for which the Save Manager resumes from the recorded position.
+Set this to `false` in the `_init()` method of such commands when necessary.
 
 ## Methods
     
