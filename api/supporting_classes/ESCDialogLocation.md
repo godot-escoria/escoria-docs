@@ -17,7 +17,7 @@
 ### is\_class
 
 ```gdscript
-func is_class(p_classname: String) -> bool
+func is_class(p_classname: Variant) -> bool
 ```
 
 Whether this object's class is the same as given string class name.
@@ -26,7 +26,7 @@ Whether this object's class is the same as given string class name.
 
 | Name | Type | Description | Required? |
 |:-----|:-----|:------------|:----------|
-|p_classname|`String`|String class to compare against|yes|
+|p_classname|`String (4.6.x), StringName (4.7.x)`|Class name to compare against this location.|yes|
 
 #### Returns
 

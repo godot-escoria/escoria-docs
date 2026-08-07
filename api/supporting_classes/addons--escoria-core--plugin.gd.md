@@ -45,6 +45,12 @@ var popup_info: AcceptDialog
 ```
 
 The warning popup displayed on escoria-core enabling.
+    
+### popup\_migration
+
+```gdscript
+var popup_migration: AcceptDialogMigrate4647
+```
 
 ## Methods
     

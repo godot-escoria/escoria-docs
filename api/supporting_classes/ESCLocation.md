@@ -77,7 +77,7 @@ Escoria Plugin signal emitted to the `ESCRoom` when a start location is set in t
 ### is\_class
 
 ```gdscript
-func is_class(p_classname: String) -> bool
+func is_class(p_classname: Variant) -> bool
 ```
 
 Used by "is" keyword to check whether a node's class_name is the same as p_classname. ## Parameters p_classname: String class to compare against
@@ -86,7 +86,7 @@ Used by "is" keyword to check whether a node's class_name is the same as p_class
 
 | Name | Type | Description | Required? |
 |:-----|:-----|:------------|:----------|
-|p_classname|`String`|Class name to compare against this location.|yes|
+|p_classname|`String (4.6.x), StringName (4.7.x)`|Class name to compare against this location.|yes|
 
 #### Returns
 
