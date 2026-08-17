@@ -2,7 +2,7 @@
   (ESCPlayer)=
 # ESCPlayer
 
-**Extends:** {ref}`Area2D <Area2D>`
+**Extends:** {ref}`ESCItem <ESCItem>`
         
 ## Description
 

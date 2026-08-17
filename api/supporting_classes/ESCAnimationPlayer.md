@@ -217,3 +217,20 @@ None.
 #### Returns
 
 Returns a `bool` value. (`bool`)
+    
+% ...
+---
+### get\_current\_animation
+
+```gdscript
+func get_current_animation() -> String
+```
+
+Gets the current animation name.
+
+#### Parameters
+
+None. 
+#### Returns
+
+A string containing the current animation name.
