@@ -36,6 +36,12 @@ const ASHES_ANALYZER_MENU_ITEM = "Analyze ASHES Scripts"
 
 ```
 
+### ESC\_SHOW\_DEBUG\_PROMPT\_ACTION\_PATH
+```gdscript
+const ESC_SHOW_DEBUG_PROMPT_ACTION_PATH = "input/esc_show_debug_prompt"
+
+```
+
 ## Members
     
 ### popup\_info

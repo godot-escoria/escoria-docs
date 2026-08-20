@@ -1,6 +1,6 @@
 
-  (escoria)=
-# escoria
+  ("addons/escoria-core/game/esc_autoload.gd")=
+# "addons/escoria-core/game/esc_autoload.gd"
 
 **Extends:** {ref}`Node <Node>`
         
