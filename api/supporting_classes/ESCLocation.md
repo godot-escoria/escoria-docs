@@ -80,7 +80,7 @@ Escoria Plugin signal emitted to the `ESCRoom` when a start location is set in t
 func is_class(p_classname: Variant) -> bool
 ```
 
-Used by "is" keyword to check whether a node's class_name is the same as p_classname. ## Parameters p_classname: String class to compare against
+Used by "is" keyword to check whether a node's class_name is the same as p_classname.
 
 #### Parameters
 
@@ -127,6 +127,46 @@ Escoria editor plugin: Setter for is_start_location member. Notifies the ESCRoom
 | Name | Type | Description | Required? |
 |:-----|:-----|:------------|:----------|
 |value|`bool`|true whether the ESCLocation node was set as start location.|yes|
+
+#### Returns
+
+Returns nothing.
+    
+% ...
+---
+### set\_player\_orients\_on\_arrival
+
+```gdscript
+func set_player_orients_on_arrival(value: bool) -> void
+```
+
+Escoria editor plugin: Setter for player_orients_on_arrival member. Triggers a redraw of the editor crosshair/arrow gizmo.
+
+#### Parameters
+
+| Name | Type | Description | Required? |
+|:-----|:-----|:------------|:----------|
+|value|`bool`|true whether the player character should orient towards `interaction_angle` on arrival.|yes|
+
+#### Returns
+
+Returns nothing.
+    
+% ...
+---
+### set\_interaction\_angle
+
+```gdscript
+func set_interaction_angle(value: int) -> void
+```
+
+Escoria editor plugin: Setter for interaction_angle member. Triggers a redraw of the editor crosshair/arrow gizmo.
+
+#### Parameters
+
+| Name | Type | Description | Required? |
+|:-----|:-----|:------------|:----------|
+|value|`int`|Angle (in degrees) the player character turns to when `player_orients_on_arrival` is enabled.|yes|
 
 #### Returns
 
