@@ -395,7 +395,7 @@ Parameters
      - Description
      - Required?
    * - type
-     - ``String``
+     - ``String``\
      - Type of inputs to accept (ALL) `ALL`: Accept all types of user input `SKIP`: Accept skipping dialogues but nothing else ``NONE``\ : Deny all inputs (including opening menus) Warning The type of user input accepted will persist even after the current event has ended. Remember to reset the input type at the end of cut-scenes!
      - no
 
@@ -418,15 +418,15 @@ Parameters
      - Description
      - Required?
    * - object
-     - ``String``
+     - ``String``\
      - Global ID of the object with the animation
      - yes
    * - name
-     - ``String``
+     - ``String``\
      - Name of the animation to play before continuing.
      - yes
    * - reverse
-     - ``Boolean``
+     - ``Boolean``\
      - Plays the animation in reverse when true
      - no
 
@@ -449,15 +449,15 @@ Parameters
      - Description
      - Required?
    * - object
-     - ``String``
+     - ``String``\
      - Global ID of the object with the animation
      - yes
    * - name
-     - ``String``
+     - ``String``\
      - Name of the animation to start on the object.
      - yes
    * - reverse
-     - ``Boolean``
+     - ``Boolean``\
      - Plays the animation in reverse when true
      - no
 
@@ -472,7 +472,7 @@ Parameters
 Parameters
 ~~~~~~~~~~
 
-None. 
+None.
 
 
 ``camera_push_block(target: String[, time: Number[, type: String]])`` `API-Doc </api/commands/CameraPushBlockCommand.html>`__
@@ -485,7 +485,6 @@ Make sure the target is reachable if camera limits have been configured.
 
 **Parameters**
 
-
 * *target*\ : Global ID of the ``ESCItem`` to push the camera to. ``ESCItem``\ s have a "camera_node" property that can be set to point to a node (usually an ``ESCLocation`` node). If the "camera_node" property is empty, ``camera_push_block`` will point the camera at the ``ESCItem``\ s location. If however, the ``ESCItem`` has its "camera_node" property set, the command will instead point the camera at the node referenced by the ``ESCItem``\ s "camera_node" property.
 * *time*\ : Number of seconds the transition should take (default: ``1``\ )
 * *type*\ : Transition type to use (default: ``QUAD``\ )
@@ -494,7 +493,7 @@ Supported transitions include the names of the values used in the "TransitionTyp
 
 See https://docs.godotengine.org/en/stable/classes/class_tween.html?highlight=tween#enumerations
 
-For more details see: https://docs.escoria-framework.org/camera  
+For more details see: https://docs.escoria-framework.org/camera
 
 
 ``camera_push(target: String[, time: Number[, type: String]])`` `API-Doc </api/commands/CameraPushCommand.html>`__
@@ -507,7 +506,6 @@ Make sure the target is reachable if camera limits have been configured.
 
 **Parameters**
 
-
 * *target*\ : Global ID of the ``ESCItem`` to push the camera to. ``ESCItem``\ s have a "camera_node" property that can be set to point to a node (usually an ``ESCLocation`` node). If the "camera_node" property is empty, ``camera_push`` will point the camera at the ``ESCItem``\ s location. If however, the ``ESCItem`` has its "camera_node" property set, the command will instead point the camera at the node referenced by the ``ESCItem``\ s "camera_node" property.
 * *time*\ : Number of seconds the transition should take (default: ``1``\ )
 * *type*\ : Transition type to use (default: ``QUAD``\ )
@@ -516,7 +514,7 @@ Supported transitions include the names of the values used in the "TransitionTyp
 
 See https://docs.godotengine.org/en/stable/classes/class_tween.html?highlight=tween#enumerations
 
-For more details see: https://docs.escoria-framework.org/camera  
+For more details see: https://docs.escoria-framework.org/camera
 
 
 ``camera_set_limits(camlimits_id: Integer)`` `API-Doc </api/commands/CameraSetLimitsCommand.html>`__
@@ -527,10 +525,9 @@ Limits the current camera's movement to a limit defined in the ``ESCRoom``\ 's d
 
 **Parameters**
 
-
 * *camlimits_id*\ : Index of the camera limit defined in the ``camera limits`` list of the current ``ESCRoom``
 
-For more details see: https://docs.escoria-framework.org/camera  
+For more details see: https://docs.escoria-framework.org/camera
 
 
 ``camera_set_pos_block(time: Number, x: Integer, y: Integer)`` `API-Doc </api/commands/CameraSetPosBlockCommand.html>`__
@@ -543,12 +540,11 @@ Make sure the coordinates are reachable if camera limits have been configured.
 
 **Parameters**
 
-
 * *time*\ : Number of seconds the transition should take
 * *x*\ : Target X coordinate
 * *y*\ : Target Y coordinate
 
-For more details see: https://docs.escoria-framework.org/camera  
+For more details see: https://docs.escoria-framework.org/camera
 
 
 ``camera_set_pos(time: Number, x: Integer, y: Integer)`` `API-Doc </api/commands/CameraSetPosCommand.html>`__
@@ -559,12 +555,11 @@ Moves the camera to the given absolute position over a time period.
 
 **Parameters**
 
-
 * *time*\ : Number of seconds the transition should take
 * *x*\ : Target X coordinate
 * *y*\ : Target Y coordinate
 
-For more details see: https://docs.escoria-framework.org/camera  
+For more details see: https://docs.escoria-framework.org/camera
 
 
 ``camera_set_target_block(time: Number, object: String)`` `API-Doc </api/commands/CameraSetTargetBlockCommand.html>`__
@@ -577,11 +572,10 @@ The camera will move as close as it can if camera limits have been configured an
 
 **Parameters**
 
-
 * *time*\ : Number of seconds the transition should take to move the camera to follow ``object``
 * *object*\ : Global ID of the target object
 
-For more details see: https://docs.escoria-framework.org/camera  
+For more details see: https://docs.escoria-framework.org/camera
 
 
 ``camera_set_target(time: Number, object: String)`` `API-Doc </api/commands/CameraSetTargetCommand.html>`__
@@ -601,11 +595,11 @@ Parameters
      - Description
      - Required?
    * - time
-     - ``Number``
+     - ``Number``\
      - Duration in seconds for the camera to transition to the target.
      - yes
    * - object
-     - ``String``
+     - ``String``\
      - Global ID of the object the camera should follow.
      - yes
 
@@ -623,11 +617,10 @@ Zoom operations might not be as smooth as desired if the requested zoom level re
 
 **Parameters**
 
-
 * *magnitude*\ : Magnitude of zoom
 * *time*\ : Number of seconds the transition should take, with a value of ``0`` meaning the zoom should happen instantly (default: ``0``\ )
 
-For more details see: https://docs.escoria-framework.org/camera  
+For more details see: https://docs.escoria-framework.org/camera
 
 
 ``camera_set_zoom(magnitude: Number[, time: Number])`` `API-Doc </api/commands/CameraSetZoomCommand.html>`__
@@ -638,11 +631,10 @@ Zooms the camera in/out to the desired ``magnitude``. Values larger than '1' zoo
 
 **Parameters**
 
-
 * *magnitude*\ : Magnitude of zoom
 * *time*\ : Number of seconds the transition should take, with a value of ``0`` meaning the zoom should happen instantly (default: ``0``\ )
 
-For more details see: https://docs.escoria-framework.org/camera  
+For more details see: https://docs.escoria-framework.org/camera
 
 
 ``camera_set_zoom_height_block(pixels: Integer[, time: Number])`` `API-Doc </api/commands/CameraSetZoomHeightBlockCommand.html>`__
@@ -662,11 +654,11 @@ Parameters
      - Description
      - Required?
    * - pixels
-     - ``Integer``
+     - ``Integer``\
      - Target height in pixels (integer values only)
      - yes
    * - time
-     - ``Number``
+     - ``Number``\
      - Number of seconds the transition should take, with a value of ``0`` meaning the zoom should happen instantly (default: ``0``\ ) For more details see: https://docs.escoria-framework.org/camera
      - no
 
@@ -689,11 +681,11 @@ Parameters
      - Description
      - Required?
    * - pixels
-     - ``Integer``
+     - ``Integer``\
      - Target height in pixels
      - yes
    * - time
-     - ``Number``
+     - ``Number``\
      - Number of seconds the transition should take, with a value of ``0`` meaning the zoom should happen instantly (default: ``0``\ ) For more details see: https://docs.escoria-framework.org/camera
      - no
 
@@ -709,7 +701,6 @@ Make sure the destination coordinates are reachable if camera limits have been c
 
 **Parameters**
 
-
 * *x*\ : Shift by x pixels along the x-axis
 * *y*\ : Shift by y pixels along the y-axis
 * *time*\ : Number of seconds the transition should take, with a value of ``0`` meaning the transition should happen instantly (default: ``1``\ )
@@ -719,7 +710,7 @@ Supported transitions include the names of the values used in the "TransitionTyp
 
 See https://docs.godotengine.org/en/stable/classes/class_tween.html?highlight=tween#enumerations
 
-For more details see: https://docs.escoria-framework.org/camera  
+For more details see: https://docs.escoria-framework.org/camera
 
 
 ``camera_shift(x: Number, y: Number[, time: Number[, type: String]])`` `API-Doc </api/commands/CameraShiftCommand.html>`__
@@ -730,7 +721,6 @@ Shifts the camera by the given horizontal and vertical amounts relative to the c
 
 **Parameters**
 
-
 * *x*\ : Shift by x pixels along the x-axis
 * *y*\ : Shift by y pixels along the y-axis
 * *time*\ : Number of seconds the transition should take, with a value of ``0`` meaning the zoom should happen instantly (default: ``1``\ )
@@ -740,7 +730,7 @@ Supported transitions include the names of the values used in the "TransitionTyp
 
 https://docs.godotengine.org/en/stable/classes/class_tween.html?highlight=tween#enumerations
 
-For more details see: https://docs.escoria-framework.org/camera  
+For more details see: https://docs.escoria-framework.org/camera
 
 
 ``change_scene(path: String[, enable_automatic_transition: Boolean[, run_events: Boolean]])`` `API-Doc </api/commands/ChangeSceneCommand.html>`__
@@ -760,15 +750,15 @@ Parameters
      - Description
      - Required?
    * - path
-     - ``String``
+     - ``String``\
      - Path of the new scene
      - yes
    * - enable_automatic_transition
-     - ``Boolean``
+     - ``Boolean``\
      - Automatically transition to the new scene (default: ``true``\ )
      - no
    * - run_events
-     - ``Boolean``
+     - ``Boolean``\
      - Run the standard ESC events of the new scene (default: ``true``\ )
      - no
 
@@ -791,7 +781,7 @@ Parameters
      - Description
      - Required?
    * - path
-     - ``String``
+     - ``String``\
      - Path of the new scene
      - yes
 
@@ -814,19 +804,19 @@ Parameters
      - Description
      - Required?
    * - object
-     - ``String``
-     - Global ID of the target ``ESCItem``
+     - ``String``\
+     - Global ID of the target ``ESCItem``\
      - yes
    * - node
-     - ``String``
-     - Name of the child node of the target ``ESCItem``
+     - ``String``\
+     - Name of the child node of the target ``ESCItem``\
      - yes
    * - func_name
-     - ``String``
+     - ``String``\
      - Name of the function to be called
      - yes
    * - params...
-     - ``Variant``
+     - ``Variant``\
      - Optional arguments passed to the target function (arrays and objects are not supported). Additional positional parameters can be listed after the required ones, e.g. ``custom("the_object", "the_node", "the_function", arg1, arg2)``.
      - no
 
@@ -849,11 +839,11 @@ Parameters
      - Description
      - Required?
    * - name
-     - ``String``
+     - ``String``\
      - Name of the global variable to decrement.
      - yes
    * - value
-     - ``Float``
+     - ``Float``\
      - Value to be subtracted (default: 1)
      - yes
 
@@ -876,7 +866,7 @@ Parameters
      - Description
      - Required?
    * - node_name
-     - ``String``
+     - ``String``\
      - Name of the ``NavigationPolygonInstance`` node to activate
      - yes
 
@@ -891,7 +881,7 @@ Parameters
 Parameters
 ~~~~~~~~~~
 
-None. 
+None.
 
 
 ``hide_menu(menu_type: String)`` `API-Doc </api/commands/HideMenuCommand.html>`__
@@ -911,7 +901,7 @@ Parameters
      - Description
      - Required?
    * - menu_type
-     - ``String``
+     - ``String``\
      - Which menu to hide. Can be either ``main`` or ``pause`` (default: ``main``\ )
      - yes
 
@@ -934,11 +924,11 @@ Parameters
      - Description
      - Required?
    * - name
-     - ``String``
+     - ``String``\
      - Name of the global variable to increment.
      - yes
    * - value
-     - ``Float``
+     - ``Float``\
      - Value to be added (default: 1)
      - no
 
@@ -961,7 +951,7 @@ Parameters
      - Description
      - Required?
    * - item
-     - ``String``
+     - ``String``\
      - Global ID of the ``ESCItem`` to add to the inventory
      - yes
 
@@ -984,7 +974,7 @@ Parameters
      - Description
      - Required?
    * - item
-     - ``String``
+     - ``String``\
      - Global ID of the ``ESCItem`` to remove from the inventory
      - yes
 
@@ -1007,15 +997,15 @@ Parameters
      - Description
      - Required?
    * - file
-     - ``String``
+     - ``String``\
      - Sound file to play
      - yes
    * - player
-     - ``String``
+     - ``String``\
      - Sound player to use. Can either be ``_sound``\ , which is used to play non- looping sound effects; ``_music``\ , which plays looping music; ``_ambient``\ , which plays looping ambient sounds; or ``_speech``\ , which plays non-looping voice files (default: ``_sound``\ )
      - no
    * - start_position_seconds
-     - ``Number``
+     - ``Number``\
      - The position in seconds from which to start playing the sound file (default: ``0.0``\ )
      - no
 
@@ -1038,7 +1028,7 @@ Parameters
      - Description
      - Required?
    * - string
-     - ``String``
+     - ``String``\
      - The string to log
      - yes
 
@@ -1061,19 +1051,19 @@ Parameters
      - Description
      - Required?
    * - object
-     - ``String``
+     - ``String``\
      - Object that holds the ESC script with the event
      - yes
    * - event
-     - ``String``
+     - ``String``\
      - Name of the event to queue
      - yes
    * - channel
-     - ``String``
+     - ``String``\
      - Channel to run the event on (default: ``_front``\ ). Using a previously unused channel name will create a new channel.
      - no
    * - block
-     - ``Boolean``
+     - ``Boolean``\
      - Whether to wait for the queue to finish. This is only possible, if the queued event is not to be run on the same event as this command (default: ``false``\ )
      - no
 
@@ -1096,11 +1086,11 @@ Parameters
      - Description
      - Required?
    * - path
-     - ``String``
+     - ``String``\
      - Path of the resource to cache
      - yes
    * - front_of_queue
-     - ``Boolean``
+     - ``Boolean``\
      - Whether to put the resource at the front of the queue in order to load it as soon as possible (default: ``false``\ )
      - no
 
@@ -1123,11 +1113,11 @@ Parameters
      - Description
      - Required?
    * - name
-     - ``String``
+     - ``String``\
      - Name of the global variable that will receive the random value.
      - yes
    * - max_value
-     - ``Integer``
+     - ``Integer``\
      - Maximum possible integer value (inclusive) (default: 1)
      - yes
 
@@ -1142,7 +1132,7 @@ Makes the current script loop back to the start. Currently the only way to exit 
 Parameters
 ~~~~~~~~~~
 
-None. 
+None.
 
 
 ``save_game(slot_id: Integer, savegame_description: String)`` `API-Doc </api/commands/SaveGameCommand.html>`__
@@ -1162,11 +1152,11 @@ Parameters
      - Description
      - Required?
    * - slot_id
-     - ``Integer``
+     - ``Integer``\
      - Numeric slot index to store the save data in.
      - yes
    * - savegame_description
-     - ``String``
+     - ``String``\
      - Text shown to players when listing this save slot.
      - yes
 
@@ -1189,19 +1179,19 @@ Parameters
      - Description
      - Required?
    * - player
-     - ``String``
+     - ``String``\
      - Global ID of the ``ESCPlayer`` or ``ESCItem`` object that is active. You can specify ``current_player`` in order to refer to the currently active player, e.g. in cases where multiple players are playable such as in games like Maniac Mansion or Day of the Tentacle.
      - yes
    * - text
-     - ``String``
+     - ``String``\
      - Text to display.
      - yes
    * - key
-     - ``String``
+     - ``String``\
      - Translation key (default: nil)
      - no
    * - type
-     - ``String``
+     - ``String``\
      - Dialog type to use. One of ``floating`` or ``avatar``. (default: the value set in the setting "Escoria/UI/Default Dialog Type") The text supports translation keys by prepending the key followed by a colon (`:`) to the text. For more details see: https://docs.escoria-framework.org/en/devel/getting_started/dialogs.html#translations Playing an audio file while the text is being displayed is also supported by this mechanism. For more details see: https://docs.escoria-framework.org/en/devel/getting_started/dialogs.html#recorded_speech Example: `say(player, "Picture's looking good.", "ROOM1_PICTURE")`
      - no
 
@@ -1224,15 +1214,15 @@ Parameters
      - Description
      - Required?
    * - time
-     - ``Number``
+     - ``Number``\
      - Time in seconds until the scheduled event starts
      - yes
    * - object
-     - ``String``
+     - ``String``\
      - Global ID of the ESCItem that holds the ESC script
      - yes
    * - event
-     - ``String``
+     - ``String``\
      - Name of the event to schedule
      - yes
 
@@ -1255,12 +1245,12 @@ Parameters
      - Description
      - Required?
    * - object
-     - ``String``
+     - ``String``\
      - Global ID of the object whose active state should change.
      - yes
    * - active
-     - ``Boolean``
-     - Whether the object should be marked as active (\ ``true``\ ) or inactive (\ ``false``\ ). object\ * Global ID of the object active* Whether ``object`` should be active. ``active`` can be ``true`` or ``false``.
+     - ``Boolean``\
+     - Whether the object should be marked as active (\ ``true``\ ) or inactive (\ ``false``\ ). object* Global ID of the object active* Whether ``object`` should be active. ``active`` can be ``true`` or ``false``.
      - yes
 
 
@@ -1282,11 +1272,11 @@ Parameters
      - Description
      - Required?
    * - object
-     - ``String``
+     - ``String``\
      - Global ID of the object whose active state should change if it is registered.
      - yes
    * - active
-     - ``Boolean``
+     - ``Boolean``\
      - Whether the object should be marked as active (\ ``true``\ ) or inactive (\ ``false``\ ).
      - yes
 
@@ -1309,15 +1299,15 @@ Parameters
      - Description
      - Required?
    * - object
-     - ``String``
+     - ``String``\
      - Global ID of the object to turn
      - yes
    * - target_degrees
-     - ``Number``
+     - ``Number``\
      - Number of degrees by which ``object`` is to be turned
      - yes
    * - wait
-     - ``Number``
+     - ``Number``\
      - Number of seconds to wait for while playing each animation occurring between the current angle of ``object`` and the target angle. A value of ``0`` will complete the turn immediately (default: ``0``\ )
      - no
 
@@ -1340,11 +1330,11 @@ Parameters
      - Description
      - Required?
    * - object
-     - ``String``
+     - ``String``\
      - Global ID of the object whose animation resource is to be updated
      - yes
    * - animations
-     - ``String``
+     - ``String``\
      - The path of the animation resource to use
      - yes
 
@@ -1367,15 +1357,15 @@ Parameters
      - Description
      - Required?
    * - object
-     - ``String``
+     - ``String``\
      - Global ID of the object to turn
      - yes
    * - direction_id
-     - ``Integer``
+     - ``Integer``\
      - Target direction index from the animation resource.
      - yes
    * - wait
-     - ``Number``
+     - ``Number``\
      - Seconds to spend on each intermediate step when rotating toward the target direction (0 means immediate).
      - no
 
@@ -1398,15 +1388,15 @@ Parameters
      - Description
      - Required?
    * - name
-     - ``String``
+     - ``String``\
      - Name of the global variable to set.
      - yes
    * - value
-     - ``String`` or ``Integer`` or ``Boolean``
+     - ``String`` or ``Integer`` or ``Boolean``\
      - Value to set the global to (can be of type string, boolean, integer.)
      - yes
    * - force
-     - ``Boolean``
+     - ``Boolean``\
      - if false, setting a global whose name is reserved will trigger an error. Defaults to false. Reserved globals are: ESC_LAST_SCENE, FORCE_LAST_SCENE_NULL, ANIMATION_RESOURCES, ESC_CURRENT_SCENE
      - no
 
@@ -1429,11 +1419,11 @@ Parameters
      - Description
      - Required?
    * - pattern
-     - ``String``
+     - ``String``\
      - Pattern to use to match the names of the globals to change
      - yes
    * - value
-     - ``String`` or ``Integer`` or ``Boolean``
+     - ``String`` or ``Integer`` or ``Boolean``\
      - Value to set (can be of type string, boolean, integer or float)
      - yes
 
@@ -1456,7 +1446,7 @@ Parameters
      - Description
      - Required?
    * - visible
-     - ``Boolean``
+     - ``Boolean``\
      - Whether the GUI should be visible (\ ``true`` or ``false``\ )
      - yes
 
@@ -1479,11 +1469,11 @@ Parameters
      - Description
      - Required?
    * - object
-     - ``String``
+     - ``String``\
      - Global ID of the object to change
      - yes
    * - interactive
-     - ``Boolean``
+     - ``Boolean``\
      - Whether the object should be interactive
      - yes
 
@@ -1506,11 +1496,11 @@ Parameters
      - Description
      - Required?
    * - item
-     - ``String``
+     - ``String``\
      - Global ID of the item whose ``custom_data`` should be updated.
      - yes
    * - custom_data
-     - ``Dictionary``
+     - ``Dictionary``\
      - Dictionary assigned to the item's ``custom_data`` property (an empty dictionary is used when ``null``\ ).
      - yes
 
@@ -1533,11 +1523,11 @@ Parameters
      - Description
      - Required?
    * - object
-     - ``String``
-     - Global ID of the ``ESCPlayer`` or movable ``ESCItem``
+     - ``String``\
+     - Global ID of the ``ESCPlayer`` or movable ``ESCItem``\
      - yes
    * - speed
-     - ``Integer``
+     - ``Integer``\
      - Speed value for ``object`` in pixels per second.
      - yes
 
@@ -1560,15 +1550,15 @@ Parameters
      - Description
      - Required?
    * - object
-     - ``String``
+     - ``String``\
      - Global ID of the object whose state is to be changed
      - yes
    * - state
-     - ``String``
+     - ``String``\
      - Name of the state to be set
      - yes
    * - immediate
-     - ``Boolean``
+     - ``Boolean``\
      - If an animation for the state exists, specifies whether it is to skip to the last frame. Can be ``true`` or ``false``.
      - no
 
@@ -1591,7 +1581,7 @@ Parameters
      - Description
      - Required?
    * - menu_type
-     - ``String``
+     - ``String``\
      - Which menu to show. Can be either ``main`` or ``pause`` (default: ``main``\ )
      - yes
 
@@ -1603,12 +1593,11 @@ Parameters
 
 Moves ``object`` towards the position of ``target``. This command is blocking.
 
-
 * *object*\ : Global ID of the object to move
 * *target*\ : Global ID of the target object
 * *speed*\ : The speed at which to slide in pixels per second (will default to the speed configured on the ``object``\ )
 
-**Warning** This command does not respect the room's navigation polygons, so ``object`` can be moved even when outside walkable areas.  
+**Warning** This command does not respect the room's navigation polygons, so ``object`` can be moved even when outside walkable areas.
 
 
 ``slide(object: String, target: String[, speed: Integer])`` `API-Doc </api/commands/SlideCommand.html>`__
@@ -1630,15 +1619,15 @@ Parameters
      - Description
      - Required?
    * - object
-     - ``String``
+     - ``String``\
      - Global ID of the object that should slide.
      - yes
    * - target
-     - ``String``
+     - ``String``\
      - Global ID of the object whose position is used as the destination.
      - yes
    * - speed
-     - ``Integer``
+     - ``Integer``\
      - Optional slide speed in pixels per second (defaults to the object's configured speed when negative).
      - no
 
@@ -1661,19 +1650,19 @@ Parameters
      - Description
      - Required?
    * - identifier
-     - ``String``
+     - ``String``\
      - Global ID to use for the new object
      - yes
    * - path
-     - ``String``
+     - ``String``\
      - Path to the scene file of the object
      - yes
    * - is_active
-     - ``Boolean``
+     - ``Boolean``\
      - Whether the new object should be set to active (default: ``true``\ )
      - no
    * - position_target
-     - ``String``
+     - ``String``\
      - Global ID of another object that will be used to position the new object (when omitted, the new object's position is not specified)
      - no
 
@@ -1688,7 +1677,7 @@ Stops the current event's execution. Note that this will stop the current script
 Parameters
 ~~~~~~~~~~
 
-None. 
+None.
 
 
 ``stop_snd([audio_bus: String])`` `API-Doc </api/commands/StopSndCommand.html>`__
@@ -1708,7 +1697,7 @@ Parameters
      - Description
      - Required?
    * - audio_bus
-     - ``String``
+     - ``String``\
      - Bus to stop ("_sound", "_music", "_speech", "_ambient", or a custom audio bus you have created.)
      - no
 
@@ -1731,12 +1720,12 @@ Parameters
      - Description
      - Required?
    * - object
-     - ``String``
+     - ``String``\
      - Global ID of the object to move
      - yes
    * - target
-     - ``String``
-     - Global ID of the object to use as the destination coordinates for ``object``
+     - ``String``\
+     - Global ID of the object to use as the destination coordinates for ``object``\
      - yes
 
 
@@ -1758,15 +1747,15 @@ Parameters
      - Description
      - Required?
    * - object
-     - ``String``
+     - ``String``\
      - Global ID of the object to move
      - yes
    * - x
-     - ``Integer``
+     - ``Integer``\
      - X-coordinate of destination position
      - yes
    * - y
-     - ``Integer``
+     - ``Integer``\
      - Y-coordinate of destination position
      - yes
 
@@ -1789,15 +1778,15 @@ Parameters
      - Description
      - Required?
    * - transition_name
-     - ``String``
+     - ``String``\
      - Name of the transition shader from one of the transition directories
      - yes
    * - mode
-     - ``String``
+     - ``String``\
      - Set to ``in`` to transition into or ``out`` to transition out of the room
      - yes
    * - delay
-     - ``Number``
+     - ``Number``\
      - Delay in seconds before starting the transition (default: ``1.0``\ )
      - no
 
@@ -1820,15 +1809,15 @@ Parameters
      - Description
      - Required?
    * - object
-     - ``String``
+     - ``String``\
      - Global ID of the object to be turned
      - yes
    * - object_to_face
-     - ``String``
+     - ``String``\
      - Global ID of the object to turn towards
      - yes
    * - wait
-     - ``Number``
+     - ``Number``\
      - Length of time to wait in seconds for each intermediate angle. If set to 0, the turnaround is immediate (default: ``0``\ )
      - no
 
@@ -1851,7 +1840,7 @@ Parameters
      - Description
      - Required?
    * - seconds
-     - ``Number``
+     - ``Number``\
      - Number of seconds to block
      - yes
 
@@ -1874,15 +1863,15 @@ Parameters
      - Description
      - Required?
    * - object
-     - ``String``
+     - ``String``\
      - Global ID of the object to move
      - yes
    * - target
-     - ``String``
+     - ``String``\
      - Global ID of the target object
      - yes
    * - walk_fast
-     - ``Boolean``
+     - ``Boolean``\
      - Whether to walk fast (\ ``true``\ ) or normal speed (\ ``false``\ ). (default: false)
      - no
 
@@ -1905,15 +1894,15 @@ Parameters
      - Description
      - Required?
    * - object
-     - ``String``
+     - ``String``\
      - Global ID of the object to move
      - yes
    * - target
-     - ``String``
+     - ``String``\
      - Global ID of the target object
      - yes
    * - walk_fast
-     - ``Boolean``
+     - ``Boolean``\
      - Whether to walk fast (\ ``true``\ ) or normal speed (\ ``false``\ ) (default: false)
      - no
 
@@ -1936,19 +1925,19 @@ Parameters
      - Description
      - Required?
    * - object
-     - ``String``
+     - ``String``\
      - Global ID of the object to move
      - yes
    * - x
-     - ``Integer``
+     - ``Integer``\
      - X-coordinate of target position
      - yes
    * - y
-     - ``Integer``
+     - ``Integer``\
      - Y-coordinate of target position
      - yes
    * - walk_fast
-     - ``Boolean``
+     - ``Boolean``\
      - Whether to walk fast (\ ``true``\ ) or normal speed (\ ``false``\ ). (default: false)
      - no
 
@@ -1971,19 +1960,19 @@ Parameters
      - Description
      - Required?
    * - object
-     - ``String``
+     - ``String``\
      - Global ID of the object to move
      - yes
    * - x
-     - ``Integer``
+     - ``Integer``\
      - X-coordinate of target position
      - yes
    * - y
-     - ``Integer``
+     - ``Integer``\
      - Y-coordinate of target position
      - yes
    * - walk_fast
-     - ``Boolean``
+     - ``Boolean``\
      - Whether to walk fast (\ ``true``\ ) or normal speed (\ ``false``\ ). (default: false)
      - no
 
